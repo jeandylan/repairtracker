@@ -32,25 +32,24 @@ default should be app
                      */
                     .state('app.view-customers-table', {
                         url: '/viewcustomerstable',
-                        templateUrl: 'app/component/shop/customers/read/views/view-customers-table.html',
+                        templateUrl: 'app/component/shop/customers/read/views/customers-table.html',
                         resolve: load(['smart-table','app/component/shop/customers/read/services/readCustomersService.js',
                             'app/component/shop/customers/read/controllers/readAllCustomersCtrl.js'])
                     })
 
                     .state('app.add-customer', {
                         url: '/addcustomer',
-                        templateUrl: 'app/component/shop/customers/create/views/insert-customer-form.html',
+                        templateUrl: 'app/component/shop/customers/create/views/create-customer-form.html',
 
                         resolve: load(['app/component/shop/customers/create/controllers/addNewCustomerController.js',
                             'app/component/shop/customers/create/controllers/formAddNewCustomerController.js',
                             'app/component/core/controllers/googleTypeAheadController.js'])
                     })
-
                     .state('app.update-customer', {
                         url: '/editcustomer/{customerId:int}',
-                        templateUrl: 'app/component/shop/customers/update/views/view-update-customer.html',
+                        templateUrl: 'app/component/shop/customers/update/views/update-customer.html',
 
-                        resolve: load(['xeditable','app/component/shop/customers/update/views/view-update-customer.html',
+                        resolve: load(['xeditable',
                             'app/component/shop/customers/update/services/updateCustomerService.js',
                             'app/component/shop/customers/update/controllers/updateCustomerCtrl.js',
                             'app/component/core/controllers/googleTypeAheadController.js'])
@@ -59,29 +58,26 @@ default should be app
                     /*
                     tickets routes
                      */
-
                     .state('app.create-ticket', {
                         url: '/create-ticket',
-                        templateUrl: 'app/component/shop/tickets/create/views/create-ticket.html',
+                        templateUrl: 'app/component/shop/tickets/create/views/create-ticket-form.html',
 
                         resolve: load(['app/component/shop/tickets/create/controllers/createTicketCtrl.js'])
                     })
-                .state('app.read-ticket', {
-                    url: '/read-ticket',
-                    templateUrl: 'app/component/shop/tickets/read/views/read-ticket.html',
-
-                    resolve: load(['xeditable', "ui.select",'app/component/shop/tickets/read/controllers/readTicketCtrl.js'])
-                })
-                    /*
-                    be careful the links below belongs to tickets with(s)- return a view with a tables for all tickets
-                     */
-
-                .state('app.read-tickets', {
+                    
+                    .state('app.read-tickets', {
                     url: '/read-tickets',
-                    templateUrl: 'app/component/shop/tickets/read/views/read-tickets.html',
+                    templateUrl: 'app/component/shop/tickets/read/views/tickets-table.html',
 
                     resolve: load(['smart-table','app/component/shop/tickets/read/controllers/readTicketsCtrl.js'])
-                });
+                    })
+                    
+                    .state('app.update-ticket', {
+                        url: '/update-ticket/{ticketId:int}',
+                        templateUrl: 'app/component/shop/tickets/update/views/update-ticket.html',
+
+                        resolve: load(['xeditable', "ui.select",'app/component/shop/tickets/update/controllers/updateTicketCtrl.js'])
+                    });   
 
                 function load(srcs, callback) {
                     return {

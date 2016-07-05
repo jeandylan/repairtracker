@@ -39,6 +39,16 @@
             <td >{{row.model}}</td>
             <td>{{row.make}}</td>
             <td>{{row.problem_type}}</td>
+            <td>
+                <a ui-sref="app.update-customer({ticketIdId:row.id})" class="btn btn-sm btn-warning"  >
+                    <i class="glyphicon glyphicon glyphicon-edit"></i>
+                </a>
+            </td>
+            <td>
+                <a ui-sref="app.delete-customer({ticketId:row.id})" class="btn btn-sm btn-danger"  >
+                    <i class="glyphicon glyphicon glyphicon-remove-circle"></i>
+                </a>
+            </td>
 
 
 

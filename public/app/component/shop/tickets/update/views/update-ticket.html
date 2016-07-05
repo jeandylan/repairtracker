@@ -1,0 +1,64 @@
+<div class="bg-light lter b-b wrapper-md"  >
+    <h1 class="m-n font-thin h3">Create new Ticket</h1>
+</div>
+<div ng-controller="updateTicketCtrl">
+    <form editable-form name="editableForm" onaftersave="saveUser()">
+
+        <div class="wrapper-md">
+            <!----button--->
+            <div class="form-group row ">
+                <div class="buttons">
+                    <!-- button to show form -->
+                    <button type="button" class="btn btn-default" ng-click="editableForm.$show()" ng-show="!editableForm.$visible">
+                        Edit
+                    </button>
+                    <!-- buttons to submit / cancel form -->
+      <span ng-show="editableForm.$visible">
+        <button type="submit" class="btn btn-primary" ng-disabled="editableForm.$waiting">
+            Save
+        </button>
+        <button type="button" class="btn btn-default" ng-disabled="editableForm.$waiting" ng-click="editableForm.$cancel()">
+            Cancel
+        </button>
+          </span>
+                </div>
+            </div>
+
+        <div class="wrapper-md">
+            <!---start panel-->
+            <div class="panel panel-default col-sm-6">
+                <!---personal detail form panel --->
+                <div class="panel-heading font-bold">
+                    Ticket Details
+                </div>
+                <div class="panel-body">
+
+                    <!----one select  box --->
+                    <div class="form-group row">
+                    <label class="col-sm-2 control-label">Model</label>
+                    <div class="col-sm-10">
+                        <span href="#" editable-select="user.group" onshow="loadGroups()" e-ng-options="g.id as g.text for g in groups">
+                            {{ ticket.problem_type || 'not set' }}
+                        </span>
+                    </div>
+                </div>
+                    <!----one Edit   box --->
+                    <div class="form-group row">
+                        <label class="col-sm-2 control-label">Make</label>
+                        <div class="col-sm-10">
+                            <span href="#"editable-text="user.name" onshow="loadGroups()" e-ng-options="g.id as g.text for g in groups">
+                                {{ tickets.model || 'not set' }}
+                            </span>
+                        </div>
+                    </div>
+
+
+
+        </div>
+            </div>
+            </div>
+
+
+
+</div>
+

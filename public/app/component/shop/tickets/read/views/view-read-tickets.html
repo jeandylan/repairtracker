@@ -1,0 +1,50 @@
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">tickets</h1>
+</div>
+<div ng-controller="readTicketsCtrl">
+    <table st-table="displayedCollection"  st-safe-src="rowCollection" class="table table-striped"> <!----remember display and st-dafe when updating ---->
+        <thead>
+        <tr>
+            <th st-sort="ticket_problem">ticket problem</th>
+            <th st-sort="model" >model</th>
+            <th st-sort="make" >make</th>
+            <th st-sort="problem_type" >problem type</th>
+
+
+        </tr>
+        <tr>
+
+            <th>
+                <input st-search="ticket_problem" placeholder="search for ticket problem" class="input-sm form-control" type="search"/>
+            </th>
+
+            <th>
+                <input st-search="model" placeholder="search for model" class="input-sm form-control" type="search"/>
+            </th>
+
+            <th>
+                <input st-search="make" placeholder="search for make" class="input-sm form-control" type="search"/>
+            </th>
+            <th>
+
+            <th>
+                <input st-search="problem_type" placeholder="search for problem type "/>
+            </th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="row in displayedCollection">
+            <td >{{row.ticket_problem}}</td>
+            <td >{{row.model}}</td>
+            <td>{{row.make}}</td>
+            <td>{{row.problem_type}}</td>
+
+
+
+
+        </tr>
+        </tbody>
+    </table>
+
+</div>

@@ -1,0 +1,55 @@
+<div class="bg-light lter b-b wrapper-md"  >
+    <h1 class="m-n font-thin h3">Create new Ticket</h1>
+</div>
+<div ng-controller="createTicketCtrl">
+
+    <form>
+        <div class="wrapper-md">
+            <!---start panel-->
+            <div class="panel panel-default col-sm-6">
+                <!---personal detail form panel --->
+                <div class="panel-heading font-bold">
+                    Ticket Details
+                </div>
+                <div class="panel-body">
+
+                    <!----one text box --->
+
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 control-label">Model</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 control-label">Make</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 control-label">problem Type</label>
+                        <div class="col-sm-10">
+                            <select  class="form-control">
+                                <option>Power Problem</option>
+                                <option>Wifi Problem</option>
+                                </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 control-label">ticket problem</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" rows="7" id="ticket_problem"></textarea>
+                        </div>
+
+                </div>
+            </div>
+        </div>
+            </div>
+
+    </form>
+
+</div>
+

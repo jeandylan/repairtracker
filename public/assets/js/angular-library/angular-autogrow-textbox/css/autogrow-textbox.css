@@ -1,0 +1,4 @@
+.autogrow {
+    resize: none;
+    box-sizing: content-box;
+}

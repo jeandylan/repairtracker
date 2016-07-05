@@ -1,0 +1,196 @@
+<div class="bg-light lter b-b wrapper-md"  >
+    <h1 class="m-n font-thin h3">Add new Customer</h1>
+</div>
+<div ng-controller="formAddNewClientController">
+
+    <form>
+
+        <div class="wrapper-md">
+
+            <!---start panel-->
+            <div class="panel panel-default">
+                <!---personal detail form panel --->
+                <div class="panel-heading font-bold">
+                    personal details
+                </div>
+                <div class="panel-body">
+                    <!---angular material drop box ---->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">sex:</label>
+                        <div class="col-sm-10">
+                            <label class="checkbox-inline"><input type="radio" name="sex" value="">M</label>
+                            <label class="checkbox-inline"><input type="radio" name="sex" value="">F</label>
+                        </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <!----end of material dropBox--->
+                    <!----one text box --->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">first Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <!---end of Text box-->
+
+                    <!----one text box --->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Last Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <!---end of Calendar box-->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Date Of Bith</label>
+                        <div class="col-sm-10">
+                            <p class="input-group">
+                                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <!---end of Calendar box-->
+
+
+                </div>
+            </div>
+            <!--end panel-->
+
+
+            <!---start panel-->
+            <div class="panel panel-default">
+                <!---personal detail form panel --->
+                <div class="panel-heading font-bold">
+                    contact details
+                </div>
+                <div class="panel-body">
+
+
+                    <!----one text box --->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Home telephone :</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <!---end of Text box-->
+
+                    <!----one text box --->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Mobile Telephone 1:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <!---end of Text box-->
+
+                    <!----one text box --->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Mobile Telephone 2:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <!---end of Text box-->
+
+<span ng-controller="googleTypeAheadController">
+      <!----one text box --->
+      <div class="form-group">
+          <label class="col-sm-2 control-label">address 1:</label>
+          <div class="col-sm-10">
+              <input type="text" ng-model="ngModelOptionsSelected" ng-model-options="modelOptions"  placeholder="Locations loaded Automatically if available" uib-typeahead="address for address in getLocation($viewValue)" typeahead-loading="loadingLocations" typeahead-no-results="noResults" class="form-control">
+              <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
+              <div ng-show="noResults">
+                  <i class="glyphicon glyphicon-remove"></i> No Results Found
+              </div>
+          </div>
+          <div class="line line-dashed b-b line-lg pull-in"></div>
+      </div>
+    <!---end of Text box-->
+      <div class="form-group">
+          <label class="col-sm-2 control-label">state:</label>
+          <div class="col-sm-10">
+              <input type="text" ng-model="state" class="form-control">
+          </div>
+      </div>
+      <div class="line line-dashed b-b line-lg pull-in"></div>
+    <!---start text box---->
+  <div class="form-group">
+      <label class="col-sm-2 control-label">street:</label>
+      <div class="col-sm-10">
+          <input type="text" ng-model="street" class="form-control">
+      </div>
+  </div>
+      <div class="line line-dashed b-b line-lg pull-in"></div>
+    <!---end text box---->
+
+    <!---start text box---->
+  <div class="form-group">
+      <label class="col-sm-2 control-label">city/nearby city:</label>
+      <div class="col-sm-10">
+          <input type="text" ng-model="city" class="form-control">
+      </div>
+  </div>
+      <div class="line line-dashed b-b line-lg pull-in"></div>
+    <!---end text box---->
+    <!---start text box---->
+  <div class="form-group">
+      <label class="col-sm-2 control-label">village:</label>
+      <div class="col-sm-10">
+          <input type="text" ng-model="village" class="form-control">
+      </div>
+  </div>
+      <div class="line line-dashed b-b line-lg pull-in"></div>
+    <!---end text box---->
+
+
+    <!---start text box---->
+  <div class="form-group">
+      <label class="col-sm-2 control-label">city:</label>
+      <div class="col-sm-10">
+          <input type="text" ng-model="city" class="form-control">
+      </div>
+  </div>
+      <div class="line line-dashed b-b line-lg pull-in"></div>
+    <!---end text box---->
+
+  </span>
+                    <!----one text box --->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">address 2:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <!---end of Text box-->
+
+                    <!---start txt box--->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">E-mail :</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+
+                </div>
+            </div>
+
+            <!--end panel--->
+
+
+            <button type="button" class="btn btn-info btn-block">save</button>
+        </div>
+    </form>
+</div>
+</div>

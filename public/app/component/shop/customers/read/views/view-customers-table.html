@@ -1,0 +1,77 @@
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">View Customer</h1>
+</div>
+<div ng-controller="readAllCustomersCtrl">
+    <table st-table="displayedCollection"  st-safe-src="rowCollection" class="table table-striped"> <!----remember display and st-dafe when updating ---->
+        <thead>
+        <tr>
+            <th st-sort="first_name">first name</th>
+            <th st-sort="last_name" >last name</th>
+            <th>email</th>
+            <th>DOB</th>
+            <th>address</th>
+            <th>address 1</th>
+            <th>mobile tel</th>
+            <th>mobile tel 1</th>
+            <th>home tel</th>
+
+        </tr>
+        <tr>
+            <th>
+                <input st-search="first_name" placeholder="search for first name" class="input-sm form-control" type="search"/>
+            </th>
+            <th>
+                <input st-search="last_name" placeholder="search for last name" class="input-sm form-control" type="search"/>
+            </th>
+            <th>
+                <input st-search="email" placeholder="search for email" class="input-sm form-control" type="search"/>
+            </th>
+            <th>
+                <!----no search for dob--->
+            </th>
+            <th>
+                <input st-search="address" placeholder="search for address "/>
+            </th>
+            <th>
+                <input st-search="address_1" placeholder="search for address 1"/>
+            </th>
+            <th>
+                <input st-search="mobile_tel" placeholder="search for mobile tel" class="input-sm form-control" type="search"/>
+            </th>
+            <th>
+                <input st-search="mobile_tel_1" placeholder="search for mobile tel 1" class="input-sm form-control" type="search"/>
+            </th>
+            <th>
+                <input st-search="phone_tel" placeholder="search for phone tel" class="input-sm form-control" type="search"/>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="row in displayedCollection">
+            <td >{{row.first_name}}</td>
+            <td >{{row.last_name}}</td>
+            <td>{{row.email}}</td>
+            <td>{{row.date_of_birth}}</td>
+            <td >{{row.address}}</td>
+            <td>{{row.address_1}}</td>
+            <td >{{row.mobile_tel}}</td>
+            <td >{{row.mobile_tel_1}}</td>
+            <td>{{row.home_tel}}</td>
+            <td>
+                <a ui-sref="app.update-customer({customerId:row.id})" class="btn btn-sm btn-warning"  >
+                    <i class="glyphicon glyphicon glyphicon-edit"></i>
+               </a>
+            </td>
+            <td>
+                <a ui-sref="app.delete-customer({customerId:row.id})" class="btn btn-sm btn-danger"  >
+                    <i class="glyphicon glyphicon glyphicon-remove-circle"></i>
+                </a>
+            </td>
+
+
+
+        </tr>
+        </tbody>
+    </table>
+
+</div>

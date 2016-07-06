@@ -39,7 +39,19 @@ class CustomerController extends Controller
      */
     public function store()
     {
-        //
+        $rules = array(
+            'first_name'       => 'required',
+            'last_name'      => 'required',
+            'email' => 'email'
+        );
+        $validator = Validator::make(Input::all(), $rules);
+
+        $customer = new Customer();
+        $customer->first_name=Input::get('first_name');
+        $customer->last_name=Input::get('last_name');
+        $customer->save();
+
+
     }
 
     /**

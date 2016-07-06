@@ -25,7 +25,8 @@ default should be app
                 $stateProvider
                     .state('app', {
                         url: '/app',
-                        templateUrl: 'tpl/app.html'
+                        templateUrl: 'tpl/app.html',
+                        resolve:load(['app/component/core/controllers/testCtrl.js'])
                     })
                     /*
                     customers route
@@ -42,7 +43,7 @@ default should be app
                         templateUrl: 'app/component/shop/customers/create/views/create-customer-form.html',
 
                         resolve: load(['app/component/shop/customers/create/controllers/addNewCustomerController.js',
-                            'app/component/shop/customers/create/controllers/formAddNewCustomerController.js',
+                            'app/component/shop/customers/create/controllers/createCustomerCtrl.js',
                             'app/component/core/controllers/googleTypeAheadController.js'])
                     })
                     .state('app.update-customer', {

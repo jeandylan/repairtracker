@@ -332,45 +332,39 @@
       </li>
     </ul>
   </li>
-  <li ui-sref-active="active">
-    <a ui-sref="app.chart">
-      <i class="glyphicon glyphicon-signal"></i>
-      <span translate="aside.nav.components.CHART">Chart</span>
-    </a>
-  </li>
-  <li ng-class="{active:$state.includes('app.page')}">
+  <li>
     <a href class="auto">
       <span class="pull-right text-muted">
         <i class="fa fa-fw fa-angle-right text"></i>
         <i class="fa fa-fw fa-angle-down text-active"></i>
       </span>
       <i class="glyphicon glyphicon-file icon"></i>
-      <span translate="aside.nav.components.pages.PAGES">Pages</span>
+      <span translate="invoices.invoices">Invoices</span>
     </a>
     <ul class="nav nav-sub dk">
       <li class="nav-sub-header">
         <a href>
-          <span translate="aside.nav.components.pages.PAGES">Pages</span>
+          <span translate="">Pages</span>
         </a>
       </li>
       <li ui-sref-active="active">
-        <a ui-sref="app.page.profile">
-          <span translate="aside.nav.components.pages.PROFILE">Profile</span>
+        <a ui-sref="app.create-invoice">
+          <span translate="invoices.create-invoice"> create Invoice</span>
         </a>
       </li>
       <li ui-sref-active="active">
-        <a ui-sref="app.page.post">
-          <span translate="aside.nav.components.pages.POST">Post</span>
+        <a ui-sref="app.update-invoice">
+          <span translate="invoices.update-invoice">update invoice</span>
         </a>
       </li>
       <li ui-sref-active="active">
-        <a ui-sref="app.page.search">
-          <span translate="aside.nav.components.pages.SEARCH">Search</span>
+        <a ui-sref="app.read-invoices">
+          <span translate="invoices.read-invoices">view Table Invoice</span>
         </a>
       </li>
       <li ui-sref-active="active">
-        <a ui-sref="app.page.invoice">
-          <span translate="aside.nav.components.pages.INVOICE">Invoice</span>
+        <a ui-sref="app.read-invoice">
+          <span translate="invoices.read-invoice">view invoice</span>
         </a>
       </li>
       <li ui-sref-active="active">

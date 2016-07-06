@@ -36,6 +36,7 @@
 <script src="assets/js/angular-library/angular-aria/angular-aria.js"></script>
 <script src="assets/js/angular-library/angular-cookies/angular-cookies.js"></script>
 <script src="assets/js/angular-library/angular-messages/angular-messages.js"></script>
+<script src="assets/js/angular-library/angular-messages/angular-messages.js"></script>
 <script src="assets/js/angular-library/angular-resource/angular-resource.js"></script>
 <script src="assets/js/angular-library/angular-sanitize/angular-sanitize.js"></script>
 <script src="assets/js/angular-library/angular-touch/angular-touch.js"></script>

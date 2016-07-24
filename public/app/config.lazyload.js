@@ -100,13 +100,6 @@ angular.module('app')
                 ]
             },
             {
-                name: 'toaster',
-                files: [
-                    'assets/js/angular-library/angularjs-toaster/toaster.js',
-                    'assets/js/angular-library/angularjs-toaster/toaster.css'
-                ]
-            },
-            {
                 name: 'textAngular',
                 files: [
                     'assets/js/angular-library/textAngular/dist/textAngular-sanitize.min.js',
@@ -173,6 +166,20 @@ angular.module('app')
             name: 'smart-table',
             files: [
                 'assets/js/angular-library/angular-smart-table/dist/smart-table.min.js'
+            ]
+        },
+        {
+            name: 'monospaced.qrcode',
+            files: [
+                'assets/js/angular-library/angular-qr-code/angular-qrcode.min.js',
+                'assets/js/angular-library/angular-qr-code/qrcode.js'
+            ]
+        },
+        {
+            name: 'AngularPrint',
+            files: [
+                'assets/js/angular-library/angular-print/angularPrint.css',
+                'assets/js/angular-library/angular-print/angularPrint.js'
             ]
         },
      

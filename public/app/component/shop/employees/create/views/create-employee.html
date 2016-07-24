@@ -1,0 +1,179 @@
+<form name="employee_form" ng-controller="createEmployeeCtrl">
+
+    <div class="wrapper-md">
+
+        <!---start panel-->
+        <div class="panel panel-default">
+            <!---personal detail form panel --->
+            <div class="panel-heading font-bold">
+                personal details
+            </div>
+            <div class="panel-body">
+                <!---angular material drop box ---->
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">sex:</label>
+                    <div class="col-sm-10">
+                        <label class="checkbox-inline"><input type="radio" name="sex" value="">M</label>
+                        <label class="checkbox-inline"><input type="radio" name="sex" value="">F</label>
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                <!----end of material dropBox--->
+                <!----one text box --->
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">first Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="first_name"  ng-model="employee.first_name" class="form-control" required>
+                        <p class="alert-warning" ng-show="employee_form.first_name.$error.required">first Name Required.</p>
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                <!---end of Text box-->
+
+                <!----one text box --->
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Last Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="last_name"  ng-model="employee.last_name" class="form-control" required>
+                        <p class="alert-warning" ng-show="employee_form.last_name.$error.required">last Name Required.</p>
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                <!---end of Calendar box-->
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Date Of Bith</label>
+                    <div class="col-sm-10">
+                        <p class="input-group">
+                            <input type="text"  name="date_of_birth" class="form-control" uib-datepicker-popup="{{format}}" ng-model="employee.date_of_birth" is-open="popup1.opened" datepicker-options="dateOptions" required close-text="Close" />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                </span>
+                        </p>
+                        <p class="alert-warning" ng-show="employee.date_of_birth.$error.required">date of birth required.</p>
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                <!---end of Calendar box-->
+
+
+            </div>
+        </div>
+        <!--end panel-->
+
+
+        <!---start panel-->
+        <div class="panel panel-default">
+            <!---personal detail form panel --->
+            <div class="panel-heading font-bold">
+                contact details
+            </div>
+            <div class="panel-body">
+
+
+                <!----one text box --->
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Home telephone :</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="home_tel" ng-model="employee.home_tel" class="form-control">
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                <!---end of Text box-->
+
+                <!---end of Text box-->
+                <!----future Implementation typahead address
+                <span ng-controller="googleTypeAheadController">
+                      <!----one text box ---
+                      <div class="form-group">
+                          <label class="col-sm-2 control-label">address 1:</label>
+                          <div class="col-sm-10">
+                              <input type="text" ng-model="ngModelOptionsSelected" ng-model-options="modelOptions"  placeholder="Locations loaded Automatically if available" uib-typeahead="address for address in getLocation($viewValue)" typeahead-loading="loadingLocations" typeahead-no-results="noResults" class="form-control">
+                              <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
+                              <div ng-show="noResults">
+                                  <i class="glyphicon glyphicon-remove"></i> No Results Found
+                              </div>
+                          </div>
+                          <div class="line line-dashed b-b line-lg pull-in"></div>
+                      </div>
+                    <!---end of Text box--
+                      <div class="form-group">
+                          <label class="col-sm-2 control-label">state:</label>
+                          <div class="col-sm-10">
+                              <input type="text" ng-model="state" class="form-control">
+                          </div>
+                      </div>
+                      <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <!---start text box----
+                  <div class="form-group">
+                      <label class="col-sm-2 control-label">street:</label>
+                      <div class="col-sm-10">
+                          <input type="text" ng-model="street" class="form-control">
+                      </div>
+                  </div>
+                      <div class="line line-dashed b-b line-lg pull-in"></div>
+                    <!---end text box---->
+
+                <!---start text box----
+              <div class="form-group">
+                  <label class="col-sm-2 control-label">city/nearby city:</label>
+                  <div class="col-sm-10">
+                      <input type="text" ng-model="city" class="form-control">
+                  </div>
+              </div>
+                  <div class="line line-dashed b-b line-lg pull-in"></div>
+                <!---end text box---->
+                <!---start text box----
+              <div class="form-group">
+                  <label class="col-sm-2 control-label">village:</label>
+                  <div class="col-sm-10">
+                      <input type="text" ng-model="village" class="form-control">
+                  </div>
+              </div>
+                  <div class="line line-dashed b-b line-lg pull-in"></div>
+                <!---end text box---->
+
+
+                <!---start text box----
+              <div class="form-group">
+                  <label class="col-sm-2 control-label">city:</label>
+                  <div class="col-sm-10">
+                      <input type="text" ng-model="city" class="form-control">
+                  </div>
+              </div>
+                  <div class="line line-dashed b-b line-lg pull-in"></div>
+                <!---end text box----
+
+              </span>
+
+                                <!----one text box ---
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">address 2:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="line line-dashed b-b line-lg pull-in"></div>
+                                <!---end of Text box-->
+                <!-----End of address testing function--->
+                <!---start txt box--->
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">E-mail*should be unique in db :</label>
+                    <div class="col-sm-10">
+                        <input  type="email" name="email" ng-model="employee.email" class="form-control">
+                        <p class="alert-warning"  ng-show="employee_form.email.$error.email">Enter Valid email e.g abc@xyz.com</p>
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+
+
+
+            </div>
+        </div>
+
+        <!--end panel--->
+
+
+        <button  ng-click="createEmployee()" class="btn btn-info btn-block">save</button>
+    </div>
+</form>

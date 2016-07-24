@@ -11,21 +11,20 @@ class customerSeeder extends Seeder
      */
     public function run()
     {
-        $limit=5;
-        $minTelNum=3333333;
-        $maxTelNum=9999999;
-        $minTenantId=1;
-        $maxTenantId=4;
+        $limit=10; //number Of Customer To generate
+
+        $faker = Faker\Factory::create(); //use faker to create Data
         for ($i = 0; $i < $limit; $i++) {
             DB::table('customers')->insert([
-                'first_name' => str_random(10),
-                'last_name' => str_random(20),
-                'date_of_birth' => date('Y-m-d'),
-                'address' => str_random(40),
-                'mobile_tel' => rand ($minTelNum,$maxTelNum),
-                'email' => str_random(10) . '@gmail.com',
+                'first_name' => $faker->firstName,
+                'last_name' => $faker->lastName,
+                'date_of_birth' => $faker->date('Y-m-d'),
+                'address' => $faker->address,
+                'mobile_tel' => $faker->phoneNumber,
+                'email' => $faker->safeEmail
                 ///'tenant_id' => rand ($minTenantId,$maxTenantId)
             ]);
+            
         }
     }
 }

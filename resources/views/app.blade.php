@@ -28,8 +28,8 @@
 <script src="assets/js/bootstrap.min.js"></script>
 <!-- Angular -->
 <!-- Angular -->
-<script src="assets/js/angular-library/angular/angular.js"></script>
-<!-- bootstrap this is breaking the nav bar pop up -->
+<script src="assets/js/angular-library/angular/angular1.5.min.js"></script>
+<!-- bootstrap this is breaking the previous  nav bar pop up -->
 <script src="assets/js/angular-library/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 
 <script src="assets/js/angular-library/angular-animate/angular-animate.js"></script>
@@ -41,10 +41,14 @@
 <script src="assets/js/angular-library/angular-sanitize/angular-sanitize.js"></script>
 <script src="assets/js/angular-library/angular-touch/angular-touch.js"></script>
 
-<!-- ngMaterial -->
-
+<!-- toast -->
+<script src="assets/js/angular-library/angularjs-toaster/toaster.min.js"></script>
+<link rel="stylesheet" href="assets/js/angular-library/angularjs-toaster/toaster.min.css"  type="text/css">
 
 <script src="assets/js/angular-library/angular-ui-router/release/angular-ui-router.js"></script>
+<!--ui tab route Extension-->
+<script src="assets/js/angular-library/anjular-ui-route-tab/ui-router-tabs.js"></script>
+
 <script src="assets/js/angular-library/ngstorage/ngStorage.js"></script>
 <script src="assets/js/angular-library/angular-ui-utils/ui-utils.js"></script>
 
@@ -68,6 +72,7 @@
 
 <!----core for App ---->
 <script src="app/component/core/services/ui-load.js"></script>
+
 <script src="app/component/core/filters/fromNow.js"></script>
 <script src="app/component/core/directives/setnganimate.js"></script>
 <script src="app/component/core/directives/ui-butterbar.js"></script>
@@ -80,7 +85,9 @@
 <script src="app/component/core/directives/ui-shift.js"></script>
 <script src="app/component/core/directives/ui-toggleclass.js"></script>
 <script src="app/component/core/controllers/bootstrap.js"></script>
-
-
+<!-----server service to query--->
+<script src="app/component/core/services/serverServices.js"></script>
+<!---delete Controller used By All CRUD Operation -->
+<script src="app/component/shop/deleteConfirmation/controllers/deleteModalCtrl.js"></script>
 </body>
 </html>

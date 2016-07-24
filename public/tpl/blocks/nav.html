@@ -332,6 +332,90 @@
       </li>
     </ul>
   </li>
+
+
+
+      <li ui-sref-active="active">
+        <a ui-sref="app.employee.read-all">
+          <i class="fa fa-users text-success"></i>
+          <span translate="employee.employees">Employees</span>
+        </a>
+      </li>
+  <li ui-sref-active="active">
+    <a ui-sref="app.supplier.read-all">
+      <i class="fa fa-users text-success"></i>
+      <span translate="supplier.suppliers">Supplier</span>
+    </a>
+  </li>
+
+  <li>
+
+  <li ng-class="{active:$state.includes('app.form')}">
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <i class="glyphicon glyphicon-edit"></i>
+      <span translate="tickets.tickets">Tickets</span>
+    </a>
+    <ul class="nav nav-sub dk">
+      <li class="nav-sub-header">
+        <a href>
+          <span translate="tickets.tickets">Tickets</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.create-ticket">
+          <span translate="tickets.create-ticket">create Tickets</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.read-tickets">
+          <span translate="tickets.read-tickets">read TIckets</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.update-ticket">
+          <span translate="tickets.update-tickets">update tickets</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.form.fileupload">
+          <span>File upload</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.form.imagecrop">
+          <span>Image crop</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.form.select">
+          <span>Select</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.form.slider">
+          <span>Slider</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.form.editor">
+          <span>Editor</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="app.form.xeditable">
+          <span>Xeditable</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+
+
+
+
   <li>
     <a href class="auto">
       <span class="pull-right text-muted">

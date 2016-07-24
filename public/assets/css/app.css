@@ -1,6 +1,11 @@
-/* ng message error msg
-
+/* Bootsrap Ui Tabs to be Disable if updated
 */
+.uib-tab.active a {
+  /*CSS HERE*/
+ /* background-color:  !important;
+ */
+}
+
 
 
 html {

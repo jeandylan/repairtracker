@@ -13,7 +13,7 @@ class CreateCustomersTable extends Migration
     public function up()
     {
         Schema::create('customers', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id');//Big increments =UNSIGNED  Integer(larger set of +number)
             // $table->integer('tenant_id')->unsigned();;
             $table->string('first_name');
             $table->string('last_name');
@@ -21,7 +21,7 @@ class CreateCustomersTable extends Migration
             $table->string('home_tel')->nullable();
             $table->string('mobile_tel')->nullable();
             $table->string('mobile_tel_1')->nullable();
-            $table->string('email')->nullable()->unique();
+            $table->string('email')->nullable();
             $table->string('address')->nullable();
             $table->string('address_1')->nullable();
             $table->timestamps();
@@ -35,6 +35,6 @@ class CreateCustomersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('customers');
+       // Schema::drop('customers');
     }
 }

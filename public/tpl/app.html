@@ -1,7 +1,9 @@
   <!-- navbar -->
-  <div data-ng-include=" 'tpl/blocks/header.html' " class="app-header navbar">
+  <div data-ng-include="'tpl/blocks/header.html'" class="app-header navbar">
   </div>
   <!-- / navbar -->
+  <!---toast--->
+
 
   <!-- menu -->
   <div data-ng-include=" 'tpl/blocks/aside.html' " class="app-aside hidden-xs {{app.settings.asideColor}}">
@@ -15,7 +17,8 @@
     <div class="app-content-body fade-in-up" ui-view></div>
   </div>
   <!-- /content -->
-
+  <!----toast for content-->
+  <toaster-container toaster-options="{'time-out': 3000}"></toaster-container>
   <!-- footer -->
   <div class="app-footer wrapper b-t bg-light">
     <span class="pull-right">{{app.version}} <a href ui-scroll-to="app" class="m-l-sm text-muted"><i class="fa fa-long-arrow-up"></i></a></span>

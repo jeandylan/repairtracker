@@ -2,7 +2,7 @@
     <h1 class="m-n font-thin h3">Edit new Customer</h1>
 </div>
     <div ng-controller="updateCustomerCtrl">
-        <form editable-form name="editableForm" onaftersave="saveUser()">
+        <form editable-form name="editableForm" onaftersave="updateCustomer()">
 
         <div class="wrapper-md">
             <!----button--->
@@ -14,7 +14,7 @@
                     </button>
                     <!-- buttons to submit / cancel form -->
       <span ng-show="editableForm.$visible">
-        <button type="submit" class="btn btn-primary" ng-disabled="editableForm.$waiting">
+        <button type="submit" class="btn btn-primary"  ng-disabled="editableForm.$waiting">
             Save
         </button>
         <button type="button" class="btn btn-default" ng-disabled="editableForm.$waiting" ng-click="editableForm.$cancel()">

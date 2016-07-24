@@ -45,6 +45,10 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
+        if ($e instanceof APIException){
+            return response(['success' => false, 'message' => $e->getMessage()], 401);
+        }
+
         return parent::render($request, $e);
     }
 }

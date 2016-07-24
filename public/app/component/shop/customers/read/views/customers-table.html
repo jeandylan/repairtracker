@@ -3,9 +3,12 @@
 
 
 <div class="bg-light lter b-b wrapper-md">
-    <h1 class="m-n font-thin h3">View Customer</h1>
+    <h1 class="m-n font-thin h3">Add New Customer</h1>
 </div>
-<div ng-controller="readAllCustomersCtrl" >
+<div ng-controller="readAllCustomersCtrl" id="table" >
+
+
+
     <table st-table="displayedCollection"  st-safe-src="rowCollection" class="table table-striped"> <!----remember display and st-dafe when updating ---->
         <thead>
         <tr>
@@ -34,10 +37,10 @@
                 <!----no search for dob--->
             </th>
             <th>
-                <input st-search="address" placeholder="search for address "/>
+                <input st-search="address" class="input-sm form-control" type="search"  placeholder="search for address "/>
             </th>
             <th>
-                <input st-search="address_1" placeholder="search for address 1"/>
+                <input st-search="address_1" class="input-sm form-control" type="search"  placeholder="search for address 1"/>
             </th>
             <th>
                 <input st-search="mobile_tel" placeholder="search for mobile tel" class="input-sm form-control" type="search"/>
@@ -50,7 +53,8 @@
             </th>
         </tr>
         </thead>
-        <tbody>
+
+        <tbody >
         <tr ng-repeat="row in displayedCollection">
             <td >{{row.first_name}}</td>
             <td >{{row.last_name}}</td>
@@ -62,20 +66,24 @@
             <td >{{row.mobile_tel_1}}</td>
             <td>{{row.home_tel}}</td>
             <td>
+                <a ui-sref="app.create-ticket({customerId:row.id})" class="btn btn-sm btn-info"  >
+                    <i class="glyphicon glyphicon-plus-sign">Ticket</i>
+                </a>
+            </td>
+            <td>
                 <a ui-sref="app.update-customer({customerId:row.id})" class="btn btn-sm btn-warning"  >
-                    <i class="glyphicon glyphicon glyphicon-edit"></i>
+                    <i class="glyphicon  glyphicon-edit">edit</i>
                </a>
             </td>
             <td>
-                <a ui-sref="app.delete-customer({customerId:row.id})" class="btn btn-sm btn-danger"  >
-                    <i class="glyphicon glyphicon glyphicon-remove-circle"></i>
+                <!---store rowId so as to be able to delete customer from Db, firstName and lastName to so as to display it in confirm delete popup--->
+                <a ng-click="deleteBtn(row.id,row.first_name,row.last_name)" class="btn btn-sm btn-danger"  >
+                    <i class="glyphicon  glyphicon-remove-circle">delete</i>
                 </a>
             </td>
-
-
-
         </tr>
         </tbody>
+
     </table>
 
 </div>

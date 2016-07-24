@@ -19,6 +19,7 @@
         "classmap": [
             "database"
         ],
+        "exceptions":["app/Exceptions/APIException.php"],
         "psr-4": {
             "App\\": "app/"
         }

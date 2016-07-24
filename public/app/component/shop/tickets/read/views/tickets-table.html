@@ -5,48 +5,42 @@
     <table st-table="displayedCollection"  st-safe-src="rowCollection" class="table table-striped"> <!----remember display and st-dafe when updating ---->
         <thead>
         <tr>
-            <th st-sort="ticket_problem">ticket problem</th>
+            <th st-sort="make">make</th>
             <th st-sort="model" >model</th>
-            <th st-sort="make" >make</th>
-            <th st-sort="problem_type" >problem type</th>
+            <th st-sort="problem_type" >problem_type</th>
+            <th st-sort="problem_definition" >problem_definition</th>
 
 
         </tr>
         <tr>
-
             <th>
-                <input st-search="ticket_problem" placeholder="search for ticket problem" class="input-sm form-control" type="search"/>
+                <input st-search="make" placeholder="search for make" class="input-sm form-control" type="search"/>
             </th>
 
             <th>
                 <input st-search="model" placeholder="search for model" class="input-sm form-control" type="search"/>
             </th>
-
             <th>
-                <input st-search="make" placeholder="search for make" class="input-sm form-control" type="search"/>
+                <input st-search="problem_type" placeholder="search for problem type " type="search"/>
             </th>
             <th>
-
-            <th>
-                <input st-search="problem_type" placeholder="search for problem type "/>
+                <input st-search="ticket_problem" placeholder="search for ticket problem" class="input-sm form-control" type="search"/>
             </th>
 
         </tr>
         </thead>
         <tbody>
         <tr ng-repeat="row in displayedCollection">
-            <td >{{row.ticket_problem}}</td>
+            <td >{{row.make}}</td>
             <td >{{row.model}}</td>
-            <td>{{row.make}}</td>
             <td>{{row.problem_type}}</td>
+            <td>{{row.problem_definition}}</td>
             <td>
-                <a ui-sref="app.update-customer({ticketIdId:row.id})" class="btn btn-sm btn-warning"  >
-                    <i class="glyphicon glyphicon glyphicon-edit"></i>
+                <a ui-sref="app.update-ticket({ticketId:row.id})" class="btn btn-sm btn-warning"  >
+                    <i class="glyphicon glyphicon-edit">edit</i>
                 </a>
-            </td>
-            <td>
-                <a ui-sref="app.delete-customer({ticketId:row.id})" class="btn btn-sm btn-danger"  >
-                    <i class="glyphicon glyphicon glyphicon-remove-circle"></i>
+                <a ng-click="deleteTicketBtn(row.id,row.problem_definition)" class="btn btn-sm btn-danger"  >
+                    <i class="glyphicon glyphicon-remove-circle">delete</i>
                 </a>
             </td>
 

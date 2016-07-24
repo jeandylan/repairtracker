@@ -22,13 +22,17 @@ class Kernel extends HttpKernel
      *
      * @var array
      */
+    /*
+     * add  \App\Http\Middleware\VerifyCsrfToken::class,
+     * to web below
+     */
     protected $middlewareGroups = [
         'web' => [
             \App\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-            \App\Http\Middleware\VerifyCsrfToken::class,
+
         ],
 
         'api' => [

@@ -2,10 +2,14 @@
     <h1 class="m-n font-thin h3">Create new Ticket</h1>
 </div>
 <div ng-controller="updateTicketCtrl">
-    <form editable-form name="editableForm" onaftersave="saveUser()">
+    <form editable-form name="editableForm" onaftersave="updateTicket()">
 
         <div class="wrapper-md">
-            <!----button--->
+            <div class="form-group row">
+                <button type="button"  ui-sref="app.create-invoice({ticketId:1})" class="btn btn-default"> create Invoice
+                </button>
+            </div>
+            <!----button for edit--->
             <div class="form-group row ">
                 <div class="buttons">
                     <!-- button to show form -->
@@ -22,7 +26,9 @@
         </button>
           </span>
                 </div>
+
             </div>
+
 
         <div class="wrapper-md">
             <!---start panel-->
@@ -37,8 +43,8 @@
                     <div class="form-group row">
                     <label class="col-sm-2 control-label">Model</label>
                     <div class="col-sm-10">
-                        <span href="#" editable-select="user.group" onshow="loadGroups()" e-ng-options="g.id as g.text for g in groups">
-                            {{ ticket.problem_type || 'not set' }}
+                        <span href="#" editable-select="ticket.model"  e-ng-options="g.id as g.text for g in groups">
+                            {{ ticket.model || 'empty' }}
                         </span>
                     </div>
                 </div>
@@ -46,19 +52,65 @@
                     <div class="form-group row">
                         <label class="col-sm-2 control-label">Make</label>
                         <div class="col-sm-10">
-                            <span href="#"editable-text="user.name" onshow="loadGroups()" e-ng-options="g.id as g.text for g in groups">
-                                {{ tickets.model || 'not set' }}
+                            <span href="#"editable-text="ticket.make" >
+                                {{ ticket.make || 'empty' }}
                             </span>
                         </div>
                     </div>
 
+                    <!----one Edit  g box --->
+                    <div class="form-group row">
+                        <label class="col-sm-2 control-label">problem Type</label>
+                        <div class="col-sm-10">
+                            <span href="#"editable-text="ticket.problem_type" >
+                                {{ ticket.problem_type || 'empty' }}
+                            </span>
+                        </div>
+                    </div>
 
+                </div>
+            </div>
+            <!----SECOND PANEL ---->
+            <div class="panel panel-default col-sm-6">
+                <!---personal detail form panel --->
+                <div class="panel-heading font-bold">
+                    Ticket Details
+                </div>
+                <!---a seperation-->
+                <div class="panel-body">
+                    <!----one QR CODE  box --->
+                    <div class="form-group row">
+                        <label class="col-sm-2 control-label">Problem Definition</label>
+                        <div class="col-sm-10">
+                        <span href="#" editable-textarea="ticket.problem_definition">
+                            {{ ticket.problem_definition || 'not set' }}
+                        </span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="panel-heading font-bold">
+                   QR code
+                </div>
+                <div class="panel-body">
+
+                    <!----one select  box --->
+                    <div class="form-group row">
+                        <label class="col-sm-2 control-label">ticket Qr</label>
+                        <div class="col-sm-10">
+                            <div print-section>
+                            <qrcode version="6" error-correction-level="M" size="200" data="{{qr}}"></qrcode>
+                                </div>
+                        </div>
+                        <button type="button" class="btn-info" print-btn><span class="glyphicon glyphicon-print"> Print</span></button>
+                    </div>
+            </div>
+
+            <!----end second panel-->
+        </div>
 
         </div>
-            </div>
-            </div>
-
-
-
+    </form>
 </div>
 

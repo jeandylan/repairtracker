@@ -18,10 +18,44 @@ class suppliersSeeder extends Seeder
             DB::table('suppliers')->insert([
                 'first_name' => $faker->firstName,
                 'last_name' =>$faker->lastName,
-                'company'=>$faker->company,
-                'address' => $faker->streetAddress,
-                'mobile_tel' =>$faker->phoneNumber,
-                'email' => $faker->companyEmail
+                'company'=>$faker->company
+            ]);
+            //generate 2 fake address for supplier
+            DB::table('supplier_address')->insert([
+                'supplier_id' => $i,
+                'address' => $faker->address,
+                'type' => $faker->randomElement($array = array ('home','private','company'))
+
+            ]);
+
+            DB::table('supplier_address')->insert([
+                'supplier_id' => $i,
+                'address' => $faker->address,
+                'type' => $faker->randomElement($array = array ('home','private','company'))
+
+            ]);
+
+            //generate  2 false telephone
+            DB::table('supplier_telephone')->insert([
+                'supplier_id' => $i,
+                'telephone_number' => $faker->phoneNumber,
+                'type' => $faker->randomElement($array = array ('home','private','company'))
+
+            ]);
+
+            DB::table('supplier_telephone')->insert([
+                'supplier_id' => $i,
+                'telephone_number' => $faker->phoneNumber,
+                'type' => $faker->randomElement($array = array ('home','private','company'))
+
+            ]);
+
+            //generate False Email
+            DB::table('supplier_email')->insert([
+                'supplier_id' => $i,
+                'email' => $faker->safeEmail,
+                'type' => $faker->randomElement($array = array ('home','private','company'))
+
             ]);
 
         }

@@ -2,7 +2,7 @@
  * Created by dylan on 17-Jun-16.
  */
 
-app.controller("readAllCustomersCtrl",function ($scope,serverServices,$uibModal,toaster) {
+app.controller("tableCustomersCtrl",function ($scope,serverServices,$uibModal,toaster) {
 
     //when the page loads query the server for all customer  data from db so as to display inside table
     getAllCustomersData();
@@ -22,25 +22,27 @@ the get all customer from server function
         });
     }
 
+
     $scope.deleteBtn = function (customerId,firstName,lastName) {
-        $scope.customerId = customerId;
-        $scope.customerName=firstName+ " "+lastName;
+        $scope.deleteUrl = "api/customer/"+customerId;
+        $scope.confirmBoxMessage="do you want to delete customer "+firstName+ " "+lastName;
 
         var modalInstance = $uibModal.open({
             animation:1,
-            templateUrl:'app/component/shop/customers/delete/view/delete-customer-modal-template.html' ,
-            controller: 'deleteCustomerModalCtrl',
+            templateUrl:'app/component/shop/deleteConfirmation/view/delete-modal-template.html' ,
+            controller: 'deleteModalCtrl',
             resolve: {
-                customerId: function () {
-                    return $scope.customerId;
+                deleteUrl: function () {
+                    return $scope.deleteUrl;
                 },
-                customerName:function () {
-                    return $scope.customerName;
+                confirmBoxMessage:function () {
+                    return $scope.confirmBoxMessage;
                 }
+
             }
         });
 
-        modalInstance.result.then(function (customerId) {
+        modalInstance.result.then(function (deleteurl) {
             //btn ok(confrim delete) was clicked on popup/modal call function ,delete was done On deleteModalCtrl(return a cleint Id)...We need to refresh data..
             getAllCustomersData();
         }, function () {

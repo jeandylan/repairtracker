@@ -4,7 +4,7 @@
 /*
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!this is the controller for table view of tickets
  */
-app.controller("readTicketsCtrl",function ($scope,serverServices,$uibModal) {
+app.controller("readTicketsCtrl",function ($scope,serverServices,$uibModal,toaster) {
     getAllTicketsData();
 
     function getAllTicketsData() {
@@ -22,27 +22,30 @@ app.controller("readTicketsCtrl",function ($scope,serverServices,$uibModal) {
     
     $scope.deleteTicketBtn=function (ticketId,ticketProblem) {
 
-        $scope.ticketId = ticketId;
-        $scope.ticketProblem=ticketProblem;
+        $scope.deleteUrl = "api/ticket/"+ticketId;
+        $scope.confirmBoxMessage="do you want to delete Ticket  "+ticketProblem;
 
         var modalInstance = $uibModal.open({
             animation:1,
-            templateUrl:'app/component/shop/tickets/delete/view/delete-ticket-modal-template.html' ,
-            controller: 'deleteTicketModalCtrl',
+            templateUrl:'app/component/shop/deleteConfirmation/view/delete-modal-template.html' ,
+            controller: 'deleteModalCtrl',
             resolve: {
-                ticketId: function () {
-                    return $scope.ticketId;
+                deleteUrl: function () {
+                    return $scope.deleteUrl;
                 },
-                ticketProblem:function () {
-                    return $scope.ticketProblem;
+                confirmBoxMessage:function () {
+                    return $scope.confirmBoxMessage;
                 }
+
             }
         });
 
-        modalInstance.result.then(function (customerId) {
+        modalInstance.result.then(function () {
             //btn ok(confrim delete) was clicked on popup/modal call function ,delete was done On deleteModalCtrl(return a cleint Id)...We need to refresh data..
             getAllTicketsData();
         }, function () {
+            toaster.pop('error', "Server Error : ", "An error ocuured ,try reload the page");
+
             //button cancel was click on popup/modal nothing to do
         });
     }

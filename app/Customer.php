@@ -20,4 +20,16 @@ class Customer extends Model
         //final Model,Intermediate Model,foreignKey Intermediade Model,foreign key Final Model
         return $this->hasManyThrough('App\Invoice','App\Ticket','customer_id','ticket_id');
     }
+    public function address()
+    {
+        return $this->hasMany('App\CustomerAddress');
+    }
+
+    public function email(){
+        return $this->hasMany('App\CustomerEmail');
+    }
+     public  function telephone(){
+         return $this->hasMany('App\CustomerTelephone');
+     }
+
 }

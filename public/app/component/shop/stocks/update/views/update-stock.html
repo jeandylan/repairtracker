@@ -1,0 +1,86 @@
+<form editable-form name="editableForm" onaftersave="updateStock()" ng-controller="updateStockCtrl">
+        <!----button for edit--->
+        <div class="form-group row ">
+            <div class="buttons">
+                <!-- button to show form -->
+                <button type="button" class="btn btn-default" ng-click="editableForm.$show()" ng-show="!editableForm.$visible">
+                    Edit
+                </button>
+                <!-- buttons to submit / cancel form -->
+      <span ng-show="editableForm.$visible">
+        <button type="submit" class="btn btn-primary" ng-disabled="editableForm.$waiting">
+            Save
+        </button>
+        <button type="button" class="btn btn-default" ng-disabled="editableForm.$waiting" ng-click="editableForm.$cancel()">
+            Cancel
+        </button>
+          </span>
+            </div>
+
+        </div>
+
+
+        <div class="wrapper-md">
+            <!---start panel-->
+            <div class="panel panel-default col-sm-6">
+                <!---personal detail form panel --->
+                <div class="panel-heading font-bold">
+                    Stock Details
+                </div>
+                <div class="panel-body">
+
+
+                    <!----one Edit  g box --->
+                    <div class="form-group row">
+                        <label class="col-sm-2 control-label">product name</label>
+                        <div class="col-sm-10">
+                            <span href="#"editable-text="stock.product_name" >
+                                {{ stock.product_name || 'empty' }}
+                            </span>
+                        </div>
+                    </div>
+                    <!----one Edit  float point box --->
+                    <div class="form-group row">
+                        <label class="col-sm-2 control-label">selling price</label>
+                        <div class="col-sm-10">
+                            <span href="#"editable-number="stock.selling_price" e-step="any" >
+                                {{ stock.selling_price || 'empty' }}
+                            </span>
+                        </div>
+                    </div>
+                    <!----one Edit  Numeric box --->
+                    <div class="form-group row">
+                        <label class="col-sm-2 control-label">reorder level</label>
+                        <div class="col-sm-10">
+                            <span href="#"editable-number="stock.reorder_level" e-step="any" >
+                                {{ stock.reorder_level || 'empty' }}
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!----SECOND PANEL ---->
+            <div class="panel panel-default col-sm-6">
+                <!---personal detail form panel --->
+                <div class="panel-heading font-bold">
+                    Stock Other details
+                </div>
+                <!---a seperation-->
+                <div class="panel-body">
+                    <!----one QR CODE  box --->
+                    <div class="form-group row">
+                        <label class="col-sm-2 control-label">barcode</label>
+                        <div class="col-sm-10">
+                        <span href="#" editable-textarea="stock.barcode">
+                            {{ stock.barcode || 'not set' }}
+                        </span>
+                        </div>
+                    </div>
+
+                </div>
+                <!----end second panel-->
+            </div>
+
+        </div>
+</form>

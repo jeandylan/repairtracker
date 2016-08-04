@@ -18,12 +18,6 @@ class CreateCustomersTable extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->date('date_of_birth');
-            $table->string('home_tel')->nullable();
-            $table->string('mobile_tel')->nullable();
-            $table->string('mobile_tel_1')->nullable();
-            $table->string('email')->nullable();
-            $table->string('address')->nullable();
-            $table->string('address_1')->nullable();
             $table->timestamps();
     });
     }

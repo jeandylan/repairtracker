@@ -11,6 +11,9 @@ use App\Common\Utility;
 use \Exception;
 use App\Http\Requests;
 use App\Customer;
+use App\CustomerAddress;
+use App\CustomerTelephone;
+use App\CustomerEmail;
 
 //use Mockery\CountValidator\Exception;
 
@@ -41,14 +44,51 @@ class CustomerController extends Controller
         $rules = array(
             'first_name'       => 'required',
             'last_name'      => 'required',
-            'email' => 'email',
         );
         
         $validator = Validator::make(Input::all(), $rules); //validate input according to rule above
 
-        $customer = new Customer(Input::get()); //As data was  send with Dataname that is the same as declared in db (filed first name was send as first_name ,same as in db),
+        $customer = new Customer(Input::except('telephones','emails','addresses')); //As data was  send with Dataname that is the same as declared in db (filed first name was send as first_name ,same as in db),
         // no need to precise what input goes in what table field(row),(laravel knows where to put the data if input Name declared in json data is the same as dbName)
         $customer->save();
+
+        $customerId=$customer->id; //Id Of customer created
+
+        $telephones=Input::get('telephones'); //get Telephone Number Array
+
+        foreach ($telephones as $telephone) {
+            $customerTelephone=new CustomerTelephone;
+            $customerTelephone->customer_id=$customerId;
+            $customerTelephone->type=$telephone['type'];
+            $customerTelephone->telephone_number=$telephone['telephone_number'];
+            $customerTelephone->save();
+        }
+
+        $addresses=Input::get('addresses');
+
+        foreach ($addresses as $address){
+            $customerAddress=new CustomerAddress;
+            $customerAddress->customer_id=$customerId;
+            $customerAddress->type=$address['type'];
+            $customerAddress->address=$address['address'];
+            $customerAddress->save();
+
+        }
+
+        $emails=Input::get('emails');
+
+        foreach ($emails as $email){
+            $customerEmail=new CustomerEmail;
+            $customerEmail->customer_id=$customerId;
+            $customerEmail->type=$email['type'];
+            $customerEmail->email=$email['email'];
+            $customerEmail->save();
+
+        }
+
+
+
+
 
        return  array("successful"=>true, "message"=>"customer was created");
     }

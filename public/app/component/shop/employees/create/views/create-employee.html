@@ -59,117 +59,91 @@
             </div>
         </div>
         <!--end panel-->
+        <!---start panel-->
+        <div class="panel panel-default">
+            <div class="panel-heading font-bold">telephone</div>
+            <div class="panel-body">
+                <!----telephone  --->
+                <div ng-repeat="telephone in telephones">
+                    <div class="input-group my-group">
+                        <select  ng-model="telephone.type" class="form-control" placeholder="select telephone type">
+                            <option value="home">home</option>
+                            <option value="private">private</option>
+                            <option value="company">company</option>
+                        </select>
+                        <input type="text"  ng-model="telephone.telephone_number" class="form-control" placeholder="Enter Telephone Number" >
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default"  ng-click="deleteTelephoneNumber(telephone)">
+                                <span class="fa fa-times-circle text-danger"></span>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+                <button ng-click="createTelephoneNumber()">Add Telephone Number</button>
+            </div>
+        </div>
 
+        <div class="line line-dashed b-b line-lg pull-in"></div>
+        <!--end panel--->
 
         <!---start panel-->
         <div class="panel panel-default">
-            <!---personal detail form panel --->
-            <div class="panel-heading font-bold">
-                contact details
-            </div>
+            <div class="panel-heading font-bold">Address</div>
             <div class="panel-body">
-
-
-                <!----one text box --->
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Home telephone :</label>
-                    <div class="col-sm-10">
-                        <input type="text" name="home_tel" ng-model="employee.home_tel" class="form-control">
+                <!----Address  --->
+                <div ng-repeat="address in addresses">
+                    <div class="input-group my-group">
+                        <select  ng-model="address.type" class="form-control" placeholder="select Address type">
+                            <option value="home">home</option>
+                            <option value="private">private</option>
+                            <option value="company">company</option>
+                        </select>
+                        <input type="text" ng-model="address.address" placeholder="AutoCompletion For Address" uib-typeahead="address for address in getLocation($viewValue)" typeahead-loading="loadingLocations" typeahead-no-results="noResults" class="form-control">
+                        <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
+                        <div ng-show="noResults">
+                            <i class="glyphicon glyphicon-remove"></i> No Results Found
+                        </div>
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default"  ng-click="deleteAddress(address)">
+                                <span class="fa fa-times-circle text-danger"></span>
+                            </button>
+                        </span>
                     </div>
                 </div>
-                <div class="line line-dashed b-b line-lg pull-in"></div>
-                <!---end of Text box-->
-
-                <!---end of Text box-->
-                <!----future Implementation typahead address
-                <span ng-controller="googleTypeAheadController">
-                      <!----one text box ---
-                      <div class="form-group">
-                          <label class="col-sm-2 control-label">address 1:</label>
-                          <div class="col-sm-10">
-                              <input type="text" ng-model="ngModelOptionsSelected" ng-model-options="modelOptions"  placeholder="Locations loaded Automatically if available" uib-typeahead="address for address in getLocation($viewValue)" typeahead-loading="loadingLocations" typeahead-no-results="noResults" class="form-control">
-                              <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
-                              <div ng-show="noResults">
-                                  <i class="glyphicon glyphicon-remove"></i> No Results Found
-                              </div>
-                          </div>
-                          <div class="line line-dashed b-b line-lg pull-in"></div>
-                      </div>
-                    <!---end of Text box--
-                      <div class="form-group">
-                          <label class="col-sm-2 control-label">state:</label>
-                          <div class="col-sm-10">
-                              <input type="text" ng-model="state" class="form-control">
-                          </div>
-                      </div>
-                      <div class="line line-dashed b-b line-lg pull-in"></div>
-                    <!---start text box----
-                  <div class="form-group">
-                      <label class="col-sm-2 control-label">street:</label>
-                      <div class="col-sm-10">
-                          <input type="text" ng-model="street" class="form-control">
-                      </div>
-                  </div>
-                      <div class="line line-dashed b-b line-lg pull-in"></div>
-                    <!---end text box---->
-
-                <!---start text box----
-              <div class="form-group">
-                  <label class="col-sm-2 control-label">city/nearby city:</label>
-                  <div class="col-sm-10">
-                      <input type="text" ng-model="city" class="form-control">
-                  </div>
-              </div>
-                  <div class="line line-dashed b-b line-lg pull-in"></div>
-                <!---end text box---->
-                <!---start text box----
-              <div class="form-group">
-                  <label class="col-sm-2 control-label">village:</label>
-                  <div class="col-sm-10">
-                      <input type="text" ng-model="village" class="form-control">
-                  </div>
-              </div>
-                  <div class="line line-dashed b-b line-lg pull-in"></div>
-                <!---end text box---->
-
-
-                <!---start text box----
-              <div class="form-group">
-                  <label class="col-sm-2 control-label">city:</label>
-                  <div class="col-sm-10">
-                      <input type="text" ng-model="city" class="form-control">
-                  </div>
-              </div>
-                  <div class="line line-dashed b-b line-lg pull-in"></div>
-                <!---end text box----
-
-              </span>
-
-                                <!----one text box ---
-
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">address 2:</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="line line-dashed b-b line-lg pull-in"></div>
-                                <!---end of Text box-->
-                <!-----End of address testing function--->
-                <!---start txt box--->
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">E-mail*should be unique in db :</label>
-                    <div class="col-sm-10">
-                        <input  type="email" name="email" ng-model="employee.email" class="form-control">
-                        <p class="alert-warning"  ng-show="employee_form.email.$error.email">Enter Valid email e.g abc@xyz.com</p>
-                    </div>
-                </div>
-                <div class="line line-dashed b-b line-lg pull-in"></div>
-
-
-
+                <button ng-click="createAddress()">Add Address</button>
             </div>
         </div>
+
+        <div class="line line-dashed b-b line-lg pull-in"></div>
+        <!--end panel--->
+
+        <!---start panel-->
+        <div class="panel panel-default">
+            <div class="panel-heading font-bold">Email</div>
+            <div class="panel-body">
+                <!----Email --->
+                <div ng-repeat="email in emails">
+                    <div class="input-group my-group">
+                        <select  ng-model="email.type" class="form-control" placeholder="select email type">
+                            <option value="home">home</option>
+                            <option value="private">private</option>
+                            <option value="company">company</option>
+                        </select>
+                        <input type="text"  ng-model="email.email" class="form-control" placeholder="Enter Email" >
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default"  ng-click="deleteEmail(email)">
+                                <span class="fa fa-times-circle text-danger"></span>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+                <button ng-click="createEmail()">Add Email</button>
+            </div>
+        </div>
+
+        <div class="line line-dashed b-b line-lg pull-in"></div>
+        <!--end panel--->
+
 
         <!--end panel--->
 

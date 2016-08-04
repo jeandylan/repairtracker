@@ -3,11 +3,14 @@
  */
 app.controller('updateEmployeeCtrl', function($scope,serverServices,editableOptions,$filter, $state, $stateParams,toaster) {
     editableOptions.theme = 'bs3';  //the editable theme for xeditable injection should always be used else calendar and type ahead for address fails
+
+    $scope.types = ["home", "private", "company"]; //used by select
+
     $scope.employeeId=$stateParams.employeeId; // $stateParams parameters validation have been done during routing (only Type check was done i.e id should be  Integer),same as in db
     /*
      get Employee details via Json Ajax
      */
-    getEmployeeData($scope.employeeId);
+    getEmployeeData();
 
 
     $scope.updateEmployee=function () { //when the submit btn click (function call found in <form> tag on top)
@@ -37,12 +40,14 @@ app.controller('updateEmployeeCtrl', function($scope,serverServices,editableOpti
             );
 
     };
-
-    function  getEmployeeData(employeeId) {
+    $scope.t="";
+    function  getEmployeeData() {
         serverServices.get('api/employee/'+$scope.employeeId)//id parameter obtain by doing state parameter (like a query)
             .then(
                 function (result) {
                     $scope.employee = result;
+                    console.log(result);
+                    $scope.t=$scope.employee.date_of_birth;
                 },
                 function (result) {
                     // toaster.pop('error', "server Err", "we could not get info needed");
@@ -52,22 +57,22 @@ app.controller('updateEmployeeCtrl', function($scope,serverServices,editableOpti
                 });
     }
 
+    $scope.createAddress=function ($event) {
+        $event.preventDefault();
+        $event.stopPropagation();
+        $scope. employee.address.push({}); //push empty (for now ) object ->uniquely identify because of hash
 
+    };
 
 
     /*
      calendar functions
      */
+
+
+
+
     $scope.opened = {};
-    $scope.formats = ['dd-MMMM-yyyy', 'yyyy-MM-dd', 'dd.MM.yyyy', 'shortDate'];
-    $scope.format = $scope.formats[1];
-    $scope.altInputFormats = ['M!/d!/yyyy'];
-
-    $scope.popup1 = {
-        opened: false
-    };
-
-
     $scope.open = function($event, elementOpened) {
         $event.preventDefault();
         $event.stopPropagation();
@@ -77,8 +82,5 @@ app.controller('updateEmployeeCtrl', function($scope,serverServices,editableOpti
     $scope.dateOptions = {
         maxDate: new Date()
     };
-
-    $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-    $scope.format = $scope.formats[1];
-    $scope.altInputFormats = ['M!/d!/yyyy'];
+    
 });

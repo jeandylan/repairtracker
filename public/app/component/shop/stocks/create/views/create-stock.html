@@ -1,0 +1,60 @@
+<form name="form" ng-controller="createStockCtrl">
+
+    <div class="wrapper-md">
+
+        <!---start panel-->
+        <div class="panel panel-default">
+            <!---personal detail form panel --->
+            <div class="panel-heading font-bold">
+                stock details
+            </div>
+            <div class="panel-body">
+
+                <!----one text box --->
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">product_name</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="product_name"  ng-model="stock.product_name" class="form-control" required>
+                        <p class="alert-warning" ng-show="form.product_name.$error.required">first Name Required.</p>
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                <!---end of Text box-->
+
+                <!----one text box --->
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">selling_price</label>
+                    <div class="col-sm-10">
+                        <input type="number" name="selling_price"  ng-model="stock.selling_price" class="form-control">
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                <!---end of txt box-->
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">reorder level</label>
+                    <div class="col-sm-10">
+                        <input type="number" name="reorder_level"  ng-model="stock.reorder_level" class="form-control">
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                <!----barcode bx-->
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">barcode</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="barcode"  ng-model="stock.barcode" class="form-control">
+
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+
+
+
+            </div>
+        </div>
+        <!--end panel-->
+
+
+
+        <button  ng-click="createStock()" class="btn btn-info btn-block">save</button>
+    </div>
+</form>

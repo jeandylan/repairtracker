@@ -217,130 +217,37 @@
       </li>
     </ul>
   </li>
-  <li ng-class="{active:$state.includes('app.table')}">
-    <a href class="auto">
-      <span class="pull-right text-muted">
-        <i class="fa fa-fw fa-angle-right text"></i>
-        <i class="fa fa-fw fa-angle-down text-active"></i>
-      </span>
-      <b class="label bg-primary pull-right">2</b>
-      <i class="glyphicon glyphicon-list"></i>
-      <span translate="customers.customers">Customers</span>
+
+
+  <li ui-sref-active="active">
+    <a ui-sref="app.ticket.read-all">
+      <span translate="tickets.read-tickets">read Tickets</span>
     </a>
-    <ul class="nav nav-sub dk">
-      <li class="nav-sub-header">
-        <a href>
-          <span translate="customers.customers">Customers</span>
-        </a>
-      </li>
-      <li ui-sref-active="active">
-        <a ui-sref="app.view-customers-table">
-          <span translate="customers.view-customers-table">view customers</span>
-        </a>
-      </li>
-      <li ui-sref-active="active">
-        <a ui-sref="app.add-customer">
-          <span translate="customers.add-customer">add customers</span>
-        </a>
-      </li>
-      <li ui-sref-active="active">
-        <a ui-sref="app.update-customer">
-          <span translate="customers.edit-customer">edit customer</span>
-        </a>
-      </li>
-      <li ui-sref-active="active">
-        <a ui-sref="app.table.grid">
-          <span>ngGrid</span>
-        </a>
-      </li>
-      <li ui-sref-active="active">
-        <a ui-sref="app.table.uigrid">
-          <span>uiGrid</span>
-        </a>
-      </li>
-      <li ui-sref-active="active">
-        <a ui-sref="app.table.smart">
-          <span>Smart table</span>
-        </a>
-      </li>
-      <li ui-sref-active="active">
-        <a ui-sref="app.table.editable">
-          <span>Editable</span>
-        </a>
-      </li>
-    </ul>
   </li>
-  <li ng-class="{active:$state.includes('app.form')}">
-    <a href class="auto">
-      <span class="pull-right text-muted">
-        <i class="fa fa-fw fa-angle-right text"></i>
-        <i class="fa fa-fw fa-angle-down text-active"></i>
-      </span>
-      <i class="glyphicon glyphicon-edit"></i>
-      <span translate="tickets.tickets">Tickets</span>
+
+  <li ui-sref-active="active">
+    <a ui-sref="app.stock.table">
+      <i class="fa fa-archive" aria-hidden="true"></i>
+      <span translate="stocks.table">stocks Table</span>
     </a>
-    <ul class="nav nav-sub dk">
-      <li class="nav-sub-header">
-        <a href>
-          <span translate="tickets.tickets">Tickets</span>
-        </a>
-      </li>
-      <li ui-sref-active="active">
-        <a ui-sref="app.create-ticket">
-          <span translate="tickets.create-ticket">create Tickets</span>
-        </a>
-      </li>
-      <li ui-sref-active="active">
-        <a ui-sref="app.read-tickets">
-          <span translate="tickets.read-tickets">read TIckets</span>
-        </a>
-      </li>
-      <li ui-sref-active="active">
-        <a ui-sref="app.update-ticket">
-          <span translate="tickets.update-tickets">update tickets</span>
-        </a>
-      </li>
-      <li ui-sref-active="active">
-        <a ui-sref="app.form.fileupload">
-          <span>File upload</span>
-        </a>
-      </li>
-      <li ui-sref-active="active">
-        <a ui-sref="app.form.imagecrop">
-          <span>Image crop</span>
-        </a>
-      </li>
-      <li ui-sref-active="active">
-        <a ui-sref="app.form.select">
-          <span>Select</span>
-        </a>
-      </li>
-      <li ui-sref-active="active">
-        <a ui-sref="app.form.slider">
-          <span>Slider</span>
-        </a>
-      </li>
-      <li ui-sref-active="active">
-        <a ui-sref="app.form.editor">
-          <span>Editor</span>
-        </a>
-      </li>
-      <li ui-sref-active="active">
-        <a ui-sref="app.form.xeditable">
-          <span>Xeditable</span>
-        </a>
-      </li>
-    </ul>
+  </li>
+
+  <li ui-sref-active="active">
+    <a ui-sref="app.customer.table">
+      <i class="fa fa-users" aria-hidden="true"></i>
+      <span translate="customer.table">Customer</span>
+    </a>
   </li>
 
 
 
-      <li ui-sref-active="active">
+
+  <li ui-sref-active="active">
         <a ui-sref="app.employee.read-all">
-          <i class="fa fa-users text-success"></i>
+          <i class="fa fa-black-tie"></i>
           <span translate="employee.employees">Employees</span>
         </a>
-      </li>
+  </li>
   <li ui-sref-active="active">
     <a ui-sref="app.supplier.read-all">
       <i class="fa fa-users text-success"></i>
@@ -348,70 +255,7 @@
     </a>
   </li>
 
-  <li>
 
-  <li ng-class="{active:$state.includes('app.form')}">
-    <a href class="auto">
-      <span class="pull-right text-muted">
-        <i class="fa fa-fw fa-angle-right text"></i>
-        <i class="fa fa-fw fa-angle-down text-active"></i>
-      </span>
-      <i class="glyphicon glyphicon-edit"></i>
-      <span translate="tickets.tickets">Tickets</span>
-    </a>
-    <ul class="nav nav-sub dk">
-      <li class="nav-sub-header">
-        <a href>
-          <span translate="tickets.tickets">Tickets</span>
-        </a>
-      </li>
-      <li ui-sref-active="active">
-        <a ui-sref="app.create-ticket">
-          <span translate="tickets.create-ticket">create Tickets</span>
-        </a>
-      </li>
-      <li ui-sref-active="active">
-        <a ui-sref="app.read-tickets">
-          <span translate="tickets.read-tickets">read TIckets</span>
-        </a>
-      </li>
-      <li ui-sref-active="active">
-        <a ui-sref="app.update-ticket">
-          <span translate="tickets.update-tickets">update tickets</span>
-        </a>
-      </li>
-      <li ui-sref-active="active">
-        <a ui-sref="app.form.fileupload">
-          <span>File upload</span>
-        </a>
-      </li>
-      <li ui-sref-active="active">
-        <a ui-sref="app.form.imagecrop">
-          <span>Image crop</span>
-        </a>
-      </li>
-      <li ui-sref-active="active">
-        <a ui-sref="app.form.select">
-          <span>Select</span>
-        </a>
-      </li>
-      <li ui-sref-active="active">
-        <a ui-sref="app.form.slider">
-          <span>Slider</span>
-        </a>
-      </li>
-      <li ui-sref-active="active">
-        <a ui-sref="app.form.editor">
-          <span>Editor</span>
-        </a>
-      </li>
-      <li ui-sref-active="active">
-        <a ui-sref="app.form.xeditable">
-          <span>Xeditable</span>
-        </a>
-      </li>
-    </ul>
-  </li>
 
 
 

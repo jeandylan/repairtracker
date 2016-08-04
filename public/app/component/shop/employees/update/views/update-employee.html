@@ -31,8 +31,8 @@
                 <div class="form-group row">
                     <label class="col-sm-2 control-label">First Name</label>
                     <div class="col-sm-10">
-                            <span href="#" editable-text="employee.first_name">
-                                {{employee.first_name || 'empty'}}
+                            <span href="#" editable-text="employee.personal.first_name">
+                                {{employee.personal.first_name || 'empty'}}
                             </span>
                     </div>
                 </div>
@@ -40,8 +40,8 @@
                 <div class="form-group row">
                     <label class="col-sm-2 control-label">Last Name</label>
                     <div class="col-sm-10">
-                            <span  href="#" editable-text="employee.last_name">
-                                {{employee.last_name || 'empty'}}
+                            <span  href="#" editable-text="employee.personal.last_name">
+                                {{employee.personal.last_name || 'empty'}}
                             </span>
                     </div>
                 </div>
@@ -50,9 +50,9 @@
                 <div class="form-group row">
                     <label class="col-sm-2 control-label">Date of Birth</label>
                     <div class="col-sm-10">
-                            <span href="#" editable-bsdate="employee.date_of_birth" e-is-open="opened.$data" e-datepicker-options="dateOptions" e-ng-click="open($event,'$data')" e-datepicker-popup="yyyy/MM/dd">
-                                {{ (employee.date_of_birth | date:"yyyy/MM/dd") || 'empty' }}
-                            </span>
+                        <span editable-bsdate="employee.personal.date_of_birth" e-is-open="opened.$data" e-ng-click="open($event,'$data')" e-datepicker-popup="dd-MMMM-yyyy">
+                            {{ (employee.personal.date_of_birth | date:"dd/MM/yyyy") || 'empty' }}
+                        </span>
                     </div>
                 </div>
                 <!--end panel body--->
@@ -72,33 +72,35 @@
             <div class="panel-body">
                 <!----start of panelbody-->
                     <!---on xeditbox--->
+
+                <div ng-repeat="address in employee.addresses">
                     <div class="form-group row">
-                        <label class="col-sm-2 control-label">address </label>
-                        <div class="col-sm-10">
-                            <span href="#" editable-text="employee.address">
-                                {{employee.address || 'empty'}}
+                        <span editable-select="address.type" e-ng-options="type for type in types">
+                            {{ address.type }}
+                        </span>
+                            <span editable-text="address.address">
+                                {{address.address || 'empty'}}
                             </span>
-                        </div>
+
                     </div>
+                    </div>
+                <button ng-click="createAddress($event)" ng-show="editableForm.$visible">Add Address</button>
+
 
 
                 <!---on xeditbox--->
-                <div class="form-group row">
-                    <label class="col-sm-2 control-label">home Tel </label>
-                    <div class="col-sm-10">
-                            <span href="#" editable-text="employee.home_tel">
-                                {{employee.home_tel|| 'empty'}}
+                <div ng-repeat="telephone in employee.telephones">
+                    <div class="form-group row">
+                        <span editable-select="telephone.type"  class="col-sm-2 control-label" e-ng-options="type for type in types">
+                            {{ telephone.type }}
+                        </span>
+                            <span  editable-text="telephone.telephone_number">
+                                {{telephone.telephone_number || 'empty'}}
                             </span>
+
                     </div>
                 </div>
-                <div class="form-group row">
-                    <label class="col-sm-2 control-label">mobile Tel </label>
-                    <div class="col-sm-10">
-                            <span href="#" editable-text="employee.mobile_tel">
-                                {{employee.home_tel|| 'empty'}}
-                            </span>
-                    </div>
-                </div>
+
                 <div class="form-group row">
                     <label class="col-sm-2 control-label">Email</label>
                     <div class="col-sm-10">

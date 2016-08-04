@@ -6,6 +6,10 @@
  */
 }
 
+.my-group .form-control{
+  width:50%;
+}
+
 
 
 html {

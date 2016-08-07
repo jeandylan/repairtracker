@@ -89,5 +89,7 @@
 <script src="app/component/core/services/serverServices.js"></script>
 <!---delete Controller used By All CRUD Operation -->
 <script src="app/component/shop/deleteConfirmation/controllers/deleteModalCtrl.js"></script>
+<!---confirm Btn--- http://stackoverflow.com/questions/21815971/extend-angularui-popover-directive-to-create-a-confirm-popover--->
+<script src="app/component/core/directives/delete-button.js"></script>
 </body>
 </html>

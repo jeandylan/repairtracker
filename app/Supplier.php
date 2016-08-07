@@ -12,4 +12,15 @@ class Supplier extends Model
     public function stocks(){
         return $this->hasMany('App\Ticket','customer_id');
     }
+
+    public function address()
+    {
+        return $this->hasMany('App\SupplierAddress');
+    }
+    public function email(){
+        return $this->hasMany('App\SupplierEmail');
+    }
+    public  function telephone(){
+        return $this->hasMany('App\SupplierTelephone');
+    }
 }

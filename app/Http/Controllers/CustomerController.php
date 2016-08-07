@@ -52,43 +52,14 @@ class CustomerController extends Controller
         // no need to precise what input goes in what table field(row),(laravel knows where to put the data if input Name declared in json data is the same as dbName)
         $customer->save();
 
-        $customerId=$customer->id; //Id Of customer created
+        $addresses=Input::get('addresses');
+        foreach ($addresses as $address) $customer->address()->create($address);
 
         $telephones=Input::get('telephones'); //get Telephone Number Array
-
-        foreach ($telephones as $telephone) {
-            $customerTelephone=new CustomerTelephone;
-            $customerTelephone->customer_id=$customerId;
-            $customerTelephone->type=$telephone['type'];
-            $customerTelephone->telephone_number=$telephone['telephone_number'];
-            $customerTelephone->save();
-        }
-
-        $addresses=Input::get('addresses');
-
-        foreach ($addresses as $address){
-            $customerAddress=new CustomerAddress;
-            $customerAddress->customer_id=$customerId;
-            $customerAddress->type=$address['type'];
-            $customerAddress->address=$address['address'];
-            $customerAddress->save();
-
-        }
+        foreach ($telephones as $telephone) $customer->telephone()->create($telephone);
 
         $emails=Input::get('emails');
-
-        foreach ($emails as $email){
-            $customerEmail=new CustomerEmail;
-            $customerEmail->customer_id=$customerId;
-            $customerEmail->type=$email['type'];
-            $customerEmail->email=$email['email'];
-            $customerEmail->save();
-
-        }
-
-
-
-
+        foreach ($emails as $email) $customer->email()->create($email);
 
        return  array("successful"=>true, "message"=>"customer was created");
     }
@@ -103,7 +74,11 @@ class CustomerController extends Controller
     {
 
         try {
-            return Customer::find($id);
+
+            $customer= Customer::find($id);
+            return ($customer != null) ? response()->json(['successful'=>true,'personal' => $customer, 'addresses' => $customer->address()->get(),'telephones'=>$customer->telephone()->get(),'emails'=>$customer->email()->get()]):
+            response()->json(['successful'=>false,'message'=>'cannot find customer']);
+
 
         }
         catch (\Illuminate\Database\QueryException $e){
@@ -124,13 +99,6 @@ class CustomerController extends Controller
         );
 
         $validator = Validator::make(Input::all(), $rules);
-        /*
-
-        $customer->first_name=Input::get('first_name');
-        $customer->last_name=Input::get('last_name');
-        $customer->email=Input::get('email');
-        $customer->date_of_birth=Input::get('date_of_birth');
-        */
         $customer = Customer::find($id);
         $customer->update(Input::all());
         return  array("successful"=>true, "message"=>"customer was updated");
@@ -153,6 +121,8 @@ class CustomerController extends Controller
 
 
     }
+
+
 
 
 

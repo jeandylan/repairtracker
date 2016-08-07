@@ -20,7 +20,18 @@ class SupplierController extends Controller
     }
 
     public function get($id){
-        return Supplier::find($id);
+        try {
+
+            $supplier= Supplier::find($id);
+            return ($supplier != null) ? response()->json(['successful'=>true,'personal' => $supplier, 'addresses' => $supplier->address()->get(),'telephones'=>$supplier->telephone()->get(),'emails'=>$supplier->email()->get()]):
+                response()->json(['successful'=>false,'message'=>'cannot find supplier']);
+
+
+        }
+        catch (\Illuminate\Database\QueryException $e){
+            return "error";
+        }
+
     }
 
 
@@ -38,42 +49,16 @@ class SupplierController extends Controller
         //As data was  send with Dataname that correspond to that in Db ,no need to precise what input goes in what table field(row),(laravel Figure it out)
         $supplier ->save();
 
-        $supplierId=$supplier->id; //Id Of supplier created
+        $addresses=Input::get('addresses');
+        foreach ($addresses as $address) $supplier->address()->create($address);
 
         $telephones=Input::get('telephones'); //get Telephone Number Array
-
-        foreach ($telephones as $telephone) {
-            $supplierTelephone=new supplierTelephone;
-            $supplierTelephone->supplier_id=$supplierId;
-            $supplierTelephone->type=$telephone['type'];
-            $supplierTelephone->telephone_number=$telephone['telephone_number'];
-            $supplierTelephone->save();
-        }
-
-        $addresses=Input::get('addresses');
-
-        foreach ($addresses as $address){
-            $supplierAddress=new supplierAddress;
-            $supplierAddress->supplier_id=$supplierId;
-            $supplierAddress->type=$address['type'];
-            $supplierAddress->address=$address['address'];
-            $supplierAddress->save();
-
-        }
+        foreach ($telephones as $telephone) $supplier->telephone()->create($telephone);
 
         $emails=Input::get('emails');
+        foreach ($emails as $email) $supplier->email()->create($email);
 
-        foreach ($emails as $email){
-            $supplierEmail=new supplierEmail;
-            $supplierEmail->supplier_id=$supplierId;
-            $supplierEmail->type=$email['type'];
-            $supplierEmail->email=$email['email'];
-            $supplierEmail->save();
-
-        }
-        return  array("successful"=>true, "message"=>"supplier was created");
-
-
+        return  array("successful"=>true, "message"=>"Supplier was created");
     }
 
 

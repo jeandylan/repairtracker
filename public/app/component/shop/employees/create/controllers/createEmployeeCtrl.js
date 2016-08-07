@@ -98,9 +98,8 @@ app.controller("createEmployeeCtrl",function ($scope,serverServices,toaster,$htt
         serverServices.post('api/employee',employeeData) //using service (customer/service/clientService ) that will query Laravel for .json output
             .then(
                 function (result) {
-                    console.log(result);
-
-                    toaster.pop("success","DONE",result.message);
+                    (result.successful)?toaster.pop("success",'success',result.message):
+                        toaster.pop("warning",'info:',result.message);
                 },
                 function (error) {
                     // handle errors here

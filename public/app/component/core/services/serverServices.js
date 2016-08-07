@@ -63,6 +63,7 @@ app.service("serverServices", function ($http, $q) {
         post query sent to server,used to add new data
          */
         post:function (uri,data) {
+            console.log();
             var deferred = $q.defer(); //always declare a new deffered when using promised else old promise will be returned
             return $http({
                 method: 'POST',

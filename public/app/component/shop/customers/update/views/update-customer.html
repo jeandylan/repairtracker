@@ -1,138 +1,91 @@
+<div  ng-controller="updateCustomerCtrl" class="form-group">
 
-    <div ng-controller="updateCustomerCtrl">
-        <form editable-form name="editableForm" onaftersave="updateCustomer()">
-
-        <div class="wrapper-md">
-            <!----button--->
-            <div class="form-group row ">
-                <div class="buttons">
-                    <!-- button to show form -->
-                    <button type="button" class="btn btn-default" ng-click="editableForm.$show()" ng-show="!editableForm.$visible">
-                        Edit
-                    </button>
-                    <!-- buttons to submit / cancel form -->
-      <span ng-show="editableForm.$visible">
-        <button type="submit" class="btn btn-primary"  ng-disabled="editableForm.$waiting">
-            Save
-        </button>
-        <button type="button" class="btn btn-default" ng-disabled="editableForm.$waiting" ng-click="editableForm.$cancel()">
-            Cancel
-        </button>
-          </span>
-                </div>
+    <!---start panel-->
+    <div class="panel panel-default">
+        <!---personal detail form panel --->
+        <div class="panel-heading font-bold">
+            personal details
+        </div>
+        <div class="panel-body">
+            <!----start of panelbody-->
+            <!---on xeditbox--->
+            <div class="form-group ">
+                First Name: <a href="#" editable-text="customer.personal.first_name" onbeforesave="updateCustomer()">{{customer.personal.first_name || 'empty'}}</a>
             </div>
-            <!---start panel-->
-            <div class="panel panel-default  col-sm-5">
-                    <!---personal detail form panel --->
-                <div class="panel-heading font-bold">
-                        personal details
-                </div>
-                <div class="panel-body">
-                      <!----start of panelbody-->
-                    <!---on xeditbox--->
-                    <div class="form-group row">
-                        <label class="col-sm-2 control-label">First Name</label>
-                        <div class="col-sm-10">
-                            <span href="#" editable-text="customer.first_name">
-                                {{customer.first_name || 'empty'}}
-                            </span>
-                        </div>
-                    </div>
-                    <!---on xeditbox--->
-                    <div class="form-group row">
-                        <label class="col-sm-2 control-label">Last Name</label>
-                        <div class="col-sm-10">
-                            <span  href="#" editable-text="customer.last_name">
-                                {{customer.last_name || 'empty'}}
-                            </span>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-2 control-label">Email</label>
-                        <div class="col-sm-10">
-                            <span href="#" editable-text="customer.email">
-                                {{customer.email || 'empty'}}
-                            </span>
-                        </div>
-                    </div>
-                    <!---on xeditbox--->
-                    <div class="form-group row">
-                        <label class="col-sm-2 control-label">Date of Birth</label>
-                        <div class="col-sm-10">
-                            <span href="#" editable-bsdate="customer.date_of_birth" e-is-open="opened.$data" e-datepicker-options="dateOptions" e-ng-click="open($event,'$data')" e-datepicker-popup="yyyy/MM/dd">
-                                {{ (customer.date_of_birth | date:"yyyy/MM/dd") || 'empty' }}
-                            </span>
-                        </div>
-                    </div>
-                <!--end panel body--->
-                </div>
-
-            <!---end panel--->
-
-                <div class="panel-heading font-bold">
-                   Customer address
-                </div>
-                <div class="panel-body">
-                    <!----start of panelbody-->
-                    <!---on xeditbox--->
-                    <div class="form-group row">
-                        <label class="col-sm-2 control-label">address </label>
-                        <div class="col-sm-10">
-                            <span href="#" editable-text="customer.address">
-                                {{customer.address || 'empty'}}
-                            </span>
-                        </div>
-                    </div>
-                    <!---on xeditbox--->
-                    <div class="form-group row">
-                        <label class="col-sm-2 control-label">address1</label>
-                        <div class="col-sm-10">
-                            <span href="#" editable-text="customer.address_1">
-                                {{customer.address_1 || 'empty'}}
-                            </span>
-                        </div>
-                    </div>
+            <!---on xeditbox--->
+            <div class="form-group">
+                Last Name: <a  href="#" editable-text="customer.personal.last_name" onaftersave="updateCustomer()">{{customer.personal.last_name || 'empty'}}</a>
+            </div>
+            <!---on xeditbox--->
+            <div class="form-group">
+                DOB: <a  href="#" editable-bsdate="customer.personal.date_of_birth" e-is-open="opened.$data" e-ng-click="open($event,'$data')" onaftersave="updateCustomer()" e-datepicker-popup="dd-MMMM-yyyy">{{ (customer.personal.date_of_birth | date:"dd/MM/yyyy") || 'empty' }}</a>
             </div>
         </div>
-            <!--middle seperator-->
-            <div class="col-sm-1"></div>
-<!---right side-->
-            <div class="panel panel-default  col-sm-5">
-            <div class="panel-heading font-bold">
-                personal Address
-            </div>
-            <div class="panel-body">
-                <!----start of panelbody-->
-                <!---on xeditbox--->
-                <div class="form-group row">
-                    <label class="col-sm-2 control-label">Home tel</label>
-                    <div class="col-sm-10">
-                        <span href="#" editable-text="customer.home_tel">
-                            {{customer.home_tel || 'empty'}}
-                        </span>
-                    </div>
-                </div>
-                <!---on xeditbox--->
-                <div class="form-group row">
-                    <label class="col-sm-2 control-label">mobile Tel</label>
-                    <div class="col-sm-10">
-                        <span href="#" editable-text="customer.mobile_tel">
-                            {{customer.mobile_tel || 'empty'}}
-                        </span>
-                    </div>
-                </div>
-                <!---on xeditbox--->
-                <div class="form-group row">
-                    <label class="col-sm-2 control-label">mobile Tel 1</label>
-                    <div class="col-sm-10">
-                        <span href="#" editable-text="customer.mobile_tel_1">
-                            {{customer.mobile_tel_1 || 'empty'}}
-                        </span>
-                    </div>
-                </div>
-            </div>
+        <!--end panel body--->
+    </div>
+
+    <!---end panel--->
+
+
+    <!---right side-->
+    <div class="panel panel-default">
+        <!----Title-->
+        <div class="panel-heading font-bold">
+            Address
         </div>
+        <!---Address--->
+
+        <div ng-repeat="address in customer.addresses">
+            <div class="form-group">
+                Type:<a editable-select="address.type" onaftersave="updateAddressType(address)"   e-ng-options="type for type in types">
+                {{ address.type || 'select address type'}}
+            </a>
+                Address: <a editable-text="address.address" onaftersave="updateAddress(address)" e-uib-typeahead="address for address in getLocation($viewValue)" e-typeahead-loading="loadingLocations" e-typeahead-no-results="noResults">{{address.address || 'empty'}}</a>
+                <button class="btn-warning" type="button" confirm-button="deleteAddress(address)" message="Are you sure you want to remove this Address?"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+            </div>
+
+
+        </div>
+
+
+        <button type="button" ng-click="createAddress()" class="btn-primary"><i class="fa fa-plus " aria-hidden="true"></i> Add Address</button>
+
+
+
+        <!---on xeditbox--->
+        <!----Title-->
+        <div class="panel-heading font-bold row">
+            Telephone
+        </div>
+        <div ng-repeat="telephone in customer.telephones">
+            <div class="form-group">
+                Type:<a editable-select="telephone.type" onaftersave="updateTelephoneType(telephone)"   e-ng-options="type for type in types">
+                {{ telephone.type || 'select telephone type'}}
+            </a>
+                telephone: <a editable-text="telephone.telephone_number" onaftersave="updateTelephone(telephone)">{{telephone.telephone_number || 'empty'}}</a>
+                <button class="btn-warning" type="button" confirm-button="deleteTelephone(telephone)" message="Are you sure you want to remove this telephone?"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+            </div>
+
+        </div>
+        <button type="button" ng-click="createTelephone($event)" class="btn-primary"><i class="fa fa-plus " aria-hidden="true"></i> Add telephone</button>
+
+
+        <div class="panel-heading font-bold">
+            Emails
+        </div>
+        <div ng-repeat="email in customer.emails">
+            <div class="form-group">
+                Type:<a editable-select="email.type" onaftersave="updateEmailType(email)"   e-ng-options="type for type in types">
+                {{ email.type || 'select email type'}}
+            </a>
+                email: <a editable-text="email.email" onaftersave="updateEmail(email)">{{email.email || 'empty'}}</a>
+                <button class="btn-warning" type="button" confirm-button="deleteEmail(email)" message="Are you sure you want to remove this email?"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+            </div>
+
+        </div>
+        <button type="button" ng-click="createEmail($event)" class="btn-primary"><i class="fa fa-plus " aria-hidden="true"></i> Add email</button>
 
     </div>
-            </form>
-        </div>
+
+
+</div>

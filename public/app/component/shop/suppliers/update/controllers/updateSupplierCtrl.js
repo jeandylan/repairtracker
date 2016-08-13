@@ -15,8 +15,7 @@ app.controller('updateSupplierCtrl', function($scope,serverServices,editableOpti
         var supplierUpdateData={
             first_name:$scope.supplier.personal.first_name,  // array containing customer data
             last_name:$scope.supplier.personal.last_name,
-            date_of_birth:$scope.supplier.personal.date_of_birth,
-            role:$scope.supplier.role
+            company:$scope.supplier.personal.company
         };
         //return $http.put('api/supplier/'+$scope.supplierId, supplierUpdateData);
 

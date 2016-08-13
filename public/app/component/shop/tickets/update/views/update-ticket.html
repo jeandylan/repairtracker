@@ -1,36 +1,8 @@
-<div class="bg-light lter b-b wrapper-md"  >
-    <h1 class="m-n font-thin h3">Create new Ticket</h1>
-</div>
 <div ng-controller="updateTicketCtrl">
-    <form editable-form name="editableForm" onaftersave="updateTicket()">
-
-        <div class="wrapper-md">
-            <div class="form-group row">
-                <button type="button"  ui-sref="app.create-invoice({ticketId:1})" class="btn btn-default"> create Invoice
-                </button>
-            </div>
-            <!----button for edit--->
-            <div class="form-group row ">
-                <div class="buttons">
-                    <!-- button to show form -->
-                    <button type="button" class="btn btn-default" ng-click="editableForm.$show()" ng-show="!editableForm.$visible">
-                        Edit
-                    </button>
-                    <!-- buttons to submit / cancel form -->
-      <span ng-show="editableForm.$visible">
-        <button type="submit" class="btn btn-primary" ng-disabled="editableForm.$waiting">
-            Save
-        </button>
-        <button type="button" class="btn btn-default" ng-disabled="editableForm.$waiting" ng-click="editableForm.$cancel()">
-            Cancel
-        </button>
-          </span>
-                </div>
-
-            </div>
 
 
         <div class="wrapper-md">
+            <h4>Ticket for {{ticket.customer[0].first_name}} {{ticket.customer[0].last_name}}</h4>
             <!---start panel-->
             <div class="panel panel-default col-sm-6">
                 <!---personal detail form panel --->
@@ -43,32 +15,45 @@
                     <div class="form-group row">
                     <label class="col-sm-2 control-label">Model</label>
                     <div class="col-sm-10">
-                        <span href="#" editable-select="ticket.model"  e-ng-options="g.id as g.text for g in groups">
-                            {{ ticket.model || 'empty' }}
+                        <span href="#" editable-select="ticket.info.model"  e-ng-options="g.id as g.text for g in groups">
+                            {{ ticket.info.model || 'empty' }}
                         </span>
                     </div>
                 </div>
                     <!----one Edit  g box --->
-                    <div class="form-group row">
-                        <label class="col-sm-2 control-label">Make</label>
-                        <div class="col-sm-10">
-                            <span href="#"editable-text="ticket.make" >
-                                {{ ticket.make || 'empty' }}
-                            </span>
-                        </div>
+                    <div class="form-group ">
+                        make: <a href="#" editable-text="ticket.info.make"  onaftersave="updateTicket()">{{ticket.info.make || 'empty'}}</a>
                     </div>
 
                     <!----one Edit  g box --->
-                    <div class="form-group row">
-                        <label class="col-sm-2 control-label">problem Type</label>
-                        <div class="col-sm-10">
-                            <span href="#"editable-text="ticket.problem_type" >
-                                {{ ticket.problem_type || 'empty' }}
-                            </span>
-                        </div>
+                    <div class="form-group ">
+                        problem Type: <a href="#" editable-text="ticket.info.problem_type"  onaftersave="updateTicket()">{{ticket.info.problem_type || 'empty'}}</a>
                     </div>
+                </div>
+                <div class="panel-heading font-bold">
+                    other
+                </div>
+                <div ng-repeat="txtField in txtFields">
+                    {{txtField.properties.field_name}}: <a href="#" editable-text="txtField.data[0].field_data"
+                                                           onbeforesave="validate(txtField)"
+                                                           onaftersave="updateOtherField(txtField)">{{txtField.data[0].field_data || 'empty'}}</a>
 
                 </div>
+                <div class="panel-heading font-bold">
+                    Technician Assign To Ticket
+                </div>
+                <div class="panel-body">
+                    <div ng-repeat="technician in ticket.employees">
+                        <div class="form-group ">
+                            Technician: <a href="#" editable-text="technician.first_name"  onaftersave="updateTicket()">{{technician.first_name || 'empty'}}</a>
+                        </div>
+                        </div>
+                </div>
+
+
+
+
+
             </div>
             <!----SECOND PANEL ---->
             <div class="panel panel-default col-sm-6">
@@ -78,20 +63,15 @@
                 </div>
                 <!---a seperation-->
                 <div class="panel-body">
-                    <!----one QR CODE  box --->
-                    <div class="form-group row">
-                        <label class="col-sm-2 control-label">Problem Definition</label>
-                        <div class="col-sm-10">
-                        <span href="#" editable-textarea="ticket.problem_definition">
-                            {{ ticket.problem_definition || 'not set' }}
-                        </span>
-                        </div>
+                    <div class="form-group ">
+                        Problem Definition: <a href="#" editable-textarea="ticket.info.problem_definition" e-rows="7" e-cols="40"  onaftersave="updateTicket()">{{ticket.info.problem_definition || 'empty'}}</a>
                     </div>
 
                 </div>
 
+
                 <div class="panel-heading font-bold">
-                   QR code
+                    QR code
                 </div>
                 <div class="panel-body">
 
@@ -100,17 +80,31 @@
                         <label class="col-sm-2 control-label">ticket Qr</label>
                         <div class="col-sm-10">
                             <div print-section>
-                            <qrcode version="6" error-correction-level="M" size="200" data="{{qr}}"></qrcode>
-                                </div>
+                                <qrcode version="6" error-correction-level="M" size="200" data="{{qr}}"></qrcode>
+                            </div>
                         </div>
                         <button type="button" class="btn-info" print-btn><span class="glyphicon glyphicon-print"> Print</span></button>
                     </div>
-            </div>
+                </div>
+                <div class="panel-heading font-bold">
+                    Stock Used For Ticket
+                </div>
+                <div class="panel-body">
+                    <div ng-repeat="stock in ticket.stocks">
+                        <div class="form-group row">
+                            <b>Name :</b>{{stock.product_name}}
+                            <span class="text-warning"> x </span>
+                            <small>Rs.</small>{{stock.selling_price}}
+                        </div>
+                    </div>
+                </div>
 
-            <!----end second panel-->
+
+
+
+                <!----end second panel-->
         </div>
 
         </div>
-    </form>
+
 </div>
-

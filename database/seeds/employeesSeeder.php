@@ -14,7 +14,7 @@ class employeesSeeder extends Seeder
         $limit=10;
 
         $faker = Faker\Factory::create(); //use faker to create Data
-        for ($i = 0; $i < $limit; $i++) {
+        for ($i = 1; $i < $limit; $i++) {
             DB::table('employees')->insert([
                 'first_name' => $faker->firstName,
                 'last_name' =>$faker->lastName,

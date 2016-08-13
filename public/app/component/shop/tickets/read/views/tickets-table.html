@@ -36,9 +36,11 @@
             <td>{{row.problem_type}}</td>
             <td>{{row.problem_definition}}</td>
             <td>
-                <a ui-sref="app.update-ticket({ticketId:row.id})" class="btn btn-sm btn-warning"  >
+                <a ui-sref="app.ticket.update({ticketId:row.id})" class="btn btn-sm btn-warning"  >
                     <i class="glyphicon glyphicon-edit">edit</i>
                 </a>
+                </td>
+            <td>
                 <a ng-click="deleteTicketBtn(row.id,row.problem_definition)" class="btn btn-sm btn-danger"  >
                     <i class="glyphicon glyphicon-remove-circle">delete</i>
                 </a>

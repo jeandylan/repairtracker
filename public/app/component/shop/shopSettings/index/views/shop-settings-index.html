@@ -1,0 +1,33 @@
+<div class="panel panel-default">
+
+    <div class="panel-body">
+        <div ui-view>
+            <div ng-controller="shopSettingsIndexCtrl">
+            <div class="row">
+                <!-- Card Projects -->
+                <div class="col-md-2">
+                    <div class="card">
+                        <div ng-style="cardBackgroundStyle">
+                            <i class="fa fa-wpforms" aria-hidden="true"></i>
+                            <span ng-style="cardTextStyle">Form Editor</span>
+                        </div>
+
+                        <div class="card-content">
+                            <p>add,update,remove fields from Forms</p>
+                        </div>
+
+                        <div class="card-action">
+                            <a ui-sref="app.settings.form-editor({formName:'ticket'})" >ticket</a>
+                            <a href="#" target="new_blank">Link</a>
+                            <a href="#" target="new_blank">Link</a>
+                            <a href="#" target="new_blank">Link</a>
+                            <a href="#" target="new_blank">Link</a>
+                        </div>
+                    </div>
+                </div>
+                <!--END OF CARD--->
+            </div>
+            </div>
+        </div>
+    </div>
+</div>

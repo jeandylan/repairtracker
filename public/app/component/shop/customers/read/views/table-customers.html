@@ -1,20 +1,11 @@
 
 <div ng-controller="tableCustomersCtrl" id="table" >
-
-
-
     <table st-table="displayedCollection"  st-safe-src="rowCollection" class="table table-striped"> <!----remember display and st-dafe when updating ---->
         <thead>
         <tr>
             <th st-sort="first_name">first name</th>
             <th st-sort="last_name" >last name</th>
-            <th>email</th>
             <th>DOB</th>
-            <th>address</th>
-            <th>address 1</th>
-            <th>mobile tel</th>
-            <th>mobile tel 1</th>
-            <th>home tel</th>
 
         </tr>
         <tr>
@@ -24,27 +15,6 @@
             <th>
                 <input st-search="last_name" placeholder="search for last name" class="input-sm form-control" type="search"/>
             </th>
-            <th>
-                <input st-search="email" placeholder="search for email" class="input-sm form-control" type="search"/>
-            </th>
-            <th>
-                <!----no search for dob--->
-            </th>
-            <th>
-                <input st-search="address" class="input-sm form-control" type="search"  placeholder="search for address "/>
-            </th>
-            <th>
-                <input st-search="address_1" class="input-sm form-control" type="search"  placeholder="search for address 1"/>
-            </th>
-            <th>
-                <input st-search="mobile_tel" placeholder="search for mobile tel" class="input-sm form-control" type="search"/>
-            </th>
-            <th>
-                <input st-search="mobile_tel_1" placeholder="search for mobile tel 1" class="input-sm form-control" type="search"/>
-            </th>
-            <th>
-                <input st-search="phone_tel" placeholder="search for phone tel" class="input-sm form-control" type="search"/>
-            </th>
         </tr>
         </thead>
 
@@ -52,15 +22,9 @@
         <tr ng-repeat="row in displayedCollection">
             <td >{{row.first_name}}</td>
             <td >{{row.last_name}}</td>
-            <td>{{row.email}}</td>
             <td>{{row.date_of_birth}}</td>
-            <td >{{row.address}}</td>
-            <td>{{row.address_1}}</td>
-            <td >{{row.mobile_tel}}</td>
-            <td >{{row.mobile_tel_1}}</td>
-            <td>{{row.home_tel}}</td>
             <td>
-                <a ui-sref="app.create-ticket({customerId:row.id})" class="btn btn-sm btn-info"  >
+                <a ui-sref="app.ticket.create({customerId:row.id})" class="btn btn-sm btn-info"  >
                     <i class="glyphicon glyphicon-plus-sign">Ticket</i>
                 </a>
             </td>

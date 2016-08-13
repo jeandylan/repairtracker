@@ -16,7 +16,7 @@ class Stock extends Model
     }
     
     function tickets(){
-        //2nd arg is pivot table name
+        //2nd arg is pivot table name,last foreign key joint to
         return $this->belongsToMany('App\Ticket','stock_ticket','stock_id','ticket_id');
     }
 

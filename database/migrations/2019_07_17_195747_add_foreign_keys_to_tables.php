@@ -30,6 +30,35 @@ class AddForeignKeysToTables extends Migration
             $table->foreign('customer_id')->references('id')->on('customers');
             
         });
+        /*supplier Contact info */
+        Schema::table('supplier_address', function (Blueprint $table) {
+            $table->foreign('supplier_id')->references('id')->on('suppliers');
+        });
+
+        Schema::table('supplier_email', function (Blueprint $table) {
+            $table->foreign('supplier_id')->references('id')->on('suppliers');
+        });
+
+        Schema::table('supplier_telephone', function (Blueprint $table) {
+            $table->foreign('supplier_id')->references('id')->on('suppliers');
+        });
+        /* Employee Contact Info*/
+        Schema::table('employee_address', function (Blueprint $table) {
+            $table->foreign('employee_id')->references('id')->on('employees');
+
+        });
+
+        Schema::table('employee_email', function (Blueprint $table) {
+            $table->foreign('employee_id')->references('id')->on('employees');
+
+        });
+        Schema::table('employee_telephone', function (Blueprint $table) {
+            $table->foreign('employee_id')->references('id')->on('employees');
+
+        });
+
+
+
 
 
         /*ticket relationship*/

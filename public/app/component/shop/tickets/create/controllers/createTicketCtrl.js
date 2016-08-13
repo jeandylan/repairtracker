@@ -1,7 +1,7 @@
 /**
  * Created by dylan on 03-Jul-16.
  */
-
+console.log("ty");
 app.controller("createTicketCtrl",function ($scope,$stateParams,serverServices,toaster,$state) {
     $scope.customerId=$stateParams.customerId;
     $scope.createTicket=function () {
@@ -28,7 +28,21 @@ app.controller("createTicketCtrl",function ($scope,$stateParams,serverServices,t
            );
 
 
-   }
-
+   };
+    $scope.getFields=function () {
+        console.log("r");
+        serverServices.get('api/moreField/ticket') //using service (customer/service/clientService ) that will query Laravel for .json output
+            .then(
+                function (result) {
+                    toaster.pop("success","DONE","Got additional Fields ");
+                    $scope.txtFields=result;
+                },
+                function (error) {
+                    // handle errors here
+                    toaster.pop("error","SERVER ERROR","ooh nothing was saved error ");
+                }
+            );
+    };
+    $scope.getFields();
 
 });

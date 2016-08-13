@@ -7,9 +7,6 @@
         <tr>
             <th st-sort="first_name">first name</th>
             <th st-sort="last_name" >last name</th>
-            <th>email</th>
-            <th>address</th>
-            <th>mobile tel</th>
             <th st-sort="company">company</th>
 
         </tr>
@@ -21,15 +18,6 @@
                 <input st-search="last_name" placeholder="search for last name" class="input-sm form-control" type="search"/>
             </th>
             <th>
-                <input st-search="email" placeholder="search for email" class="input-sm form-control" type="search"/>
-            </th>
-            <th>
-                <input st-search="address" class="input-sm form-control" type="search"  placeholder="search for address "/>
-            </th>
-            <th>
-                <input st-search="mobile_tel" placeholder="search for mobile tel" class="input-sm form-control" type="search"/>
-            </th>
-            <th>
                 <input st-search="company" placeholder="search for company Name" class="input-sm form-control" type="search"/>
             </th>
         </tr>
@@ -39,9 +27,6 @@
         <tr ng-repeat="row in displayedCollection">
             <td >{{row.first_name}}</td>
             <td >{{row.last_name}}</td>
-            <td>{{row.email}}</td>
-            <td >{{row.address}}</td>
-            <td >{{row.mobile_tel}}</td>
             <td>{{row.company}}</td>
             <td>
                 <a ui-sref="app.supplier.update({supplierId:row.id})" class="btn btn-sm btn-warning"  >

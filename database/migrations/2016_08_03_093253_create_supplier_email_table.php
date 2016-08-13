@@ -19,6 +19,19 @@ class CreateSupplierEmailTable extends Migration
             $table->enum('type', array('home', 'company','private'));
             $table->timestamps();
         });
+        Schema::create('txt_fields', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('field_name');
+            $table->string('form_name');
+            $table->boolean('required');
+            $table->integer('max');
+
+        });
+        Schema::create('txt_field_data', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('field_id');
+            $table->string('field_data');
+        });
     }
 
     /**

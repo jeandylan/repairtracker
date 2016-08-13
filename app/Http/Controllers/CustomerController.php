@@ -39,7 +39,7 @@ class CustomerController extends Controller
 
     public function store(Request $request)
     {
-        Utility::stripXSS(); //prevent xss , should be called before server side validation so as validation is done on safe data
+
 
         $rules = array(
             'first_name'       => 'required',
@@ -91,7 +91,7 @@ class CustomerController extends Controller
 
     public function update($id)
     {
-        Utility::stripXSS(); //prevent xss , should be called before server side validation so as validation is done on safe data
+        //Utility::stripXSS(); //prevent xss , should be called before server side validation so as validation is done on safe data
         $rules = array(
             'first_name'       => 'required',
             'last_name'      => 'required',

@@ -68,7 +68,7 @@ class SupplierController extends Controller
         Utility::stripXSS(); //prevent xss , should be called before server side validation so as validation is done on safe data
         $supplier = Supplier::find($id);
         $supplier->update(Input::get());
-        return  array("successful"=>true, "message"=>"ticket updated");
+        return  array("successful"=>true, "message"=>"supplier updated");
     }
 
 
@@ -76,10 +76,10 @@ class SupplierController extends Controller
     {
         try {
             Supplier::find($id)->delete();
-            return array("successful" => true, "message" => "ticket deleted");
+            return array("successful" => true, "message" => "supplier deleted");
         }
         catch (\Exception $e){
-            return array("successful" => false, "message" => "ticket cannot be deleted");
+            return array("successful" => false, "message" => "supplier cannot be deleted");
         }
 
     }

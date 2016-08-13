@@ -18,4 +18,8 @@ class Employee extends Model
     public  function telephone(){
         return $this->hasMany('App\EmployeeTelephone');
     }
+
+    public function ticket(){
+        return $this->belongsToMany('App\Ticket','employee_ticket','employee_id','ticket_id');
+    }
 }

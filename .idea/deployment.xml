@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="C:\Users\dylan\Dropbox" uploadOnCheckin="6b960097-ae2c-4d07-8ba3-35edfba346e5">
+    <serverData>
+      <paths name="C:\Users\dylan\Dropbox">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myUploadOnCheckinName" value="C:\Users\dylan\Dropbox" />
+  </component>
+</project>

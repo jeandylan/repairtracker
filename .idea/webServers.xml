@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="6b960097-ae2c-4d07-8ba3-35edfba346e5" name="C:\Users\dylan\Dropbox" url="http://localhost">
+        <fileTransfer port="0" mountedRoot="C:\Users\dylan\Dropbox" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>

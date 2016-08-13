@@ -69,7 +69,7 @@
             <div class="panel-heading font-bold">telephone</div>
             <div class="panel-body">
                     <!----telephone  --->
-                <div ng-repeat="telephone in telephones">
+                <div  ng-animate="'animate'"  ng-repeat="telephone in telephones">
                     <div class="input-group my-group">
                         <select  ng-model="telephone.type" class="form-control" placeholder="select telephone type">
                             <option value="home">home</option>
@@ -96,7 +96,7 @@
             <div class="panel-heading font-bold">Address</div>
             <div class="panel-body">
                 <!----Address  --->
-                <div ng-repeat="address in addresses">
+                <div  ng-animate="'animate'" ng-repeat="address in addresses">
                     <div class="input-group my-group">
                         <select  ng-model="address.type" class="form-control" placeholder="select Address type">
                             <option value="home">home</option>
@@ -127,7 +127,7 @@
             <div class="panel-heading font-bold">Email</div>
             <div class="panel-body">
                 <!----Email --->
-                <div ng-repeat="email in emails">
+                <div  ng-animate="'animate'" ng-repeat="email in emails">
                     <div class="input-group my-group">
                         <select  ng-model="email.type" class="form-control" placeholder="select email type">
                             <option value="home">home</option>

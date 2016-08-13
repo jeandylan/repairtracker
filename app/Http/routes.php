@@ -48,6 +48,18 @@ Route::group(['prefix' => 'api'], function () {
     Route::delete('/ticket/{id}', 'TicketController@destroy');
     Route::put('/ticket/{id}', 'TicketController@update');// delete A ticket with specific Id
 
+    Route::get('ticketfieldsdata/{ticketId}','TicketController@fields');
+
+    /*more forms*/
+    
+    Route::get('/fields/{formName}','FieldController@getFormFields');
+
+    Route::get('/fieldsdata/{formName}/{entity_id}','FieldController@getFieldsDetails');
+    Route::Post('/field/{formName}','FieldController@create');
+
+    /*more Form Data*/
+    Route::put('/fielddata/{entity_id}', 'FieldDataController@update');
+
 
     //stock Route
     Route::get('/stocks', 'StockController@getAll'); //get all Stock

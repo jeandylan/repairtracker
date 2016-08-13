@@ -61,7 +61,7 @@
 <script src="assets/js/angular-library/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
 <script src="assets/js/angular-library/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
 <script src="assets/js/angular-library/angular-translate-storage-local/angular-translate-storage-local.js"></script>
-
+<script src="assets/js/angular-library/angular-breadcrumbs/angular-breadcrumb.min.js"></script>
 <!----app still need router --->
 <script src="app/app.js"></script>
 <script src="app/config.js"></script>
@@ -85,6 +85,7 @@
 <script src="app/component/core/directives/ui-shift.js"></script>
 <script src="app/component/core/directives/ui-toggleclass.js"></script>
 <script src="app/component/core/controllers/bootstrap.js"></script>
+
 <!-----server service to query--->
 <script src="app/component/core/services/serverServices.js"></script>
 <!---delete Controller used By All CRUD Operation -->

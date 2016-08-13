@@ -18,7 +18,7 @@
             </div>
             <!---on xeditbox--->
             <div class="form-group">
-                DOB: <a  href="#" editable-bsdate="supplier.personal.date_of_birth" e-is-open="opened.$data" e-ng-click="open($event,'$data')" onaftersave="updateSupplier()" e-datepicker-popup="dd-MMMM-yyyy">{{ (supplier.personal.date_of_birth | date:"dd/MM/yyyy") || 'empty' }}</a>
+                company: <a  href="#" editable-text="supplier.personal.company" onaftersave="updateSupplier()">{{supplier.personal.company || 'empty'}}</a>
             </div>
         </div>
         <!--end panel body--->

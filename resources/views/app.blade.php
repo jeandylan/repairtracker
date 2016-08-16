@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/font.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/app.css" type="text/css" />
+    <link rel="stylesheet" href="assets/js/angular-library/angular-xeditable/dist/css/xeditable.min.css" type="text/css">
 </head>
 <body ng-controller="appInit">
 <div class="app" id="app" ng-class="{'app-header-fixed':app.settings.headerFixed, 'app-aside-fixed':app.settings.asideFixed, 'app-aside-folded':app.settings.asideFolded, 'app-aside-dock':app.settings.asideDock, 'container':app.settings.container}" ui-view>
@@ -30,7 +31,7 @@
 <!-- Angular -->
 <script src="assets/js/angular-library/angular/angular1.5.min.js"></script>
 <!-- bootstrap this is breaking the previous  nav bar pop up -->
-<script src="assets/js/angular-library/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="assets/js/angular-library/angular-bootstrap/ui-bootstrap-tpls-2.0.1.min.js"></script>
 
 <script src="assets/js/angular-library/angular-animate/angular-animate.js"></script>
 <script src="assets/js/angular-library/angular-aria/angular-aria.js"></script>
@@ -62,6 +63,8 @@
 <script src="assets/js/angular-library/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
 <script src="assets/js/angular-library/angular-translate-storage-local/angular-translate-storage-local.js"></script>
 <script src="assets/js/angular-library/angular-breadcrumbs/angular-breadcrumb.min.js"></script>
+<script src='assets/js/angular-library/angular-xeditable/dist/js/xeditable.min.js'></script>
+
 <!----app still need router --->
 <script src="app/app.js"></script>
 <script src="app/config.js"></script>
@@ -85,6 +88,7 @@
 <script src="app/component/core/directives/ui-shift.js"></script>
 <script src="app/component/core/directives/ui-toggleclass.js"></script>
 <script src="app/component/core/controllers/bootstrap.js"></script>
+
 
 <!-----server service to query--->
 <script src="app/component/core/services/serverServices.js"></script>

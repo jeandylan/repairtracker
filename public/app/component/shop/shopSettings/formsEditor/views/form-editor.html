@@ -1,3 +1,59 @@
-<div ng-controller="formEditorCtrl">
-    <h1>test form editor</h1>
+
+<div ng-controller="formEditorCtrl as vm">
+    <div class="panel panel-default">
+        <div class="panel-heading font-bold">
+            Current custom text field in form {{formName}}
+        </div>
+        <div class="panel-body">
+            <div ng-repeat="txtField in vm.txtFormFields">
+                <div class="form-group">
+                    <b> txt Box {{$index + 1}}</b>
+                    <button type="button" class="btn-danger"  ng-click="vm.deleteTextField(txtField)" ><i class="fa fa-trash" aria-hidden="true"></i></button>
+                    <div class="form-group">
+                        Field Name: <a  href="#" editable-text="txtField.field_name"  onaftersave="vm.updateTextField(txtField)" >{{txtField.field_name || 'empty'}}</a>
+                    </div>
+
+                    <div class="form-group">
+                        max length: <a  href="#" editable-number="txtField.max"  onaftersave="vm.updateTextField(txtField)">{{txtField.max || 'empty'}}</a>
+                    </div>
+                    <div class="form-group">
+                        required: <a  href="#" editable-radiolist="txtField.required" onbeforesave="vm.updateTextField(txtField)"
+                                      e-ng-options="item.value as item.text for item in [{value:0,text:'no'},{value:1,text:'yes'}] track by item.value">{{(txtField.required | booleanToString)|| 'empty'}}</a>
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+            </div>
+
+
+                <!---form to create new TxtField-->
+
+                    <div ng-controller="newFieldCtrl as vmNewTextField">
+                        <div ng-repeat="newTextField in vmNewTextField.newTextFormFields">
+                            <div class="panel-heading font-bold" ng-show="$index== 0">new unsaved text Field for {{formName}}</div>
+                            <div  class="card" ng-style="cardBackground">
+                                <div class="form-group">
+                                    Field Name:  <a  href="#" editable-text="newTextField.field_name"  onbeforesave="vmNewTextField.required($data)">{{newTextField.field_name || 'empty'}}</a>
+                                </div>
+                                <div class="form-group">
+                                    max:  <a  href="#" editable-number="newTextField.max" onbeforesave="vmNewTextField.number($data)"  onbeforesave="vmNewTextField.required($data)">{{newTextField.max || 'empty'}}</a>
+                                </div>
+                                <div class="form-group">
+                                    required:  <a  href="#" editable-radiolist="newTextField.required" e-ng-options="s.value as s.text for s in ::yesNo track by s.value" onbeforesave="vmNewTextField.required($data)" >{{(newTextField.required | booleanToString) || 'empty'}}</a>
+                                </div>
+                                <div class="card-action" ng-style="cardBottom">
+                                    <button type="button" class="btn-primary"  ng-click="vmNewTextField.saveNewTextField(newTextField)" ><i class="fa fa-floppy-o " aria-hidden="true"></i> save</button>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" ng-click="vmNewTextField.createTextField($event)" class="btn-primary"><i class="fa fa-plus " aria-hidden="true"></i> create New txt Field</button>
+                    </div>
+
+
+            <!---button to add new Form--->
+
+                </div>
+
+
+        </div>
+    </div>
 </div>

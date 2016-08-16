@@ -50,15 +50,19 @@ Route::group(['prefix' => 'api'], function () {
 
     Route::get('ticketfieldsdata/{ticketId}','TicketController@fields');
 
-    /*more forms*/
-    
-    Route::get('/fields/{formName}','FieldController@getFormFields');
 
+    /*fields data*/
     Route::get('/fieldsdata/{formName}/{entity_id}','FieldController@getFieldsDetails');
-    Route::Post('/field/{formName}','FieldController@create');
-
-    /*more Form Data*/
     Route::put('/fielddata/{entity_id}', 'FieldDataController@update');
+    Route::post('/fielddata', 'FieldDataController@create');
+
+/*txt Field Resource*/
+    Route::get('/txtFields/{formName}','FieldController@get');
+    Route::Post('/txtField','FieldController@create');
+    Route::put('/txtField/{fieldId}','FieldController@update');
+    Route::delete('/txtField/{id}', 'FieldController@destroy');
+    
+
 
 
     //stock Route

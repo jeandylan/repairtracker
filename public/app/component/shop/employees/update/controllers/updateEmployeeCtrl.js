@@ -14,7 +14,6 @@ app.controller('updateEmployeeCtrl', function($scope,serverServices,editableOpti
 
 
     $scope.updateEmployee=function () { //when the submit btn click (function call found in <form> tag on top)
-
         var employeeUpdateData={
             first_name:$scope.employee.personal.first_name,  // array containing customer data
             last_name:$scope.employee.personal.last_name,
@@ -30,8 +29,6 @@ app.controller('updateEmployeeCtrl', function($scope,serverServices,editableOpti
                 return (result.successful) ?  true: "error "+result.message;
             }
         );
-
-
     };
 
 
@@ -257,6 +254,8 @@ app.controller('updateEmployeeCtrl', function($scope,serverServices,editableOpti
 
                 });
     }
+    
+    
 
 
     

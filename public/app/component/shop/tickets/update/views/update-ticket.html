@@ -1,6 +1,4 @@
 <div ng-controller="updateTicketCtrl">
-
-
         <div class="wrapper-md">
             <h4>Ticket for {{ticket.customer[0].first_name}} {{ticket.customer[0].last_name}}</h4>
             <!---start panel-->
@@ -34,9 +32,13 @@
                     other
                 </div>
                 <div ng-repeat="txtField in txtFields">
-                    {{txtField.properties.field_name}}: <a href="#" editable-text="txtField.data[0].field_data"
-                                                           onbeforesave="validate(txtField)"
-                                                           onaftersave="updateOtherField(txtField)">{{txtField.data[0].field_data || 'empty'}}</a>
+
+                    <div ng-show="txtField.data[0].id"class="ng-hide" >
+                     {{txtField.properties.field_name}}: <a href="#" editable-text="txtField.data[0].field_data" onaftersave="updateTxtData(txtField)">{{txtField.data[0].field_data || 'empty'}}</a>
+                     </div>
+                    <div ng-show="!txtField.data[0].id" class="ng-hide" >
+                        {{txtField.properties.field_name}}: <a href="#" editable-text="txtField.data[0].field_data" onaftersave="createTxtData(txtField)">{{txtField.data[0].field_data || 'empty'}}</a>
+                    </div>
 
                 </div>
                 <div class="panel-heading font-bold">

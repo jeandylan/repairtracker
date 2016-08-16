@@ -1,4 +1,5 @@
   <!-- navbar -->
+
   <div data-ng-include="'tpl/blocks/header.html'" class="app-header navbar">
   </div>
   <!-- / navbar -->
@@ -11,15 +12,13 @@
   <!-- / menu -->
 
   <!-- content -->
-  <div class="app-content">
+  <div class="app-content" ng-controller="shopAppCtrl">
     <div ui-butterbar></div>
     <a href class="off-screen-toggle hide" ui-toggle-class="off-screen" data-target=".app-aside" ></a>
-
-
+    <div ncy-breadcrumb></div>
     <div class="bg-light lter b-b wrapper-md">
       <h1 class="m-n font-thin h3">{{$state.current.pageTitle || ''}}</h1>
     </div> <!----this may cause awkard Things--->
-    <div ncy-breadcrumb></div>
     <div class="app-content-body fade-in-up" ui-view></div>
   </div>
   <!-- /content -->
@@ -34,6 +33,4 @@
 
   <div data-ng-include=" 'tpl/blocks/settings.html' " class="settings panel panel-default">
   </div>
-  <div ng-controller="testCtrl">
 
-  </div>

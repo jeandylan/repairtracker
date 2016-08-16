@@ -70,7 +70,24 @@ angular.module('app')
                     container: false
                 }
             };
-            
+            $scope.SettingsCardBackgroundStyle = {
+                "background-color" : "#03A9F4",
+                "font-size" : "3em",
+                "padding" : "0.5em"
+            };
+
+
+
+            $scope.cardTextStyle={
+                "color": "#DCEDC8",
+                'font-size':'120%'
+            };
+            $scope.cardBackground={
+                "background-color" : '#F9FBE7',
+                "color":"#1A237E"
+            };
+
+            $scope.yesNo=[{value:0,text:'no'},{value:1,text:'yes'}];
 
             // save settings to local storage
             if ( angular.isDefined($localStorage.settings) ) {
@@ -110,4 +127,46 @@ angular.module('app')
             }
 
         }]);
+
+angular.module('app').controller("shopAppCtrl",function ($scope,serverServices,toaster,editableOptions) {
+    editableOptions.theme = 'bs3';  //the editable theme for xeditable injection should always be used else calendar and type ahead for address fails
+     $scope.updateResource=function (url, data) {
+         console.log('start updating');
+        return serverServices.put(url, data)//id parameter obtain by doing state parameter (like a query)
+            .then(
+                function (result) {
+                    console.log(result);
+                    (result.successful) ? toaster.pop("success", 'success', result.message) :
+                        toaster.pop("warning", 'info:', result.message);
+                    return result
+
+                },
+                function (result) {
+                    // toaster.pop('error', "server Err", "we could not get info needed");
+                    console.log(result);
+                    toaster.pop('error', "server Err", result.message);
+                    return result;
+                    //could not get response from Server
+
+                });
+    };
+
+    $scope.createResource=function (url, data){
+        console.log('start creatinon');
+        return serverServices.post(url, data)//id parameter obtain by doing state parameter (like a query)
+            .then(
+                function (result) {
+                    (result.successful) ? toaster.pop("success", 'success', result.message) :
+                        toaster.pop("warning", 'info:', result.message);
+                    return result;
+
+                },
+                function (result) {
+                    // toaster.pop('error', "server Err", "we could not get info needed");
+                    console.log(result);
+                    toaster.pop('error', "server Err", result.message);
+                    //could not get response from Server
+                });
+    }
+});
 

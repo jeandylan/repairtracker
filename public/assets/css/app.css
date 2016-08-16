@@ -1,5 +1,13 @@
 /* Bootsrap Ui Tabs to be Disable if updated
 */
+/*ng hide needed*/
+.ng-hide:not(.ng-hide-animate) {
+  /* this is just another form of hiding an element */
+  display: block!important;
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
 .uib-tab.active a {
   /*CSS HERE*/
  /* background-color:  !important;

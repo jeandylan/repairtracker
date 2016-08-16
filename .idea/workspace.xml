@@ -1,60 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b07e4cfc-bd4e-4489-9168-ae9346d1c3c2" name="Default" comment="add ability to create/update/delete multiple address For Customer/supplier/Employee added:07/08/2016">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/field()" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fieldDetails()" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/increments('id')" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/string('field_data')" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/unsigned()" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/dylan.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/webServers.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/EmployeeTicket.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/EmployeeTicket.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/FieldController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/FieldDataController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Middleware/securityMiddleware.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/TxtField.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/TxtFieldData.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/component/shop/shopSettings/formsEditor/controllers/formEditorCtrl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/component/shop/shopSettings/formsEditor/views/form-editor.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/component/shop/shopSettings/index/controllers/shopSettingsIndexCtrl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/component/shop/shopSettings/index/views/shop-settings-index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/js/angular-library/angular-breadcrumbs/angular-breadcrumb.min.js" />
+    <list default="true" id="b07e4cfc-bd4e-4489-9168-ae9346d1c3c2" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/component/core/filters/otherFilter.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/js/angular-library/angular-bootstrap/ui-bootstrap-tpls-2.0.1.min.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/app/component/core/filters/fromNow.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Employee.php" afterPath="$PROJECT_DIR$/app/Employee.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/SupplierController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/SupplierController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TicketController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TicketController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Kernel.php" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/FieldController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/FieldController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/FieldDataController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/FieldDataController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Stock.php" afterPath="$PROJECT_DIR$/app/Stock.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Ticket.php" afterPath="$PROJECT_DIR$/app/Ticket.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_08_03_093253_create_supplier_email_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_08_03_093253_create_supplier_email_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2019_07_17_195747_add_foreign_keys_to_tables.php" afterPath="$PROJECT_DIR$/database/migrations/2019_07_17_195747_add_foreign_keys_to_tables.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/employeesSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/employeesSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/stocksSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/stocksSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/suppliersSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/suppliersSeeder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/TxtField.php" afterPath="$PROJECT_DIR$/app/TxtField.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/TxtFieldData.php" afterPath="$PROJECT_DIR$/app/TxtFieldData.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/app.js" afterPath="$PROJECT_DIR$/public/app/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/core/route/mainRouter.js" afterPath="$PROJECT_DIR$/public/app/component/core/route/mainRouter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/customers/create/views/create-customer-form.html" afterPath="$PROJECT_DIR$/public/app/component/shop/customers/create/views/create-customer-form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/customers/index/views/index-customer.html" afterPath="$PROJECT_DIR$/public/app/component/shop/customers/index/views/index-customer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/customers/read/views/table-customers.html" afterPath="$PROJECT_DIR$/public/app/component/shop/customers/read/views/table-customers.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/employees/index/views/employee-index.html" afterPath="$PROJECT_DIR$/public/app/component/shop/employees/index/views/employee-index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/employees/read/views/view-employees-table.html" afterPath="$PROJECT_DIR$/public/app/component/shop/employees/read/views/view-employees-table.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/stocks/index/views/index-stock.html" afterPath="$PROJECT_DIR$/public/app/component/shop/stocks/index/views/index-stock.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/suppliers/read/views/view-suppliers-table.html" afterPath="$PROJECT_DIR$/public/app/component/shop/suppliers/read/views/view-suppliers-table.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/suppliers/update/controllers/updateSupplierCtrl.js" afterPath="$PROJECT_DIR$/public/app/component/shop/suppliers/update/controllers/updateSupplierCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/suppliers/update/views/update-supplier.html" afterPath="$PROJECT_DIR$/public/app/component/shop/suppliers/update/views/update-supplier.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/tickets/create/controllers/createTicketCtrl.js" afterPath="$PROJECT_DIR$/public/app/component/shop/tickets/create/controllers/createTicketCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/employees/update/controllers/updateEmployeeCtrl.js" afterPath="$PROJECT_DIR$/public/app/component/shop/employees/update/controllers/updateEmployeeCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/employees/update/views/update-employee.html" afterPath="$PROJECT_DIR$/public/app/component/shop/employees/update/views/update-employee.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/shopSettings/formsEditor/controllers/formEditorCtrl.js" afterPath="$PROJECT_DIR$/public/app/component/shop/shopSettings/formsEditor/controllers/formEditorCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/shopSettings/formsEditor/views/form-editor.html" afterPath="$PROJECT_DIR$/public/app/component/shop/shopSettings/formsEditor/views/form-editor.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/shopSettings/index/controllers/shopSettingsIndexCtrl.js" afterPath="$PROJECT_DIR$/public/app/component/shop/shopSettings/index/controllers/shopSettingsIndexCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/shopSettings/index/views/shop-settings-index.html" afterPath="$PROJECT_DIR$/public/app/component/shop/shopSettings/index/views/shop-settings-index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/tickets/create/views/create-ticket-form.html" afterPath="$PROJECT_DIR$/public/app/component/shop/tickets/create/views/create-ticket-form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/tickets/index/views/index-ticket.html" afterPath="$PROJECT_DIR$/public/app/component/shop/tickets/index/views/index-ticket.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/tickets/read/views/tickets-table.html" afterPath="$PROJECT_DIR$/public/app/component/shop/tickets/read/views/tickets-table.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/tickets/update/controllers/updateTicketCtrl.js" afterPath="$PROJECT_DIR$/public/app/component/shop/tickets/update/controllers/updateTicketCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/tickets/update/views/update-ticket.html" afterPath="$PROJECT_DIR$/public/app/component/shop/tickets/update/views/update-ticket.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/config.js" afterPath="$PROJECT_DIR$/public/app/config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/config.lazyload.js" afterPath="$PROJECT_DIR$/public/app/config.lazyload.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/css/app.css" afterPath="$PROJECT_DIR$/public/assets/css/app.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/js/angular-library/angular/angular1.5.min.js" afterPath="$PROJECT_DIR$/public/assets/js/angular-library/angular/angular1.5.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tpl/app.html" afterPath="$PROJECT_DIR$/public/tpl/app.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tpl/blocks/nav.html" afterPath="$PROJECT_DIR$/public/tpl/blocks/nav.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/app.blade.php" afterPath="$PROJECT_DIR$/resources/views/app.blade.php" />
     </list>
     <list id="b7001cda-1272-4fd3-8ae7-c7b7de829768" name="New changelist" comment="">
@@ -100,105 +77,105 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="mainRouter.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app/component/core/route/mainRouter.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="211" column="42" selection-start-line="211" selection-start-column="42" selection-end-line="211" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/tpl/app.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="53" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="61" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="form-editor.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app/component/shop/shopSettings/formsEditor/views/form-editor.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="formEditorCtrl.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="formEditorCtrl.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/app/component/shop/shopSettings/formsEditor/controllers/formEditorCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+            <state relative-caret-position="680">
+              <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FieldDataController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FieldDataController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
               <folding>
-                <element signature="e#0#41#0" expanded="false" />
+                <element signature="e#40#68#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="shop-settings-index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app/component/shop/shopSettings/index/views/shop-settings-index.html">
+      <file leaf-file-name="updateTicketCtrl.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/app/component/shop/tickets/update/controllers/updateTicketCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="343">
+              <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index-customer.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app/component/shop/customers/index/views/index-customer.html">
+      <file leaf-file-name="TxtFieldData.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/TxtFieldData.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="153">
+              <caret line="10" column="61" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index-stock.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app/component/shop/stocks/index/views/index-stock.html">
+      <file leaf-file-name="update-ticket.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/component/shop/tickets/update/views/update-ticket.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="43" column="53" selection-start-line="43" selection-start-column="53" selection-end-line="43" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="314">
+              <caret line="56" column="15" selection-start-line="56" selection-start-column="15" selection-end-line="56" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/assets/css/app.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Ticket.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Ticket.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="646">
+              <caret line="42" column="72" selection-start-line="42" selection-start-column="72" selection-end-line="42" selection-end-column="72" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FieldController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FieldController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="603">
+              <caret line="62" column="19" selection-start-line="61" selection-start-column="12" selection-end-line="64" selection-end-column="81" />
+              <folding>
+                <element signature="e#40#68#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TxtField.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/TxtField.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="37" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="table-customers.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app/component/shop/customers/read/views/table-customers.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="52" selection-start-line="1" selection-start-column="52" selection-end-line="1" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="shopSettingsIndexCtrl.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app/component/shop/shopSettings/index/controllers/shopSettingsIndexCtrl.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-              <folding>
-                <element signature="e#0#41#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -209,8 +186,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -226,28 +203,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/TicketTxtFieldData.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_08_09_182147_create_ticket_fields_data_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_08_09_215035_create_ticket_txt_field_data_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_08_09_214902_create_ticket_txt_fields_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_08_09_215035_create_txt_field_data_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_08_09_214902_create_txt_fields_table.php" />
-        <option value="$PROJECT_DIR$/public/app/component/shop/tickets/create/controllers/createTicketCtrl.js" />
-        <option value="$PROJECT_DIR$/public/app/component/shop/tickets/create/views/create-ticket-form.html" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/securityMiddleware.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_08_03_093253_create_supplier_email_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TicketController.php" />
-        <option value="$PROJECT_DIR$/app/Ticket.php" />
-        <option value="$PROJECT_DIR$/app/TxtFieldData.php" />
-        <option value="$PROJECT_DIR$/app/TxtField.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/FieldController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/FieldDataController.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/public/app/component/shop/tickets/update/views/update-ticket.html" />
-        <option value="$PROJECT_DIR$/public/app/component/shop/tickets/update/controllers/updateTicketCtrl.js" />
         <option value="$PROJECT_DIR$/public/app/component/shop/fields/index/form-select.html" />
         <option value="$PROJECT_DIR$/public/app/component/shop/fields/index/create-field-form-selection.html" />
         <option value="$PROJECT_DIR$/public/app/component/shop/settings/index.html" />
@@ -260,23 +218,42 @@
         <option value="$PROJECT_DIR$/public/app/component/shop/shopSettings/formsEditor/directive/controllers/createTxtFieldCtrl.js" />
         <option value="$PROJECT_DIR$/public/app/component/shop/shopSettings/formsEditor/directive/controllers/formEditorCtrl.js" />
         <option value="$PROJECT_DIR$/public/app/component/shop/shopSettings/formsEditor/views/form-editord2.html" />
-        <option value="$PROJECT_DIR$/public/app/component/shop/employees/update/views/update-employee.html" />
         <option value="$PROJECT_DIR$/public/tpl/blocks/nav.html" />
         <option value="$PROJECT_DIR$/public/assets/js/angular-library/angular-breadcrumbs/uiBreadcrumbs.js" />
-        <option value="$PROJECT_DIR$/public/app/app.js" />
-        <option value="$PROJECT_DIR$/resources/views/app.blade.php" />
         <option value="$PROJECT_DIR$/public/app/component/shop/shopSettings/index/views/shop-setttings-index.html" />
-        <option value="$PROJECT_DIR$/public/assets/css/app.css" />
-        <option value="$PROJECT_DIR$/public/app/config.js" />
-        <option value="$PROJECT_DIR$/public/app/component/shop/shopSettings/index/controllers/shopSettingsIndexCtrl.js" />
         <option value="$PROJECT_DIR$/public/app/component/shop/customers/index/views/index-customer.html" />
-        <option value="$PROJECT_DIR$/public/app/component/shop/shopSettings/index/views/shop-settings-index.html" />
         <option value="$PROJECT_DIR$/public/app/component/shop/customers/read/views/table-customers.html" />
         <option value="$PROJECT_DIR$/public/app/component/shop/stocks/index/views/index-stock.html" />
+        <option value="$PROJECT_DIR$/public/app/component/core/filters/fromNow.js" />
+        <option value="$PROJECT_DIR$/public/app/component/core/filters/otherFilter.js" />
+        <option value="$PROJECT_DIR$/public/app/component/shop/employees/update/controllers/updateEmployeeCtrl.js" />
+        <option value="$PROJECT_DIR$/app/TxtField.php" />
+        <option value="$PROJECT_DIR$/public/app/component/shop/shopSettings/index/controllers/shopSettingsIndexCtrl.js" />
+        <option value="$PROJECT_DIR$/public/app/component/shop/shopSettings/index/views/shop-settings-index.html" />
+        <option value="$PROJECT_DIR$/public/app/component/core/controllers/resourceCtrl.js" />
+        <option value="$PROJECT_DIR$/public/app/component/core/controllers/shopAppCtrl.js" />
+        <option value="$PROJECT_DIR$/public/app/app.js" />
+        <option value="$PROJECT_DIR$/public/app/config.lazyload.js" />
         <option value="$PROJECT_DIR$/public/tpl/app.html" />
-        <option value="$PROJECT_DIR$/public/app/component/shop/shopSettings/formsEditor/views/form-editor.html" />
         <option value="$PROJECT_DIR$/public/app/component/core/route/mainRouter.js" />
+        <option value="$PROJECT_DIR$/public/app/component/shop/tickets/create/views/create-ticket-form.html" />
+        <option value="$PROJECT_DIR$/public/app/component/shop/tickets/read/views/tickets-table.html" />
+        <option value="$PROJECT_DIR$/public/app/component/shop/employees/index/views/employee-index.html" />
+        <option value="$PROJECT_DIR$/public/app/component/shop/employees/read/views/view-employees-table.html" />
+        <option value="$PROJECT_DIR$/public/app/component/shop/employees/update/views/update-employee.html" />
+        <option value="$PROJECT_DIR$/public/app/component/shop/tickets/index/views/index-ticket.html" />
+        <option value="$PROJECT_DIR$/resources/views/app.blade.php" />
+        <option value="$PROJECT_DIR$/public/app/config.js" />
+        <option value="$PROJECT_DIR$/public/app/component/shop/shopSettings/formsEditor/views/form-editor.html" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/FieldController.php" />
         <option value="$PROJECT_DIR$/public/app/component/shop/shopSettings/formsEditor/controllers/formEditorCtrl.js" />
+        <option value="$PROJECT_DIR$/public/assets/css/app.css" />
+        <option value="$PROJECT_DIR$/public/app/component/shop/tickets/update/views/update-ticket.html" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/FieldDataController.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/app/TxtFieldData.php" />
+        <option value="$PROJECT_DIR$/app/Ticket.php" />
+        <option value="$PROJECT_DIR$/public/app/component/shop/tickets/update/controllers/updateTicketCtrl.js" />
       </list>
     </option>
   </component>
@@ -328,9 +305,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="ProjectPane">
-        <subPane />
-      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -338,8 +312,15 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="repairtrackerV2">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane />
       </pane>
     </panes>
   </component>
@@ -354,11 +335,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\repairtrackerV2\public\assets\js\angular-library\angular-bootstrap" />
+      <recent name="C:\xampp\htdocs\repairtrackerV2\public\assets\js\angular-library\angular" />
+      <recent name="C:\xampp\htdocs\repairtrackerV2\public\assets\js\angular-library\angular-xeditable\dist\css" />
+      <recent name="C:\xampp\htdocs\repairtrackerV2\public\assets\js\angular-library\angular-xeditable\dist\js" />
       <recent name="C:\xampp\htdocs\repairtrackerV2\public\assets\js\angular-library\angular-breadcrumbs" />
-      <recent name="C:\xampp\htdocs\repairtrackerV2\public\app\component\core\directives" />
-      <recent name="C:\xampp\htdocs\repairtrackerV2\public\app\component\shop\shopSettings\formsEditor\views" />
-      <recent name="C:\xampp\htdocs\repairtrackerV2\public\assets\fonts\font-awesome" />
-      <recent name="C:\xampp\htdocs\repairtrackerV2\public\app\component\shop\suppliers\read\controllers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\repairtrackerV2\public\app\component\shop\employee\index\controllers" />
@@ -479,7 +460,12 @@
       <workItem from="1470938512203" duration="5858000" />
       <workItem from="1470985306106" duration="2635000" />
       <workItem from="1471019075493" duration="12419000" />
-      <workItem from="1471075962459" duration="25470000" />
+      <workItem from="1471075962459" duration="25514000" />
+      <workItem from="1471164071383" duration="10870000" />
+      <workItem from="1471204181780" duration="8744000" />
+      <workItem from="1471248473657" duration="19348000" />
+      <workItem from="1471333333305" duration="6131000" />
+      <workItem from="1471362708771" duration="9983000" />
     </task>
     <task id="LOCAL-00001" summary="w">
       <created>1467750478580</created>
@@ -572,11 +558,18 @@
       <option name="project" value="LOCAL" />
       <updated>1470568621869</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="update client side">
+      <created>1471123163761</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1471123163761</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="499560000" />
+    <option name="totallyTimeSpent" value="554680000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -585,24 +578,24 @@
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.246875" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4038055" sideWeight="0.50208336" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.205074" sideWeight="0.50208336" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.065539114" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.654334" sideWeight="0.4942348" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.065539114" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -645,7 +638,8 @@
     <MESSAGE value="added tabs" />
     <MESSAGE value="04-08-16" />
     <MESSAGE value="add ability to create/update/delete multiple address For Customer/supplier/Employee added:07/08/2016" />
-    <option name="LAST_COMMIT_MESSAGE" value="add ability to create/update/delete multiple address For Customer/supplier/Employee added:07/08/2016" />
+    <MESSAGE value="update client side" />
+    <option name="LAST_COMMIT_MESSAGE" value="update client side" />
     <option name="PRESELECT_EXISTING_CHANGELIST" value="false" />
   </component>
   <component name="XDebuggerManager">
@@ -655,268 +649,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Ticket.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="58" column="5" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/TxtField.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/TxtFieldData.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FieldController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CustomerController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1207">
-          <caret line="82" column="9" selection-start-line="82" selection-start-column="9" selection-end-line="82" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TicketController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
-          <caret line="74" column="29" selection-start-line="74" selection-start-column="29" selection-end-line="74" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/component/shop/tickets/create/views/create-ticket-form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="52" column="30" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/component/shop/tickets/create/views/create-ticket-form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="52" column="30" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Customer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_08_03_093253_create_supplier_email_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CustomerController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="812">
-          <caret line="103" column="68" selection-start-line="103" selection-start-column="7" selection-end-line="103" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TicketController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-70">
-          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Ticket.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FieldController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="7" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FieldDataController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="73" selection-start-line="15" selection-start-column="73" selection-end-line="15" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="57" column="23" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/TxtField.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="50" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/TxtFieldData.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" column="50" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/component/shop/fields/index/create-field-form-selection.html" />
-    <entry file="file://$PROJECT_DIR$/public/app/component/shop/settings/index.html" />
-    <entry file="file://$PROJECT_DIR$/public/app/component/shop/tickets/update/views/update-ticket.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="21" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/component/shop/customers/create/controllers/createCustomerCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-663">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/component/shop/shopSettings/formsEditor/directive/controllers/createTxtFieldCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/component/shop/shopSettings/formsEditor/directive/controllers/formEditorCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/component/shop/customers/create/views/create-customer-form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-778">
-          <caret line="86" column="42" selection-start-line="86" selection-start-column="42" selection-end-line="86" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/component/shop/customers/update/controllers/updateCustomerCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="34" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/component/shop/employees/index/views/employee-index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="35" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/component/shop/shopSettings/index/views/shop-settings-index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/component/shop/employees/read/views/view-employees-table.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/component/shop/tickets/update/controllers/updateTicketCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-629">
-          <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/component/shop/employees/update/views/update-employee.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="19" selection-start-line="3" selection-start-column="8" selection-end-line="8" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/component/core/directives/angularUtils_uiBreadcrumbs.tpl.html at master · michaelbromley_angularUtils.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/angular-library/angular-breadcrumbs/breadcrumbs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-510">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/angular-library/angular-breadcrumbs/uiBreadcrumbs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/js/angular-library/angular-breadcrumbs/angular-breadcrumb.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/app.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="63" column="13" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -924,47 +660,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="659">
           <caret line="336" column="28" selection-start-line="336" selection-start-column="28" selection-end-line="336" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/component/shop/shopSettings/formsEditor/views/form-editord2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="22" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/css/app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="72" column="12" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/component/shop/shopSettings/formsEditor/views/form-editord2.html" />
     <entry file="file://$PROJECT_DIR$/public/app/component/shop/customers/read/views/table-customers.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="52" selection-start-line="1" selection-start-column="52" selection-end-line="1" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -972,67 +675,345 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CustomerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="103" column="56" selection-start-line="103" selection-start-column="7" selection-end-line="103" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/component/shop/customers/update/views/update-customer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="73" column="18" selection-start-line="73" selection-start-column="18" selection-end-line="73" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/component/shop/customers/update/controllers/updateCustomerCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="86" column="13" selection-start-line="85" selection-start-column="7" selection-end-line="88" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CustomerTelephoneController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/component/core/controllers/toaster.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/component/core/controllers/shopAppCtrl.js" />
+    <entry file="file://$PROJECT_DIR$/public/app/config.lazyload.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="150" column="14" selection-start-line="150" selection-start-column="14" selection-end-line="150" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/tpl/app.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="102" selection-start-line="16" selection-start-column="102" selection-end-line="16" selection-end-column="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/component/core/route/mainRouter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-289">
+          <caret line="148" column="50" selection-start-line="148" selection-start-column="50" selection-end-line="148" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/component/shop/stocks/create/views/create-stock.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/component/shop/employees/read/views/view-employees-table.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="54" selection-start-line="0" selection-start-column="54" selection-end-line="0" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/component/shop/employees/update/views/update-employee.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="60" selection-start-line="0" selection-start-column="60" selection-end-line="0" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/component/shop/tickets/create/views/create-ticket-form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/component/shop/tickets/read/views/tickets-table.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/app/component/shop/stocks/index/views/index-stock.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="37" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
-          <folding />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/component/shop/employees/create/views/create-employee.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/component/shop/employees/index/views/employee-index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="41" selection-start-line="0" selection-start-column="41" selection-end-line="0" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/component/shop/stocks/read/views/table-stock.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/component/shop/stocks/update/views/update-stock.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-554">
+          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/component/shop/tickets/index/views/index-ticket.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/angular-library/angular-xeditable/dist/js/xeditable.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/angular-library/angular-xeditable/dist/css/xeditable.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/angular-library/angular-bootstrap/ui-bootstrap-tpls.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/angular-library/angular/angular1.5.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/angular-library/angular-bootstrap/ui-bootstrap-tpls-2.0.1.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/angular-library/angular-bootstrap/ui-bootstrap-tpls.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2907">
+          <caret line="0" column="2" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/app/component/shop/shopSettings/index/views/shop-settings-index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/tpl/app.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="53" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/component/core/route/mainRouter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="211" column="42" selection-start-line="211" selection-start-column="42" selection-end-line="211" selection-end-column="42" />
+        <state relative-caret-position="306">
+          <caret line="18" column="40" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/app/component/shop/shopSettings/index/controllers/shopSettingsIndexCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/component/core/filters/otherFilter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/component/shop/employees/update/controllers/updateEmployeeCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="46" column="19" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1046">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="133" column="36" selection-start-line="133" selection-start-column="36" selection-end-line="133" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/app/component/shop/shopSettings/formsEditor/views/form-editor.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+        <state relative-caret-position="170">
+          <caret line="10" column="74" selection-start-line="10" selection-start-column="74" selection-end-line="10" selection-end-column="74" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/TxtField.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FieldController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="603">
+          <caret line="62" column="19" selection-start-line="61" selection-start-column="12" selection-end-line="64" selection-end-column="81" />
+          <folding>
+            <element signature="e#40#68#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="56" column="15" selection-start-line="56" selection-start-column="15" selection-end-line="56" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/component/shop/tickets/update/views/update-ticket.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="43" column="53" selection-start-line="43" selection-start-column="53" selection-end-line="43" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/TxtFieldData.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="10" column="61" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Ticket.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="42" column="72" selection-start-line="42" selection-start-column="72" selection-end-line="42" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TicketController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-366">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/css/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FieldDataController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+          <folding>
+            <element signature="e#40#68#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/app/component/shop/shopSettings/formsEditor/controllers/formEditorCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="680">
+          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/component/shop/tickets/update/controllers/updateTicketCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>

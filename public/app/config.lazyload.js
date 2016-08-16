@@ -150,13 +150,6 @@ angular.module('app')
                 ]
             },
             {
-                name: 'xeditable',
-                files: [
-                    'assets/js/angular-library/angular-xeditable/dist/js/xeditable.min.js',
-                    'assets/js/angular-library/angular-xeditable/dist/css/xeditable.min.css'
-                ]
-            },
-            {
                 name: 'smart-view-table',
                 files: [
                     'assets/js/angular-library/angular-smart-view-table/dist/smart-view-table.min.js'

@@ -37,13 +37,11 @@ class Ticket extends Model
 
     public function fieldDetails($ticketId){
 
-        $formFields=App\TxtField::where('form_name', '=', 'Ticket')->get();
+        $formFields=App\TxtField::where('form_name', '=', 'ticket')->get();
         $out=array();
-        $x="";
         foreach ($formFields as $formField){
-            $fieldData=$formField->data()->where('entity_id','=',3);
-            //$x=$x.$formField;
-//[0],
+            $fieldData=App\TxtFieldData::where('entity_id','=',$ticketId)->where('field_id','=',$formField->id);
+
            array_push($out,array('data'=>$fieldData->get(),'properties'=>$formField));
         }
         return $out;

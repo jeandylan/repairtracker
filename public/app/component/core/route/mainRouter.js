@@ -29,7 +29,7 @@ default should be app
                         ncyBreadcrumb: {
                             label: 'Home'
                         },
-                        resolve:load(['app/component/core/controllers/testCtrl.js']),
+                        resolve:load(['app/component/core/controllers/testCtrl.js','app/component/core/filters/otherFilter.js']),
 
                     })
 
@@ -43,26 +43,28 @@ default should be app
                         resolve: load(['app/component/shop/customers/index/controllers/indexCustomersCtrl.js']),
                         ncyBreadcrumb: {
                             skip: true // Never display this state in breadcrumb.
-                        }
+                        },
+                        pageTitle:'Customer  Panel'
                     })
                     .state('app.customer.table', {
                         url: '/table',
                         templateUrl: 'app/component/shop/customers/read/views/table-customers.html',
-                        resolve: load(['smart-table', 'app/component/shop/customers/read/controllers/tableCustomersCtrl.js'])
+                        resolve: load(['smart-table', 'app/component/shop/customers/read/controllers/tableCustomersCtrl.js']),
+                        pageTitle:'Customers Table Panel'
                     })
 
                     .state('app.customer.create', {
                         url: '/create',
                         templateUrl: 'app/component/shop/customers/create/views/create-customer-form.html',
-
                         resolve: load(['app/component/shop/customers/create/controllers/createCustomerCtrl.js',
-                            'app/component/core/controllers/googleTypeAheadController.js'])
+                            'app/component/core/controllers/googleTypeAheadController.js']),
+                        pageTitle:'Customer create Panel'
                     })
                     .state('app.customer.update', {
                         url: '/update/{customerId:int}',
                         templateUrl: 'app/component/shop/customers/update/views/update-customer.html',
 
-                        resolve: load(['xeditable',
+                        resolve: load([
                             'app/component/shop/customers/update/controllers/updateCustomerCtrl.js',
                             'app/component/core/controllers/googleTypeAheadController.js'])
                     })
@@ -77,7 +79,8 @@ default should be app
                         resolve: load(['app/component/shop/tickets/index/controllers/ticketIndexCtrl.js']),
                         ncyBreadcrumb: {
                             skip: true // Never display this state in breadcrumb.
-                        }
+                        },
+                        pageTitle:'Ticket Panel'
                     })
 
                     .state('app.ticket.create', {
@@ -86,22 +89,24 @@ default should be app
                         resolve: load(['app/component/shop/tickets/create/controllers/createTicketCtrl.js']),
                         ncyBreadcrumb: {
                             skip: true // Never display this state in breadcrumb.
-                        }
+                        },
+                        pageTitle:'Create Ticket Panel'
                     })
 
                     
                     .state('app.ticket.read-all', {
-                    url: '/read/all',
-                    templateUrl: 'app/component/shop/tickets/read/views/tickets-table.html',
-
-                    resolve: load(['smart-table','app/component/shop/tickets/read/controllers/readTicketsCtrl.js'])
+                        url: '/read/all',
+                        templateUrl: 'app/component/shop/tickets/read/views/tickets-table.html',
+                        resolve: load(['smart-table','app/component/shop/tickets/read/controllers/readTicketsCtrl.js']),
+                        pageTitle:'Tickets Table Panel'
                     })
+
                     
                     .state('app.ticket.update', {
                         url: '/update/ticket/{ticketId:int}',
                         templateUrl: 'app/component/shop/tickets/update/views/update-ticket.html',
 
-                        resolve: load(['xeditable','monospaced.qrcode' ,'AngularPrint',"ui.select",'app/component/shop/tickets/update/controllers/updateTicketCtrl.js'])
+                        resolve: load(['monospaced.qrcode' ,'AngularPrint',"ui.select",'app/component/shop/tickets/update/controllers/updateTicketCtrl.js'])
                     })
                 /*
                 Invoice Routes
@@ -134,17 +139,19 @@ default should be app
                     .state('app.employee.read-all', {
                         url: '/read/all',
                         templateUrl: 'app/component/shop/employees/read/views/view-employees-table.html',
-                        resolve: load(['smart-table','app/component/shop/employees/read/controllers/readAllEmployeesCtrl.js'])
+                        resolve: load(['smart-table','app/component/shop/employees/read/controllers/readAllEmployeesCtrl.js']),
+                        pageTitle:'Employee Table Panel'
                     })
                     .state('app.employee.create', {
                         url: '/create',
                         templateUrl: 'app/component/shop/employees/create/views/create-employee.html',
-                        resolve: load(['app/component/shop/employees/create/controllers/createEmployeeCtrl.js'])
+                        resolve: load(['app/component/shop/employees/create/controllers/createEmployeeCtrl.js']),
+                        pageTitle:'Employee Create Panel'
                     })
                     .state('app.employee.update', {
                         url: '/update/{employeeId:int}',
                         templateUrl: 'app/component/shop/employees/update/views/update-employee.html',
-                        resolve: load(['xeditable','app/component/shop/employees/update/controllers/updateEmployeeCtrl.js'])
+                        resolve: load(['app/component/shop/employees/update/controllers/updateEmployeeCtrl.js'])
                     })
 
                 /*suppliers Route
@@ -184,32 +191,34 @@ default should be app
                         ncyBreadcrumb: {
                             skip: true // Never display this state in breadcrumb.
                         },
-                        pageTitle:'stock Page' //cause cause trouble
+                        pageTitle:'stock Panel' //cause cause trouble
                     })
 
                     .state('app.stock.create', {
                         url: '/stock/create',
                         templateUrl: 'app/component/shop/stocks/create/views/create-stock.html',
-                        resolve: load(['app/component/shop/stocks/create/controllers/createStockCtrl.js'])
+                        resolve: load(['app/component/shop/stocks/create/controllers/createStockCtrl.js']),
+                        pageTitle:'Create Stock Panel'
                     })
 
                     .state('app.stock.table', {
-                    url: '/stock/table',
-                    templateUrl: 'app/component/shop/stocks/read/views/table-stock.html',
-                    resolve: load(['smart-table','app/component/shop/stocks/read/controllers/tableStockCtrl.js'])
+                        url: '/stock/table',
+                        templateUrl: 'app/component/shop/stocks/read/views/table-stock.html',
+                        resolve: load(['smart-table','app/component/shop/stocks/read/controllers/tableStockCtrl.js']),
+                        pageTitle:'Stock Table Panel'
                     })
 
                     .state('app.stock.update', {
                     url: '/stock/update/{stockId:int}',
                     templateUrl: 'app/component/shop/stocks/update/views/update-stock.html',
-                    resolve: load(['xeditable','app/component/shop/stocks/update/controllers/updateStockCtrl.js'])
+                    resolve: load(['app/component/shop/stocks/update/controllers/updateStockCtrl.js'])
                     })
                     /* thing below made me crazy ,mind to put (ng-view when needed else be ready to loose 24 hr,debugging)*/
                     .state('app.settings', {
                         url: '/settings',
                         templateUrl: 'app/component/shop/shopSettings/index/views/shop-settings-index.html',
                         resolve: load(['app/component/shop/shopSettings/index/controllers/shopSettingsIndexCtrl.js']),
-                        pageTitle:'Setting Page' //cause cause trouble
+                        pageTitle:'Setting Panel' //cause cause trouble
                     })
                     .state('app.settings.form-editor', {
                         url: '/from-editor/{formName:string}',

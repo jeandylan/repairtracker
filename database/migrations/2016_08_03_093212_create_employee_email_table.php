@@ -17,6 +17,7 @@ class CreateEmployeeEmailTable extends Migration
             $table->integer('employee_id')->unsigned();
             $table->string('email');
             $table->enum('type', array('home', 'company','private'));
+            $table->string('shop_location');
             $table->timestamps();
         });
     }

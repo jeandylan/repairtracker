@@ -16,6 +16,10 @@ class Kernel extends HttpKernel
     protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
         \App\Http\Middleware\securityMiddleware::class,
+        \App\Http\Middleware\TenantMiddleware::class,
+        'Barryvdh\Cors\HandleCors',
+
+
     ];
 
     /**
@@ -33,6 +37,10 @@ class Kernel extends HttpKernel
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+
+        ],
+        'jwtAuthMiddleware'=>[
+           // \App\Http\Middleware\JWTAuthMiddleware::class,
 
         ],
 

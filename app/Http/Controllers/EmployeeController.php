@@ -15,6 +15,7 @@ use Mockery\CountValidator\Exception;
 use App\EmployeeAddress;
 use App\EmployeeEmail;
 use App\EmployeeTelephone;
+use JWTAuth;
 
 class EmployeeController extends Controller
 {
@@ -34,6 +35,13 @@ class EmployeeController extends Controller
 
     }
 
+    public function getProfile(){
+
+         return JWTAuth::parseToken()->toUser();
+        //return "kill";
+
+    }
+
     public function getAll()
     {
         try {
@@ -47,14 +55,14 @@ class EmployeeController extends Controller
     
     public function store(Request $request)
     {
-        Utility::stripXSS(); //prevent xss , should be called before server side validation so as validation is done on safe data
+
 
         $rules = array(
             'first_name'       => 'required',
             'last_name'      => 'required',
         );
-        $validator = Validator::make(Input::except('telephones','emails','addresses'), $rules); //validate input according to rule above
-        $employee = new Employee(Input::except('telephones','emails','addresses'));
+        $validator = Validator::make(Input::except('telephones','emails','addresses','token'), $rules); //validate input according to rule above
+        $employee = new Employee(Input::except('telephones','emails','addresses','token'));
         //As data was  send with Dataname that correspond to that in Db ,no need to precise what input goes in what table field(row),(laravel Figure it out)
         $employee->save();
 
@@ -69,6 +77,7 @@ class EmployeeController extends Controller
 
 
         return  array("successful"=>true, "message"=>"Employee was created");
+
     }
 
 
@@ -76,7 +85,7 @@ class EmployeeController extends Controller
 
     public function update($id)
     {
-        Utility::stripXSS(); //prevent xss , should be called before server side validation so as validation is done on safe data
+
         $rules = array(
             'first_name'       => 'required',
             'last_name'      => 'required'

@@ -15,8 +15,22 @@ Route::get('/', function () {
     return view('app');
 });
 
+
+
+
 #laravel api
 Route::group(['prefix' => 'api'], function () {
+
+    //user Login
+    Route::post('/login','AuthenticateController@authenticate'); //create customer
+
+
+    Route::group(['middleware' => ['jwtAuthMiddleware']], function () {
+
+        /*get Login profile Info */
+        Route::get('/employee/myProfile','EmployeeController@getProfile');
+        Route::get('/check','AuthenticateController@getAuthenticatedUser'); //create customer
+
     //Customer Route
     Route::get('/customers', 'CustomerController@index'); //get all customers
     Route::get('/customer/{id}','CustomerController@get'); //get customer data that have id provided
@@ -96,9 +110,9 @@ Route::group(['prefix' => 'api'], function () {
 
 
     //employee Route
-    Route::get('/employees', 'EmployeeController@getAll'); //get all Emp.
-    Route::get('/employee/{id}', 'EmployeeController@get');//get Specific Emp.
-    Route::post('/employee','EmployeeController@store'); //create a new Emp.
+        Route::get('/employees', 'EmployeeController@getAll'); //get all Emp.
+        Route::get('/employee/{id}', 'EmployeeController@get');//get Specific Emp.
+        Route::post('/employee','EmployeeController@store'); //create a new Emp.
     Route::delete('/employee/{id}', 'EmployeeController@destroy');//Delete A Specific Emp.
     Route::put('/employee/{id}', 'EmployeeController@update');// Update A Emp. with specific Id
 
@@ -116,4 +130,5 @@ Route::group(['prefix' => 'api'], function () {
     Route::post('/employee/telephone', 'EmployeeTelephoneController@store');
 
 
+    });
 });

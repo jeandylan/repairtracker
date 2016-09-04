@@ -16,7 +16,8 @@ class CreateEmployeeTicketTable extends Migration
             $table->integer('ticket_id')->unsigned();
             $table->integer('employee_id')->unsigned();
             $table->primary(array('ticket_id', 'employee_id'));
-            // $table->integer('tenant_id')->unsigned();;
+            $table->string('shop_location');;
+
             $table->timestamps();
         });
     }

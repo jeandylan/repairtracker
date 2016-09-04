@@ -3,9 +3,10 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use HipsterJazzbo\Landlord\BelongsToTenant;
 class Supplier extends Model
 {
+    use BelongsToTenant;
     protected $table='suppliers'; //tbl Model refers to
     protected $guarded = array(['id']); //cannot be updated ,by mass Assign
 

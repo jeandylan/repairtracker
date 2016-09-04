@@ -15,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'users',
+        'passwords' => 'employees',
     ],
 
     /*
@@ -38,18 +38,18 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'employees',
         ],
 
         'api' => [
             'driver' => 'token',
-            'provider' => 'users',
+            'provider' => 'employees',
         ],
     ],
 
     /*
     |--------------------------------------------------------------------------
-    | User Providers
+    | User Providers (modify it so as to accomodate different table)
     |--------------------------------------------------------------------------
     |
     | All authentication drivers have a user provider. This defines how the
@@ -65,9 +65,10 @@ return [
     */
 
     'providers' => [
-        'users' => [
+
+        'employees' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => App\Employee::class,
         ],
 
         // 'users' => [
@@ -96,8 +97,7 @@ return [
     */
 
     'passwords' => [
-        'users' => [
-            'provider' => 'users',
+        'employees' => [
             'email' => 'auth.emails.password',
             'table' => 'password_resets',
             'expire' => 60,

@@ -81,6 +81,7 @@ angular.module('app')
                     'assets/js/angular-library/angular-file-upload/angular-file-upload.js'
                 ]
             },
+
             {
                 name:'ui.calendar',
                 files: ['assets/js/angular-library/angular-ui-calendar/src/calendar.js']
@@ -159,6 +160,14 @@ angular.module('app')
             name: 'smart-table',
             files: [
                 'assets/js/angular-library/angular-smart-table/dist/smart-table.min.js'
+            ]
+        },
+        {
+            name: 'ngDialog',
+            files: [
+                'assets/js/angular-library/angular-ngDialog/ngDialog.css',
+                'assets/js/angular-library/angular-ngDialog/ngDialog-theme-default.css',
+                'assets/js/angular-library/angular-ngDialog/ngDialog.min.js'
             ]
         },
         {

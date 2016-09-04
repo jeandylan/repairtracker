@@ -17,6 +17,7 @@ class CreateStockTicketTable extends Migration
             $table->integer('ticket_id')->unsigned();
             $table->integer('stock_id')->unsigned();
             $table->integer('qty_out')->unsigned();
+            $table->string('shop_location');
             $table->timestamps();
 
             

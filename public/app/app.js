@@ -19,9 +19,12 @@ angular.module('app', [
     'oc.lazyLoad',
     'pascalprecht.translate',
     'ncy-angular-breadcrumb',
-    'xeditable'
+    'xeditable',
+    'satellizer',
+    'angular-cache',
 
 ]);
+
 /*
 just like ngmateria ui.bootstrap have been disabled
  */

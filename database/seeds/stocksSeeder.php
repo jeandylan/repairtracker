@@ -14,12 +14,14 @@ class stocksSeeder extends Seeder
         $limit=10;
 
         $faker = Faker\Factory::create(); //use faker to create Data
+
         for ($i = 0; $i < $limit; $i++) {
             DB::table('stocks')->insert([
                 'product_name' => $faker->words($nb = 3, $asText = true),
                 'selling_price' => $faker->randomFloat($nbMaxDecimals = NULL, $min = 0, $max = NULL),
                 'reorder_level' => $faker->randomDigitNotNull,
-                'barcode' => $faker->ean13
+                'barcode' => $faker->ean13,
+                'shop_location'=>$faker->randomElement($array = array ('mahebourg','curepipe','vacoas')),
                 
             ]);
 

@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests;
 use App\Stock;
-use App\Common\Utility;
+
 
 class StockController extends Controller
 {
@@ -26,14 +26,14 @@ class StockController extends Controller
 
     public function store(Request $request)
     {
-        Utility::stripXSS(); //prevent xss , should be called before server side validation so as validation is done on safe data
+
 
         $rules = array(
             'product_name'       => 'required',
             'selling_price'      => 'required',
         );
         $validator = Validator::make(Input::all(), $rules); //validate input according to rule above
-        $stock = new Stock(Input::get());
+        $stock = new Stock(Input::all());
         //As data was  send with Dataname that correspond to that in Db ,no need to precise what input goes in what table field(row),(laravel Figure it out)
         $stock->save();
         return  array("successful"=>true, "message"=>"stock was created");
@@ -62,7 +62,6 @@ class StockController extends Controller
 
     public function update($id)
     {
-        Utility::stripXSS(); //prevent xss , should be called before server side validation so as validation is done on safe data
         $rules = array(
             'product_name'       => 'required',
             'selling_price'      => 'required'

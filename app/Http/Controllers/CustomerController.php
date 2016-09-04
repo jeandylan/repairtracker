@@ -75,6 +75,7 @@ class CustomerController extends Controller
 
         try {
 
+
             $customer= Customer::find($id);
             return ($customer != null) ? response()->json(['successful'=>true,'personal' => $customer, 'addresses' => $customer->address()->get(),'telephones'=>$customer->telephone()->get(),'emails'=>$customer->email()->get()]):
             response()->json(['successful'=>false,'message'=>'cannot find customer']);
@@ -84,6 +85,9 @@ class CustomerController extends Controller
         catch (\Illuminate\Database\QueryException $e){
             return "error";
         }
+    }
+    public function firstNameLastNameSearch(){
+
     }
 
 

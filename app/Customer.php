@@ -3,10 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use HipsterJazzbo\Landlord\BelongsToTenant;
 
 class Customer extends Model
 {
+    use BelongsToTenant;
     protected $table='customers';
     protected $guarded = array(['id']); //cannot be updated ,by mass Assign
     //protected $fillable = array('first_name', 'last_name', 'email','date_of_birth','home_tel','mobile_tel','mobile_tel_1','address','address_1'); //white List

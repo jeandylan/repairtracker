@@ -14,10 +14,10 @@ class CreateCustomersTable extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->increments('id');//Big increments =UNSIGNED  Integer(larger set of +number)
-            // $table->integer('tenant_id')->unsigned();;
             $table->string('first_name');
             $table->string('last_name');
             $table->date('date_of_birth');
+            $table->string('shop_location');
             $table->timestamps();
     });
     }

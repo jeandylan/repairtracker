@@ -17,6 +17,7 @@ class CreateCustomerTelephoneTable extends Migration
             $table->integer('customer_id')->unsigned();
             $table->string('telephone_number');
             $table->enum('type', array('home', 'company','private'));
+            $table->string('shop_location');
             $table->timestamps();
         });
     }

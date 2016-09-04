@@ -17,6 +17,7 @@ class CreateEmployeeTelephoneTable extends Migration
             $table->integer('employee_id')->unsigned();
             $table->string('telephone_number');
             $table->enum('type', array('home', 'company','private'));
+            $table->string('shop_location');
             $table->timestamps();
         });
     }

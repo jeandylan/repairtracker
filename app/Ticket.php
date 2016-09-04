@@ -6,9 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 use App\TxtFieldData;
 Use App\TxtField;
 use App;
-
+use HipsterJazzbo\Landlord\BelongsToTenant;
 class Ticket extends Model
 {
+    use BelongsToTenant;
     protected $table='tickets';
     protected  $fillable= array('customer_id', 'model', 'make','problem_type','problem_definition');
 

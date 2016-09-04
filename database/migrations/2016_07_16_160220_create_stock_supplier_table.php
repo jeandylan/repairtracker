@@ -18,6 +18,7 @@ class CreateStockSupplierTable extends Migration
             $table->integer('stock_id')->unsigned();
             $table->decimal('cost_price'); //price paid for one product
             $table->integer('qty_in')->unsigned();
+            $table->string('shop_location');
             $table->timestamps();
 
            

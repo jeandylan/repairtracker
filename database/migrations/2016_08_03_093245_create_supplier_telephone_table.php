@@ -17,6 +17,7 @@ class CreateSupplierTelephoneTable extends Migration
             $table->integer('supplier_id')->unsigned();
             $table->string('telephone_number');
             $table->enum('type', array('home', 'company','private'));
+            $table->string('shop_location');
             $table->timestamps();
         });
     }

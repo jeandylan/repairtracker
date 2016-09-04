@@ -1,9 +1,9 @@
 /**
  * Created by dylan on 03-Jul-16.
  */
-console.log("ty");
-app.controller("createTicketCtrl",function ($scope,$stateParams,serverServices,toaster,$state) {
-    $scope.customerId=$stateParams.customerId;
+
+app.controller("createTicketCtrl",function ($scope,$stateParams,serverServices,toaster,$state,ngDialog) {
+    console.log($scope.customerId=$stateParams.customerId);
     $scope.createTicket=function () {
 
        var ticketData={model:$scope.ticket.model,
@@ -12,8 +12,6 @@ app.controller("createTicketCtrl",function ($scope,$stateParams,serverServices,t
            problem_definition:$scope.ticket.problem_definition
           
        };
-
-
        serverServices.post('api/ticket/'+$scope.customerId,ticketData) //using service (customer/service/clientService ) that will query Laravel for .json output
            .then(
                function (result) {
@@ -44,5 +42,16 @@ app.controller("createTicketCtrl",function ($scope,$stateParams,serverServices,t
             );
     };
     $scope.getFields();
+
+    console.log("TY")
+    $scope.selectCustomer=function () {
+        console.log("TYOOOOO")
+
+        ngDialog.open({
+            template: 'app/component/shop/customers/read/views/table-customers.html',
+            controller:'tableCustomersCtrl',
+            className: 'ngdialog-theme-default'
+        });
+    }
 
 });

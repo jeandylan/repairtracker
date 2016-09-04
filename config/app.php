@@ -155,6 +155,14 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        /*landloard class so as to be able to provide domain subdomain */
+        HipsterJazzbo\Landlord\LandlordServiceProvider::class,
+        /*permission */
+        Zizaco\Entrust\EntrustServiceProvider::class,
+        /*cors*/
+        Barryvdh\Cors\ServiceProvider::class,
+        /*JWT for login*/
+        'Tymon\JWTAuth\Providers\JWTAuthServiceProvider',
 
     ],
 
@@ -201,6 +209,14 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Landlord'   => HipsterJazzbo\Landlord\Facades\LandlordFacade::class,
+        'JWTAuth' => 'Tymon\JWTAuth\Facades\JWTAuth',
+        'JWTFactory' => 'Tymon\JWTAuth\Facades\JWTFactory',
+        /*permission*/
+        'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
+        /*permission for middleWare*/
+
+
 
     ],
 

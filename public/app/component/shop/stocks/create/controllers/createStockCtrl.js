@@ -13,11 +13,13 @@ app.controller("createStockCtrl",function ($scope,serverServices,toaster) {
             barcode:$scope.stock.barcode
 
         };
+
+        console.log(stockData);
+
         serverServices.post('api/stock',stockData) //using service (customer/service/clientService ) that will query Laravel for .json output
             .then(
                 function (result) {
                     console.log(result);
-
                     toaster.pop("success","DONE",result.message);
                 },
                 function (error) {
@@ -25,6 +27,7 @@ app.controller("createStockCtrl",function ($scope,serverServices,toaster) {
                     toaster.pop("error","SERVER ERROR","ooh nothing was saved error ");
                 }
             );
+
     }
 
 });

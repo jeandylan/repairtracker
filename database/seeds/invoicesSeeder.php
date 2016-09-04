@@ -16,11 +16,12 @@ class invoicesSeeder extends Seeder
         $minTicketId=1;
         $maxTicketId=9;
         $faker = Faker\Factory::create(); //use faker to create Data
-        for ($i = 1; $i < $limit; $i++) {
 
+        for ($i = 1; $i < $limit; $i++) {
             DB::table('invoices')->insert([
                 'ticket_id' => $i,
-                'paid' => $faker->boolean(70) //0.7 chance of getting True
+                'paid' => $faker->boolean(70) ,//0.7 chance of getting True,
+                'shop_location'=>$faker->randomElement($array = array ('mahebourg','curepipe','vacoas')),
             ]);
         }
     }

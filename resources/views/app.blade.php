@@ -11,16 +11,18 @@
     <link rel="stylesheet" href="assets/fonts/font-awesome/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="assets/fonts/simple-line-icons/css/simple-line-icons.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css" type="text/css" />
+
     <link rel="stylesheet" href="assets/css/font.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/app.css" type="text/css" />
     <link rel="stylesheet" href="assets/js/angular-library/angular-xeditable/dist/css/xeditable.min.css" type="text/css">
 </head>
-<body ng-controller="appInit">
+
+<body ng-controller="config"> <!--config .js--->
 <div class="app" id="app" ng-class="{'app-header-fixed':app.settings.headerFixed, 'app-aside-fixed':app.settings.asideFixed, 'app-aside-folded':app.settings.asideFolded, 'app-aside-dock':app.settings.asideDock, 'container':app.settings.container}" ui-view>
 
 
 </div>
+
 
 
 <!-- jQuery -->
@@ -88,13 +90,22 @@
 <script src="app/component/core/directives/ui-shift.js"></script>
 <script src="app/component/core/directives/ui-toggleclass.js"></script>
 <script src="app/component/core/controllers/bootstrap.js"></script>
-
-
+<!---contoller for login--->
+<script src="app/component/shop/log-in-out/loginCtrl.js"></script>
+<!----controller for logOut--->
+<script src="app/component/shop/log-in-out/logOutCtrl.js"></script>
 <!-----server service to query--->
 <script src="app/component/core/services/serverServices.js"></script>
 <!---delete Controller used By All CRUD Operation -->
 <script src="app/component/shop/deleteConfirmation/controllers/deleteModalCtrl.js"></script>
 <!---confirm Btn--- http://stackoverflow.com/questions/21815971/extend-angularui-popover-directive-to-create-a-confirm-popover--->
 <script src="app/component/core/directives/delete-button.js"></script>
+
+<!---Auth 0 plugin --->
+<script src="assets/js/angular-library/angular-satellizer/satellizer.min.js"></script>
+
+<!---cache Plugin--->
+<script src="assets/js/angular-library/angular-cache/angular-cache.min.js"></script>
+
 </body>
 </html>

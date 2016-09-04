@@ -1,13 +1,23 @@
 
 <div ng-controller="createTicketCtrl">
+    <div>
+        <h4>To Create Ticket A  Customer is needed:</h4>
+        <button class="btn btn-default" ng-click="selectCustomer()">Select Customer</button>
+    </div>
+    <div>
+        <h4>To Create Ticket An Employee is needed:</h4>
+        <button class="btn btn-default" >Select Customer</button>
+    </div>
 
-    <form name="ticket_form">
-        <div class="wrapper-md">
+        <div class="wrapper-md"  >
+
             <!---start panel-->
+            <fieldset ng-disabled="true">
             <div class="panel panel-default col-sm-6">
                 <!---personal detail form panel --->
                 <div class="panel-heading font-bold">
                     Ticket Details
+                    <td data-title="'Name'" title="{{user.name}}">{{user.name}}</td>
                 </div>
                 <div class="panel-body">
 
@@ -54,9 +64,10 @@
 
         </div>
             <button  ng-click="createTicket()" class="btn btn-info btn-block">save</button>
+            </fieldset>
             </div>
 
-    </form>
+
 
 </div>
 

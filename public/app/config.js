@@ -16,7 +16,11 @@ angular.module('app')
         app.value      = $provide.value;
     }
   ])
-  .config(['$translateProvider', function($translateProvider){
+    .config(function (CacheFactoryProvider) {
+        angular.extend(CacheFactoryProvider.defaults, { maxAge: 15 * 60 * 1000});
+    })
+
+    .config(['$translateProvider', function($translateProvider){
     // Register a loader for the static files
     // So, the module will search missing translation tables under the specified urls.
     // Those urls are [prefix][langKey][suffix].
@@ -36,16 +40,20 @@ angular.module('app')
 /* Controllers */
 
 angular.module('app')
-    .controller('appInit', ['$scope', '$translate', '$localStorage', '$window',
-        function(              $scope,   $translate,   $localStorage,   $window ) {
+    .controller('config', ['$scope', '$translate', '$localStorage', '$window',
+        function(              $scope,   $translate,   $localStorage,   $window) {
             // add 'ie' classes to html
             var isIE = !!navigator.userAgent.match(/MSIE/i);
             isIE && angular.element($window.document.body).addClass('ie');
             isSmartDevice( $window ) && angular.element($window.document.body).addClass('smart');
+            var domainName=location.host.split(".")
+
 
             // config
             $scope.app = {
-                name: 'tester',
+                name:'appName',
+                companyName:domainName[1],
+                companyLocation:domainName[2],
                 version: '2.0.3',
                 // for chart colors
                 color: {
@@ -75,6 +83,9 @@ angular.module('app')
                 "font-size" : "3em",
                 "padding" : "0.5em"
             };
+
+
+
 
 
 
@@ -118,6 +129,8 @@ angular.module('app')
                 $scope.lang.isopen = !$scope.lang.isopen;
             };
 
+
+
             function isSmartDevice( $window )
             {
                 // Adapted from http://www.detectmobilebrowsers.com
@@ -128,45 +141,5 @@ angular.module('app')
 
         }]);
 
-angular.module('app').controller("shopAppCtrl",function ($scope,serverServices,toaster,editableOptions) {
-    editableOptions.theme = 'bs3';  //the editable theme for xeditable injection should always be used else calendar and type ahead for address fails
-     $scope.updateResource=function (url, data) {
-         console.log('start updating');
-        return serverServices.put(url, data)//id parameter obtain by doing state parameter (like a query)
-            .then(
-                function (result) {
-                    console.log(result);
-                    (result.successful) ? toaster.pop("success", 'success', result.message) :
-                        toaster.pop("warning", 'info:', result.message);
-                    return result
 
-                },
-                function (result) {
-                    // toaster.pop('error', "server Err", "we could not get info needed");
-                    console.log(result);
-                    toaster.pop('error', "server Err", result.message);
-                    return result;
-                    //could not get response from Server
-
-                });
-    };
-
-    $scope.createResource=function (url, data){
-        console.log('start creatinon');
-        return serverServices.post(url, data)//id parameter obtain by doing state parameter (like a query)
-            .then(
-                function (result) {
-                    (result.successful) ? toaster.pop("success", 'success', result.message) :
-                        toaster.pop("warning", 'info:', result.message);
-                    return result;
-
-                },
-                function (result) {
-                    // toaster.pop('error', "server Err", "we could not get info needed");
-                    console.log(result);
-                    toaster.pop('error', "server Err", result.message);
-                    //could not get response from Server
-                });
-    }
-});
 

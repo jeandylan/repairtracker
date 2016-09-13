@@ -42,10 +42,10 @@
                 </a>
             </td>
             <td>
-                <!---store rowId so as to be able to delete customer from Db, firstName and lastName to so as to display it in confirm delete popup--->
-                <a ng-click="deleteBtn(row.id,row.first_name,row.last_name)" class="btn btn-sm btn-danger"  >
+                <!--->
+                <button type="button" class="btn btn-sm btn-danger"  confirm-button="deleteBtn(row.id)" message="Are you sure you want to remove this ?">
                     <i class="glyphicon  glyphicon-remove-circle">delete</i>
-                </a>
+                </button>
             </td>
         </tr>
         </tbody>

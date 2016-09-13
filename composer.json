@@ -8,10 +8,12 @@
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
         "hipsterjazzbo/landlord": "^1.0",
-        "tymon/jwt-auth": "0.5.*",
         "zizaco/entrust": "5.2.x-dev",
         "barryvdh/laravel-cors": "^0.8.2",
-        "nicolaslopezj/searchable": "1.*"
+        "laravelcollective/html": "5.2.*",
+        "google/apiclient": "^2.0",
+        "twilio/sdk": "^5.3"
+
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

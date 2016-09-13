@@ -19,34 +19,11 @@ app.controller("readTicketsCtrl",function ($scope,serverServices,$uibModal,toast
                 console.log(error);
             });
     }
-    
-    $scope.deleteTicketBtn=function (ticketId,ticketProblem) {
 
-        $scope.deleteUrl = "api/ticket/"+ticketId;
-        $scope.confirmBoxMessage="do you want to delete Ticket  "+ticketProblem;
-
-        var modalInstance = $uibModal.open({
-            animation:1,
-            templateUrl:'app/component/shop/deleteConfirmation/view/delete-modal-template.html' ,
-            controller: 'deleteModalCtrl',
-            resolve: {
-                deleteUrl: function () {
-                    return $scope.deleteUrl;
-                },
-                confirmBoxMessage:function () {
-                    return $scope.confirmBoxMessage;
-                }
-
-            }
-        });
-
-        modalInstance.result.then(function () {
-            //btn ok(confrim delete) was clicked on popup/modal call function ,delete was done On deleteModalCtrl(return a cleint Id)...We need to refresh data..
+    $scope.deleteBtn=function (id) {
+        serverServices.delete('api/ticket/'+id).then(function () {
             getAllTicketsData();
-        }, function () {
-            toaster.pop('error', "Server Error : ", "An error ocuured ,try reload the page");
 
-            //button cancel was click on popup/modal nothing to do
         });
     }
 });

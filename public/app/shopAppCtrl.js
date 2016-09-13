@@ -4,6 +4,7 @@
 angular.module('app')
     .controller("shopAppCtrl",function ($scope,serverServices,toaster,editableOptions,$rootScope,$state,CacheFactory,$auth){
 //Check if  Authenticated
+
         editableOptions.theme = 'bs3';  //the editable theme for xeditable injection should always be used else calendar and type ahead for address fails
         $scope.$on('$stateChangeSuccess', function () {
             if($auth.isAuthenticated()) {
@@ -14,8 +15,9 @@ angular.module('app')
                     });
                     serverServices.get('api/employee/myProfile') //using service (customer/service/clientService ) that will query Laravel for .json output
                         .then(function (result) {
+                            console.log(result);
                                 CacheFactory.get('appCache').put('profile', result);
-                                console.log("get Cache")
+                                console.log("get Cache");
                                 $scope.profile = CacheFactory.get('appCache').get('profile');
                             },
                             function (error) {

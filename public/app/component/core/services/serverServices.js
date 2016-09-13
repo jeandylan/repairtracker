@@ -1,7 +1,9 @@
 /**
  * Created by dylan on 06-Jul-16.
+ * used by All Contollers to make Server Query,return a promise a success or failure
+ * for notification used webSocket i.e socket i.o
  */
-app.service("serverServices", function ($http, $q) {
+app.service("serverServices", function ($http, $q,toaster) {
     return {
         get: function(uri) {
           //always return to promise , where reject means some err occured,
@@ -12,6 +14,7 @@ app.service("serverServices", function ($http, $q) {
                     return deferred.promise;
 
                 }, function(error) {
+                    console.log(error.data);
 
                     // something went wrong
                    // console.log(error.data);
@@ -28,10 +31,15 @@ app.service("serverServices", function ($http, $q) {
             return $http.delete(uri) //use the delete  uri,add the / so that angular could handle https ,if ever https is being used
                 .then(function(response) {
                     deferred.resolve(response.data); //return sucessful data to controller /function calling it
+
+                    (response.data.successful) ? toaster.pop('successful',"deleted", response.data.message ) : toaster.pop('warning',"",response.data.message);
+
+
                     return deferred.promise;
 
                 }, function(error) {
                     // something went wrong
+                    toaster.pop('error', "server Error ");
                     console.log(error.data);
                     deferred.reject(error.data);//return server error data
                     return deferred.promise;
@@ -72,7 +80,7 @@ app.service("serverServices", function ($http, $q) {
                 }, function(error) {
                     // something went wrong
                     console.log(error.data);
-                    deferred.reject(error.data);//return server error data
+                    deferred.reject(error.data);//return the server error data (error Code Etc..)
                     return deferred.promise;
                 });
         }

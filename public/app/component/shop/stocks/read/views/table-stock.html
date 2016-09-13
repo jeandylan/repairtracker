@@ -36,9 +36,12 @@
                 <a ui-sref="app.stock.update({stockId:row.id})" class="btn btn-sm btn-warning"  >
                     <i class="glyphicon glyphicon-edit">edit</i>
                 </a>
-                <a ng-click="deleteStockBtn(row.id,row.product_name)" class="btn btn-sm btn-danger"  >
-                    <i class="glyphicon glyphicon-remove-circle">delete</i>
-                </a>
+               </td>
+            <td>
+                <!--->
+                <button type="button" class="btn btn-sm btn-danger"  confirm-button="deleteBtn(row.id)" message="Are you sure you want to remove this ?">
+                    <i class="glyphicon  glyphicon-remove-circle">delete</i>
+                </button>
             </td>
 
 

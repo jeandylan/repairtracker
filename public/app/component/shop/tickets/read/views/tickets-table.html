@@ -39,9 +39,9 @@
                 </a>
                 </td>
             <td>
-                <a ng-click="deleteTicketBtn(row.id,row.problem_definition)" class="btn btn-sm btn-danger"  >
-                    <i class="glyphicon glyphicon-remove-circle">delete</i>
-                </a>
+                <button type="button" class="btn btn-sm btn-danger"  confirm-button="deleteBtn(row.id)" message="Are you sure you want to remove this ?">
+                    <i class="glyphicon  glyphicon-remove-circle">delete</i>
+                </button>
             </td>
 
 

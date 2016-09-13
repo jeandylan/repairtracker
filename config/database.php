@@ -65,6 +65,18 @@ return [
             'strict' => false,
             'engine' => null,
         ],
+        'saas_admin' => [
+            'driver'    => 'mysql',
+            'host'      => env('DB_HOST', 'localhost'),
+            'database'  => 'saas_admin',
+            'username'  => env('DB_USERNAME', 'forge'),
+            'password'  =>  env('DB_USERNAME', 'forge'),
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+            'strict' => false,
+            'engine' => null,
+        ],
 
         'pgsql' => [
             'driver' => 'pgsql',

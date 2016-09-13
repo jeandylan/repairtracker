@@ -14,6 +14,8 @@ use App\Customer;
 use App\CustomerAddress;
 use App\CustomerTelephone;
 use App\CustomerEmail;
+use Tymon\JWTAuth\Claims\Custom;
+
 
 //use Mockery\CountValidator\Exception;
 
@@ -61,7 +63,7 @@ class CustomerController extends Controller
         $emails=Input::get('emails');
         foreach ($emails as $email) $customer->email()->create($email);
 
-       return  array("successful"=>true, "message"=>"customer was created");
+       return  array("successful"=>true, "message"=>"customer was created","newResource"=>$customer);
     }
 
     /*
@@ -75,19 +77,25 @@ class CustomerController extends Controller
 
         try {
 
-
             $customer= Customer::find($id);
             return ($customer != null) ? response()->json(['successful'=>true,'personal' => $customer, 'addresses' => $customer->address()->get(),'telephones'=>$customer->telephone()->get(),'emails'=>$customer->email()->get()]):
             response()->json(['successful'=>false,'message'=>'cannot find customer']);
-
-
         }
         catch (\Illuminate\Database\QueryException $e){
             return "error";
         }
     }
-    public function firstNameLastNameSearch(){
+    public function search(){
+        $last_name = Input::get('last_name');
+        $first_name = Input::get('first_name');
+        $global=Input::get('global');
 
+        if($global){
+            $customer=Customer::where("last_name", "LIKE", "%$global%")
+                ->OrWhere("first_name", "LIKE", "%$global%")->get();
+            return $customer;
+        }
+        return array();
     }
 
 
@@ -95,7 +103,7 @@ class CustomerController extends Controller
 
     public function update($id)
     {
-        //Utility::stripXSS(); //prevent xss , should be called before server side validation so as validation is done on safe data
+
         $rules = array(
             'first_name'       => 'required',
             'last_name'      => 'required',

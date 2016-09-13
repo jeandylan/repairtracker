@@ -3,9 +3,10 @@
 namespace App;
 use App\Customer;
 use Illuminate\Database\Eloquent\Model;
-use App\TxtFieldData;
-Use App\TxtField;
+use App\CustomTextField;
+Use App\CustomTextFieldData;
 use App;
+use App\TicketComment;
 use HipsterJazzbo\Landlord\BelongsToTenant;
 class Ticket extends Model
 {
@@ -25,31 +26,39 @@ class Ticket extends Model
     }
 
 
-    function stock(){
+    public function stock(){
         //2nd arg is pivot table name
         return $this->belongsToMany('App\Stock','stock_ticket','ticket_id','stock_id');
     }
-    function employee(){
+    public function employee(){
         //2nd arg is pivot table name
-        return $this->belongsToMany('App\Employee');
+        return $this->belongsToMany('App\Employee','employee_ticket','ticket_id','employee_id');
     }
+    /*
+    public function comments(){
+        return $this->hasMany('TicketComment');
+    }
+    */
 
 
 
-    public function fieldDetails($ticketId){
 
-        $formFields=App\TxtField::where('form_name', '=', 'ticket')->get();
+
+
+    public function customTextFieldDetails($ticketId){
+
+        $customFormFields=App\CustomTextField::where('form_name', '=', 'ticket')->get();
         $out=array();
-        foreach ($formFields as $formField){
-            $fieldData=App\TxtFieldData::where('entity_id','=',$ticketId)->where('field_id','=',$formField->id);
+        foreach ($customFormFields as $customFormField){
+            $customFieldData=App\CustomTextFieldData::where('entity_id','=',$ticketId)->where('custom_text_field_id','=',$customFormField->id);
 
-           array_push($out,array('data'=>$fieldData->get(),'properties'=>$formField));
+           array_push($out,array('data'=>$customFieldData->get(),'properties'=>$customFormField));
         }
         return $out;
     }
 
     public function fieldPropertyInfo($field_id){
-    $fieldInfo=App\TxtFieldData::find($field_id)->property()->get();
+    $fieldInfo=App\CustomTextFieldData::find($field_id)->property()->get();
         //echo  $fieldInfo;
     return $fieldInfo;
 

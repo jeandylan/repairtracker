@@ -1,124 +1,133 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/app/Http/routes.php" line="112" />
+    <bookmark url="file://$PROJECT_DIR$/app/Http/routes.php" line="132" />
+    <bookmark url="file://$PROJECT_DIR$/app/Http/Controllers/SaasAdmin/CompanyController.php" line="49" />
+    <bookmark url="file://$PROJECT_DIR$/database/seeds/ticketSeeder.php" line="24" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b07e4cfc-bd4e-4489-9168-ae9346d1c3c2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/comments/'apexMru@yahoo.com'" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/comments/'johnDoe.yahoo.com'])" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/comments/'rue" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/comments/23456789" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/comments/apex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/comments/assertTrue(true)phpunit" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/comments/customer_id" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/comments/get()" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/comments/id" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/comments/insert([" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/comments/insertGetId([" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/comments/invoices" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/comments/make" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/comments/model" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/comments/on('tickets')" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/comments/problem_definition" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/comments/rand" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/comments/save()" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/comments/seeJson([" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/comments/true" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/comments/unsigned()php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthenticateController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Middleware/JWTAuthMiddleware.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Middleware/TenantMiddleware.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/jwt.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/landlord.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/component/shop/log-in-out/log-in.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/component/shop/log-in-out/logOutCtrl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/component/shop/log-in-out/loginCtrl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/component/shop/tickets/create/controllers/selectCustomerCtrl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/component/shop/tickets/create/views/select-customer.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/component/shop/tickets/create/views/select-technician.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/shopAppCtrl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/js/angular-library/angular-cache/angular-cache.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/js/angular-library/angular-ngDialog/ngDialog-theme-default.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/js/angular-library/angular-ngDialog/ngDialog.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/js/angular-library/angular-ngDialog/ngDialog.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/js/angular-library/angular-satellizer/satellizer.min.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/seeds/TestSeeder.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/seeds/TicketSeeder.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/app/component/core/controllers/testCtrl.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/composer.phar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/CustomTextField.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/CustomTextFieldData.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/GoogleController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/MailController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/SaasAdmin/CompanyController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/SmsController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Mylibs/GmailMailler.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Mylibs/JWTAut.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Saas/configSaas.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/SaasCompany.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/SaasCompanyDomain.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/TicketComment.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/FirebaseJWT.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_09_05_154649_create_custom_text_field_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_09_05_154707_create_custom_text_field_data_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_09_12_090327_create_tickets_comments_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/tenants/2016_07_05_091411_create_customers_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/tenants/2016_07_05_091412_create_tickets_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/tenants/2016_07_16_085455_create_invoices_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/tenants/2016_07_16_142000_create_stocks_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/tenants/2016_07_16_160156_create_suppliers_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/tenants/2016_07_16_160220_create_stock_supplier_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/tenants/2016_07_17_131134_create_stock_ticket_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/tenants/2016_07_22_072844_create_employees_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/tenants/2016_07_22_073202_create_employee_ticket_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/tenants/2016_07_31_143545_create_customer_address_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/tenants/2016_07_31_143606_create_customer_telephone_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/tenants/2016_07_31_151711_create_customer_email_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/tenants/2016_08_03_093130_create_employee_address_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/tenants/2016_08_03_093159_create_employee_telephone_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/tenants/2016_08_03_093212_create_employee_email_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/tenants/2016_08_03_093232_create_supplier_address_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/tenants/2016_08_03_093245_create_supplier_telephone_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/tenants/2016_08_03_093253_create_supplier_email_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/tenants/2016_09_05_154649_create_custom_text_field_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/tenants/2016_09_05_154707_create_custom_text_field_data_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/tenants/2019_07_17_195747_add_foreign_keys_to_tables.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/seeds/testSeeder.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/seeds/ticketSeeder.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/domainCreator.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/component/core/services/gmailServices.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/component/shop/shopSettings/email/gmail-login.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/component/shop/shopSettings/email/gmailCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/component/shop/tickets/create/controllers/createCustomerTicketCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/component/shop/tickets/create/controllers/selectStockCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/component/shop/tickets/create/controllers/selectTechnicianCtrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/component/shop/tickets/create/views/create-customer-ticket.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app/component/shop/tickets/create/views/select-stock.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/domainCreator.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/test.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/admin.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/emails/comment.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/json/client_secrets.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/json/smsApi.txt" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/TxtField.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/TxtFieldData.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/field()" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fieldDetails()" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/increments('id')" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/insert([" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/integer('id')" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Http/Controllers/FieldController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomTextFieldController.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Http/Controllers/FieldDataController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomTextFieldDataController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/repairtrackerV2.iml" afterPath="$PROJECT_DIR$/.idea/repairtrackerV2.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Customer.php" afterPath="$PROJECT_DIR$/app/Customer.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CustomerAddress.php" afterPath="$PROJECT_DIR$/app/CustomerAddress.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CustomerEmail.php" afterPath="$PROJECT_DIR$/app/CustomerEmail.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CustomerTelephone.php" afterPath="$PROJECT_DIR$/app/CustomerTelephone.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Employee.php" afterPath="$PROJECT_DIR$/app/Employee.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/EmployeeAddress.php" afterPath="$PROJECT_DIR$/app/EmployeeAddress.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/EmployeeEmail.php" afterPath="$PROJECT_DIR$/app/EmployeeEmail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/EmployeeTelephone.php" afterPath="$PROJECT_DIR$/app/EmployeeTelephone.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/EmployeeTicket.php" afterPath="$PROJECT_DIR$/app/EmployeeTicket.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthenticateController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthenticateController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/StockController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/StockController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TicketController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TicketController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Kernel.php" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Middleware/securityMiddleware.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/securityMiddleware.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Middleware/JWTAuthMiddleware.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/JWTAuthMiddleware.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Middleware/TenantMiddleware.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/TenantMiddleware.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Invoice.php" afterPath="$PROJECT_DIR$/app/Invoice.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Stock.php" afterPath="$PROJECT_DIR$/app/Stock.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/StockSupplier.php" afterPath="$PROJECT_DIR$/app/StockSupplier.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/StockTicket.php" afterPath="$PROJECT_DIR$/app/StockTicket.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Supplier.php" afterPath="$PROJECT_DIR$/app/Supplier.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/SupplierAddress.php" afterPath="$PROJECT_DIR$/app/SupplierAddress.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/SupplierEmail.php" afterPath="$PROJECT_DIR$/app/SupplierEmail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/SupplierTelephone.php" afterPath="$PROJECT_DIR$/app/SupplierTelephone.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Ticket.php" afterPath="$PROJECT_DIR$/app/Ticket.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/TxtField.php" afterPath="$PROJECT_DIR$/app/TxtField.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/TxtFieldData.php" afterPath="$PROJECT_DIR$/app/TxtFieldData.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/auth.php" afterPath="$PROJECT_DIR$/config/auth.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/database.php" afterPath="$PROJECT_DIR$/config/database.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/mail.php" afterPath="$PROJECT_DIR$/config/mail.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_07_05_091411_create_customers_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_07_05_091411_create_customers_table.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_07_05_091412_create_tickets_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_07_05_091412_create_tickets_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_07_16_085455_create_invoices_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_07_16_085455_create_invoices_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_07_16_142000_create_stocks_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_07_16_142000_create_stocks_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_07_16_160156_create_suppliers_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_07_16_160156_create_suppliers_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_07_16_160220_create_stock_supplier_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_07_16_160220_create_stock_supplier_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_07_17_131134_create_stock_ticket_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_07_17_131134_create_stock_ticket_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_07_22_072844_create_employees_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_07_22_072844_create_employees_table.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_07_22_073202_create_employee_ticket_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_07_22_073202_create_employee_ticket_table.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_07_31_143545_create_customer_address_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_07_31_143545_create_customer_address_table.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_07_31_143606_create_customer_telephone_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_07_31_143606_create_customer_telephone_table.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_07_31_151711_create_customer_email_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_07_31_151711_create_customer_email_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_08_03_093130_create_employee_address_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_08_03_093130_create_employee_address_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_08_03_093159_create_employee_telephone_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_08_03_093159_create_employee_telephone_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_08_03_093212_create_employee_email_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_08_03_093212_create_employee_email_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_08_03_093232_create_supplier_address_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_08_03_093232_create_supplier_address_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_08_03_093245_create_supplier_telephone_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_08_03_093245_create_supplier_telephone_table.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_08_03_093253_create_supplier_email_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_08_03_093253_create_supplier_email_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2019_07_17_195747_add_foreign_keys_to_tables.php" afterPath="$PROJECT_DIR$/database/migrations/2019_07_17_195747_add_foreign_keys_to_tables.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/customerSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/customerSeeder.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/employeesSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/employeesSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/invoicesSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/invoicesSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/stockSupplierSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/stockSupplierSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/stockTicketSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/stockTicketSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/stocksSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/stocksSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/suppliersSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/suppliersSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/app.js" afterPath="$PROJECT_DIR$/public/app/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/core/route/mainRouter.js" afterPath="$PROJECT_DIR$/public/app/component/core/route/mainRouter.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/core/services/serverServices.js" afterPath="$PROJECT_DIR$/public/app/component/core/services/serverServices.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/stocks/create/controllers/createStockCtrl.js" afterPath="$PROJECT_DIR$/public/app/component/shop/stocks/create/controllers/createStockCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/stocks/index/views/index-stock.html" afterPath="$PROJECT_DIR$/public/app/component/shop/stocks/index/views/index-stock.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/customers/create/controllers/createCustomerCtrl.js" afterPath="$PROJECT_DIR$/public/app/component/shop/customers/create/controllers/createCustomerCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/customers/read/controllers/tableCustomersCtrl.js" afterPath="$PROJECT_DIR$/public/app/component/shop/customers/read/controllers/tableCustomersCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/customers/read/views/table-customers.html" afterPath="$PROJECT_DIR$/public/app/component/shop/customers/read/views/table-customers.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/employees/read/controllers/readAllEmployeesCtrl.js" afterPath="$PROJECT_DIR$/public/app/component/shop/employees/read/controllers/readAllEmployeesCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/employees/read/views/view-employees-table.html" afterPath="$PROJECT_DIR$/public/app/component/shop/employees/read/views/view-employees-table.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/log-in-out/loginCtrl.js" afterPath="$PROJECT_DIR$/public/app/component/shop/log-in-out/loginCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/shopSettings/formsEditor/controllers/formEditorCtrl.js" afterPath="$PROJECT_DIR$/public/app/component/shop/shopSettings/formsEditor/controllers/formEditorCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/shopSettings/formsEditor/views/form-editor.html" afterPath="$PROJECT_DIR$/public/app/component/shop/shopSettings/formsEditor/views/form-editor.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/shopSettings/index/controllers/shopSettingsIndexCtrl.js" afterPath="$PROJECT_DIR$/public/app/component/shop/shopSettings/index/controllers/shopSettingsIndexCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/shopSettings/index/views/shop-settings-index.html" afterPath="$PROJECT_DIR$/public/app/component/shop/shopSettings/index/views/shop-settings-index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/stocks/read/controllers/tableStockCtrl.js" afterPath="$PROJECT_DIR$/public/app/component/shop/stocks/read/controllers/tableStockCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/stocks/read/views/table-stock.html" afterPath="$PROJECT_DIR$/public/app/component/shop/stocks/read/views/table-stock.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/suppliers/read/controllers/readAllSuppliersCtrl.js" afterPath="$PROJECT_DIR$/public/app/component/shop/suppliers/read/controllers/readAllSuppliersCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/suppliers/read/views/view-suppliers-table.html" afterPath="$PROJECT_DIR$/public/app/component/shop/suppliers/read/views/view-suppliers-table.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/tickets/create/controllers/createTicketCtrl.js" afterPath="$PROJECT_DIR$/public/app/component/shop/tickets/create/controllers/createTicketCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/tickets/create/controllers/selectCustomerCtrl.js" afterPath="$PROJECT_DIR$/public/app/component/shop/tickets/create/controllers/selectCustomerCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/tickets/create/views/create-ticket-form.html" afterPath="$PROJECT_DIR$/public/app/component/shop/tickets/create/views/create-ticket-form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/config.js" afterPath="$PROJECT_DIR$/public/app/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/config.lazyload.js" afterPath="$PROJECT_DIR$/public/app/config.lazyload.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/css/app.css" afterPath="$PROJECT_DIR$/public/assets/css/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/css/bootstrap.css" afterPath="$PROJECT_DIR$/public/assets/css/bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tpl/app.html" afterPath="$PROJECT_DIR$/public/tpl/app.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tpl/blocks/aside.html" afterPath="$PROJECT_DIR$/public/tpl/blocks/aside.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tpl/blocks/header.html" afterPath="$PROJECT_DIR$/public/tpl/blocks/header.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tpl/blocks/page_footer.html" afterPath="$PROJECT_DIR$/public/tpl/blocks/page_footer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/tickets/create/views/select-customer.html" afterPath="$PROJECT_DIR$/public/app/component/shop/tickets/create/views/select-customer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/tickets/create/views/select-technician.html" afterPath="$PROJECT_DIR$/public/app/component/shop/tickets/create/views/select-technician.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/tickets/read/controllers/readTicketsCtrl.js" afterPath="$PROJECT_DIR$/public/app/component/shop/tickets/read/controllers/readTicketsCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/tickets/read/views/tickets-table.html" afterPath="$PROJECT_DIR$/public/app/component/shop/tickets/read/views/tickets-table.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/component/shop/tickets/update/controllers/updateTicketCtrl.js" afterPath="$PROJECT_DIR$/public/app/component/shop/tickets/update/controllers/updateTicketCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app/shopAppCtrl.js" afterPath="$PROJECT_DIR$/public/app/shopAppCtrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/app.blade.php" afterPath="$PROJECT_DIR$/resources/views/app.blade.php" />
     </list>
     <list id="b7001cda-1272-4fd3-8ae7-c7b7de829768" name="New changelist" comment="" />
@@ -141,73 +150,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="create-customer-form.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app/component/shop/customers/create/views/create-customer-form.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" column="39" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="createTicketCtrl.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="createTicketCtrl.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/app/component/shop/tickets/create/controllers/createTicketCtrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="51" column="44" selection-start-line="51" selection-start-column="44" selection-end-line="51" selection-end-column="44" />
+            <state relative-caret-position="82">
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="select-technician.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app/component/shop/tickets/create/views/select-technician.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="select-customer.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app/component/shop/tickets/create/views/select-customer.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="selectCustomerCtrl.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/app/component/shop/tickets/create/controllers/selectCustomerCtrl.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-              <folding>
-                <element signature="e#0#38#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CustomerController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CustomerController.php">
+      <file leaf-file-name="serverServices.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/app/component/core/services/serverServices.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
-              <caret line="88" column="46" selection-start-line="88" selection-start-column="46" selection-end-line="88" selection-end-column="46" />
+              <caret line="20" column="70" selection-start-line="20" selection-start-column="70" selection-end-line="20" selection-end-column="70" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="composer.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/composer.json">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="13" column="41" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
+            <state relative-caret-position="412">
+              <caret line="82" column="44" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -232,57 +199,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/app/component/shop/signIn/sign-in.html" />
-        <option value="$PROJECT_DIR$/public/app/component/shop/signIn/page_signin.html" />
-        <option value="$PROJECT_DIR$/app/Employee.php" />
-        <option value="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" />
-        <option value="$PROJECT_DIR$/app/Http/Middleware/jwtAuth.php" />
-        <option value="$PROJECT_DIR$/app/Http/Middleware/securityMiddleware.php" />
-        <option value="$PROJECT_DIR$/app/Http/Middleware/Cors.php" />
-        <option value="$PROJECT_DIR$/config/auth.php" />
-        <option value="$PROJECT_DIR$/database/seeds/employeesSeeder.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/JWTAuthMiddleware.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/AuthenticateController.php" />
-        <option value="$PROJECT_DIR$/public/tpl/blocks/aside.html" />
-        <option value="$PROJECT_DIR$/public/app/component/shop/logIn/log-in.html" />
-        <option value="$PROJECT_DIR$/public/app/component/shop/logIn/checkLogin.js" />
-        <option value="$PROJECT_DIR$/public/app/component/shop/logIn/checkLoginCtrl.js" />
-        <option value="$PROJECT_DIR$/public/app/component/shop/logIn/loginCtrl.js" />
-        <option value="$PROJECT_DIR$/public/app/component/shop/logIn/logOutCtrl.js" />
-        <option value="$PROJECT_DIR$/public/app/component/core/services/cacheService.js" />
-        <option value="$PROJECT_DIR$/public/app/component/shop/profile/profileCtrl.js" />
-        <option value="$PROJECT_DIR$/public/app/contentAppCtrl.js" />
-        <option value="$PROJECT_DIR$/public/app/component/core/services/cacheServices.js" />
-        <option value="$PROJECT_DIR$/public/app/component/shop/log-in-out/log-in.html" />
-        <option value="$PROJECT_DIR$/public/tpl/blocks/page_footer.html" />
-        <option value="$PROJECT_DIR$/public/tpl/app.html" />
-        <option value="$PROJECT_DIR$/public/tpl/blocks/header.html" />
-        <option value="$PROJECT_DIR$/config/app.php" />
-        <option value="$PROJECT_DIR$/public/app/app.js" />
-        <option value="$PROJECT_DIR$/public/app/config.js" />
-        <option value="$PROJECT_DIR$/public/app/component/shop/log-in-out/loginCtrl.js" />
-        <option value="$PROJECT_DIR$/public/app/component/shop/log-in-out/logOutCtrl.js" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/public/app/shopAppCtrl.js" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" />
-        <option value="$PROJECT_DIR$/public/app/component/shop/stocks/create/controllers/createStockCtrl.js" />
-        <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
-        <option value="$PROJECT_DIR$/app/Http/Middleware/TenantMiddleware.php" />
-        <option value="$PROJECT_DIR$/public/app/component/core/services/serverServices.js" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/StockController.php" />
-        <option value="$PROJECT_DIR$/public/app/component/shop/stocks/index/views/index-stock.html" />
-        <option value="$PROJECT_DIR$/public/app/config.lazyload.js" />
-        <option value="$PROJECT_DIR$/public/assets/css/app.css" />
-        <option value="$PROJECT_DIR$/resources/views/app.blade.php" />
-        <option value="$PROJECT_DIR$/public/app/component/shop/tickets/create/views/create-ticket-form.html" />
-        <option value="$PROJECT_DIR$/public/app/component/shop/customers/create/views/create-customer-form.html" />
-        <option value="$PROJECT_DIR$/public/app/component/shop/tickets/create/controllers/createTicketCtrl.js" />
-        <option value="$PROJECT_DIR$/public/app/component/shop/tickets/create/views/available-technician.html" />
-        <option value="$PROJECT_DIR$/public/app/component/core/route/mainRouter.js" />
-        <option value="$PROJECT_DIR$/public/app/component/shop/tickets/create/views/select-customer.html" />
-        <option value="$PROJECT_DIR$/public/app/component/shop/tickets/create/controllers/selectCustomerCtrl.js" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" />
         <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/app/Shop.php" />
+        <option value="$PROJECT_DIR$/config/database.php" />
+        <option value="$PROJECT_DIR$/app/SaasAdmin.php" />
+        <option value="$PROJECT_DIR$/app/saasAdminCompanyDomain.php" />
+        <option value="$PROJECT_DIR$/app/SaasAdminCompany.php" />
+        <option value="$PROJECT_DIR$/app/SaasCompany.php" />
+        <option value="$PROJECT_DIR$/app/SaasCompanyDomain.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/GoogleController.php" />
+        <option value="$PROJECT_DIR$/config/mail.php" />
+        <option value="$PROJECT_DIR$/resources/views/emails/comment.blade.php" />
+        <option value="$PROJECT_DIR$/storage/json/smsApi.txt" />
+        <option value="$PROJECT_DIR$/config/twillo.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/SmsController.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_09_12_084746_create_ticket_comment_table.php" />
+        <option value="$PROJECT_DIR$/database/seeds/customerSeeder.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_07_05_091411_create_customers_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_07_31_143545_create_customer_address_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_07_31_143606_create_customer_telephone_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_07_31_151711_create_customer_email_table.php" />
+        <option value="$PROJECT_DIR$/app/Customer.php" />
+        <option value="$PROJECT_DIR$/app/CustomerAddress.php" />
+        <option value="$PROJECT_DIR$/app/CustomerEmail.php" />
+        <option value="$PROJECT_DIR$/app/CustomerTelephone.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_07_17_195747_add_foreign_keys_to_tables.php" />
+        <option value="$PROJECT_DIR$/database/seeds/testSeeder.php" />
+        <option value="$PROJECT_DIR$/database/seeds/employeesSeeder.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_09_12_090327_create_tickets_comments_table.php" />
+        <option value="$PROJECT_DIR$/app/TicketComment.php" />
+        <option value="$PROJECT_DIR$/vendor/firebase/php-jwt/src/JWT.php" />
+        <option value="$PROJECT_DIR$/config/FirebaseJWT.php" />
+        <option value="$PROJECT_DIR$/public/app/shopAppCtrl.js" />
+        <option value="$PROJECT_DIR$/public/app/component/core/services/serverServices.js" />
+        <option value="$PROJECT_DIR$/public/app/component/shop/log-in-out/loginCtrl.js" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AuthenticateController.php" />
+        <option value="$PROJECT_DIR$/app/Mylibs/JWTFirebase.php" />
+        <option value="$PROJECT_DIR$/app/Mylibs/JWTAut.php" />
+        <option value="$PROJECT_DIR$/public/app/component/core/route/mainRouter.js" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/MailController.php" />
+        <option value="$PROJECT_DIR$/app/Mylibs/GmailMailler.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_07_05_091412_create_tickets_table.php" />
+        <option value="$PROJECT_DIR$/public/app/component/shop/tickets/create/views/create-ticket-form.html" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" />
+        <option value="$PROJECT_DIR$/app/Ticket.php" />
+        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
+        <option value="$PROJECT_DIR$/database/seeds/ticketSeeder.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_07_22_073202_create_employee_ticket_table.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/TicketController.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/public/app/component/shop/tickets/create/controllers/createTicketCtrl.js" />
       </list>
     </option>
   </component>
@@ -508,32 +475,26 @@
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="js-jscs-package" value="C:\Users\dylan\AppData\Roaming\npm\node_modules\jscs" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/assets/css" />
-      <recent name="$PROJECT_DIR$/public/assets/js/angular-library/angular-ngDialog" />
-      <recent name="$PROJECT_DIR$/public/assets/js/angular-library/angular-satellizer" />
-      <recent name="$PROJECT_DIR$/public/assets/js/angular-library/angular-jwt" />
-      <recent name="$PROJECT_DIR$/public/assets/js/angular-library/angular-cache" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/config" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/SaasAdmin" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers" />
+      <recent name="$PROJECT_DIR$/resources/views" />
       <recent name="$PROJECT_DIR$/public/tpl/blocks" />
-      <recent name="C:\xampp\htdocs\repairtrackerV2\public\app\component\shop\employee\index\controllers" />
-      <recent name="C:\xampp\htdocs\repairtrackerV2\public\app\component\shop\deletConfirmation" />
-      <recent name="C:\xampp\htdocs\repairtrackerV2\app\comments" />
-      <recent name="C:\xampp\htdocs\repairtrackerV2\public\app\component\shop\tickets\update\views" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/storage/json" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers" />
+      <recent name="$PROJECT_DIR$/public/app/component/core/services" />
+      <recent name="$PROJECT_DIR$/database/migrations/tenants" />
+      <recent name="$PROJECT_DIR$/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.create-customer-form.html">
-    <configuration default="false" name="EmployeeController.php" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/repairtrackerV2/app/Http/Controllers/EmployeeController.php">
-      <method />
-    </configuration>
-    <configuration default="false" name="create-customer-form.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/repairtrackerV2/public/app/component/shop/customers/create/views/create-customer-form.html">
-      <method />
-    </configuration>
+  <component name="RunManager">
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
@@ -580,16 +541,6 @@
       <recursive>false</recursive>
       <method />
     </configuration>
-    <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.EmployeeController.php" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.create-customer-form.html" />
-    </list>
-    <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.create-customer-form.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.EmployeeController.php" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -688,7 +639,28 @@
       <workItem from="1472854367065" duration="657000" />
       <workItem from="1472883902356" duration="14303000" />
       <workItem from="1472913475565" duration="26857000" />
-      <workItem from="1472974240792" duration="4609000" />
+      <workItem from="1472974240792" duration="5579000" />
+      <workItem from="1472988146062" duration="179000" />
+      <workItem from="1472988508675" duration="26081000" />
+      <workItem from="1473087824522" duration="18831000" />
+      <workItem from="1473142362408" duration="10961000" />
+      <workItem from="1473170819356" duration="1248000" />
+      <workItem from="1473172259187" duration="1026000" />
+      <workItem from="1473185334912" duration="1163000" />
+      <workItem from="1473194529938" duration="12516000" />
+      <workItem from="1473268760852" duration="1172000" />
+      <workItem from="1473272489102" duration="7006000" />
+      <workItem from="1473287541281" duration="891000" />
+      <workItem from="1473349998710" duration="13865000" />
+      <workItem from="1473441357498" duration="10772000" />
+      <workItem from="1473456071747" duration="6252000" />
+      <workItem from="1473487085607" duration="7443000" />
+      <workItem from="1473526450563" duration="15301000" />
+      <workItem from="1473574058971" duration="33525000" />
+      <workItem from="1473669526468" duration="4185000" />
+      <workItem from="1473697479022" duration="19670000" />
+      <workItem from="1473752679355" duration="8960000" />
+      <workItem from="1473779747427" duration="1129000" />
     </task>
     <task id="LOCAL-00001" summary="w">
       <created>1467750478580</created>
@@ -795,11 +767,18 @@
       <option name="project" value="LOCAL" />
       <updated>1471375873843</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Ability to add/delete/update new TxtField and TxtFieldDataFor Ticket (todo make it more modular mainly on updateTicketCtrl)">
+      <created>1472985612722</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1472985612722</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="709872000" />
+    <option name="totallyTimeSpent" value="913018000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1055" extended-state="0" />
@@ -808,24 +787,26 @@
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28206465" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.205074" sideWeight="0.50208336" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="ReST Console" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32878152" sideWeight="0.50312823" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.065539114" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32878152" sideWeight="0.49687174" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6533613" sideWeight="0.4942348" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.065539114" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -875,87 +856,244 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="10" />
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/assets/js/angular-library/angular-jwt/angular-jwt.min.js" />
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Cors.php" />
-    <entry file="file://$PROJECT_DIR$/config/app.php">
+    <entry file="file://$PROJECT_DIR$/database/seeds/employeesSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1404">
-          <caret line="162" column="45" selection-start-line="162" selection-start-column="45" selection-end-line="162" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/angular-library/angular-satellizer/satellizer.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="31" column="7" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
+        <state relative-caret-position="648">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_09_05_154649_create_custom_text_field_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+        <state relative-caret-position="342">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/component/shop/employees/create/controllers/createEmployeeCtrl.js">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_08_03_093130_create_employee_address_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-949">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="342">
+          <caret line="20" column="17" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/component/shop/log-in-out/logOutCtrl.js">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_07_17_195747_add_foreign_keys_to_tables.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+        <state relative-caret-position="1530">
+          <caret line="86" column="71" selection-start-line="86" selection-start-column="71" selection-end-line="86" selection-end-column="71" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/component/shop/log-in-out/loginCtrl.js">
+    <entry file="file://$PROJECT_DIR$/app/SaasCompany.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="198">
+          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Stock.php">
+    <entry file="file://$PROJECT_DIR$/app/SaasCompanyDomain.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="180">
+          <caret line="10" column="50" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_09_12_090327_create_tickets_comments_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/TicketComment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Customer.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Authenticate.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/CustomerAddress.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/EncryptCookies.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/EmployeeAddress.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/JWTAuthMiddleware.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/jwt.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1217">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="164" column="59" selection-start-line="164" selection-start-column="59" selection-end-line="164" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/mail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="3" selection-start-line="2" selection-start-column="0" selection-end-line="12" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/firebase/php-jwt/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/firebase/php-jwt/src/SignatureInvalidException.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/firebase/php-jwt/src/JWT.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/component/shop/log-in-out/loginCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/firebase/php-jwt/tests/JWTTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-324">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SmsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/FirebaseJWT.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Mylibs/JWTFirebase.php" />
+    <entry file="file://$PROJECT_DIR$/public/app/config.lazyload.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="180" column="29" selection-start-line="180" selection-start-column="19" selection-end-line="180" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AuthenticateController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="34" column="44" selection-start-line="34" selection-start-column="44" selection-end-line="34" selection-end-column="44" />
+          <folding>
+            <element signature="e#39#67#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/component/shop/tickets/create/views/create-customer-ticket.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="533">
+          <caret line="142" column="26" selection-start-line="142" selection-start-column="26" selection-end-line="142" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/component/core/route/mainRouter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="105" column="42" selection-start-line="105" selection-start-column="42" selection-end-line="105" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/shopAppCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-182">
+          <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/tpl/app.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Mylibs/JWTAut.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="972">
+          <caret line="54" column="40" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Mylibs/GmailMailler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CustomerController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -963,10 +1101,90 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/EmployeeTicket.php">
+    <entry file="file://$PROJECT_DIR$/public/app/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_07_05_091412_create_tickets_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/component/shop/tickets/create/views/create-ticket-form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="112" column="69" selection-start-line="112" selection-start-column="69" selection-end-line="112" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/testSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="51" column="46" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/ticketSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1170">
+          <caret line="65" column="40" selection-start-line="65" selection-start-column="40" selection-end-line="65" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_07_22_072844_create_employees_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="15" column="39" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EmployeeTicket.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_07_22_073202_create_employee_ticket_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Ticket.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1188">
+          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+          <folding>
+            <element signature="e#39#54#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -979,280 +1197,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/StockTicket.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MailController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="432">
+          <caret line="30" column="44" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/app/component/shop/tickets/create/controllers/createCustomerTicketCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-540">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/JWTAuthMiddleware.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TicketController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="32" column="58" selection-start-line="32" selection-start-column="58" selection-end-line="32" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Authenticate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/EncryptCookies.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/securityMiddleware.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AuthenticateController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="734">
-          <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/TenantMiddleware.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="30" column="11" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StockController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1274">
-          <caret line="77" column="5" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
+        <state relative-caret-position="176">
+          <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
           <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
+            <element signature="e#2884#3503#0#PHP" expanded="false" />
+            <element signature="e#3511#3716#0#PHP" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/component/shop/employees/index/controllers/employeesIndexCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/app/component/core/services/serverServices.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="59" column="10" selection-start-line="59" selection-start-column="10" selection-end-line="59" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/component/shop/stocks/create/controllers/createStockCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/angular-library/angular-ngDialog/ngDialog.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/angular-library/angular-ngDialog/ngDialog-theme-default.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/component/shop/stocks/index/views/index-stock.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/component/shop/employees/index/views/employee-index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="6" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/css/app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1923" column="17" selection-start-line="1923" selection-start-column="9" selection-end-line="1923" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/app.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/component/shop/customers/read/controllers/tableCustomersCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="34" />
+        <state relative-caret-position="360">
+          <caret line="20" column="70" selection-start-line="20" selection-start-column="70" selection-end-line="20" selection-end-column="70" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/component/shop/tickets/create/views/create-ticket-form.html">
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="66" selection-start-line="4" selection-start-column="66" selection-end-line="4" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/component/shop/employees/read/controllers/readAllEmployeesCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/component/core/route/mainRouter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-409">
-          <caret line="220" column="0" selection-start-line="220" selection-start-column="0" selection-end-line="220" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/component/shop/employees/read/views/view-employees-table.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/component/shop/tickets/create/views/select-technician.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="887">
-          <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/shopAppCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/config.lazyload.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="165" column="24" selection-start-line="165" selection-start-column="23" selection-end-line="165" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/component/shop/tickets/create/views/select-customer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/component/shop/customers/create/views/create-customer-form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="39" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="39" />
+        <state relative-caret-position="412">
+          <caret line="82" column="44" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/app/component/shop/tickets/create/controllers/createTicketCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="51" column="44" selection-start-line="51" selection-start-column="44" selection-end-line="51" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/app/component/shop/tickets/create/controllers/selectCustomerCtrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CustomerController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="88" column="46" selection-start-line="88" selection-start-column="46" selection-end-line="88" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="41" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
+        <state relative-caret-position="82">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
         </state>
       </provider>

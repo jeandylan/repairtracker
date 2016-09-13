@@ -3,7 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use JWTAuth;
+//use JWTAuth;
 use Illuminate\Support\Facades\Hash;
 use App\Employee;
 class JWTAuthMiddleware
@@ -11,26 +11,28 @@ class JWTAuthMiddleware
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param  \Illuminate\Http\Request $request
+     * @param  \Closure $next
      * @return mixed
      */
     public function handle($request, Closure $next)
     {
+        /*
+
         try {
-            /*Bug In library force me to follow such technique*/
+            /Bug In library force me to follow such technique//
             $received_token  = JWTAuth::getToken();
             $decodeToken=JWTAuth::decode($received_token)->get();
             $employee=Employee::where('email',$decodeToken['sub'])->first();
 
             //check if employee exist else Return Error
             if ($employee && $employee->password==$decodeToken['password']){
-                return $next($request);
+
             }
             else{
                 return response()->json(['successful' => 'false', 'message' => 'credential invalid']);
             }
-            /*make it more Secure Fresh Token every time*/
+            //make it more Secure Fresh Token every time//
             // $newToken          = JWTAuth::refresh($current_token);
 
         }
@@ -47,6 +49,10 @@ class JWTAuthMiddleware
             return response()->json(['token_absent'], $e->getStatusCode());
 
         }
+
+    }
+    */
+        return $next($request);
 
     }
 }

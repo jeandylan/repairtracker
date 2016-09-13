@@ -6,6 +6,10 @@ app.controller("formEditorCtrl",function ($scope,$stateParams,$state,serverServi
     vm.formName=$stateParams.formName;
     $state.current.pageTitle=vm.formName+" form editor page";
     getFormField();
+    vm.yesNo= [
+        {value: 1, text: 'yes'},
+        {value: 0, text: 'no'}
+    ];
 
     $scope.$on('fieldDataChanged',function () { //refresg data if new Txt field
         getFormField();
@@ -13,7 +17,7 @@ app.controller("formEditorCtrl",function ($scope,$stateParams,$state,serverServi
 
 
     function  getFormField() {
-        serverServices.get('api/txtFields/'+vm.formName)//id parameter obtain by doing state parameter (like a query)
+        serverServices.get('api/customTextField/'+vm.formName)//id parameter obtain by doing state parameter (like a query)
             .then(
                 function (result) {
                     vm.txtFormFields = result;
@@ -25,7 +29,7 @@ app.controller("formEditorCtrl",function ($scope,$stateParams,$state,serverServi
     }
 
     vm.deleteTextField=function (txtField) {
-        serverServices.delete('api/txtField/'+txtField.id)//id parameter obtain by doing state parameter (like a query)
+        serverServices.delete('api/customTextField/'+txtField.id)//id parameter obtain by doing state parameter (like a query)
             .then(
                 function (result) {
                     $scope.$emit("fieldDataChanged");
@@ -40,9 +44,12 @@ app.controller("formEditorCtrl",function ($scope,$stateParams,$state,serverServi
     };
 
     vm.updateTextField=function (txtField) { //when the submit btn click (function call found in <form> tag on top)
-            return $scope.updateResource('api/txtField/' + txtField.id, txtField).then(
+            return serverServices.put('api/customTextField/' + txtField.id, txtField).then(
                 function (result) {
-                    return (result.successful) ? true : "error " + result.message;
+                    toaster.pop('success', "done", result.message);
+                },function (result) {
+                    console.log(result);
+                    toaster.pop('error', "server Err", result.message);
                 });
     };
 
@@ -58,13 +65,20 @@ app.controller("newFieldCtrl",function ($scope,$stateParams,$state,serverService
         $e.preventDefault();
         vmNewField.newTextFormFields.push({form_name:'ticket'});
     };
+    vmNewField.deleteNewTextField=function (newTextField) {
+        index=vmNewField.newTextFormFields.indexOf(newTextField);
+        if (index > -1) {
+            vmNewField.newTextFormFields.splice(index, 1);
+        }
+    };
 
     vmNewField.saveNewTextField=function (newTextField) {
         console.log(newTextField);
-        $scope.createResource('api/txtField',newTextField).then(
+       serverServices.post('api/customTextField',newTextField).then(
             function (result) {
                 if (result.successful){
                     $scope.$emit("fieldDataChanged");
+                    toaster.pop('success', "done", result.message);
                     vmNewField.deleteNewTextField(newTextField);
 
                 }

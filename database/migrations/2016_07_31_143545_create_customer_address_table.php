@@ -17,7 +17,6 @@ class CreateCustomerAddressTable extends Migration
             $table->integer('customer_id')->unsigned();
             $table->string('address');
             $table->enum('type', array('home', 'company','private'));
-            $table->string('shop_location');
             $table->timestamps();
 
         });

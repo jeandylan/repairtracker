@@ -95,12 +95,15 @@ default should be app,every page is Check for login in ShopAppCtrl
                     })
 
                     .state('app.ticket.create', {
-                        url: '/create?customerId&employeeId', //! need CUstomer Id to create Ticket
+                        url: '/create?customerId&employeeId', //! pass customerId & employeeId as Query in uri
                         templateUrl: 'app/component/shop/tickets/create/views/create-ticket-form.html',
                         resolve: load(['app/component/shop/tickets/create/controllers/createTicketCtrl.js',
-                            'app/component/shop/customers/create/controllers/createCustomerCtrl.js',
+                            'app/component/shop/tickets/create/controllers/selectCustomerCtrl.js',//load controller needed by select dialog also
+                            'app/component/shop/tickets/create/controllers/selectTechnicianCtrl.js',
+                            'app/component/shop/tickets/create/controllers/createCustomerTicketCtrl.js', //load ctrl needed to create Customer
                             'app/component/core/controllers/googleTypeAheadController.js',
-                            'app/component/shop/customers/read/controllers/tableCustomersCtrl.js'
+                            'app/component/shop/tickets/create/controllers/selectStockCtrl.js', //load Ctrl For select Stock
+                            'AngularPrint'
                         ]),
                         ncyBreadcrumb: {
                             skip: true // Never display this state in breadcrumb.
@@ -231,19 +234,25 @@ default should be app,every page is Check for login in ShopAppCtrl
                     templateUrl: 'app/component/shop/stocks/update/views/update-stock.html',
                     resolve: load(['app/component/shop/stocks/update/controllers/updateStockCtrl.js'])
                     })
-                    /* thing below made me crazy ,mind to put (ng-view when needed else be ready to loose 24 hr,debugging)*/
+                    /* things below made me crazy ,mind to put (ng-view when needed else be ready to loose 24 hr,debugging)*/
                     .state('app.settings', {
                         url: '/settings',
                         templateUrl: 'app/component/shop/shopSettings/index/views/shop-settings-index.html',
                         resolve: load(['app/component/shop/shopSettings/index/controllers/shopSettingsIndexCtrl.js']),
                         pageTitle:'Setting Panel' //cause cause trouble
                     })
+                    .state('app.settings.gmail',{
+                        url:'/gmail',
+                        templateUrl:'app/component/shop/shopSettings/email/gmail-login.html'
+                    })
+
                     .state('app.settings.form-editor', {
                         url: '/from-editor/{formName:string}',
                         templateUrl:'app/component/shop/shopSettings/formsEditor/views/form-editor.html',
                         resolve: load(['app/component/shop/shopSettings/formsEditor/controllers/formEditorCtrl.js']),
                         pageTitle:'' //cause cause trouble,defined into ctrl
                     });
+
 
 
 

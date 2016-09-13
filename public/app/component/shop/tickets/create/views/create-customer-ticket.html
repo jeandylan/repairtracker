@@ -1,0 +1,156 @@
+<div ng-controller="createCustomerTicketCtrl">
+
+    <form name="customer_form">
+
+
+        <!---start panel-->
+        <div class="panel panel-default">
+            <!---personal detail form panel --->
+            <div class="panel-heading font-bold">
+                personal details
+            </div>
+            <div class="panel-body">
+                <!---angular material drop box ---->
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">sex:</label>
+                    <div class="col-sm-10">
+                        <label class="checkbox-inline"><input type="radio" name="sex" value="">M</label>
+                        <label class="checkbox-inline"><input type="radio" name="sex" value="">F</label>
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                <!----end of material dropBox--->
+                <!----one text box --->
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">first Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="first_name" required ng-model="customer.first_name" class="form-control">
+                        <p class="alert-warning" ng-show="customer_form.first_name.$error.required">first Name
+                                                                                                    Required.</p>
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                <!---end of Text box-->
+
+                <!----one text box --->
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Last Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="last_name" required ng-model="customer.last_name" class="form-control">
+                        <p class="alert-warning" ng-show="customer_form.last_name.$error.required">last Name
+                                                                                                   Required.</p>
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                <!---end of Calendar box-->
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Date Of Bith</label>
+                    <div class="col-sm-10">
+                        <p class="input-group">
+                            <input type="text" name="date_of_birth" name="date_of_birth" class="form-control" uib-datepicker-popup="{{format}}" ng-model="customer.date_of_birth" is-open="popup1.opened" datepicker-options="dateOptions" required close-text="Close"/>
+                            <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                </span>
+                        </p>
+                        <p class="alert-warning" ng-show="customer_form.date_of_birth.$error.required">date of birth required.</p>
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                <!---end of Calendar box-->
+
+
+            </div>
+        </div>
+        <!--end panel-->
+
+
+        <!---start panel-->
+        <div class="panel panel-default">
+            <div class="panel-heading font-bold">telephone</div>
+            <div class="panel-body">
+                <!----telephone  --->
+                <div ng-animate="'animate'" ng-repeat="telephone in telephones">
+                    <div class="input-group my-group">
+                        <select ng-model="telephone.type" class="form-control" placeholder="select telephone type">
+                            <option value="home">home</option>
+                            <option value="private">private</option>
+                            <option value="company">company</option>
+                        </select>
+                        <input type="text" ng-model="telephone.telephone_number" class="form-control" placeholder="Enter Telephone Number">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="deleteTelephoneNumber(telephone)">
+                                <span class="fa fa-times-circle text-danger"></span>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+                <button ng-click="createTelephoneNumber()">Add Telephone Number</button>
+            </div>
+        </div>
+
+        <div class="line line-dashed b-b line-lg pull-in"></div>
+        <!--end panel--->
+
+        <!---start panel-->
+        <div class="panel panel-default">
+            <div class="panel-heading font-bold">Address</div>
+            <div class="panel-body">
+                <!----Address  --->
+                <div ng-animate="'animate'" ng-repeat="address in addresses">
+                    <div class="input-group my-group">
+                        <select ng-model="address.type" class="form-control" placeholder="select Address type">
+                            <option value="home">home</option>
+                            <option value="private">private</option>
+                            <option value="company">company</option>
+                        </select>
+                        <input type="text" ng-model="address.address" placeholder="AutoCompletion For Address" uib-typeahead="address for address in getLocation($viewValue)" typeahead-loading="loadingLocations" typeahead-no-results="noResults" class="form-control">
+                        <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
+                        <div ng-show="noResults">
+                            <i class="glyphicon glyphicon-remove"></i> No Results Found
+                        </div>
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="deleteAddress(address)">
+                                <span class="fa fa-times-circle text-danger"></span>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+                <button ng-click="createAddress()">Add Address</button>
+            </div>
+        </div>
+
+        <div class="line line-dashed b-b line-lg pull-in"></div>
+        <!--end panel--->
+
+        <!---start panel-->
+        <div class="panel panel-default">
+            <div class="panel-heading font-bold">Email</div>
+            <div class="panel-body">
+                <!----Email --->
+                <div ng-animate="'animate'" ng-repeat="email in emails">
+                    <div class="input-group my-group">
+                        <select ng-model="email.type" class="form-control" placeholder="select email type">
+                            <option value="home">home</option>
+                            <option value="private">private</option>
+                            <option value="company">company</option>
+                        </select>
+                        <input type="text" ng-model="email.email" class="form-control" placeholder="Enter Email">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="deleteEmail(email)">
+                                <span class="fa fa-times-circle text-danger"></span>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+                <button ng-click="createEmail()">Add Email</button>
+            </div>
+        </div>
+
+        <div class="line line-dashed b-b line-lg pull-in"></div>
+        <!--end panel--->
+
+        <button ng-click="createCustomer()" class="btn btn-info btn-block">save</button>
+
+    </form>
+</div>
+

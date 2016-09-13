@@ -1,15 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
-use JWTAuth;
+
 use Illuminate\Support\Facades\Hash;
+use \Firebase\JWT\JWT;
 
 use Carbon\Carbon;
 use App\Employee;
-use Tymon\JWTAuth\Exceptions\JWTException;
 use App\Http\Requests;
 
 class AuthenticateController extends Controller
@@ -23,7 +22,19 @@ class AuthenticateController extends Controller
 
                if(Hash::check($request->input(['password']), $employee->password)){
                    $customClaims = ['password' =>$employee->password];
-                   $token = JWTAuth::fromUser($employee,$customClaims);
+                   $key= \Config::get('FirebaseJWT.key'); // default
+                   $token = array(
+                       'data' =>  "ujuh",          // Data related to the signer user
+                       "iss" => $employee->id,
+                       "jti"=>base64_encode(time()),
+                       "aud" => "repairTracker",
+                       "iat" =>  time(),
+                       "nbf"=>time()+10,
+                       "exp"=>time()+600500,
+                       "nbf" => time(),
+                       "data"=>$customClaims
+                   );
+                   $token = JWT::encode($token, $key,'HS256');
                    return array("successful"=>true, "message"=>"login sucessful","token"=>$token);
                }
                return response()->json(['error' => 'invalid_password'], 401);
@@ -32,7 +43,7 @@ class AuthenticateController extends Controller
             else{
                 return response()->json(['error' => $request->input('email')], 401);
             }
-        } catch (JWTException $e) {
+        } catch (Exception $e) {
             // something went wrong whilst attempting to encode the token
             return response()->json(['error' => 'could_not_create_token'], 500);
         }

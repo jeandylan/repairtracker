@@ -17,7 +17,6 @@ class CreateCustomersTable extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->date('date_of_birth');
-            $table->string('shop_location');
             $table->timestamps();
     });
     }

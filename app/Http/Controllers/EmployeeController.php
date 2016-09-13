@@ -1,7 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Ticket;
+use Firebase\JWT\JWT;
+use Google_Client;
+use Google_Service_Drive;
+use Google_Service_Gmail;
 use Illuminate\Http\Request;
 use App\Common\Utility;
 use App\Http\Requests;
@@ -15,10 +19,12 @@ use Mockery\CountValidator\Exception;
 use App\EmployeeAddress;
 use App\EmployeeEmail;
 use App\EmployeeTelephone;
-use JWTAuth;
+use App\Mylibs\JWTAut;
 
 class EmployeeController extends Controller
 {
+
+
     public function get($id)
     {
         try {
@@ -36,10 +42,7 @@ class EmployeeController extends Controller
     }
 
     public function getProfile(){
-
-         return JWTAuth::parseToken()->toUser();
-        //return "kill";
-
+       return JWTAut::toUser();
     }
 
     public function getAll()
@@ -79,6 +82,7 @@ class EmployeeController extends Controller
         return  array("successful"=>true, "message"=>"Employee was created");
 
     }
+
 
 
 
@@ -129,4 +133,22 @@ class EmployeeController extends Controller
 
 
     }
+
+    public function searchTechnician(){
+        $last_name = Input::get('last_name');
+        $first_name = Input::get('first_name');
+        $global=Input::get('global'); //global means any thing Here We only
+
+        if($global){ //global need to be updated To support Other colunms
+            $technician=Employee::where("last_name", "LIKE", "%$global%")
+                ->OrWhere("first_name", "LIKE", "%$global%")->where('role','=','technician')->get();
+            return $technician;
+        }
+        return array();
+    }
+
+    public  function  getTechnician(){
+       return $technician=Employee::where("role", "=", "technician")->get();
+    }
+
 }

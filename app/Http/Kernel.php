@@ -15,6 +15,9 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
+        /*
+         * security Prevent xss ,no need for xcsrt in Token Based App
+         */
         \App\Http\Middleware\securityMiddleware::class,
         \App\Http\Middleware\TenantMiddleware::class,
         'Barryvdh\Cors\HandleCors',
@@ -39,8 +42,11 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
 
         ],
+        /*
+         * disable This During Dev Only , prevent JWT checking
+         */
         'jwtAuthMiddleware'=>[
-           // \App\Http\Middleware\JWTAuthMiddleware::class,
+            // \App\Http\Middleware\JWTAuthMiddleware::class,
 
         ],
 

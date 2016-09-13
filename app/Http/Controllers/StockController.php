@@ -29,14 +29,14 @@ class StockController extends Controller
 
 
         $rules = array(
-            'product_name'       => 'required',
-            'selling_price'      => 'required',
+            'product_name' => 'required',
+            'selling_price' => 'required',
         );
         $validator = Validator::make(Input::all(), $rules); //validate input according to rule above
         $stock = new Stock(Input::all());
         //As data was  send with Dataname that correspond to that in Db ,no need to precise what input goes in what table field(row),(laravel Figure it out)
         $stock->save();
-        return  array("successful"=>true, "message"=>"stock was created");
+        return array("successful" => true, "message" => "stock was created");
     }
 
     /*
@@ -51,25 +51,22 @@ class StockController extends Controller
         try {
             return Stock::find($id);
 
-        }
-        catch (\Illuminate\Database\QueryException $e){
+        } catch (\Illuminate\Database\QueryException $e) {
             return "error";
         }
     }
 
 
-
-
     public function update($id)
     {
         $rules = array(
-            'product_name'       => 'required',
-            'selling_price'      => 'required'
+            'product_name' => 'required',
+            'selling_price' => 'required'
         );
         $validator = Validator::make(Input::all(), $rules);
         $stock = Stock::find($id);
         $stock->update(Input::all());
-        return  array("successful"=>true, "message"=>"Stock item was updated");
+        return array("successful" => true, "message" => "Stock item was updated");
 
     }
 
@@ -80,13 +77,21 @@ class StockController extends Controller
         try {
             $stock = Stock::find($id); //get Customer with id X
             $stock->delete($id); //delete the Customer
-            return  array("successful"=>true, "message"=>"Stock item was deleted");
+            return array("successful" => true, "message" => "Stock item was deleted");
+        } catch (\Illuminate\Database\QueryException $ex) {
+            return array("successful" => false, "message" => "An error Db");
         }
 
-        catch (\Illuminate\Database\QueryException $ex){
-            return  array("successful"=>false, "message"=>"An error Db");
-        }
+    }
 
+    public function search()
+    {
+        $product_name = Input::get('product_name');
+        if($product_name){
+            $stock=Stock::where("product_name", "LIKE", "%$product_name%")->get();
+            return $stock;
+        }
+        return array();
 
     }
 }

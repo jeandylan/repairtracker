@@ -3,14 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Ticket;
-use App\TxtField;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
-use App\Http\Requests;
+use App\CustomTextField;
+use Illuminate\Support\Facades\Validator;
 use App;
+use App\Http\Requests;
 
-class FieldController extends Controller
+class CustomTextFieldController extends Controller
 {
     public function createTxtField($formName) //create a new Field For A form
     {
@@ -20,12 +19,12 @@ class FieldController extends Controller
 
     public function get($formName)
     {
-        return TxtField::where('form_name', '=', $formName)->get();
+        return CustomTextField::where('form_name', '=', $formName)->get();
 
     }
     public function destroy($id)
     {
-        $txtField=TxtField::find($id);
+        $txtField= CustomTextField::find($id);
         $txtField->delete();
         return array("successful" => true, "message" => "Txtfield was deleted");
 
@@ -34,8 +33,8 @@ class FieldController extends Controller
 
     public function getFieldsDetails($formName, $entityID)
     {
-        $fields = new TxtTicket;
-        $fields = TxtField::where('form_name', '=', $formName)->get();
+        $fields = new  CustomTextField;
+        $fields =  CustomTextField::where('form_name', '=', $formName)->get();
         $out = array();
         foreach ($fields as $field) {
             array_push($out, $field->fieldData()->get());
@@ -45,7 +44,7 @@ class FieldController extends Controller
 
     public function update($id)
     {
-        $field = TxtField::find($id);
+        $field =  CustomTextField::find($id);
         $field->update(Input::all());
         return array("successful" => true, "message" => "Txtfield was updated");
 
@@ -59,7 +58,7 @@ class FieldController extends Controller
         );
         $validator = Validator::make(Input::all(), $rules); //validate input according to rule above
         if ($validator->passes()) {
-            $txtField = new TxtField(Input::all());
+            $txtField = new  CustomTextField(Input::all());
             //As data was  send with Dataname that correspond to that in Db ,no need to precise what input goes in what table field(row),(laravel Figure it out)
             $txtField->save();
             return array("successful" => true, "message" => "field was created");
@@ -69,5 +68,3 @@ class FieldController extends Controller
         }
     }
 }
-
-

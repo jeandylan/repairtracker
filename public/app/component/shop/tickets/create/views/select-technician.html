@@ -1,0 +1,22 @@
+<div ng-controller="selectTechnicianCtrl">
+    <h4>Select One Technician </h4>
+    <table st-table="displayedCollection" st-safe-src="rowCollection" class="table table-striped">
+        <thead>
+        <tr>
+            <th colspan="5"><input st-search="" class="form-control" placeholder="Search by first Name or last Name" type="text"/></th>
+        </tr>
+        <tr>
+            <th st-sort="firstName">first name</th>
+            <th st-sort="lastName">last name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="row in displayedCollection">
+            <td>{{row.first_name}}</td>
+            <td>{{row.last_name}}</td>
+            <td><button class="btn-default" ng-click="selectThisTechnician(row)">select</button></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>

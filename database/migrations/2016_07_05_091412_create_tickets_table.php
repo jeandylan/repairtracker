@@ -17,9 +17,9 @@ class CreateTicketsTable extends Migration
             $table->integer('customer_id')->unsigned();
             $table->string('model');
             $table->string('make');
-            $table->string('problem_type');
             $table->longText('problem_definition'); //give a detaile status of the problem
             $table->string('shop_location');
+            $table->date('expected_completed');
             $table->timestamps();
 
         });

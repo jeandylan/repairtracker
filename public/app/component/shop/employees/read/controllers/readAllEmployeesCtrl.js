@@ -22,32 +22,10 @@ the get all customer from server function
         });
     }
 
-    $scope.deleteBtn = function (employeeId,firstName,lastName) {
-        $scope.deleteUrl = "api/employee/"+employeeId;
-        $scope.confirmBoxMessage="do you want to delete Employee "+firstName+ " "+lastName;
-
-        var modalInstance = $uibModal.open({
-            animation:1,
-            templateUrl:'app/component/shop/deleteConfirmation/view/delete-modal-template.html' ,
-            controller: 'deleteModalCtrl',
-            resolve: {
-                deleteUrl: function () {
-                    return $scope.deleteUrl;
-                },
-                confirmBoxMessage:function () {
-                    return $scope.confirmBoxMessage;
-                }
-
-            }
-        });
-
-        modalInstance.result.then(function (deleteurl) {
-            //btn ok(confrim delete) was clicked on popup/modal call function ,delete was done On deleteModalCtrl(return a cleint Id)...We need to refresh data..
+    $scope.deleteBtn = function (employeeId) {
+        serverServices.delete("api/employee/"+employeeId).then(function (response) {
             getAllEmployeesData();
-        }, function () {
-            //button cancel was click on popup/modal nothing to do
         });
-
     };
 });
 

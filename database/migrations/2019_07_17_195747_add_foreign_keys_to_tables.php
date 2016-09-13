@@ -66,6 +66,8 @@ class AddForeignKeysToTables extends Migration
            $table->foreign('customer_id')->references('id')->on('customers');
         });
 
+
+
         Schema::table('invoices', function (Blueprint $table) {
            $table->foreign('ticket_id')->references('id')->on('tickets');
         });
@@ -76,6 +78,13 @@ class AddForeignKeysToTables extends Migration
 
         Schema::table('suppliers', function (Blueprint $table) {
 
+        });
+        /*ticket Comments*/
+        Schema::table('tickets_comments', function (Blueprint $table) {
+            $table->foreign('employee_id')->references('id')->on('employees');
+        });
+        Schema::table('tickets_comments', function (Blueprint $table) {
+            $table->foreign('ticket_id')->references('id')->on('tickets');
         });
 
 

@@ -15,9 +15,11 @@ $scope.login=function (email,password) {
 
     $auth.login(credential,options)
         .then(function(response) {
+            console.log(response);
            if(response.data.successful) $state.go('app')
         })
         .catch(function(response) {
+            console.log(response.data);
 
         });
 

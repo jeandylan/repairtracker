@@ -162,7 +162,9 @@ return [
         /*cors*/
         Barryvdh\Cors\ServiceProvider::class,
         /*JWT for login*/
-        'Tymon\JWTAuth\Providers\JWTAuthServiceProvider',
+      //  'Tymon\JWTAuth\Providers\JWTAuthServiceProvider',
+        /*form builder*/
+        Collective\Html\HtmlServiceProvider::class,
 
     ],
 
@@ -210,11 +212,15 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Landlord'   => HipsterJazzbo\Landlord\Facades\LandlordFacade::class,
-        'JWTAuth' => 'Tymon\JWTAuth\Facades\JWTAuth',
-        'JWTFactory' => 'Tymon\JWTAuth\Facades\JWTFactory',
+       // 'JWTAuth' => 'Tymon\JWTAuth\Facades\JWTAuth',
+       // 'JWTFactory' => 'Tymon\JWTAuth\Facades\JWTFactory',
         /*permission*/
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
         /*permission for middleWare*/
+        /*form Templates*/
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
+
 
 
 

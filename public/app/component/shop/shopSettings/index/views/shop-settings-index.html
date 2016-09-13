@@ -1,33 +1,135 @@
-<div class="panel panel-default">
+<script type="text/javascript">
+      // Your Client ID can be retrieved from your project in the Google
+      // Developer Console, https://console.developers.google.com
+      var CLIENT_ID = '<YOUR_CLIENT_ID>';
 
-    <div class="panel-body">
-        <div ui-view>
-            <div ng-controller="shopSettingsIndexCtrl">
-            <div class="row">
-                <!-- Card Projects -->
-                <div class="col-md-2">
-                    <div class="card">
-                        <div ng-style="SettingsCardBackgroundStyle">
+      var SCOPES = ['https://www.googleapis.com/auth/gmail.readonly'];
+
+      /**
+       * Check if current user has authorized this application.
+       */
+      function checkAuth() {
+          gapi.auth.authorize(
+                  {
+                      'client_id': CLIENT_ID,
+                      'scope': SCOPES.join(' '),
+                      'immediate': true
+                  }, handleAuthResult);
+      }
+
+      /**
+       * Handle response from authorization server.
+       *
+       * @param {Object} authResult Authorization result.
+       */
+      function handleAuthResult(authResult) {
+          var authorizeDiv = document.getElementById('authorize-div');
+          if (authResult && !authResult.error) {
+              // Hide auth UI, then load client library.
+              authorizeDiv.style.display = 'none';
+              loadGmailApi();
+          } else {
+              // Show auth UI, allowing the user to initiate authorization by
+              // clicking authorize button.
+              authorizeDiv.style.display = 'inline';
+          }
+      }
+
+      /**
+       * Initiate auth flow in response to user clicking authorize button.
+       *
+       * @param {Event} event Button click event.
+       */
+      function handleAuthClick(event) {
+          gapi.auth.authorize(
+                  {client_id: CLIENT_ID, scope: SCOPES, immediate: false},
+                  handleAuthResult);
+          return false;
+      }
+
+      /**
+       * Load Gmail API client library. List labels once client library
+       * is loaded.
+       */
+      function loadGmailApi() {
+          gapi.client.load('gmail', 'v1', listLabels);
+      }
+
+      /**
+       * Print all Labels in the authorized user's inbox. If no labels
+       * are found an appropriate message is printed.
+       */
+      function listLabels() {
+          var request = gapi.client.gmail.users.labels.list({
+              'userId': 'me'
+          });
+
+          request.execute(function(resp) {
+              var labels = resp.labels;
+              appendPre('Labels:');
+
+              if (labels && labels.length > 0) {
+                  for (i = 0; i < labels.length; i++) {
+                      var label = labels[i];
+                      appendPre(label.name)
+                  }
+              } else {
+                  appendPre('No Labels found.');
+              }
+          });
+      }
+
+      /**
+       * Append a pre element to the body containing the given message
+       * as its text node.
+       *
+       * @param {string} message Text to be placed in pre element.
+       */
+      function appendPre(message) {
+          var pre = document.getElementById('output');
+          var textContent = document.createTextNode(message + '\n');
+          pre.appendChild(textContent);
+      }
+
+    </script>
+    <script src="https://apis.google.com/js/client.js?onload=checkAuth">
+    </script>
+<div ng-controller="shopSettingsIndexCtrl">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div ui-view>
+               <button id="authorize-button" onclick="handleAuthClick(event)">
+        Authorize
+      </button>
+                 <pre id="output"></pre>
+                <div class="list-group list-group-lg list-group-sp">
+                    <div class="list-group-item clearfix">
+                        <span>
                             <i class="fa fa-wpforms" aria-hidden="true"></i>
-                            <span ng-style="cardTextStyle">Form Editor</span>
-                        </div>
+                            <span>Form Editor</span>
+                        </span>
 
-                        <div class="card-content">
-                            <p>add,update,remove fields from Forms</p>
-                        </div>
-
-                        <div class="card-action">
-                            <a ui-sref="app.settings.form-editor({formName:'Ticket'})" >ticket</a>
-                            <a href="#" target="new_blank">Link</a>
-                            <a href="#" target="new_blank">Link</a>
-                            <a href="#" target="new_blank">Link</a>
-                            <a href="#" target="new_blank">Link</a>
-                        </div>
+                        <span class="clear">
+                            <a ui-sref="app.settings.form-editor({formName:'ticket'})" ><h4>Ticket Form Editor</h4></a>
+                        </span>
                     </div>
                 </div>
-                <!--END OF CARD--->
+                <div class="list-group list-group-lg list-group-sp">
+                    <a ui-sref="app.settings.form-editor({formName:'Ticket'})"  class="list-group-item clearfix">
+                        <span>
+                            <i class="fa fa-wpforms" aria-hidden="true"></i>
+                            <span ng-style="cardTextStyle">Form Editor</span>
+                        </span>
+                        <span class="clear">
+                            <span>Customize Ticket form</span>
+                            <small class="text-muted clear text-ellipsis"Add New field, New Validation, Update Them</small></span>
+                    </a>
+                </div>
             </div>
             </div>
-        </div>
+
+
     </div>
+
+
 </div>

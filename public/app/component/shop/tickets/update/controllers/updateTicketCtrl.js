@@ -89,6 +89,7 @@ app.controller("updateTicketCtrl",function ($scope,$location,editableOptions,$st
             entity_id:$scope.ticketId,
             field_id:$txtField.properties.id
         };
+
         serverServices.post('api/fielddata',newTxtData) //using service (public/app/component/core/services/serverServices.js) that will query Laravel for .json output/Input
             .then(
                 function (result) {

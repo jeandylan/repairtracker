@@ -14,14 +14,39 @@ class employeesSeeder extends Seeder
         $limit=10;
         $faker = Faker\Factory::create(); //use faker to create Data
 
+        //generate Client dylan At mbg
+        DB::table('employees')->insert([
+            'first_name' => 'dylan',
+            'last_name' =>'blais',
+            'date_of_birth' => $faker->date('Y-m-d'),
+            'email'=>'dylanblais1@gmail.com',
+            'password'=>Hash::make('pass'),
+            'shop_location'=>'mahebourg',
+            'role'=>'technician'
+        ]);
+
+        DB::table('employees')->insert([
+            'first_name' => 'stacy',
+            'last_name' =>'nagalingum',
+            'date_of_birth' => $faker->date('Y-m-d'),
+            'email'=>'stacy1@gmail.com',
+            'password'=>Hash::make('pass'),
+            'shop_location'=>'mahebourg',
+            'role'=>'technician'
+        ]);
+
+
+
+
         for ($i = 1; $i < $limit; $i++) {
+            $shopLocation=$faker->randomElement($array = array ('mahebourg','curepipe','vacoas'));
             DB::table('employees')->insert([
                 'first_name' => $faker->firstName,
                 'last_name' =>$faker->lastName,
                 'date_of_birth' => $faker->date('Y-m-d'),
                 'email'=>$faker->safeEmail,
                 'password'=>Hash::make('pass'),
-                'shop_location'=>$faker->randomElement($array = array ('mahebourg','curepipe','vacoas')),
+                'shop_location'=>$shopLocation,
                 'role'=>$faker->randomElement($array = array ('admin','cashier','technician'))
             ]);
             
@@ -29,7 +54,7 @@ class employeesSeeder extends Seeder
                 'employee_id' => $i,
                 'address' => $faker->address,
                 'type' => $faker->randomElement($array = array ('home','private','company')),
-                'shop_location'=>$faker->randomElement($array = array ('mahebourg','curepipe','vacoas')),
+                'shop_location'=>$shopLocation,
 
             ]);
 
@@ -37,7 +62,7 @@ class employeesSeeder extends Seeder
                 'employee_id' => $i,
                 'address' => $faker->address,
                 'type' => $faker->randomElement($array = array ('home','private','company')),
-                'shop_location'=>$faker->randomElement($array = array ('mahebourg','curepipe','vacoas')),
+                'shop_location'=>$shopLocation,
 
             ]);
 
@@ -46,7 +71,7 @@ class employeesSeeder extends Seeder
                 'employee_id' => $i,
                 'telephone_number' => $faker->phoneNumber,
                 'type' => $faker->randomElement($array = array ('home','private','company')),
-                'shop_location'=>$faker->randomElement($array = array ('mahebourg','curepipe','vacoas')),
+                'shop_location'=>$shopLocation,
 
             ]);
 
@@ -54,7 +79,7 @@ class employeesSeeder extends Seeder
                 'employee_id' => $i,
                 'telephone_number' => $faker->phoneNumber,
                 'type' => $faker->randomElement($array = array ('home','private','company')),
-                'shop_location'=>$faker->randomElement($array = array ('mahebourg','curepipe','vacoas')),
+                'shop_location'=>$shopLocation,
 
             ]);
 
@@ -63,7 +88,7 @@ class employeesSeeder extends Seeder
                 'employee_id' => $i,
                 'email' => $faker->safeEmail,
                 'type' => $faker->randomElement($array = array ('home','private','company')),
-                'shop_location'=>$faker->randomElement($array = array ('mahebourg','curepipe','vacoas')),
+                'shop_location'=>$shopLocation,
 
             ]);
 

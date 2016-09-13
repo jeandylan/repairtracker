@@ -102,8 +102,8 @@ app.controller("createCustomerCtrl",function ($scope,serverServices,toaster,$htt
         serverServices.post('api/customer',customerData) //using service (customer/service/clientService ) that will query Laravel for .json output
             .then(
                 function (result) {
-
                     toaster.pop("success","DONE",result.message);
+                    $scope.newCustomerId=result.newId;
                 },
                 function (error) {
                     // handle errors here

@@ -16,10 +16,10 @@ class CreateEmployeeTicketTable extends Migration
             $table->increments('id');//Auto Incrmt
             $table->integer('ticket_id')->unsigned();
             $table->integer('employee_id')->unsigned();
-            $table->string('job_assign');
+            $table->string('job_assign')->nullable();
             $table->integer('completed_percentage')->nullable();
             $table->integer('hours_work_on')->nullable();
-            $table->date('expected_completed_on')->nullable();
+            $table->date('estimated_completion_date')->nullable();
 
             $table->timestamps();
         });

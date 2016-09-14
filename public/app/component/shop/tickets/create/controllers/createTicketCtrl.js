@@ -2,12 +2,14 @@
  * Created by dylan on 03-Jul-16.
  */
 
-app.controller("createTicketCtrl",function ($scope,$stateParams,serverServices,toaster,$state,ngDialog) {
+app.controller("createTicketCtrl",function ($scope,$stateParams,serverServices,toaster,$state,ngDialog,$filter) {
     $scope.customer={}; //customer should be unique
     $scope.stocks=[]; //ticket can have many Stock item
     $scope.technicians=[]; //Ticket can have many Many Tech
-
-
+    $scope.ticket = {}
+    $scope.calendarOption={
+        minDate:new Date()
+    }
 
     console.log($scope.customer.id=$stateParams.customerId); //these Are Optional Only capture if pass as Params
 
@@ -27,51 +29,30 @@ app.controller("createTicketCtrl",function ($scope,$stateParams,serverServices,t
     };
 
     $scope.createTicket=function () {
-        console.log($scope.isEmail);
-        var ticketData = {
-            model: $scope.model,
-            make: $scope.make,
-            problem_type: "fgfr",
-            problem_definition: $scope.problem_definition,
-           // technician_id: $scope.technician.id
-        };
-
-        $scope.customTextFieldsData = [];
-
-        angular.forEach($scope.customTextFields, function (value, index) {
-            $scope.customTextFieldsData.push({
-                custom_text_field_id: value.id,
-                field_data: getCustomTextData(value.field_name)
-            })
-        });
-        $scope.serverData = {
-            text_field:[ticketData],
-            custom_text_fields_data: $scope.customTextFieldsData,
-            email:$scope.customEmail
-    };
-
-        serverServices.post('api/ticket/' + $scope.customer.id, $scope.serverData) //using service (customer/service/clientService ) that will query Laravel for .json output
+        $scope.ticket.estimated_completion_date=  $filter('date')($scope.ticket.estimated_completion_date, "yyyy-MM-dd"); //need to change Dates in before Laravel sent
+        serverServices.post('api/ticket/' + $scope.customer.id, $scope.ticket) //using service (customer/service/clientService ) that will query Laravel for .json output
             .then(function (result) {
-                    toaster.pop("success", "DONE", result.message);
-                console.log(result)
-                    var idOfNewTicket = result; //this is the id of newly created in db
-                    $state.go("app.update-ticket", {ticketId: idOfNewTicket});//go to Webpage that modify newly created ticket,so as to edit Ticket and View QR
+                console.log(result);
+                $scope.newTicketId = result.ticketId; //this is the id of newly created in db
+                assignToTechnicianToTicket(result.ticketId);
+
                 }),
                 function (error) {
                     console.log(error);
                     toaster.pop("error", "SERVER ERROR", "ooh nothing was saved error ");
                 };
+    };
 
-   };
-
-   function assignToTechnicianToTicket(ticketId,ticketAssignData){
-       serverServices.post('/ticketSetTechnician/'+ticketId,ticketAssignData)
-           .then(function () {
-               console.log("valis");
-           }).
-           catch(function (e) {
-               console.log(e);
-       });
+   function assignToTechnicianToTicket(ticketId){
+       for (var i in $scope.technicians) {
+           $scope.technicians[i].ticket.estimated_completion_date=  $filter('date')($scope.technicians[i].ticket.estimated_completion_date, "yyyy-MM-dd"); //need to change Dates in before Laravel
+           $scope.technicians[i].ticket.employee_id= $scope.technicians[i].id;
+           serverServices.post('api/ticketSetTechnician/'+ticketId,$scope.technicians[i].ticket)
+               .then(function () {
+               }),
+               function (error) {
+               };
+       }
    }
 
     $scope.selectCustomer=function () {

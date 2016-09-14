@@ -39,49 +39,29 @@ class TicketController extends Controller
     {
         if(Customer::where('id','=',$customerId)->exists()) { //check if Customer ID in dB so as not to break foreignkey constrain
 
+            $ticketData=Input::all();
+            $ticketData['customer_id']=$customerId; //add the Customer Id To to ticket Data
+            $ticket=new Ticket($ticketData);
+            //$ticket->estimated_completion_date="2016-01-03";
+            $ticket->save();
+            //Now Sent Email
+            $emailOutput="";
 
-            $ticket = new Ticket();
-            $ticket->customer_id = $customerId;
-            $textField=input::get('text_field');
-            $ticket->make = $textField[0]['make'];
-            $ticket->model = $textField[0]['model'];
-            $ticket->problem_type = $textField[0]['problem_type'];
-            $ticket->problem_definition =$textField[0]['problem_definition'];
-            $ticket->customer()->associate($customerId);
-
-            $ticket->save(); //Need To save Ticket Before It can Be assigned To employee Because of manyToMany rel
-            //check if technician Id Is provided  uses this Id to assign Technician
-            if(input::get('technician_id')) $ticket->employee()->attach(input::get('technician_id'));
-
-            $lastTicketId= $ticket->id; //get the new Ticket Id
-
-            if(input::get('custom_text_fields_data')){
-                $cutomTextFieldsData=input::get('custom_text_fields_data');
-                foreach ( $cutomTextFieldsData as $customText){
-                   $customTextFieldData = new CustomTextFieldData();
-                    $customTextFieldData->custom_text_field_id=$customText['custom_text_field_id'];
-                    $customTextFieldData->entity_id=$lastTicketId;
-                  $customTextFieldData->field_data=$customText['field_data'];
-                    $customTextFieldData->save();
-                }
-            }
-
-            if(input::get('isEmail')){
-                $mail=new GmailMailler();
-                $mail->sentMail("ergergregrrvbrtfv rever");
-
-                return "yyyyyy";
-
+            $customerDetails=Customer::find($customerId);
+            foreach ($customerDetails->email()->get() as $customerEmail ){
+                $ticketEmail=new GmailMailler();
+              $emailOutput .=  $ticketEmail->SentTicketCreation($customerEmail->email,$customerDetails->first_name,"ticket Creation",
+                  "ferfr","we Have a ticket for you ");
 
             }
-            return  array("successful"=>true, "message"=>"ticket  created","ticketId"=>$lastTicketId);
+
+
+
+            return  array("successful"=>true, "message"=>"ticket  created, $emailOutput","ticketId"=>$ticket->id); //return the new Ticket ID
         }
         else{
-            return array("successful"=>false,"message"=>"cannot store Ticket, user Does not exist");
+            return response()->json(['error' => 'Error msg'], 404); // Status code here
         }
-
-
-
     }
 
     public function getComments($ticketId){
@@ -113,8 +93,8 @@ class TicketController extends Controller
 
     public function getTechnician(Request $request,$ticketId){
         $ticket=Ticket::find($ticketId);
-        $ticket->employee();
-        return $ticket;
+       $employee= $ticket->employee();
+        return $employee;
     }
 
     public function setTechnician($ticketId){
@@ -124,6 +104,7 @@ class TicketController extends Controller
         }
         $technician = Employee::find(input::get('employee_id'));
         $ticket->employee()->attach($technician->id,Input::all());
+        return  array("successful"=>true, "message"=>"Technican Job updated");
 
     }
 

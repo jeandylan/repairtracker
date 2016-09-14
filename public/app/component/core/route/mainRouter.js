@@ -39,7 +39,7 @@ default should be app,every page is Check for login in ShopAppCtrl
                         ncyBreadcrumb: {
                             label: 'Home'
                         },
-                        resolve:load(['smart-table','app/component/core/filters/otherFilter.js','app/shopAppCtrl.js']),
+                        resolve:load(['smart-table','app/component/core/filters/otherFilter.js','app/shopAppCtrl.js','moment']),
 
                     })
 

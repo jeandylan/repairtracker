@@ -18,8 +18,9 @@ class CreateTicketsTable extends Migration
             $table->string('model');
             $table->string('make');
             $table->longText('problem_definition'); //give a detaile status of the problem
+            $table->boolean('completed');
+            $table->date('estimated_completion_date');
             $table->string('shop_location');
-            $table->date('expected_completed');
             $table->timestamps();
 
         });

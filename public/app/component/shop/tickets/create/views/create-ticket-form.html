@@ -21,7 +21,7 @@
                 </div>
                 <div ng-repeat="technician in technicians">
                     <div class="row form-group">
-                        <div class="col-md-5">
+                        <div class="col-md-4">
                             <div class="col-md-4">
                                 <small>Technician Name: <b class=text-info>{{technician.first_name+" "+ technician.last_name}}</b> </small>
                             </div>
@@ -31,37 +31,63 @@
                                 </button>
                             </div>
                         </div>
-                            <div class="col-md-7">
-                              Task Description:  <textarea ng-model="technician.task" cols="100" style="width:100%"  placeholder="insert Job Description for Technician {{technician.first_name+' '+technician.last_name}}" required></textarea>
+                            <div class="col-md-4">
+                              Job assign:
+                                <textarea ng-model="technician.ticket.job_assign" cols="100" style="width:100%"  placeholder="insert Job Description for Technician {{technician.first_name+' '+technician.last_name}}" required></textarea>
+                            </div>
+                         <div class="col-md-4">
+                              estimated Completion Date:
+                             <p class="input-group">
+                                <input type="text" name="date_of_birth" name="date_of_birth" class="form-control"
+                                       uib-datepicker-popup="{{'yyyy/MM/dd'}}" ng-model="technician.ticket.estimated_completion_date" is-open="calendar2.isOpen" datepicker-options="calendarOption" required close-text="Close" />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="calendar2.isOpen= !calendar2.isOpen"><i class="glyphicon glyphicon-calendar"></i></button>
+                                </span>
+                            </p>
+
                             </div>
                         </div>
                     </div>
             <button class="btn btn-default btn-sm pull-right" ng-click="heading1.isOpen = !heading1.isOpen">
                 next<i class="glyphicon glyphicon-chevron-right"></i></button>
         </div>
+
         <!---end of accordeion-->
-        <div uib-accordion-group class="panel-primary"
-             heading="Ticket Details for mr. {{customer.first_name+ ' '+customer.last_name}}" is-open="heading1.isOpen">
+        <div uib-accordion-group class="panel-primary" heading="Ticket Details for mr. {{customer.first_name+ ' '+customer.last_name}}" is-open="heading1.isOpen">
             <div class="form-group row">
                 <label class="col-sm-2 control-label">Model</label>
                 <div class="col-sm-10">
-                    <input type="text" ng-model="model" class="form-control">
+                    <input type="text" ng-model="ticket.model" class="form-control">
+
                 </div>
             </div>
-
             <div class="form-group row">
                 <label class="col-sm-2 control-label">Make</label>
                 <div class="col-sm-10">
-                    <input type="text" ng-model="make" class="form-control">
+                    <input type="text" ng-model="ticket.make" class="form-control">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-2 control-label"> problem Definition</label>
                 <div class="col-sm-10">
-					<textarea class="form-control" ng-model="problem_definition" rows="7"
+					<textarea class="form-control" ng-model="ticket.problem_definition" rows="7"
 					          id="problem_definition"></textarea>
                 </div>
             </div>
+
+             <div class="form-group row">
+                <label class="col-sm-2 control-label">Expected Complete Date</label>
+                <div class="col-sm-10">
+                    <p class="input-group">
+                                <input type="text" name="date_of_birth" name="date_of_birth" class="form-control"
+                                       uib-datepicker-popup="{{'yyyy/MM/dd'}}" ng-model="ticket.estimated_completion_date" is-open="calendar1.isOpen" datepicker-options="calendarOption" required close-text="Close" />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="calendar1.isOpen= !calendar1.isOpen"><i class="glyphicon glyphicon-calendar"></i></button>
+                                </span>
+                            </p>
+                </div>
+            </div>
+
             <div class="form-group row" ng-repeat='field in customTextFields'>
                 <label class="col-sm-2 control-label"> {{field.field_name}}</label>
                 <div class="col-sm-10">
@@ -77,7 +103,8 @@
             <button class="btn btn-default btn-sm pull-right" ng-click="heading0.isOpen = !heading0.isOpen">Prev <i
 		            class="glyphicon glyphicon-chevron-left"></i></button>
         </div>
-	    <!---end of 1 accordeon-->
+
+	     <!---end of 1 accordeon-->
         <div uib-accordion-group class="panel-primary" heading="Labour Details" is-open="heading2.isOpen">
             parts
 	        <!---yeah award agian nexyt should be first -->
@@ -105,7 +132,6 @@
             <!---yeah award agian nexyt should be first -->
             <button class="btn btn-default btn-sm pull-right" ng-click="heading4.isOpen = !heading4.isOpen">Next <i
                     class="glyphicon glyphicon-chevron-right"></i></button>
-
             <button class="btn btn-default btn-sm pull-right" ng-click="heading2.isOpen = !heading2.isOpen">Prev<i class="glyphicon glyphicon-chevron-left"></i></button>
         </div>
 

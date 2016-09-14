@@ -22,6 +22,7 @@ class ticketSeeder extends Seeder
             'model' => $faker->word,
             'make' => $faker->word,
             'problem_definition' => $faker->sentences($nb = 3, $asText = true),
+            'estimated_completion_date'=>$faker->dateTimeBetween($startDate = 'now', $endDate = '+2 months'),
             'shop_location'=>'mahebourg',
         ]);
 
@@ -30,6 +31,7 @@ class ticketSeeder extends Seeder
             'model' => $faker->word,
             'make' => $faker->word,
             'problem_definition' => $faker->sentences($nb = 3, $asText = true),
+            'estimated_completion_date'=>$faker->dateTimeBetween($startDate = 'now', $endDate = '+2 months'),
             'shop_location'=>'mahebourg',
         ]);
 
@@ -54,6 +56,7 @@ class ticketSeeder extends Seeder
                 'model' => $faker->word,
                 'make' => $faker->word,
                 'problem_definition' => $faker->sentences($nb = 3, $asText = true),
+                'estimated_completion_date'=>$faker->dateTimeBetween($startDate = 'now', $endDate = '+2 months'),
                 'shop_location'=>$shop_location,
             ]);
         }
@@ -67,6 +70,7 @@ class ticketSeeder extends Seeder
                 'job_assign' => $faker->sentences($nb = 3, $asText = true),
                 'hours_work_on'=>rand(1,2),
                 'completed_percentage'=>rand(60,100),
+                'estimated_completion_date'=>$faker->dateTimeBetween($startDate = 'now', $endDate = '+2 months')
             ]);
         }
     }

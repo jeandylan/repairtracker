@@ -17,6 +17,7 @@ class CreateTicketsCommentsTable extends Migration
             $table->integer('ticket_id')->unsigned();
             $table->integer('employee_id')->unsigned()->nullable(); //store Employee And Admin Id(note nullable is for Customers)
             $table->string('comment');
+            $table->boolean('to_customer');
             $table->timestamps();
 
     });

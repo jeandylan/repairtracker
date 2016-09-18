@@ -2,30 +2,166 @@
  * Created by dylan on 03-Jul-16.
  */
 
-app.controller("updateTicketCtrl",function ($scope,$location,editableOptions,$stateParams,serverServices,toaster) {
+app.controller("updateTicketCtrl",function ($scope,$location,editableOptions,$stateParams,serverServices,toaster,CacheFactory,ngDialog,$filter) {
     editableOptions.theme = 'bs3';
-    $scope.qr=$location.path();
+    $scope.newComment={}; //new Comment that is supposed to be posted On ticket
+    $scope.qr=$location.path(); //QR have Address of ticket
     $scope.ticketId=$stateParams.ticketId;
+    $scope.minDate=new Date();
+    $scope.opened = {};
+    $scope.unsavedStocks=[];
+    $scope.unsavedTechniciansTask=[];
+    $scope.currentUser=CacheFactory.get('appCache').get('profile'); //obtain current  login user from cache (used to know who post Comments)
     getTicketData($scope.ticketId);
-    getFieldData($scope.ticketId);
+    getStockUsed();
+    getComments();
+   /// getFieldData($scope.ticketId);
+    getTaskAssign();
 
+    $scope.$on('fieldDataChanged',function () { //refresg data if new Txt field
+        getFieldData($scope.ticketId);
+    });
 
-    function  getTicketData(id) {
-        serverServices.get('api/ticket/'+id)//id parameter obtain by doing state parameter (like a query)
+    $scope.$on('newCommentPosted',function () {
+        $scope.newComment={};
+        getComments();
+    });
+
+    $scope.$on('changeTask',function () {
+        $scope.unsavedTechniciansTask=[];
+        getTaskAssign();
+    });
+
+//General
+    function  getTicketData() {
+        serverServices.get('api/ticket/'+$scope.ticketId)//id parameter obtain by doing state parameter (like a query)
             .then(
                 function (result) {
                     $scope.ticket = result;
                     console.log(result)
                 },
                 function (result) {
-                    // toaster.pop('error', "server Err", "we could not get info needed");
                     console.log(result);
-                    //could not get response from Server
                 });
     }
+    $scope.open = function($event, elementOpened) {
+        $event.preventDefault();
+        $event.stopPropagation();
 
-    function getFieldData(id) {
-        serverServices.get('api/ticketfieldsdata/'+id).then(
+        $scope.opened[elementOpened] = !$scope.opened[elementOpened];
+    }; //calendar Func
+
+    ///Function definition Task
+    function getTaskAssign(){
+        serverServices.get('api/ticketTechnician/'+$scope.ticketId).then(
+            function (result) {
+                $scope.tasks=result;
+               console.log(result)
+            },function (result) {
+                console.log(result);
+            })
+    }
+    $scope.createTask=function () {
+        for (var i in $scope.unsavedTechniciansTask) {
+            (!$scope.unsavedTechniciansTask[i].ticket)?toaster.pop('warning', 'error at Task'+(i+1), "Job Assign Canoot be blank"):
+                $scope.unsavedTechniciansTask[i].ticket.employee_id= $scope.unsavedTechniciansTask[i].id;
+            serverServices.post('api/ticketTechnician/'+$scope.ticketId,$scope.unsavedTechniciansTask[i].ticket)
+                .then(function () {
+                    if(i==$scope.unsavedTechniciansTask.length-1)$scope.$emit("changeTask");
+                }),
+                function (error) {
+                };
+        }
+    };
+    $scope.selectTechnician=function () {
+        ngDialog.open({
+            template: 'app/component/shop/tickets/update/views/select-technician.html',
+            controller:'selectTechnicianCtrl',
+            className: 'ngdialog-theme-default',
+            scope:$scope
+        }).closePromise.then(function (data) {
+
+            if(data.value.id) $scope.unsavedTechniciansTask.push(data.value);
+        });
+    };
+    $scope.removeTechnician=function (technician) {
+        index=$scope.unsavedTechniciansTask.indexOf(technician);
+        if (index > -1) {
+            $scope.unsavedTechniciansTask.splice(index, 1);
+        }
+    };
+    $scope.deleteTask=function (task) {
+        serverServices.delete('api/ticketTechnician/'+task.task.id).then(
+            function () {
+                $scope.$emit("changeTask");
+            },function () {
+            })
+    };
+
+    //function Stocks
+    function getStockUsed(){
+        serverServices.get('api/ticketStock/'+$scope.ticketId).then(
+            function (result) {
+                $scope.usedStocks=result;
+                //console.log(result)
+            },function (result) {
+                console.log(result);
+            })
+    }
+    $scope.saveStock=function (stock) {
+        serverServices.post('api/ticketStock/'+$scope.ticketId,stock).then(
+            function (result) {
+                console.log(result);
+                $scope.removeUnsavedStock(stock);
+                getStockUsed();
+            },function (result) {
+                
+            })
+
+
+    };
+    $scope.selectStock=function () {
+        ngDialog.open({
+            template: 'app/component/shop/tickets/update/views/select-stock.html',
+            controller:'selectStockCtrl',
+            className: 'ngdialog-theme-default',
+            scope:$scope
+        }).closePromise.then(function (data) {
+            if(data.value.id) $scope.unsavedStocks.push(data.value);  //add item to potential Stocks
+        });
+    };
+    $scope.removeUnsavedStock=function (stock) {
+        index=$scope.unsavedStocks.indexOf(stock);
+        if (index > -1) {
+            $scope.unsavedStocks.splice(index, 1);
+        }
+    };
+
+    //comments
+    function getComments() {
+        serverServices.get('api/ticketComments/'+$scope.ticketId).then(
+            function (result) {
+                $scope.comments=result;
+                console.log(result)
+            },function (result) {
+                console.log(result);
+
+            }
+        )
+
+    }
+    $scope.postComment=function () {
+        serverServices.post('api/ticketComments/'+$scope.ticketId,$scope.newComment).then(
+            function (result) {
+                $scope.$emit("newCommentPosted");
+            },function (result) {
+
+            });
+    };
+
+
+    function getFieldData() {
+        serverServices.get('api/ticketfieldsdata/'+$scope.ticketId).then(
             function (result) {
                 $scope.txtFields = result;
 
@@ -34,12 +170,7 @@ app.controller("updateTicketCtrl",function ($scope,$location,editableOptions,$st
                toaster.pop('error', "server Err", result.message);
                 console.log(result);
             });
-
     }
-
-    $scope.$on('fieldDataChanged',function () { //refresg data if new Txt field
-       getFieldData($scope.ticketId);
-    });
 
     $scope.updateTicket=function () {
         var ticketUpdateData=
@@ -89,7 +220,6 @@ app.controller("updateTicketCtrl",function ($scope,$location,editableOptions,$st
             entity_id:$scope.ticketId,
             field_id:$txtField.properties.id
         };
-
         serverServices.post('api/fielddata',newTxtData) //using service (public/app/component/core/services/serverServices.js) that will query Laravel for .json output/Input
             .then(
                 function (result) {
@@ -100,7 +230,10 @@ app.controller("updateTicketCtrl",function ($scope,$location,editableOptions,$st
                     toaster.pop("error","Failed","ooh nothing was saved error ");
                 }
             );
-    }
+    };
+
+
+
 
 
 });

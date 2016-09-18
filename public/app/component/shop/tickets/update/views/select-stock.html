@@ -1,0 +1,25 @@
+<div ng-controller="selectStockCtrl">
+	<h4>Select One Technician </h4>
+	<table st-table="displayedCollection" st-safe-src="rowCollection" class="table table-striped">
+		<thead>
+		<tr>
+			<th colspan="5"><input st-search="" class="form-control" placeholder="Search by Product Name" type="text"/>
+			</th>
+		</tr>
+		<tr>
+			<th st-sort="productName">product name</th>
+			<th st-sort="sellingPrice">selling price</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr ng-repeat="row in displayedCollection">
+			<td>{{row.product_name}}</td>
+			<td>{{row.selling_price}}</td>
+			<td>
+				<button class="btn-default" ng-click="selectThisStock(row)">select</button>
+			</td>
+		</tr>
+		</tbody>
+	</table>
+
+</div>

@@ -4,14 +4,16 @@
 angular.module('app')
     .controller("shopAppCtrl",function ($scope,serverServices,toaster,editableOptions,$rootScope,$state,CacheFactory,$auth){
 //Check if  Authenticated
+        
 
         editableOptions.theme = 'bs3';  //the editable theme for xeditable injection should always be used else calendar and type ahead for address fails
         $scope.$on('$stateChangeSuccess', function () {
-            if($auth.isAuthenticated()) {
-                if (!CacheFactory.get('appCache')) {
+            if($auth.isAuthenticated()) { //is Login
+                if (!CacheFactory.get('appCache')) { //if canche doess not exit
                     CacheFactory.createCache('appCache', {
                         deleteOnExpire: 'aggressive',
-                        recycleFreq: 60000
+                        recycleFreq: 60000,
+                        storageMode: 'localStorage'
                     });
                     serverServices.get('api/employee/myProfile') //using service (customer/service/clientService ) that will query Laravel for .json output
                         .then(function (result) {
@@ -28,7 +30,7 @@ angular.module('app')
                     console.log("cache Existed")
                 }
             }
-            else{
+            else{ //if not logiN(cannot find Token)
 
                 $state.go('login');
             }

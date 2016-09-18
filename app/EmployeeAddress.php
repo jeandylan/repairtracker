@@ -9,7 +9,7 @@ class EmployeeAddress extends Model
     use BelongsToTenant;
     protected $table='employee_address';
  
-    protected $fillable = ['address', 'type','employee_id'];
+  //  protected $fillable = ['address', 'type','employee_id'];
 
     public function employee()
     {

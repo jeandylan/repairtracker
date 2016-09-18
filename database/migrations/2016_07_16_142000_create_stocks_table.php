@@ -18,8 +18,8 @@ class CreateStocksTable extends Migration
             $table->float('selling_price');
             $table->integer('reorder_level')->unsigned(); //minimum reordering level
             $table->string('barcode');
-            $table->string('shop_location');
             $table->timestamps();
+
         });
     }
 

@@ -178,6 +178,12 @@ angular.module('app')
             ]
         },
         {
+            name: 'ui.bootstrap.datetimepicker',
+            files: [
+                'assets/js/angular-library/angular-date-time-picker/datetime-picker.min.js'
+            ]
+        },
+        {
             name: 'AngularPrint',
             files: [
                 'assets/js/angular-library/angular-print/angularPrint.css',

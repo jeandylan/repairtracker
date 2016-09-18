@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\StockLocationLevel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
@@ -26,8 +27,6 @@ class StockController extends Controller
 
     public function store(Request $request)
     {
-
-
         $rules = array(
             'product_name' => 'required',
             'selling_price' => 'required',
@@ -92,6 +91,24 @@ class StockController extends Controller
             return $stock;
         }
         return array();
+
+    }
+    //stock lvl
+    public function level($stockId){
+        return StockLocationLevel::where("stock_id","=",$stockId)->get();
+    }
+
+    function stockLocationReduce($stockId){
+        $qty_reduce=Input::get('reduce_by'); //qty to reduce stock lvl
+       $stockLocationLevel=StockLocationLevel::where("stock_id","=",$stockId)->first();
+        if($qty_reduce <= $stockLocationLevel->current_level && ctype_digit($qty_reduce)) { //Stock is enought to be
+            // reduced ,and qty to be reduce is provided(in int)
+            $stockLocationLevel->current_level-=Input::get('reduce_by');
+            $stockLocationLevel->save();
+            return array("successful" => true, "message" => "Stock item was updated");
+        }
+        return response()->json(['error' => 'Not enoght Stock '], 404);
+
 
     }
 }

@@ -1,153 +1,151 @@
 <div ng-controller="createTicketCtrl">
-    <!---personal detail form panel --->
-    <uib-accordion class="row">
-        <div uib-accordion-group class="panel-primary" heading="Customers & Tech" is-open="heading0.isOpen">
-            <div ng-show="!customer.id">
-                <h6  class="text-danger">To Create Ticket A Customer is needed:</h6>
-                <button class="btn btn-default" ng-click="selectCustomer()">Select Customer</button>
-                <button class="btn btn-default" ng-click="createCustomer()">create New Customer</button>
+   <!---personal detail form panel --->
+   <uib-accordion class="row">
+      <div uib-accordion-group class="panel-primary" heading="Customers & Tech" is-open="heading0.isOpen">
+         <div ng-show="!customer.id">
+            <h6  class="text-danger">To Create Ticket A Customer is needed:</h6>
+            <button class="btn btn-default" ng-click="selectCustomer()">Select Customer</button>
+            <button class="btn btn-default" ng-click="createCustomer()">create New Customer</button>
+         </div>
+         <div ng-show="customer.id">
+            <h6  class="text-info-dk"> Change Customer</h6>
+            <small class="lead">ticket currently for :</small> <b> {{customer.first_name +" "+customer.last_name}}</b>
+            <button class="btn btn-default" ng-click="changeCustomer()">change Customer</button>
+         </div>
+         <h6>Assign Tech To Ticket</h6>
+         <button class="btn btn-default" ng-click="selectTechnician()">Assign Techician</button>
+         <div ng-show="technicians.length >0">
+            <div class="line line-dashed b-b line-lg pull-in"></div>
+            <h4 class="lead">Assign Job To the Technician</h4>
+            <div class="line line-dashed b-b line-lg pull-in"></div>
+         </div>
+         <div ng-repeat="technician in technicians">
+            <div class="row form-group">
+               <div class="col-md-4">
+                  <div class="col-md-4">
+                     <small>Technician Name: <b class=text-info>{{technician.first_name+" "+ technician.last_name}}</b> </small>
+                  </div>
+                  <div class="col-md-1">
+                     <button type="button" class="btn btn-sm btn-danger"  confirm-button="removeTechnician(technician)" message="Are you sure you want to remove this technician ?">
+                     <i class="glyphicon  glyphicon-remove-circle">delete</i>
+                     </button>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  Job assign:
+                  <textarea ng-model="technician.ticket.job_assign" cols="100" style="width:100%"  placeholder="insert Job Description for Technician {{technician.first_name+' '+technician.last_name}}" required></textarea>
+               </div>
+               <div class="col-md-4">
+                  estimated Completion Date:
+                  <p class="input-group">
+                     <input type="text" class="form-control" datetime-picker="yyyy/MM/dd"
+                            ng-model="technician.ticket.estimated_completion_date" enable-time="false"  datepicker-options="calendarOption" is-open="calendar2.isOpen">
+                     <span class="input-group-btn">
+                     <button type="button" class="btn btn-default"   ng-click="calendar2.isOpen= !calendar2.isOpen"><i class="glyphicon glyphicon-calendar"></i></button>
+                     </span>
+                  </p>
+               </div>
             </div>
-            <div ng-show="customer.id">
-                 <h6  class="text-info-dk"> Change Customer</h6>
-                <small class="lead">ticket currently for :</small> <b> {{customer.first_name +" "+customer.last_name}}</b>
-                <button class="btn btn-default" ng-click="changeCustomer()">change Customer</button>
+         </div>
+         <button class="btn btn-default btn-sm pull-right" ng-click="heading1.isOpen = !heading1.isOpen">
+         next<i class="glyphicon glyphicon-chevron-right"></i></button>
+      </div>
+       <!---end of accordeion-->
+      <div uib-accordion-group class="panel-primary" heading="Ticket Details for mr. {{customer.first_name+ ' '+customer.last_name}}" is-open="heading1.isOpen">
+         <div class="form-group row">
+            <label class="col-sm-2 control-label">Model</label>
+            <div class="col-sm-10">
+               <input type="text" ng-model="ticket.model" class="form-control">
             </div>
-                <h6>Assign Tech To Ticket</h6>
-                <button class="btn btn-default" ng-click="selectTechnician()">Assign Techician</button>
-                <div ng-show="technicians.length >0">
-                     <div class="line line-dashed b-b line-lg pull-in"></div>
-                    <h4 class="lead">Assign Job To the Technician</h4>
-                    <div class="line line-dashed b-b line-lg pull-in"></div>
-                </div>
-                <div ng-repeat="technician in technicians">
-                    <div class="row form-group">
-                        <div class="col-md-4">
-                            <div class="col-md-4">
-                                <small>Technician Name: <b class=text-info>{{technician.first_name+" "+ technician.last_name}}</b> </small>
-                            </div>
-                            <div class="col-md-1">
-                                <button type="button" class="btn btn-sm btn-danger"  confirm-button="removeTechnician(technician)" message="Are you sure you want to remove this technician ?">
-                                <i class="glyphicon  glyphicon-remove-circle">delete</i>
-                                </button>
-                            </div>
-                        </div>
-                            <div class="col-md-4">
-                              Job assign:
-                                <textarea ng-model="technician.ticket.job_assign" cols="100" style="width:100%"  placeholder="insert Job Description for Technician {{technician.first_name+' '+technician.last_name}}" required></textarea>
-                            </div>
-                         <div class="col-md-4">
-                              estimated Completion Date:
-                             <p class="input-group">
-                                <input type="text" name="date_of_birth" name="date_of_birth" class="form-control"
-                                       uib-datepicker-popup="{{'yyyy/MM/dd'}}" ng-model="technician.ticket.estimated_completion_date" is-open="calendar2.isOpen" datepicker-options="calendarOption" required close-text="Close" />
-                                <span class="input-group-btn">
-                                    <button type="button" class="btn btn-default" ng-click="calendar2.isOpen= !calendar2.isOpen"><i class="glyphicon glyphicon-calendar"></i></button>
-                                </span>
-                            </p>
-
-                            </div>
-                        </div>
-                    </div>
-            <button class="btn btn-default btn-sm pull-right" ng-click="heading1.isOpen = !heading1.isOpen">
-                next<i class="glyphicon glyphicon-chevron-right"></i></button>
-        </div>
-
-        <!---end of accordeion-->
-        <div uib-accordion-group class="panel-primary" heading="Ticket Details for mr. {{customer.first_name+ ' '+customer.last_name}}" is-open="heading1.isOpen">
-            <div class="form-group row">
-                <label class="col-sm-2 control-label">Model</label>
-                <div class="col-sm-10">
-                    <input type="text" ng-model="ticket.model" class="form-control">
-
-                </div>
+         </div>
+         <div class="form-group row">
+            <label class="col-sm-2 control-label">Make</label>
+            <div class="col-sm-10">
+               <input type="text" ng-model="ticket.make" class="form-control">
             </div>
-            <div class="form-group row">
-                <label class="col-sm-2 control-label">Make</label>
-                <div class="col-sm-10">
-                    <input type="text" ng-model="ticket.make" class="form-control">
-                </div>
+         </div>
+         <div class="form-group row">
+            <label class="col-sm-2 control-label"> problem Definition</label>
+            <div class="col-sm-10">
+               <textarea class="form-control" ng-model="ticket.problem_definition" rows="7"
+                         id="problem_definition"></textarea>
             </div>
-            <div class="form-group row">
-                <label class="col-sm-2 control-label"> problem Definition</label>
-                <div class="col-sm-10">
-					<textarea class="form-control" ng-model="ticket.problem_definition" rows="7"
-					          id="problem_definition"></textarea>
-                </div>
+         </div>
+         <div class=" row line line-dashed b-b line-lg pull-in"></div>
+         <div class="form-group row">
+            <label class="col-sm-2 control-label">Next Appointment Date</label>
+            <div class="col-sm-10">
+               <p class="input-group">
+                  <input type="text" class="form-control" datetime-picker="yyyy/MM/dd HH:mm"
+                         ng-model="ticket.customer_appointment_date"  datepicker-options="calendarOption" is-open="calendar0.isOpen">
+                  <span class="input-group-btn">
+                  <button type="button" class="btn btn-default"  ng-click="calendar0.isOpen= !calendar0.isOpen"><i class="glyphicon glyphicon-calendar"></i></button>
+                  </span>
+               </p>
             </div>
-
-             <div class="form-group row">
-                <label class="col-sm-2 control-label">Expected Complete Date</label>
-                <div class="col-sm-10">
-                    <p class="input-group">
-                                <input type="text" name="date_of_birth" name="date_of_birth" class="form-control"
-                                       uib-datepicker-popup="{{'yyyy/MM/dd'}}" ng-model="ticket.estimated_completion_date" is-open="calendar1.isOpen" datepicker-options="calendarOption" required close-text="Close" />
-                                <span class="input-group-btn">
-                                    <button type="button" class="btn btn-default" ng-click="calendar1.isOpen= !calendar1.isOpen"><i class="glyphicon glyphicon-calendar"></i></button>
-                                </span>
-                            </p>
-                </div>
+         </div>
+         <div class="line line-dashed b-b line-lg pull-in"></div>
+         <div class="form-group row">
+            <label class="col-sm-2 control-label">Estimated Completion Date</label>
+            <div class="col-sm-10">
+               <p class="input-group">
+                  <input type="text" class="form-control ng-valid ng-isolate-scope ng-not-empty ng-valid-datetime ng-touched ng-dirty"  datetime-picker="yyyy/MM/dd"
+                         ng-model="ticket.estimated_completion_date" is-open="calendar1.isOpen" enable-time="false" datepicker-options="calendarOption"  datepicker-append-to-body="true">
+                  <span class="input-group-btn">
+                  <button type="button" class="btn btn-default" ng-click="calendar1.isOpen =! calendar1.isOpen"><i class="fa fa-calendar"></i></button>
+                  </span>
+               </p>
             </div>
-
-            <div class="form-group row" ng-repeat='field in customTextFields'>
-                <label class="col-sm-2 control-label"> {{field.field_name}}</label>
-                <div class="col-sm-10">
-                    <input class="form-control" customText="{{field.field_name}}" ng-required='{{field.required}}'
-                           ng-maxlength="field.max">
-                    <p class="alert-warning" ng-show="ticket_form.{{field.field_name}}.$error.required">
-                        {{field.field_name}} Required.</p>
-                </div>
+         </div>
+         <div class="form-group row" ng-repeat='field in customTextFields'>
+            <label class="col-sm-2 control-label"> {{field.field_name}}</label>
+            <div class="col-sm-10">
+               <input class="form-control" customText="{{field.field_name}}" ng-required='{{field.required}}'
+                      ng-maxlength="field.max">
+               <p class="alert-warning" ng-show="ticket_form.{{field.field_name}}.$error.required">
+                  {{field.field_name}} Required.
+               </p>
             </div>
-	        <!---next first because of Some Awkwarness-->
-            <button class="btn btn-default btn-sm pull-right" ng-click="heading2.isOpen = !heading2.isOpen">Next <i
-		            class="glyphicon glyphicon-chevron-right"></i></button>
-            <button class="btn btn-default btn-sm pull-right" ng-click="heading0.isOpen = !heading0.isOpen">Prev <i
-		            class="glyphicon glyphicon-chevron-left"></i></button>
-        </div>
-
-	     <!---end of 1 accordeon-->
-        <div uib-accordion-group class="panel-primary" heading="Labour Details" is-open="heading2.isOpen">
-            parts
-	        <!---yeah award agian nexyt should be first -->
-            <button class="btn btn-default btn-sm pull-right" ng-click="heading3.isOpen = !heading3.isOpen">Next <i
-		            class="glyphicon glyphicon-chevron-right"></i></button>
-
-            <button class="btn btn-default btn-sm pull-right" ng-click="heading1.isOpen = !heading1.isOpen">Prev
-                <i class="glyphicon glyphicon-chevron-left"></i></button>
-        </div>
-<!---end accordeon--->
-        <div uib-accordion-group class="panel-primary" heading="stocks" is-open="heading3.isOpen">
-            <button class="btn btn-default" ng-click="selectStock()">select Stock to add to ticket</button>
-            <div ng-repeat="stock in stocks">
-                 <div class="row">
-                <div class="col-md-5">
-                    {{stock.product_name}}
-                </div>
-                <div class="col-md-2"><small><b>unit price </b>rs.{{stock.selling_price}}</small></div>
-                <div class="col-md-5">Qty Used:<input type="number"  min="1" ng-init="stock.qty_out=1" ng-model="stock.qty_out"/></div>
-            </div>
-            </div>
+         </div>
+          <!---next first because of Some Awkwarness-->
+         <button class="btn btn-default btn-sm pull-right" ng-click="heading2.isOpen = !heading2.isOpen">Next <i
+                 class="glyphicon glyphicon-chevron-right"></i></button>
+         <button class="btn btn-default btn-sm pull-right" ng-click="heading0.isOpen = !heading0.isOpen">Prev <i
+                 class="glyphicon glyphicon-chevron-left"></i></button>
+      </div>
+       <!---end of 1 accordeon-->
+      <div uib-accordion-group class="panel-primary" heading="Labour Details" is-open="heading2.isOpen">
+         parts
+          <!---yeah award agian nexyt should be first -->
+         <button class="btn btn-default btn-sm pull-right" ng-click="heading3.isOpen = !heading3.isOpen">Next <i
+                 class="glyphicon glyphicon-chevron-right"></i></button>
+         <button class="btn btn-default btn-sm pull-right" ng-click="heading1.isOpen = !heading1.isOpen">Prev
+         <i class="glyphicon glyphicon-chevron-left"></i></button>
+      </div>
+       <!---end accordeon--->
+      <div uib-accordion-group class="panel-primary" heading="stocks" is-open="heading3.isOpen">
+         <button class="btn btn-default" ng-click="selectStock()">select Stock to add to ticket</button>
+         <div ng-repeat="stock in stocks">
             <div class="row">
+               <div class="col-md-5">
+                  {{stock.product_name}}
+               </div>
+               <div class="col-md-2"><small><b>unit price </b>rs.{{stock.selling_price}}</small></div>
+               <div class="col-md-5">Qty Used:<input type="number"  min="1" ng-init="stock.qty_out=1" ng-model="stock.qty_out"/></div>
+            </div>
+         </div>
+         <div class="row">
             <b>total</b> <small>rs.<span ng-bind="getTicketStocksTotal()"></span></small>
-                </div>
-            <!---yeah award agian nexyt should be first -->
-            <button class="btn btn-default btn-sm pull-right" ng-click="heading4.isOpen = !heading4.isOpen">Next <i
-                    class="glyphicon glyphicon-chevron-right"></i></button>
-            <button class="btn btn-default btn-sm pull-right" ng-click="heading2.isOpen = !heading2.isOpen">Prev<i class="glyphicon glyphicon-chevron-left"></i></button>
-        </div>
-
-        <div uib-accordion-group class="panel-primary" heading="email" is-open="heading4.isOpen">
-            Custom Message With Email <textarea ng-model='customEmail'></textarea>
-        </div>
-
-    </uib-accordion>
+         </div>
+          <!---yeah award agian nexyt should be first -->
+         <button class="btn btn-default btn-sm pull-right" ng-click="heading4.isOpen = !heading4.isOpen">Next <i
+                 class="glyphicon glyphicon-chevron-right"></i></button>
+         <button class="btn btn-default btn-sm pull-right" ng-click="heading2.isOpen = !heading2.isOpen">Prev<i class="glyphicon glyphicon-chevron-left"></i></button>
+      </div>
+      <div uib-accordion-group class="panel-primary" heading="email" is-open="heading4.isOpen">
+         Custom Message With Email <textarea ng-model='customEmail'></textarea>
+      </div>
+   </uib-accordion>
     <!---end of accordion ,save options-->
-
-
-
-    <button ng-click="createTicket()" class="btn btn-info btn-block">save</button>
+   <button ng-click="createTicket()" class="btn btn-info btn-block">save</button>
 </div>
-
-
-
-
-

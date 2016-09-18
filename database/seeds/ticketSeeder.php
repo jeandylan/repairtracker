@@ -41,6 +41,7 @@ class ticketSeeder extends Seeder
             DB::table('tickets_comments')->insert([
                 'employee_id' => rand(1,2),
                 'ticket_id' => rand(1,2),
+                'to_customer'=>rand(0,1),
                 'comment' => $faker->sentences($nb = 3, $asText = true),
             ]);
 

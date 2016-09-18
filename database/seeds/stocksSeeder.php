@@ -21,9 +21,19 @@ class stocksSeeder extends Seeder
                 'selling_price' => $faker->randomFloat($nbMaxDecimals = NULL, $min = 0, $max = NULL),
                 'reorder_level' => $faker->randomDigitNotNull,
                 'barcode' => $faker->ean13,
-                'shop_location'=>$faker->randomElement($array = array ('mahebourg','curepipe','vacoas')),
                 
             ]);
+            for($z=0; $z < 3;$z++){
+                $location=['mahebourg','vacoas','curepipe'];
+                DB::table('stocks_location_level')->insert([
+                    'stock_id' => $i+1,
+                    'current_level' => rand(1,10),
+                    'shop_location' =>$location[$z],
+                ]);
+
+            }
+
+
 
         }
     }

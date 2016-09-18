@@ -7,7 +7,7 @@ use HipsterJazzbo\Landlord\BelongsToTenant;
 class CustomerEmail extends Model
 {
 
-    protected $fillable = ['email', 'type','customer_id'];
+   // protected $fillable = ['email', 'type','customer_id'];
     protected $table='customer_email';
     public function customer()
     {

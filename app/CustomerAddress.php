@@ -8,7 +8,7 @@ class CustomerAddress extends Model
 {
 
     protected $table='customer_address';
-    protected $fillable = ['address', 'type','customer_id'];
+   // protected $fillable = ['address', 'type','customer_id'];
 
     public function customer()
     {

@@ -19,6 +19,7 @@ class CreateStockTicketTable extends Migration
             $table->integer('qty_out')->unsigned();
             $table->string('shop_location');
             $table->timestamps();
+            //todo unique ticket_id, stock id
 
             
 

@@ -6,15 +6,16 @@ app.controller("createTicketCtrl",function ($scope,$stateParams,serverServices,t
     $scope.customer={}; //customer should be unique
     $scope.stocks=[]; //ticket can have many Stock item
     $scope.technicians=[]; //Ticket can have many Many Tech
-    $scope.ticket = {}
+    $scope.ticket = {};
     $scope.calendarOption={
         minDate:new Date()
     }
 
     console.log($scope.customer.id=$stateParams.customerId); //these Are Optional Only capture if pass as Params
 
+
+
     $scope.getFields=function () {
-        console.log("r");
         serverServices.get('api/ticketCustomFields') //using service (customer/service/clientService ) that will query Laravel for .json output
             .then(
                 function (result) {
@@ -34,7 +35,7 @@ app.controller("createTicketCtrl",function ($scope,$stateParams,serverServices,t
             .then(function (result) {
                 console.log(result);
                 $scope.newTicketId = result.ticketId; //this is the id of newly created in db
-                assignToTechnicianToTicket(result.ticketId);
+                assignTechnicianToTicket(result.ticketId);
 
                 }),
                 function (error) {
@@ -43,11 +44,11 @@ app.controller("createTicketCtrl",function ($scope,$stateParams,serverServices,t
                 };
     };
 
-   function assignToTechnicianToTicket(ticketId){
+   function assignTechnicianToTicket(ticketId){
        for (var i in $scope.technicians) {
-           $scope.technicians[i].ticket.estimated_completion_date=  $filter('date')($scope.technicians[i].ticket.estimated_completion_date, "yyyy-MM-dd"); //need to change Dates in before Laravel
+           //$scope.technicians[i].ticket.estimated_completion_date=  $filter('date')($scope.technicians[i].ticket.estimated_completion_date, "yyyy-MM-dd"); //need to change Dates in before Laravel
            $scope.technicians[i].ticket.employee_id= $scope.technicians[i].id;
-           serverServices.post('api/ticketSetTechnician/'+ticketId,$scope.technicians[i].ticket)
+           serverServices.post('api/ticketTechnician/'+ticketId,$scope.technicians[i].ticket)
                .then(function () {
                }),
                function (error) {
@@ -98,7 +99,7 @@ app.controller("createTicketCtrl",function ($scope,$stateParams,serverServices,t
             className: 'ngdialog-theme-default',
             scope:$scope
         }).closePromise.then(function (data) {
-            $scope.stocks.push(data.value);  //add item to potential Stocks
+            if(data.value.id)$scope.stocks.push(data.value);  //add item to potential Stocks
         });
     };
 
@@ -112,10 +113,10 @@ app.controller("createTicketCtrl",function ($scope,$stateParams,serverServices,t
             if($scope.stocks[i].selling_price >0 && $scope.stocks[i].qty_out >0){
                 total+=$scope.stocks[i].selling_price * $scope.stocks[i].qty_out;
             }
-        };
+        }
 
         return total;
-    }
+    };
 
     $scope.getFields();
 
@@ -131,6 +132,7 @@ app.controller("createTicketCtrl",function ($scope,$stateParams,serverServices,t
     function getCustomTextData(name){
         return $('input[customText="'+name + '"]').val();
     }
+
 
 
 

@@ -24,8 +24,8 @@ Route::get('/', function () {
 Route::get("/googleAuth",'GoogleController@companyGoogleAuth');
 //Route::get("/googleAuthSuccessful",'GoogleController@saveAuth');
 Route::get("/sentEmail","GoogleController@sentEmail");
-Route::get("/se","MailController@smtpMail");
-Route::get("/sms","SmsController@sent");
+Route::get("/se","MailController@sentCommentEmail");
+
 
 Route::post('/customerReply',"TicketController@customerComment");
 
@@ -39,6 +39,8 @@ Route::group(['prefix' => 'api'], function () {
     Route::post('/login','AuthenticateController@authenticate'); //create customer
 
     Route::group(['middleware' => ['jwtAuthMiddleware']], function () {
+        /*sent sms*/
+        Route::post("/sms","SmsController@sent");
 
         /*get Login profile Info */
         Route::get('/employee/myProfile','EmployeeController@getProfile');
@@ -74,13 +76,20 @@ Route::group(['prefix' => 'api'], function () {
         Route::delete('/ticket/{id}', 'TicketController@destroy');
         Route::put('/ticket/{id}', 'TicketController@update');// delete A ticket with specific Id
         //ticket Comments
-        Route::get('/ticketComments/{id}','TicketController@getComments');
+        Route::get('/ticketComments/{id}','TicketCommentController@get');
+        Route::post('/ticketComments/{id}','TicketCommentController@create');
 
         Route::get('ticketCustomFieldsData/{ticketId}','TicketController@getCustomFieldsData');
         Route::get('ticketCustomFields','TicketController@getCustomFields');
-/*Ticket-Employee(assign Tech to ticket)*/
-        Route::get('/ticketTechnician/{ticketId}','TicketController@getTechnician');
-        Route::post('/ticketSetTechnician/{ticketId}','TicketController@setTechnician');
+/*Ticket Assign-Employee(assign Tech to ticket)*/
+        Route::get('/ticketTechnician/{ticketId}','EmployeeTaskController@get');
+        Route::post('/ticketTechnician/{ticketId}','EmployeeTaskController@create');
+        Route::delete('/ticketTechnician/{taskId}','EmployeeTaskController@delete');
+        Route::put('/ticketTechnician/{taskId}','EmployeeTaskController@update');
+        /*ticket Stock*/
+        Route::get('/ticketStock/{ticketId}','StockTicketController@get');
+        Route::post('/ticketStock/{ticketId}','StockTicketController@create');
+        Route::put('/ticketStock/{ticketId}','StockTicketController@update');
 
 
         /*Custom fields data,retreive ,post ,delete Save Data from Custom created Fields*/
@@ -105,6 +114,9 @@ Route::group(['prefix' => 'api'], function () {
         Route::put('/stock/{id}', 'StockController@update');// Update A ticket with specific Id
         //search Stock ByName
         Route::put('/stockSearch', 'StockController@search');// Update A ticket with specific Id
+        //Stock lvl
+        Route::get('/stockLevel/{stockId}','StockController@level');
+        Route::post('/stockReduce/{stockId}','StockController@stockLocationReduce');
 
         //supplier Route
         Route::get('/suppliers', 'SupplierController@getAll'); //get all Suppl.

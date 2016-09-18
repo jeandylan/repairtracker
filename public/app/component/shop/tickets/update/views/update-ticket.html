@@ -1,112 +1,195 @@
 <div ng-controller="updateTicketCtrl">
-        <div class="wrapper-md">
-            <h4>Ticket for {{ticket.customer[0].first_name}} {{ticket.customer[0].last_name}}</h4>
-            <!---start panel-->
-            <div class="panel panel-default col-sm-6">
-                <!---personal detail form panel --->
-                <div class="panel-heading font-bold">
-                    Ticket Details
-                </div>
-                <div class="panel-body">
-
-                    <!----one select  box --->
-                    <div class="form-group row">
-                    <label class="col-sm-2 control-label">Model</label>
-                    <div class="col-sm-10">
-                        <span href="#" editable-select="ticket.info.model"  e-ng-options="g.id as g.text for g in groups">
-                            {{ ticket.info.model || 'empty' }}
-                        </span>
-                    </div>
-                </div>
-                    <!----one Edit  g box --->
-                    <div class="form-group ">
-                        make: <a href="#" editable-text="ticket.info.make"  onaftersave="updateTicket()">{{ticket.info.make || 'empty'}}</a>
-                    </div>
-
-                    <!----one Edit  g box --->
-                    <div class="form-group ">
-                        problem Type: <a href="#" editable-text="ticket.info.problem_type"  onaftersave="updateTicket()">{{ticket.info.problem_type || 'empty'}}</a>
-                    </div>
-                </div>
-                <div class="panel-heading font-bold">
-                    other
-                </div>
-                <div ng-repeat="txtField in txtFields">
-
-                    <div ng-show="txtField.data[0].id"class="ng-hide" >
-                     {{txtField.properties.field_name}}: <a href="#" editable-text="txtField.data[0].field_data" onaftersave="updateTxtData(txtField)">{{txtField.data[0].field_data || 'empty'}}</a>
-                     </div>
-                    <div ng-show="!txtField.data[0].id" class="ng-hide" >
-                        {{txtField.properties.field_name}}: <a href="#" editable-text="txtField.data[0].field_data" onaftersave="createTxtData(txtField)">{{txtField.data[0].field_data || 'empty'}}</a>
-                    </div>
-
-                </div>
-                <div class="panel-heading font-bold">
-                    Technician Assign To Ticket
-                </div>
-                <div class="panel-body">
-                    <div ng-repeat="technician in ticket.employees">
-                        <div class="form-group ">
-                            Technician: <a href="#" editable-text="technician.first_name"  onaftersave="updateTicket()">{{technician.first_name || 'empty'}}</a>
-                        </div>
-                        </div>
-                </div>
-
-
-
-
-
+   <div class="wrapper-md">
+      <h4>Ticket for {{ticket.customer[0].first_name}} {{ticket.customer[0].last_name}}</h4>
+       <!---start panel-->
+      <uib-accordion class="row">
+         <div uib-accordion-group class="panel-primary" heading="ticket details" is-open="heading0.isOpen">
+            <div class="form-group">
+               model: <a href="#" editable-text="ticket.model" onaftersave="updateTicket()">{{ticket.model || 'empty'}}</a>
             </div>
-            <!----SECOND PANEL ---->
-            <div class="panel panel-default col-sm-6">
-                <!---personal detail form panel --->
-                <div class="panel-heading font-bold">
-                    Ticket Details
-                </div>
-                <!---a seperation-->
-                <div class="panel-body">
-                    <div class="form-group ">
-                        Problem Definition: <a href="#" editable-textarea="ticket.info.problem_definition" e-rows="7" e-cols="40"  onaftersave="updateTicket()">{{ticket.info.problem_definition || 'empty'}}</a>
-                    </div>
-
-                </div>
-
-
-                <div class="panel-heading font-bold">
-                    QR code
-                </div>
-                <div class="panel-body">
-
-                    <!----one select  box --->
-                    <div class="form-group row">
-                        <label class="col-sm-2 control-label">ticket Qr</label>
-                        <div class="col-sm-10">
-                            <div print-section>
-                                <qrcode version="6" error-correction-level="M" size="200" data="{{qr}}"></qrcode>
-                            </div>
+             <!----one Edit  g box --->
+            <div class="form-group">
+               make: <a href="#" editable-text="ticket.make" onaftersave="updateTicket()">{{ticket.make || 'empty'}}</a>
+            </div>
+             <!----one Edit  g box --->
+            <div class="form-group ">
+               problem definition: <a href="#" editable-textarea="ticket.problem_definition" e-rows="7" e-cols="40" onaftersave="updateTicket()">{{ticket.problem_definition || 'empty'}}</a>
+            </div>
+            <div class="form-group ">
+               Expected Completion : <a href="#" editable-bsdate="ticket.estimated_completion_date "  e-is-open="opened.$data"  e-data-format="yyyy/MM/dd HH:m" e-ng-click="open($event,'$data')" e-datepicker-popup="yyyy/MM/dd">{{ (ticket.estimated_completion_date | date:"dd/MM/yyyy") || 'empty' }}</a>
+            </div>
+            <div class="form-group ">
+               customer Appointment Date(yyyy/mm/dd hh:mm) :<a href="#" editable-combodate="ticket.customer_appointment_date">{{ (ticket.customer_appointment_date | date:"yyyy/MM/dd HH:m") || 'empty' }}</a>
+            </div>
+            <div class="form-group">
+               completed:<a href="#" editable-checkbox="ticket.completed" e-title="completed?">
+               {{ ticket.completed &&" completed" || "uncompleted" }}</a>
+            </div>
+             <!----one select  box --->
+            <div class="form-group row">
+               <label class="col-sm-2 control-label">ticket Qr</label>
+               <div class="col-sm-10">
+                  <div print-section class='col-sm-8'>
+                     <qrcode version="6" error-correction-level="M" size="200" data="{{qr}}"></qrcode>
+                  </div>
+                  <div class='col-sm-2'>
+                     <button type="button" class="btn-info" print-btn><span class="glyphicon glyphicon-print"> Print Qr</span></button>
+                  </div>
+               </div>
+            </div>
+            <div ng-repeat="txtField in txtFields">
+               <div ng-show="txtField.data[0].id" class="ng-hide">
+                  {{txtField.properties.field_name}}: <a href="#" editable-text="txtField.data[0].field_data" onaftersave="updateTxtData(txtField)">{{txtField.data[0].field_data || 'empty'}}</a>
+               </div>
+               <div ng-show="!txtField.data[0].id" class="ng-hide">
+                  {{txtField.properties.field_name}}: <a href="#" editable-text="txtField.data[0].field_data" onaftersave="createTxtData(txtField)">{{txtField.data[0].field_data || 'empty'}}</a>
+               </div>
+            </div>
+         </div>
+          <!----Task--->
+         <div uib-accordion-group class="panel-primary" heading="task" is-open="heading1.isOpen">
+            <div ng-repeat="task in tasks">
+               <div class="form-group">
+                  <div class="line line-dashed b-b line-lg pull-in"></div>
+                   <div class="row ">
+                  <h5 ng-if="!task.employee.transferred"  class='text-info col-md-6'>Technician: {{task.employee.first_name+" "+task.employee.last_name }}</h5>
+                  <h5 ng-if="task.employee.transferred" class='text-warning col-md-6'>Technician: {{task.employee.first_name+" "+task.employee.last_name+
+                     " now at "+task.employee.shop_location}}
+                  </h5>
+                       <div class='col-md-6'>
+                        <button type="button" class="btn btn-sm btn-danger"  confirm-button="deleteTask(task)"
+                                message="Are you sure you want to remove this technician ?">Delete</button>
+                       </div>
+                   </div>
+               </div>
+               <div class='form-group'>
+                  Job Assign:<a href="#" editable-textarea="task.task.job_assign" e-rows="7" e-cols="40" onaftersave="updateTicket()">{{task.task.job_assign || 'empty'}}</a>
+               </div>
+               <div class='form-group'>
+                  <div>percentage Completed: <a href="#" editable-range="task.task.completed_percentage" e-step="5">{{ task.task.completed_percentage +'%' || 'empty' }}</a></div>
+               </div>
+               <div class='form-group'>
+                  <div>hours work on: <a href="#" editable-number="task.task.hours_work_on" e-min="0">{{ task.task.hours_work_on|| "not started" }}</a></div>
+               </div>
+               <div class='form-group'>
+                  <div>estimated completion date: <a href="#" min="minDate" editable-date="task.task.estimated_completion_date">{{ (task.task.estimated_completion_date | date: "yyyy-MM-dd") || 'empty' }}</a></div>
+               </div>
+               <div class="line line-dashed b-b line-lg pull-in"></div>
+            </div>
+             <!---unsaved Task--->
+            <h3 ng-if="unsavedTechniciansTask[0]">Unsaved Task</h3>
+            <div ng-repeat="technician in unsavedTechniciansTask">
+               <div class="row form-group">
+                  <div class="col-md-4">
+                     <div class="col-md-4">
+                        <small>Technician Name: <b class=text-info>{{technician.first_name+" "+ technician.last_name}}</b> </small>
+                     </div>
+                     <div class="col-md-1">
+                        <button type="button" class="btn btn-sm btn-danger"  confirm-button="removeTechnician(technician)" message="Are you sure you want to remove this technician ?">
+                        <i class="glyphicon  glyphicon-remove-circle">delete</i>
+                        </button>
+                     </div>
+                  </div>
+                  <div class="col-md-4">
+                     Job assign:
+                     <textarea ng-model="technician.ticket.job_assign" cols="100" style="width:100%"  placeholder="insert Job Description for Technician {{technician.first_name+' '+technician.last_name}}" required></textarea>
+                  </div>
+                  <div class="col-md-4">
+                     estimated Completion Date:
+                     <div class="input-group">
+                        <input type="text" class="form-control" datetime-picker="yyyy/MM/dd"
+                               ng-model="technician.ticket.estimated_completion_date" enable-time="false"  datepicker-options="calendarOption" is-open="calendar2.isOpen">
+                        <span class="input-group-btn">
+                        <button type="button" class="btn btn-default"   ng-click="calendar2.isOpen= !calendar2.isOpen"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+              <div class="form-group" ng-if="unsavedTechniciansTask[0]"><!---save new Task--->
+                  <button type="button" class="btn btn-default btn-block" ng-click="createTask()">Save Tasks</button>
+               </div>
+            <div class="form-group ">
+               <button class="btn-primary btn-sm" ng-click="selectTechnician()">+task</button>
+            </div>
+         </div>
+          <!----Stock--->
+         <div uib-accordion-group class="panel-primary" heading="stock" is-open="heading2.isOpen">
+            <div ng-repeat="stock in usedStocks">
+               <div class="line line-dashed b-b line-lg pull-in"></div>
+               <div class="row">
+                  <div class="col-md-5">
+                     stock :{{stock.stock.product_name}}
+                  </div>
+                  <div class="col-md-2"><small><b>unit price </b>rs.{{stock.stock.selling_price}}</small></div>
+                  <div class="col-md-5">Qty Used: <a href="#" editable-number="stock.stock_ticket.qty_out" e-min="1">
+                     {{ stock.stock_ticket.qty_out|| 'empty' }}</a>
+                  </div>
+               </div>
+               <div class="form-group">
+                  Total for this Item: Rs.{{stock.stock.selling_price * stock.stock_ticket.qty_out }}
+               </div>
+               <div class="line line-dashed b-b line-lg pull-in"></div>
+            </div>
+            <div class="form-group">
+               <button class="btn-primary btn-sm" ng-click="selectStock()">+Stock item</button>
+            </div>
+             <!---unsaved Stock--->
+            <h3 ng-if="unsavedStocks[0]">Unsaved Item used in ticket</h3>
+            <div ng-repeat="stock in unsavedStocks">
+               <div class="row">
+                  <div class="col-md-4">{{stock.product_name}}</div>
+                  <div class="col-md-2"><small><b>unit price </b>rs.{{stock.selling_price}}</small></div>
+                  <div class="col-md-2"> <input type="number"  min="1" ng-init="stock.qty_out=1" ng-model="stock.qty_out"/></div>
+                  <div class="col-md-2"> total:{{stock.qty_out*stock.selling_price}}</div>
+                  <div class="col-md-2"><button class="btn-default btn-xs" ng-click="saveStock(stock)">save Items</button>
+                     <button class="btn-danger btn-xs" ng-click="removeUnsavedStock(stock)">X</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div uib-accordion-group class="panel-primary" heading="comments" is-open="heading3.isOpen">
+            <div class="m-b b-l m-l-md streamline">
+               <div ng-repeat="comment in comments">
+                  <div class="panel b-a">
+                     <div class="panel-heading pos-rlt b-b b-light">
+                        <a ng-if="!comment.author.transferred" href="">{{::comment.author.first_name+" "+comment.author.last_name}}</a>
+                        <span  class="text-warning" ng-if="comment.author.transferred">{{::comment.author.first_name+" "+comment.author.last_name+
+                        " now at "+comment.author.shop_location}}</span>
+                        <label class="label bg-primary m-l-xs">Employee</label>
+                        <span class="text-muted m-l-sm pull-right">
+                        <small class='text-info'>{{comment.sent_to_customer}}</small>
+                        <i class="fa fa-clock-o"></i>{{::comment.created_at | date :  "dd.MM.y" || ''}}</span>
+                        <div class="panel-body">
+                           <div>{{::comment.comment}}</div>
                         </div>
-                        <button type="button" class="btn-info" print-btn><span class="glyphicon glyphicon-print"> Print</span></button>
-                    </div>
-                </div>
-                <div class="panel-heading font-bold">
-                    Stock Used For Ticket
-                </div>
-                <div class="panel-body">
-                    <div ng-repeat="stock in ticket.stocks">
-                        <div class="form-group row">
-                            <b>Name :</b>{{stock.product_name}}
-                            <span class="text-warning"> x </span>
-                            <small>Rs.</small>{{stock.selling_price}}
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-                <!----end second panel-->
-        </div>
-
-        </div>
-
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="clearfix m-b-lg">
+               {{currentUser.first_name+ " "+currentUser.last_name}}
+               <div class="m-l-xxl">
+                  <div class="form-group">
+                     <textarea placeholder="enter Your Comment" rows="3" ng-model="newComment.comment" style="min-width: 100%" ></textarea>
+                  </div>
+                  <div class="form-group">
+                     <div class="col-lg-offset-2 col-lg-5">
+                        <input type="checkbox" name="sent_to_customer" ng-model="newComment.isEmail"> Email To customer
+                     </div>
+                     <div class="col-lg-offset-2 col-lg-5">
+                        <input type="checkbox" name="sent_to_customer" ng-model="newComment.isSms"> sms To customer
+                     </div>
+                  </div>
+               </div>
+               <div class="form-group-lg">
+                  <div class="col-lg-offset-2 col-lg-10">
+                     <button ng- class="btn btn-lg btn-primary" ng-click="postComment()">Post</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+          <!----end second panel-->
+      </uib-accordion>
+   </div>
 </div>

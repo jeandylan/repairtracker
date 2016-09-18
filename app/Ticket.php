@@ -28,11 +28,14 @@ class Ticket extends Model
 
     public function stock(){
         //2nd arg is pivot table name
-        return $this->belongsToMany('App\Stock','stock_ticket','ticket_id','stock_id');
+        return $this->hasMany('App\StockTicket');
     }
     public function employee(){
         //2nd arg is pivot table name
         return $this->belongsToMany('App\Employee','employee_ticket','ticket_id','employee_id');
+    }
+    public function  technician(){
+        return $this->hasMany('App\EmployeeTicket');
     }
     /*
     public function comments(){

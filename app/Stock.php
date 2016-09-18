@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use HipsterJazzbo\Landlord\BelongsToTenant;
 class Stock extends Model
 {
-    use BelongsToTenant;
+
     protected $table='stocks'; //tbl Model refers to
     protected $guarded = array(['id']); //cannot be updated ,by mass Assign
     function suppliers(){
@@ -20,6 +20,13 @@ class Stock extends Model
         //2nd arg is pivot table name,last foreign key joint to
         return $this->belongsToMany('App\Ticket','stock_ticket','stock_id','ticket_id');
     }
+
+    function stockLocationLevel(){
+
+        return $this->hasMany('App\StockLocationLevel','stock_id');
+    }
+
+
 
 
 

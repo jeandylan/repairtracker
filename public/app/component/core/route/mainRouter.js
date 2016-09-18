@@ -103,7 +103,7 @@ default should be app,every page is Check for login in ShopAppCtrl
                             'app/component/shop/tickets/create/controllers/createCustomerTicketCtrl.js', //load ctrl needed to create Customer
                             'app/component/core/controllers/googleTypeAheadController.js',
                             'app/component/shop/tickets/create/controllers/selectStockCtrl.js', //load Ctrl For select Stock
-                            'AngularPrint'
+                            'AngularPrint','ui.bootstrap.datetimepicker'
                         ]),
                         ncyBreadcrumb: {
                             skip: true // Never display this state in breadcrumb.
@@ -115,7 +115,7 @@ default should be app,every page is Check for login in ShopAppCtrl
                     .state('app.ticket.read-all', {
                         url: '/read/all',
                         templateUrl: 'app/component/shop/tickets/read/views/tickets-table.html',
-                        resolve: load(['app/component/shop/tickets/read/controllers/readTicketsCtrl.js']),
+                        resolve: load(['app/component/shop/tickets/read/controllers/readTicketsCtrl.js','moment']),
                         pageTitle:'Tickets Table Panel'
                     })
 
@@ -124,7 +124,12 @@ default should be app,every page is Check for login in ShopAppCtrl
                         url: '/update/ticket/{ticketId:int}',
                         templateUrl: 'app/component/shop/tickets/update/views/update-ticket.html',
 
-                        resolve: load(['monospaced.qrcode' ,'AngularPrint',"ui.select",'app/component/shop/tickets/update/controllers/updateTicketCtrl.js'])
+                        resolve: load(['monospaced.qrcode' ,'AngularPrint',"ui.select",
+                            'app/component/shop/tickets/update/controllers/updateTicketCtrl.js',
+                            'app/component/shop/tickets/update/controllers/selectStockCtrl.js',
+                            'app/component/shop/tickets/update/controllers/selectTechnicianCtrl.js',
+                            ,'ui.bootstrap.datetimepicker' //should be include Every where
+                        ])
                     })
 
 

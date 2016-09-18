@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\AllEmployee;
 use App\CustomTextFieldData;
-
+use App\Mylibs\JWTAut;
+use App\Mylibs\TwilloSms;
+use Illuminate\Support\Facades\DB;
 use App\Employee;
 use App\TicketComment;
 use App\User;
@@ -15,10 +18,13 @@ use App\Common\Utility;
 use App\Http\Requests;
 use App\CustomTextField;
 use CustomTextFieldu;
+use App\Stock;
+use App\EmployeeTicket;
 use App\Ticket;
 use App\Customer; //model should be used to check if customer Id exist
 
 use App\Mylibs\GmailMailler;
+use League\Flysystem\Exception;
 
 
 class TicketController extends Controller
@@ -31,7 +37,8 @@ class TicketController extends Controller
 
     public function get($id){
         $ticket= Ticket::find($id);
-        return response()->json(['successful'=>true,'info' => $ticket, 'customer' => $ticket->customer()->get(),'stocks'=>$ticket->stock()->get(),'employees'=>$ticket->employee()->get()]);
+        return $ticket;
+        //return response()->json(['successful'=>true,'info' => $ticket, 'customer' => $ticket->customer()->get(),'stocks'=>$ticket->stock()->get(),'employees'=>$ticket->employee()->get()]);
     }
 
 
@@ -46,40 +53,17 @@ class TicketController extends Controller
             $ticket->save();
             //Now Sent Email
             $emailOutput="";
-
             $customerDetails=Customer::find($customerId);
             foreach ($customerDetails->email()->get() as $customerEmail ){
                 $ticketEmail=new GmailMailler();
               $emailOutput .=  $ticketEmail->SentTicketCreation($customerEmail->email,$customerDetails->first_name,"ticket Creation",
                   "ferfr","we Have a ticket for you ");
-
             }
-
-
-
             return  array("successful"=>true, "message"=>"ticket  created, $emailOutput","ticketId"=>$ticket->id); //return the new Ticket ID
         }
         else{
             return response()->json(['error' => 'Error msg'], 404); // Status code here
         }
-    }
-
-    public function getComments($ticketId){
-        $comments=TicketComment::where('ticket_id','=',$ticketId)->get(); //all comments for ticket
-        $output=[];
-        foreach ($comments as $comment){
-            if($comment['employee_id']!= "") {
-                $ticketAuthor=Employee::find(1);
-                $comment["author"]=array("first_name"=>$ticketAuthor->first_name,"last_name"=>$ticketAuthor->last_name,"id"=>$ticketAuthor->id);
-                array_push($output,$comment);
-            }
-            else{
-                array_push($output,$comment);
-            }
-        }
-      return $output;
-
-
     }
 
 
@@ -91,20 +75,17 @@ class TicketController extends Controller
         return  array("successful"=>true, "message"=>"ticket updated");
     }
 
-    public function getTechnician(Request $request,$ticketId){
-        $ticket=Ticket::find($ticketId);
-       $employee= $ticket->employee();
-        return $employee;
-    }
 
-    public function setTechnician($ticketId){
+    public function getStock($ticketId){
         $ticket=Ticket::find($ticketId);
-        if(!$ticket) {
-            return  array("successful"=>false, "message"=>"ticket in another shop /or deleted from db");
+        $stocksTicket= $ticket->stock()->get();
+        $output=[];
+        foreach ($stocksTicket as $stockTicket){ //iTerate truw Stock stock associated with Ticket (many Stock)
+            $stock=Stock::find($stockTicket->stock_id); //find the Stock Details Of the associated stock Used
+           array_push($output,['stock'=>$stock,'stock_ticket'=>['id'=>$stockTicket->id,'qty_out'=>$stockTicket->qty_out,]]);
         }
-        $technician = Employee::find(input::get('employee_id'));
-        $ticket->employee()->attach($technician->id,Input::all());
-        return  array("successful"=>true, "message"=>"Technican Job updated");
+        return $output;
+
 
     }
 

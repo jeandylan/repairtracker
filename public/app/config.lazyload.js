@@ -15,7 +15,7 @@ angular.module('app')
                 'assets/js/jquery-plugins/flot.tooltip/js/jquery.flot.tooltip.min.js',
                 'assets/js/jquery-plugins/flot.orderbars/js/jquery.flot.orderBars.js',
                 'assets/js/jquery-plugins/flot-spline/js/jquery.flot.spline.min.js'],
-            moment:         [   'assets/js/jquery-plugins/moment/moment.js'],
+            moment:         [   'assets/js/jquery-plugins/moment/moment.min.js'],
             screenfull:     [   'assets/js/jquery-plugins/screenfull/dist/screenfull.min.js'],
             slimScroll:     [   'assets/js/jquery-plugins/slimscroll/jquery.slimscroll.min.js'],
             sortable:       [   'assets/js/jquery-plugins/html5sortable/jquery.sortable.js'],
@@ -39,15 +39,27 @@ angular.module('app')
                 'assets/js/jquery-plugins/bower-jvectormap/jquery-jvectormap.css'],
             footable:       [   'assets/js/jquery-plugins/footable/dist/footable.all.min.js',
                 'assets/js/jquery-plugins/footable/css/footable.core.css'],
-            fullcalendar:   [   'assets/js/jquery-plugins/moment/moment.js',
-                'assets/js/jquery-plugins/fullcalendar/dist/fullcalendar.min.js',
-                'assets/js/jquery-plugins/fullcalendar/dist/fullcalendar.css',
-                'assets/js/jquery-plugins/fullcalendar/dist/fullcalendar.theme.css'],
+            fullcalendar:   [
+                       'assets/js/angular-library/angular-ui-calendar/gcal.js',
+                'assets/js/angular-library/angular-ui-calendar/fullcalendar.min.css',
+                'assets/js/angular-library/angular-ui-calendar/fullcalendar.min.js',
+
+            ],
             daterangepicker:[   'assets/js/jquery-plugins/moment/moment.js',
                 'assets/js/jquery-plugins/bootstrap-daterangepicker/daterangepicker.js',
                 'assets/js/jquery-plugins/bootstrap-daterangepicker/daterangepicker-bs3.css'],
+            pdfMake:['assets/js/jquery-plugins/pdfMake/pdfmake.min.js',
+                'assets/js/jquery-plugins/pdfMake/vfs_fonts.js',
+                'assets/js/jquery-plugins/pdfMake/html2canvas.js'],
             tagsinput:      [   'assets/js/jquery-plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.js',
-                'assets/js/jquery-plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.css']
+                'assets/js/jquery-plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.css'],
+        signature:[
+            'assets/js/jquery-plugins/signature-pad/signature_pad.min.js'
+        ],
+        underscore:[
+            'assets/js/jquery-plugins/underscore/underscore-min.js'
+        ]
+
 
         }
     )
@@ -60,6 +72,19 @@ angular.module('app')
                     'assets/js/angular-library/ng-grid/ng-grid.bootstrap.css'
                 ]
             },
+        {
+            name:'ui.calendar',
+            files:[
+                'assets/js/angular-library/angular-ui-calendar/calendar.js']
+
+        },
+        {
+            name:'mwl.calendar',
+            files:[
+                'assets/js/angular-library/angular-bootstrap-calendar/angular-bootstrap-calendar-tpls.min.js',
+                'assets/js/angular-library/angular-bootstrap-calendar/angular-bootstrap-calendar.min.css'
+            ]
+        },
             {
                 name: 'ui.grid',
                 files: [
@@ -82,10 +107,6 @@ angular.module('app')
                 ]
             },
 
-            {
-                name:'ui.calendar',
-                files: ['assets/js/angular-library/angular-ui-calendar/src/calendar.js']
-            },
             {
                 name: 'ngImgCrop',
                 files: [
@@ -170,6 +191,7 @@ angular.module('app')
                 'assets/js/angular-library/angular-ngDialog/ngDialog.min.js'
             ]
         },
+
         {
             name: 'monospaced.qrcode',
             files: [

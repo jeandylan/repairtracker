@@ -4,174 +4,97 @@
 
 app.controller("updateTicketCtrl",function ($scope,$location,editableOptions,$stateParams,serverServices,toaster,CacheFactory,ngDialog,$filter) {
     editableOptions.theme = 'bs3';
-    $scope.newComment={}; //new Comment that is supposed to be posted On ticket
+
     $scope.qr=$location.path(); //QR have Address of ticket
     $scope.ticketId=$stateParams.ticketId;
-    $scope.minDate=new Date();
     $scope.opened = {};
-    $scope.unsavedStocks=[];
-    $scope.unsavedTechniciansTask=[];
     $scope.currentUser=CacheFactory.get('appCache').get('profile'); //obtain current  login user from cache (used to know who post Comments)
-    getTicketData($scope.ticketId);
-    getStockUsed();
-    getComments();
-   /// getFieldData($scope.ticketId);
-    getTaskAssign();
+    $scope.$on('changeTicketTicket',function () { //refresg data if new Txt field
+        getTicketData($scope.ticketId);
+    });
 
     $scope.$on('fieldDataChanged',function () { //refresg data if new Txt field
         getFieldData($scope.ticketId);
     });
 
-    $scope.$on('newCommentPosted',function () {
-        $scope.newComment={};
-        getComments();
-    });
 
-    $scope.$on('changeTask',function () {
-        $scope.unsavedTechniciansTask=[];
-        getTaskAssign();
-    });
 
+
+
+    getTicketData($scope.ticketId);
+   /// getFieldData($scope.ticketId);
+
+    $scope.toPdf=function (documentId) {
+        $scope.hide=true;
+        setTimeout(function() {
+            html2canvas(document.getElementById(documentId), {
+                onrendered: function (canvas) {
+                    var data = canvas.toDataURL();
+                    var docDefinition = {
+                        content: [{
+                            image: data,
+                            width: 500,
+                        }]
+                    };
+                    $scope.hide = false;
+                    pdfMake.createPdf(docDefinition).download("ticket.pdf");
+                }
+            });
+        },1500);
+
+    };
+
+
+//todo recheck date setting ,not working in laravel, offset by 1 on some ctrl show back to stock on update Stock
 //General
     function  getTicketData() {
         serverServices.get('api/ticket/'+$scope.ticketId)//id parameter obtain by doing state parameter (like a query)
             .then(
                 function (result) {
                     $scope.ticket = result;
-                    console.log(result)
                 },
                 function (result) {
                     console.log(result);
                 });
     }
+
+   $scope.updateTicket=function () {
+       serverServices.put('api/ticket/'+$scope.ticketId,$scope.ticket).then(
+           function (result) {
+               $scope.$emit('changeTicketTicket');
+
+           },function (result) {
+               console.log(result);
+           })
+   };
+    
+   
+   $scope.dateNotPast=function (data) {
+       if( new Date() > data ){
+           return "Date cannot be in the past";
+
+       }
+   };
+
+
     $scope.open = function($event, elementOpened) {
         $event.preventDefault();
         $event.stopPropagation();
-
         $scope.opened[elementOpened] = !$scope.opened[elementOpened];
     }; //calendar Func
-
-    ///Function definition Task
-    function getTaskAssign(){
-        serverServices.get('api/ticketTechnician/'+$scope.ticketId).then(
-            function (result) {
-                $scope.tasks=result;
-               console.log(result)
-            },function (result) {
-                console.log(result);
-            })
-    }
-    $scope.createTask=function () {
-        for (var i in $scope.unsavedTechniciansTask) {
-            (!$scope.unsavedTechniciansTask[i].ticket)?toaster.pop('warning', 'error at Task'+(i+1), "Job Assign Canoot be blank"):
-                $scope.unsavedTechniciansTask[i].ticket.employee_id= $scope.unsavedTechniciansTask[i].id;
-            serverServices.post('api/ticketTechnician/'+$scope.ticketId,$scope.unsavedTechniciansTask[i].ticket)
-                .then(function () {
-                    if(i==$scope.unsavedTechniciansTask.length-1)$scope.$emit("changeTask");
-                }),
-                function (error) {
-                };
-        }
-    };
-    $scope.selectTechnician=function () {
-        ngDialog.open({
-            template: 'app/component/shop/tickets/update/views/select-technician.html',
-            controller:'selectTechnicianCtrl',
-            className: 'ngdialog-theme-default',
-            scope:$scope
-        }).closePromise.then(function (data) {
-
-            if(data.value.id) $scope.unsavedTechniciansTask.push(data.value);
-        });
-    };
-    $scope.removeTechnician=function (technician) {
-        index=$scope.unsavedTechniciansTask.indexOf(technician);
-        if (index > -1) {
-            $scope.unsavedTechniciansTask.splice(index, 1);
-        }
-    };
-    $scope.deleteTask=function (task) {
-        serverServices.delete('api/ticketTechnician/'+task.task.id).then(
-            function () {
-                $scope.$emit("changeTask");
-            },function () {
-            })
-    };
-
-    //function Stocks
-    function getStockUsed(){
-        serverServices.get('api/ticketStock/'+$scope.ticketId).then(
-            function (result) {
-                $scope.usedStocks=result;
-                //console.log(result)
-            },function (result) {
-                console.log(result);
-            })
-    }
-    $scope.saveStock=function (stock) {
-        serverServices.post('api/ticketStock/'+$scope.ticketId,stock).then(
-            function (result) {
-                console.log(result);
-                $scope.removeUnsavedStock(stock);
-                getStockUsed();
-            },function (result) {
-                
-            })
-
-
-    };
-    $scope.selectStock=function () {
-        ngDialog.open({
-            template: 'app/component/shop/tickets/update/views/select-stock.html',
-            controller:'selectStockCtrl',
-            className: 'ngdialog-theme-default',
-            scope:$scope
-        }).closePromise.then(function (data) {
-            if(data.value.id) $scope.unsavedStocks.push(data.value);  //add item to potential Stocks
-        });
-    };
-    $scope.removeUnsavedStock=function (stock) {
-        index=$scope.unsavedStocks.indexOf(stock);
-        if (index > -1) {
-            $scope.unsavedStocks.splice(index, 1);
-        }
-    };
-
-    //comments
-    function getComments() {
-        serverServices.get('api/ticketComments/'+$scope.ticketId).then(
-            function (result) {
-                $scope.comments=result;
-                console.log(result)
-            },function (result) {
-                console.log(result);
-
-            }
-        )
-
-    }
-    $scope.postComment=function () {
-        serverServices.post('api/ticketComments/'+$scope.ticketId,$scope.newComment).then(
-            function (result) {
-                $scope.$emit("newCommentPosted");
-            },function (result) {
-
-            });
-    };
 
 
     function getFieldData() {
         serverServices.get('api/ticketfieldsdata/'+$scope.ticketId).then(
             function (result) {
                 $scope.txtFields = result;
-
             },
             function (result) {
                toaster.pop('error', "server Err", result.message);
                 console.log(result);
             });
     }
-
+/*
     $scope.updateTicket=function () {
         var ticketUpdateData=
         {  // array containing Updated Ticket data,to be saved in db
@@ -195,6 +118,7 @@ app.controller("updateTicketCtrl",function ($scope,$location,editableOptions,$st
                 }
             );
     };
+    */
     $scope.updateTxtData=function ($txtField) {
         console.log($txtField);
         var updateFieldData={

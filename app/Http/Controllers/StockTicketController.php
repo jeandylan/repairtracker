@@ -13,7 +13,7 @@ use App\Http\Requests;
 
 class StockTicketController extends Controller
 {
-    public function get($ticketId){
+    public function get($ticketId){  //This Is used to retreive stock ,and associated stock_ticket _id
         $ticket=Ticket::find($ticketId);
         if(!$ticket) return response()->json(['error' => "Ticket Not found :-or other reasons"], 404);
         $stocksTicket= $ticket->stock()->get();
@@ -52,7 +52,7 @@ class StockTicketController extends Controller
         */
         if($request->input('qty_out') > $stockTicket->qty_out){
             //Employee need more Stock,check Inventory lvl ,reduce Accordingly
-            if($request->input('qty_out') > $stockLocationLevel->current_level) return response()->json(['error' => "not enought stock"], 404);
+            if(!($stockLocationLevel->current_level >= $request->input('qty_out'))) return response()->json(['error' => "not enought stock"], 404);
             $stockLocationLevel->current_level-=($request->input('qty_out')-$stockTicket->qty_out);
             $stockLocationLevel->save();
             $stockTicket->qty_out=$request->input('qty_out');

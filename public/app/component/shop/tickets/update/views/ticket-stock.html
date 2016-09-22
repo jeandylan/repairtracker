@@ -1,0 +1,34 @@
+<div  ng-controller="ticketStockCtrl">
+<div ng-repeat="stock in usedStocks">
+               <div class="line line-dashed b-b line-lg pull-in"></div>
+               <div class="row">
+                  <div class="col-md-5">
+                     stock :{{stock.stock.product_name}}
+                  </div>
+                  <div class="col-md-2"><small><b>unit price </b>rs.{{stock.stock.selling_price}}</small></div>
+                  <div class="col-md-5">Qty Used: <a href="#" editable-number="stock.stock_ticket.qty_out" onaftersave="updateStock(stock)" e-min="1">
+                     {{ stock.stock_ticket.qty_out|| 'empty' }}</a>
+                  </div>
+               </div>
+               <div class="form-group">
+                  Total for this Item: Rs.{{stock.stock.selling_price * stock.stock_ticket.qty_out }}
+               </div>
+               <div class="line line-dashed b-b line-lg pull-in"></div>
+            </div>
+            <div class="form-group">
+               <button class="btn-primary btn-sm" ng-click="selectStock()">+Stock item</button>
+            </div>
+             <!---unsaved Stock--->
+            <h3 ng-if="unsavedStocks[0]">Unsaved Item used in ticket</h3>
+            <div ng-repeat="stock in unsavedStocks">
+               <div class="row">
+                  <div class="col-md-4">{{stock.product_name}}</div>
+                  <div class="col-md-2"><small><b>unit price </b>rs.{{stock.selling_price}}</small></div>
+                  <div class="col-md-2"> <input type="number"  min="1" ng-init="stock.qty_out=1" ng-model="stock.qty_out"/></div>
+                  <div class="col-md-2"> total:{{stock.qty_out*stock.selling_price}}</div>
+                  <div class="col-md-2"><button class="btn-default btn-xs" ng-click="saveStock(stock)">save Items</button>
+                     <button class="btn-danger btn-xs" ng-click="removeUnsavedStock(stock)">X</button>
+                  </div>
+               </div>
+            </div>
+    </div>

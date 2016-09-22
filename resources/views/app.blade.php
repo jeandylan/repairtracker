@@ -31,7 +31,7 @@
 <script src="assets/js/bootstrap.min.js"></script>
 <!-- Angular -->
 <!-- Angular -->
-<script src="assets/js/angular-library/angular/angular1.5.min.js"></script>
+<script src="assets/js/angular-library/angular/angular.min.js"></script>
 <!-- bootstrap this is breaking the previous  nav bar pop up -->
 <script src="assets/js/angular-library/angular-bootstrap/ui-bootstrap-tpls-2.0.1.min.js"></script>
 

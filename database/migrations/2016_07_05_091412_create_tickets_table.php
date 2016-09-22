@@ -19,6 +19,7 @@ class CreateTicketsTable extends Migration
             $table->string('make');
             $table->longText('problem_definition')->nullable(); //give a detaile status of the problem
             $table->boolean('completed');
+            $table->enum('status',array('waiting_confirmation','repairing','close'))->default('waiting_confirmation');
             $table->date('completed_date')->nullable();
             $table->dateTime('customer_appointment_date')->nullable();
             $table->date('estimated_completion_date')->nullable();

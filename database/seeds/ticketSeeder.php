@@ -23,6 +23,7 @@ class ticketSeeder extends Seeder
             'make' => $faker->word,
             'problem_definition' => $faker->sentences($nb = 3, $asText = true),
             'estimated_completion_date'=>$faker->dateTimeBetween($startDate = 'now', $endDate = '+2 months'),
+            'status'=>$faker->randomElement($array = array ('waiting_confirmation','repairing','close')),
             'shop_location'=>'mahebourg',
         ]);
 

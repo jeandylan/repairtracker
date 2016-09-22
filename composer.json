@@ -12,7 +12,9 @@
         "barryvdh/laravel-cors": "^0.8.2",
         "laravelcollective/html": "5.2.*",
         "google/apiclient": "^2.0",
-        "twilio/sdk": "^5.3"
+        "twilio/sdk": "^5.3",
+        "barryvdh/laravel-dompdf": "^0.7.0",
+        "league/fractal": "^0.14.0"
 
     },
     "require-dev": {
@@ -54,5 +56,8 @@
     },
     "config": {
         "preferred-install": "dist"
-    }
+    },
+    "repositories": { 
+		"packagist": { "url": "https://packagist.org", "type": "composer" } 
+		}
 }

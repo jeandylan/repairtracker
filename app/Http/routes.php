@@ -52,7 +52,7 @@ Route::group(['prefix' => 'api'], function () {
         Route::post('/customer','CustomerController@store'); //create customer
         Route::delete('/customer/{id}','CustomerController@destroy'); //delete customer that have id same as the one provided
         Route::put('/customer/{id}','CustomerController@update'); //update customer that have id coresponding to the one provided
-        /*search */
+        /*search cutomer */
         Route::get('/customerSearch','CustomerController@search');
 
         /*customer address*/
@@ -74,14 +74,14 @@ Route::group(['prefix' => 'api'], function () {
         Route::get('/ticket/{id}', 'TicketController@get');
         Route::post('/ticket/{customerId}','TicketController@store'); //create a ticket for the customer with Id in url
         Route::delete('/ticket/{id}', 'TicketController@destroy');
-        Route::put('/ticket/{id}', 'TicketController@update');// delete A ticket with specific Id
+        Route::put('/ticket/{id}', 'TicketController@update');// update  A ticket with specific Id
         //ticket Comments
         Route::get('/ticketComments/{id}','TicketCommentController@get');
         Route::post('/ticketComments/{id}','TicketCommentController@create');
 
         Route::get('ticketCustomFieldsData/{ticketId}','TicketController@getCustomFieldsData');
         Route::get('ticketCustomFields','TicketController@getCustomFields');
-/*Ticket Assign-Employee(assign Tech to ticket)*/
+/* task Ticket Assign-Employee(assign Tech to ticket)*/
         Route::get('/ticketTechnician/{ticketId}','EmployeeTaskController@get');
         Route::post('/ticketTechnician/{ticketId}','EmployeeTaskController@create');
         Route::delete('/ticketTechnician/{taskId}','EmployeeTaskController@delete');
@@ -161,6 +161,30 @@ Route::group(['prefix' => 'api'], function () {
         Route::delete('/employee/telephone/{id}','EmployeeTelephoneController@destroy'); //get telephone(es) For customer X
         Route::put('/employee/telephone/{id}', 'EmployeeTelephoneController@update');
         Route::post('/employee/telephone', 'EmployeeTelephoneController@store');
+
+        /*estimation*/
+        Route::get('/estimation/{ticketId}','EstimationController@get');
+
+        Route::post('/estimationLabour/{ticketId}','EstimationController@createEstimationLabour');
+        Route::put('/estimationLabour/{estimationLabourId}','EstimationController@updateEstimationLabour');
+        Route::delete('/estimationLabour/{estimationLabourId}','EstimationController@deleteEstimationLabour');
+
+        Route::post('/estimationItem/{ticketId}','EstimationController@createEstimationItem');
+        Route::put('/estimationItem/{estimationItemId}','EstimationController@updateEstimationItem');
+        Route::delete('/estimationItem/{estimationItemId}','EstimationController@deleteEstimationItem');
+
+
+        /*invoice*/
+        Route::get('/invoice/{ticketId}','InvoiceController@get');
+        Route::post('/invoice/labour/{ticketId}','InvoiceController@createLabour');
+        Route::put('/invoice/labour/{labourId}','InvoiceController@updateLabour');
+
+
+        /*calendar*/
+        Route::get('/calendar/all','CalendarController@getAllEventDates'); ///all events loc
+        Route::get('/calendar/locationAppointment','CalendarController@getLocationAppointmentDates'); //APpoint with client for loc
+        Route::get('/calendar/locationTicketEstimationCompletionDates','CalendarController@getTicketEstimatedCompletionDates'); //ticket Completion for loca
+        Route::get('/calendar/LocationTicketTaskEstimationCompletionDate','CalendarController@getLocationTicketTaskEstimationCompletionDate'); //Ticket Task Completion
 
         /* technician Routes all Technician Are Employee */
 

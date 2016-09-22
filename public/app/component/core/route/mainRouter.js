@@ -39,7 +39,8 @@ default should be app,every page is Check for login in ShopAppCtrl
                         ncyBreadcrumb: {
                             label: 'Home'
                         },
-                        resolve:load(['smart-table','app/component/core/filters/otherFilter.js','app/shopAppCtrl.js','moment']),
+                        resolve:load(['smart-table','app/component/core/filters/otherFilter.js','app/shopAppCtrl.js','moment','ngDialog']),
+
 
                     })
 
@@ -123,31 +124,67 @@ default should be app,every page is Check for login in ShopAppCtrl
                     .state('app.ticket.update', {
                         url: '/update/ticket/{ticketId:int}',
                         templateUrl: 'app/component/shop/tickets/update/views/update-ticket.html',
-
                         resolve: load(['monospaced.qrcode' ,'AngularPrint',"ui.select",
                             'app/component/shop/tickets/update/controllers/updateTicketCtrl.js',
+                            'app/component/shop/tickets/update/controllers/ticketCommentCtrl.js', //comments Ctrl
+                            'app/component/shop/tickets/update/controllers/ticketStockCtrl.js', //stock Ctrl
+                            'app/component/shop/tickets/update/controllers/ticketTaskCtrl.js', //Task ctrl
+                            'app/component/shop/tickets/update/controllers/ticketInvoiceCtrl.js', //ticket Invoice
+                            'app/component/shop/tickets/update/controllers/ticketEstimationCtrl.js',//ticketInvoive
                             'app/component/shop/tickets/update/controllers/selectStockCtrl.js',
                             'app/component/shop/tickets/update/controllers/selectTechnicianCtrl.js',
-                            ,'ui.bootstrap.datetimepicker' //should be include Every where
-                        ])
+                            'pdfMake','ui.bootstrap.datetimepicker','signature' //should be include Every where
+                        ]),
+
+
+
+
                     })
 
+                    /*Estimation Route
+                    * Estimation
+                    *
+                    * */
+                    .state('app.estimation', {
+                        url: '/create/estimation/{ticketId:int}',
+                        templateUrl: 'app/component/shop/estimations/create/views/estimation-create.html',
+                        resolve: load(['app/component/shop/estimations/create/controllers/createEstimationCtrl.js',
+                            'app/component/shop/estimations/create/controllers/selectStockCtrl.js'])
+                    })
+
+                    .state('app.viewestimation', {
+                        url: '/view/estimation/{ticketId:int}',
+                        templateUrl: 'app/component/shop/estimations/read/controllers/view-estimation.html',
+                        resolve: load(['pdfMake',
+                            'app/component/shop/estimations/read/views/viewEstimationCtrl.js','signature','signature'])
+                    })
 
 
                 /*
                 Invoice Routes
                  */
-                    .state('app.read-invoice', {
+                   /* .state('app.read-invoice', {
                         url: '/read/{invoiceId:int}',
                         templateUrl: 'app/component/shop/tickets/create/views/create-ticket-form.html',
 
                         resolve: load(['app/component/shop/tickets/create/controllers/createTicketCtrl.js'])
                     })
-                    .state('app.create-invoice', {
+                    */
+                    .state('invoice', {
                         url: '/create/invoice/{ticketId:int}',
-                        templateUrl: 'app/component/shop/invoices/create/views/create-invoice.html',
+                        view:{
+                            'main':{
+                                templateUrl: 'app/component/shop/invoices/create/views/create-invoice.html',
+                                resolve: load(['app/component/shop/invoices/create/controllers/createInvoiceCtrl.js'])
+                            }
+                        }
 
-                        resolve: load(['app/component/shop/invoices/create/controllers/createInvoiceCtrl.js'])
+                    })
+                    .state('app.view-invoice', {
+                        url: '/view/invoice/{ticketId:int}',
+                        templateUrl: 'app/component/shop/invoices/read/views/view-invoice.html',
+
+                        resolve: load(['app/component/shop/invoices/read/controllers/viewInvoiceCtrl.js','pdfMake','signature'])
                     })
                 /*
                 Employyes Routes
@@ -238,6 +275,15 @@ default should be app,every page is Check for login in ShopAppCtrl
                     url: '/update/{stockId:int}',
                     templateUrl: 'app/component/shop/stocks/update/views/update-stock.html',
                     resolve: load(['app/component/shop/stocks/update/controllers/updateStockCtrl.js'])
+                    })
+
+                        /**calendar**/
+                    .state('app.calendar',{
+                        url:'/calendar',
+                        templateUrl:'app/component/shop/calendar/views/calendar.html',
+                        resolve: load(['moment','app/component/shop/calendar/controllers/calendarCtrl.js','mwl.calendar']),
+                        pageTitle:'calendar' //cause cause trouble
+
                     })
                     /* things below made me crazy ,mind to put (ng-view when needed else be ready to loose 24 hr,debugging)*/
                     .state('app.settings', {

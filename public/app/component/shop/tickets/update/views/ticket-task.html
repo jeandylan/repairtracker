@@ -1,0 +1,66 @@
+<div ng-controller="ticketTaskCtrl">
+<div ng-repeat="task in tasks">
+               <div class="form-group">
+                  <div class="line line-dashed b-b line-lg pull-in"></div>
+                   <div class="row ">
+                  <h5 ng-if="!task.employee.transferred"  class='text-info col-md-6'>Technician: {{task.employee.first_name+" "+task.employee.last_name }}</h5>
+                  <h5 ng-if="task.employee.transferred" class='text-warning col-md-6'>Technician: {{task.employee.first_name+" "+task.employee.last_name+
+                     " now at "+task.employee.shop_location}}
+                  </h5>
+                       <div class='col-md-6'>
+                        <button type="button" class="btn btn-sm btn-danger"  confirm-button="deleteTask(task)"
+                                message="Are you sure you want to remove this technician ?">Delete</button>
+                       </div>
+                   </div>
+               </div>
+               <div class='form-group'>
+                  Job Assign:<a href="#" editable-textarea="task.task.job_assign" e-rows="7" e-cols="40" onaftersave="updateTask(task.task)">{{task.task.job_assign || 'empty'}}</a>
+               </div>
+               <div class='form-group'>
+                  <div>percentage Completed: <a href="#" onaftersave="updateTask(task.task)" editable-range="task.task.completed_percentage" e-step="5">{{ task.task.completed_percentage +'%' || 'empty' }}</a></div>
+               </div>
+               <div class='form-group'>
+                  <div>hours work on: <a href="#" onaftersave="updateTask(task.task)" editable-number="task.task.hours_work_on" e-min="0">{{ task.task.hours_work_on|| "not started" }}</a></div>
+               </div>
+               <div class='form-group'>
+                  <div>estimated completion date: <a href="#" onbeforesave="dateNotPast($data)" e-minDate="now" e-is-open="opened.$data" e-ng-click="open($event,'$data')" e-datepicker-popup="yyyy/MM/dd" onaftersave="updateTask(task.task)" editable-bsdate="task.task.estimated_completion_date">{{ (task.task.estimated_completion_date | date: "yyyy-MM-dd") || 'empty' }}</a></div>
+               </div>
+               <div class="line line-dashed b-b line-lg pull-in"></div>
+            </div>
+             <!---unsaved Task--->
+            <h3 ng-if="unsavedTechniciansTask[0]">Unsaved Task</h3>
+            <div ng-repeat="technician in unsavedTechniciansTask">
+               <div class="row form-group">
+                  <div class="col-md-4">
+                     <div class="col-md-4">
+                        <small>Technician Name: <b class=text-info>{{technician.first_name+" "+ technician.last_name}}</b> </small>
+                     </div>
+                     <div class="col-md-1">
+                        <button type="button" class="btn btn-sm btn-danger"  confirm-button="removeTechnician(technician)" message="Are you sure you want to remove this technician ?">
+                        <i class="glyphicon  glyphicon-remove-circle">delete</i>
+                        </button>
+                     </div>
+                  </div>
+                  <div class="col-md-4">
+                     Job assign:
+                     <textarea ng-model="technician.ticket.job_assign" cols="100" style="width:100%"  placeholder="insert Job Description for Technician {{technician.first_name+' '+technician.last_name}}" required></textarea>
+                  </div>
+                  <div class="col-md-4">
+                     estimated Completion Date:
+                     <div class="input-group">
+                        <input type="text" class="form-control" datetime-picker="yyyy/MM/dd"
+                               ng-model="technician.ticket.estimated_completion_date" enable-time="false"  datepicker-options="calendarOption" is-open="calendar2.isOpen">
+                        <span class="input-group-btn">
+                        <button type="button" class="btn btn-default"   ng-click="calendar2.isOpen= !calendar2.isOpen"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+              <div class="form-group" ng-if="unsavedTechniciansTask[0]"><!---save new Task--->
+                  <button type="button" class="btn btn-default btn-block" ng-click="createTask()">Save Tasks</button>
+               </div>
+            <div class="form-group ">
+               <button class="btn-primary btn-sm" ng-click="selectTechnician()">+task</button>
+            </div>
+    </div>

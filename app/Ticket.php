@@ -26,17 +26,28 @@ class Ticket extends Model
     }
 
 
-    public function stock(){
+    public function stock(){ //we will get The Id Of stock_ticket, so as to update Easily
         //2nd arg is pivot table name
         return $this->hasMany('App\StockTicket');
+    }
+    public function stockOnly(){ //get only stock associated no stock_ticket  Id,can be used to calculate Invoice
+        return $this->belongsToMany('App\Stock','stock_ticket','ticket_id','stock_id');
     }
     public function employee(){
         //2nd arg is pivot table name
         return $this->belongsToMany('App\Employee','employee_ticket','ticket_id','employee_id');
     }
+    public  function employeeTask(){
+        return $this->hasMany('App\EmployeeTicket','ticket_id');
+    }
     public function  technician(){
         return $this->hasMany('App\EmployeeTicket');
     }
+
+    public function estimation(){
+      return  $this->hasOne('App\Estimation','ticket_id','id');
+    }
+
     /*
     public function comments(){
         return $this->hasMany('TicketComment');

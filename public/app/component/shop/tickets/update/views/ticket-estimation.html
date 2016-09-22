@@ -1,0 +1,40 @@
+<div  ng-controller="ticketEstimationCtrl">
+   <h4>stock</h4>
+  <div ng-repeat='stock in estimationStocks'>
+   <div class="form-group">
+               name: {{stock.product_name|| 'empty'}}
+               qty out: <a href="#" editable-number="stock.qty_out"  onaftersave="updateEstimationStock(stock)">{{stock.qty_out || 'empty'}}</a>
+      <button class="btn-xs btn-danger" ng-click="deleteEstimationStock(stock)">x</button>
+  </div>
+  </div>
+     <h4>Labour</h4>
+  <div ng-repeat='labour in estimationLabours'>
+   <div class="form-group">
+               name: <a href="#" editable-text="labour.name" onaftersave="updateEstimationLabour(labour)">{{labour.name|| 'empty'}}</a>
+               qty out: <a href="#" editable-number="labour.cost"  onaftersave="updateEstimationLabour(labour)">{{labour.cost || 'empty'}}</a>
+     <button class="btn-xs btn-danger" ng-click="deleteEstimationLabour(labour)">x</button>
+  </div>
+  </div>
+
+    <h4 ng-if="unsavedEstimationStocks">new Stock Estimation</h4>
+    <div ng-repeat="unsavedEstimationStock in unsavedEstimationStocks">
+     StockName:{{ unsavedEstimationStock.product_name|| 'empty' }}
+      Qty_out:<a href="#" e-required e-min="1"  editable-number="unsavedEstimationStock.qty_out" onaftersave="createEstimationStock(unsavedEstimationStock)">{{ unsavedEstimationStock.qty_out|| 'empty' }}</a>
+      </div>
+  <h4 ng-if="unsavedEstimationLabours">new Labour Estimation</h4>
+
+
+  <div ng-repeat="unsavedEstimationLabour in unsavedEstimationLabours">
+     name: <a href="#" editable-text="unsavedEstimationLabour.product_name" e-style="color: green" e-required e-placeholder="Enter name" e-formclass="class1 class2">
+    {{unsavedEstimationLabour.product_name||'empty'}}</a>
+      cost:<a href="#" editable-number="unsavedEstimationLabour.cost" onaftersave="createEstimationLabour(unsavedEstimationLabour)"  e-required>{{ unsavedEstimationLabour.cost|| 'empty' }}</a>
+      </div>
+
+  <div class="form-group">
+    <button  ng-click="selectStock()" class="btn-block btn-default btn-bg">Add Stock to Estimation</button>
+  </div>
+  <div class="form-group">
+    <button  class="btn-block btn-default btn-bg"  ng-click="addUnsavedEstimationLabour()">Add labour to Estimation</button>
+  </div>
+
+</div>

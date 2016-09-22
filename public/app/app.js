@@ -23,6 +23,7 @@ angular.module('app', [
     'satellizer',
     'angular-cache',
 
+
 ]);
 
 /*

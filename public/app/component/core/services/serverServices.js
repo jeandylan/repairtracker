@@ -52,7 +52,7 @@ app.service("serverServices", function ($http, $q,toaster) {
             })
                 .then(function(response) {
                     deferred.resolve(response.data); //return sucessful data to controller /function calling it
-                    (response.data.successful) ? toaster.pop('successful',"deleted", response.data.message ) : toaster.pop('warning',"",response.data.message);
+                    (response.data.successful) ? toaster.pop('successful',"updated", response.data.message ) : toaster.pop('warning',"",response.data.message);
                     return deferred.promise;
 
                 },function(error) {
@@ -72,7 +72,7 @@ app.service("serverServices", function ($http, $q,toaster) {
             return $http.post(uri,data) //use the delete  uri,add the / so that angular could handle https ,if ever https is being used
                 .then(function(response) {
                     deferred.resolve(response.data); //return sucessful data to controller /function calling it
-                    (response.data.successful) ? toaster.pop('successful',"Done", response.data.message ) : toaster.pop('warning',"!!",response.data.message);
+                    (response.data.successful) ? toaster.pop('successful',"Created", response.data.message ) : toaster.pop('warning',"!!",response.data.message);
                     return deferred.promise;
 
                 }, function(error) {

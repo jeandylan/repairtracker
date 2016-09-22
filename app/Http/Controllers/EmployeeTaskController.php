@@ -36,7 +36,7 @@ class EmployeeTaskController extends Controller
         $task->job_assign=$request->input('job_assign');
         $task->completed_percentage=$request->input('completed_percentage');
         $task->hours_work_on=$request->input('hours_work_on');
-        $task->estimated_completed_date=$request->input('estimated_completed_date');
+        $task->estimated_completion_date=$request->input('estimated_completion_date');
         $task->save();
         return  array("successful"=>true, "message"=>"Technican Job updated");
     }

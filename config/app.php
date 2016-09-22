@@ -165,6 +165,8 @@ return [
       //  'Tymon\JWTAuth\Providers\JWTAuthServiceProvider',
         /*form builder*/
         Collective\Html\HtmlServiceProvider::class,
+        /*pdf*/
+        Barryvdh\DomPDF\ServiceProvider::class,
 
     ],
 
@@ -220,6 +222,8 @@ return [
         /*form Templates*/
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        /*pdf*/
+        'PDF' => Barryvdh\DomPDF\Facade::class,
 
 
 

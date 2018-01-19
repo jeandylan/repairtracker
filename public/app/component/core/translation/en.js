@@ -64,23 +64,21 @@
           "PROFILE" : "Profile",
           "DOCUMENTS" : "Documents"
     }
-  },
-  "MILESTONE" : "Milestone",
-      "RELEASE" : "Release"
+  }
 },
-  "customers" : {
-  "customers":"customers",
-  "add-customer" : "add customer",
-      "view-customers" : "view customer",
-      "TASK" : "Task",
-      "USER" : "User",
-      "EMAIL" : "Email"
-},
-  "tickets" : {
-  "tickets":"tickets",
-      "create-ticket" : "create ticket",
-      "view-tickets" : "view tickets"
+  "dashboard":"dashboard",
+    "calendar":"calendar",
+    "ticketsTable":"ticket",
+    "my task":"my task",
+    "stocksTable":"stocks",
+    "stocksLocationTable":"branch stock level",
+    "customersTable":"customer",
+    "employeesLocationTable":"branch employee",
+    "employeesTable":"all employees",
+    "suppliersTable":"all suppliers",
+    "settings":"settings",
+    "importExportData":"import and export data"
 
-}
+
 
 }

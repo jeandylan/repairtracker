@@ -1,0 +1,33 @@
+<div  ng-controller="UpdateSupporterCtrl" class="form-group">
+    <div class="wrapper-md" >
+        <!---start panel-->
+        <div class="panel panel-default">
+            <!---personal detail form panel --->
+            <div class="panel-heading font-bold">
+                Supporter Details
+            </div>
+            <div class="panel-body">
+                <!----start of panelbody-->
+                <!---on xeditbox--->
+
+                <div class="form-group ">
+                    Name: <a href="#" editable-text="supporter.name" onbeforesave="updateSupporter()">{{supporter.name || 'empty'}}</a>
+                </div>
+                <!---on xeditbox--->
+                <div class="form-group">
+                    Email: <a  href="#" editable-text="supporter.email" onaftersave="updateSupporter()">{{supporter.email || 'empty'}}</a>
+                </div>
+                <div class="form-group">
+                    Number of Clients: <a  href="#" editable-number="supporter.clients" onaftersave="updateSupporter()">{{supporter.clients || 'empty'}}</a>
+                </div>
+                <div class="form-group">
+                    Status: <a  href="#" editable-radiolist="supporter.status"  e-ng-options="s.value as s.text for s in ::statuses track by s.value" onaftersave="updateSupporter()">{{supporter.status==0? 'Inactive': 'Active' || 'empty'}}</a>
+                </div>
+            </div>
+            <!--end panel body--->
+        </div>
+
+        <!---end panel--->
+
+    </div>
+</div>

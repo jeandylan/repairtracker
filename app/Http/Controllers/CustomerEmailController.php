@@ -58,10 +58,8 @@ class CustomerEmailController extends Controller
         else{
             return array("successful"=>false, "message"=>"deleting unknown Email");
         }
-
-
-
-
     }
+
+
 
 }

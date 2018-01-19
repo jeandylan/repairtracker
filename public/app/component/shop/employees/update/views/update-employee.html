@@ -9,82 +9,39 @@
                 <!----start of panelbody-->
                 <!---on xeditbox--->
                 <div class="form-group ">
-                    First Name: <a href="#" editable-text="employee.personal.first_name" onbeforesave="updateEmployee()">{{employee.personal.first_name || 'empty'}}</a>
+                    First Name: <a href="#" editable-text="employee.first_name" onbeforesave="updateEmployee()">{{employee.first_name || 'empty'}}</a>
                 </div>
                 <!---on xeditbox--->
                 <div class="form-group">
-                    Last Name: <a  href="#" editable-text="employee.personal.last_name" onaftersave="updateEmployee()">{{employee.personal.last_name || 'empty'}}</a>
+                    Last Name: <a  href="#" editable-text="employee.last_name" onaftersave="updateEmployee()">{{employee.last_name || 'empty'}}</a>
+                    </div>
+
+                <div class="form-group">
+                    Email: <a  href="#" editable-text="employee.email" onaftersave="updateEmployee()">{{employee.email || 'empty'}}</a>
+                    </div>
+                <div class="form-group">
+                    password(enter new password): <a  href="#" editable-password="newPassword"  onaftersave="updatePassword()">{{"password" || 'empty'}}</a>
+                    </div>
+                <div class="form-group">
+                    address: <a  href="#" editable-text="employee.address" onaftersave="updateEmployee()">{{employee.address || 'empty'}}</a>
+                    </div>
+                <div class="form-group">
+                    telephone: <a  href="#" editable-text="employee.telephone" onaftersave="updateEmployee()">{{employee.telephone || 'empty'}}</a>
+                    </div>
+                <div class="form-group">
+                    isActive: <a href="#" editable-radiolist="employee.isActive" onaftersave="updateEmployee()" e-ng-options="s.value as s.text for s in ::statuses track by s.value">{{employee.isActive || 'empty'}}</a>
+                    </div>
+                <div class="form-group">
+                    role: <a href="#"  editable-select="employee.role" onaftersave="updateEmployeeRole()" e-ng-options="s.value as s.text for s in roles">{{employee.role || 'empty'}}</a>
                     </div>
                 <!---on xeditbox--->
                 <div class="form-group">
-                       DOB: <a  href="#" editable-bsdate="employee.personal.date_of_birth" e-is-open="opened.$data" e-ng-click="open($event,'$data')" onaftersave="updateEmployee()" e-datepicker-popup="dd-MMMM-yyyy">{{ (employee.personal.date_of_birth | date:"dd/MM/yyyy") || 'empty' }}</a>
+                       DOB: <a  href="#" editable-bsdate="employee.date_of_birth" e-is-open="opened.$data" e-ng-click="open($event,'$data')" onaftersave="updateEmployee()" e-datepicker-popup="dd-MMMM-yyyy">{{ (employee.date_of_birth | date:"dd/MM/yyyy") || 'empty' }}</a>
                     </div>
                 </div>
                 <!--end panel body--->
             </div>
 
-            <!---end panel--->
-
-
-        <!---right side-->
-        <div class="panel panel-default">
-            <!----Title-->
-            <div class="panel-heading font-bold">
-                Address
-            </div>
-                  <!---Address--->
-
-            <div ng-repeat="address in employee.addresses">
-                    <div class="form-group">
-                        Type:<a editable-select="address.type" onaftersave="updateAddressType(address)"   e-ng-options="type for type in types">
-                        {{ address.type || 'select address type'}}
-                        </a>
-                         Address: <a editable-text="address.address" onaftersave="updateAddress(address)" e-uib-typeahead="address for address in getLocation($viewValue)" e-typeahead-loading="loadingLocations" e-typeahead-no-results="noResults">{{address.address || 'empty'}}</a>
-                        <button class="btn-warning" type="button" confirm-button="deleteAddress(address)" message="Are you sure you want to remove this Address?"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
-                    </div>
-
-
-                </div>
-
-
-            <button type="button" ng-click="createAddress()" class="btn-primary"><i class="fa fa-plus " aria-hidden="true"></i> Add Address</button>
-
-
-
-                <!---on xeditbox--->
-            <!----Title-->
-            <div class="panel-heading font-bold row">
-                Telephone
-            </div>
-            <div ng-repeat="telephone in employee.telephones">
-                <div class="form-group">
-                    Type:<a editable-select="telephone.type" onaftersave="updateTelephoneType(telephone)"   e-ng-options="type for type in types">
-                    {{ telephone.type || 'select telephone type'}}
-                </a>
-                    telephone: <a editable-text="telephone.telephone_number" onaftersave="updateTelephone(telephone)">{{telephone.telephone_number || 'empty'}}</a>
-                    <button class="btn-warning" type="button" confirm-button="deleteTelephone(telephone)" message="Are you sure you want to remove this telephone?"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
-                </div>
-
-            </div>
-            <button type="button" ng-click="createTelephone($event)" class="btn-primary"><i class="fa fa-plus " aria-hidden="true"></i> Add telephone</button>
-
-
-            <div class="panel-heading font-bold">
-                Emails
-            </div>
-            <div ng-repeat="email in employee.emails">
-                <div class="form-group">
-                    Type:<a editable-select="email.type" onaftersave="updateEmailType(email)"   e-ng-options="type for type in types">
-                    {{ email.type || 'select email type'}}
-                </a>
-                    email: <a editable-text="email.email" onaftersave="updateEmail(email)">{{email.email || 'empty'}}</a>
-                    <button class="btn-warning" type="button" confirm-button="deleteEmail(email)" message="Are you sure you want to remove this email?"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
-                </div>
-
-            </div>
-            <button type="button" ng-click="createEmail($event)" class="btn-primary"><i class="fa fa-plus " aria-hidden="true"></i> Add email</button>
-
-        </div>
 
 
 </div>

@@ -1,0 +1,60 @@
+<div ng-controller="readCompanyCtrl" id="table">
+    <div class="bg-light lter b-b wrapper-md">
+        <button md-ink-ripple ui-sref="app.createCompany" class="btn btn-sm btn-info pull-right">Add Client</button>
+        <h1 class="m-n font-thin h3">Clients</h1>
+    </div>
+    <table st-table="displayedCollection" st-safe-src="rowCollection" class="table table-striped">
+        <!----remember display and st-dafe when updating ---->
+        <thead>
+        <tr>
+            <th st-sort="company_name">Comapany Name</th>
+            <th st-sort="owner_first_name">First Name</th>
+            <th st-sort="owner_last_name">Last Name</th>
+            <th>Max Ticket</th>
+            <th>Max Employee</th>
+            <th>Price/Month</th>
+            <th>Status</th>
+
+        </tr>
+        <tr>
+            <th>
+                <input st-search="company_name" placeholder="Search Company Name" class="input-sm form-control"
+                       type="search"/>
+            </th>
+            <th>
+                <input st-search="owner_first_name" placeholder="Search First Name" class="input-sm form-control"
+                       type="search"/>
+            </th>
+            <th>
+                <input st-search="owner_last_name" placeholder="Search Last Name" class="input-sm form-control"
+                       type="search"/>
+            </th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr ng-repeat="row in displayedCollection">
+            <td>{{row.company_name}}</td>
+            <td>{{row.owner_first_name}}</td>
+            <td>{{row.owner_last_name}}</td>
+            <td>{{row.max_customers}}</td>
+            <td>{{row.max_employees}}</td>
+            <td>{{row.price_per_month}}</td>
+            <td>{{row.isActive == 0 ? 'Inactive' : 'Active'}}</td>
+            <td>
+                <a ui-sref="app.updateCompany({companyId:row.id})" class="btn btn-sm btn-warning">
+                    <i class="glyphicon  glyphicon-edit"></i>
+                </a>
+            </td>
+            <td>
+                <button type="button" class="btn btn-sm btn-danger" confirm-button="deleteBtn(row.id)"
+                        message="Are you sure you want to remove this ?">
+                    <i class="glyphicon  glyphicon-remove-circle"></i>
+                </button>
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+
+</div>

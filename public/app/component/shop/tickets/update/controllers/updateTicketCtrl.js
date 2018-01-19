@@ -13,16 +13,10 @@ app.controller("updateTicketCtrl",function ($scope,$location,editableOptions,$st
         getTicketData($scope.ticketId);
     });
 
-    $scope.$on('fieldDataChanged',function () { //refresg data if new Txt field
-        getFieldData($scope.ticketId);
-    });
-
-
-
+    $scope.status = ["repairing","waiting_confirmation","close"];
 
 
     getTicketData($scope.ticketId);
-   /// getFieldData($scope.ticketId);
 
     $scope.toPdf=function (documentId) {
         $scope.hide=true;
@@ -84,16 +78,6 @@ app.controller("updateTicketCtrl",function ($scope,$location,editableOptions,$st
     }; //calendar Func
 
 
-    function getFieldData() {
-        serverServices.get('api/ticketfieldsdata/'+$scope.ticketId).then(
-            function (result) {
-                $scope.txtFields = result;
-            },
-            function (result) {
-               toaster.pop('error', "server Err", result.message);
-                console.log(result);
-            });
-    }
 /*
     $scope.updateTicket=function () {
         var ticketUpdateData=
@@ -119,42 +103,7 @@ app.controller("updateTicketCtrl",function ($scope,$location,editableOptions,$st
             );
     };
     */
-    $scope.updateTxtData=function ($txtField) {
-        console.log($txtField);
-        var updateFieldData={
-            field_data:$txtField.data[0].field_data
-        };
-        serverServices.put('api/fielddata/'+$txtField.data[0].id,updateFieldData) //using service (public/app/component/core/services/serverServices.js) that will query Laravel for .json output/Input
-            .then(
-                function (result) {
-                    toaster.pop("success","Done",result.message);
-                },
-                function (error) {
-                    // handle errors here
 
-                    toaster.pop("error","Failed","ooh nothing was saved error ");
-                }
-            );
-    };
-
-    $scope.createTxtData=function ($txtField) {
-        console.log('creating');
-        var newTxtData={
-            field_data:$txtField.data[0].field_data,
-            entity_id:$scope.ticketId,
-            field_id:$txtField.properties.id
-        };
-        serverServices.post('api/fielddata',newTxtData) //using service (public/app/component/core/services/serverServices.js) that will query Laravel for .json output/Input
-            .then(
-                function (result) {
-                    toaster.pop("success","Done",result.message);
-                    $scope.$emit("fieldDataChanged");
-                },
-                function (error) {
-                    toaster.pop("error","Failed","ooh nothing was saved error ");
-                }
-            );
-    };
 
 
 

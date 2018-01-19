@@ -1,0 +1,12 @@
+<div ng-controller="customizeEstimationEmailCtrl">
+ <h3>header of Estimation email</h3>
+ <small>include company name ,loc Address etc</small>
+ <textarea ui-tinymce="tinymceOptions" ng-model="estimation_email_header"></textarea>
+  <button ng-click="saveHeader()">save</button>
+ <h3>footer Of estimation Email</h3>
+ <small>include terms and condition</small>
+ <textarea ui-tinymce="tinymceOptions" ng-model="estimation_email_footer"></textarea>
+ <div class="row">
+  <button ng-click="saveFooter()">save</button>
+ </div>
+</div>

@@ -17,7 +17,6 @@ class CreateSupplierEmailTable extends Migration
             $table->integer('supplier_id')->unsigned();
             $table->string('email');
             $table->enum('type', array('home', 'company','private'));
-            $table->string('shop_location');
             $table->timestamps();
         });
 

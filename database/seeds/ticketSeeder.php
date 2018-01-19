@@ -16,6 +16,8 @@ class ticketSeeder extends Seeder
         $minCustomerId=1;
         $maxCustomerId=7;
         $faker = Faker\Factory::create(); //use faker to create Data
+        $testingShopLocationArray=array('mahebourg.nexus.saasrepair1.xyz','curepipe.nexus.saasrepair1.xyz','vacoas.nexus.saasrepair1.xyz');
+        $testingShopLocation='mahebourg.nexus.saasrepair1.xyz';
         //create 2  Ticket For a random customer
         DB::table('tickets')->insert([
             'customer_id' =>rand ($minCustomerId,$maxCustomerId) ,
@@ -24,7 +26,7 @@ class ticketSeeder extends Seeder
             'problem_definition' => $faker->sentences($nb = 3, $asText = true),
             'estimated_completion_date'=>$faker->dateTimeBetween($startDate = 'now', $endDate = '+2 months'),
             'status'=>$faker->randomElement($array = array ('waiting_confirmation','repairing','close')),
-            'shop_location'=>'mahebourg',
+            'shop_location'=>$testingShopLocation,
         ]);
 
         DB::table('tickets')->insert([
@@ -33,7 +35,7 @@ class ticketSeeder extends Seeder
             'make' => $faker->word,
             'problem_definition' => $faker->sentences($nb = 3, $asText = true),
             'estimated_completion_date'=>$faker->dateTimeBetween($startDate = 'now', $endDate = '+2 months'),
-            'shop_location'=>'mahebourg',
+            'shop_location'=>$testingShopLocation,
         ]);
 
 
@@ -52,7 +54,7 @@ class ticketSeeder extends Seeder
 ///Generate 10 random Ticket id >2
         for ($i = 0; $i < $limit; $i++) {
             $customerId=rand ($minCustomerId,$maxCustomerId);
-            $shop_location=$faker->randomElement($array = array ('mahebourg','curepipe','vacoas'));
+            $shop_location=$faker->randomElement($array = $testingShopLocationArray);
             DB::table('tickets')->insert([
                 'customer_id' =>$customerId ,
                 'model' => $faker->word,
@@ -61,19 +63,23 @@ class ticketSeeder extends Seeder
                 'estimated_completion_date'=>$faker->dateTimeBetween($startDate = 'now', $endDate = '+2 months'),
                 'shop_location'=>$shop_location,
             ]);
+
         }
 
         for($z=0;$z< 5;$z++){
-            $customerId=rand ($minCustomerId,$maxCustomerId);
+            $employeeId=rand ($minCustomerId,$maxCustomerId);
             $ticketId=rand(1,5);
             DB::table('employee_ticket')->insert([
-                'employee_id' => $customerId,
+                'employee_id' => $employeeId,
                 'ticket_id' => $ticketId,
                 'job_assign' => $faker->sentences($nb = 3, $asText = true),
                 'hours_work_on'=>rand(1,2),
                 'completed_percentage'=>rand(60,100),
+                'read'=>0,
                 'estimated_completion_date'=>$faker->dateTimeBetween($startDate = 'now', $endDate = '+2 months')
             ]);
+
+
         }
     }
 }

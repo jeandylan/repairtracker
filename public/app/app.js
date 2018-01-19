@@ -22,6 +22,9 @@ angular.module('app', [
     'xeditable',
     'satellizer',
     'angular-cache',
+    'mm.acl',
+    'chart.js',
+
 
 
 ]);

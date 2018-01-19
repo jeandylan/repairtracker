@@ -8,6 +8,7 @@ class StockSupplier extends Model
 {
     use BelongsToTenant;
     protected $table='stock_supplier'; //tbl Model refers to
+    protected $connection = 'tenant';
     
     
 }

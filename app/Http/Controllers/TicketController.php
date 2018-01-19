@@ -55,9 +55,10 @@ class TicketController extends Controller
             $emailOutput="";
             $customerDetails=Customer::find($customerId);
             foreach ($customerDetails->email()->get() as $customerEmail ){
-                $ticketEmail=new GmailMailler();
+             /*   $ticketEmail=new GmailMailler();
               $emailOutput .=  $ticketEmail->SentTicketCreation($customerEmail->email,$customerDetails->first_name,"ticket Creation",
                   "ferfr","we Have a ticket for you ");
+             */
             }
             return  array("successful"=>true, "message"=>"ticket  created, $emailOutput","ticketId"=>$ticket->id); //return the new Ticket ID
         }
@@ -95,11 +96,35 @@ class TicketController extends Controller
         return  array("successful"=>true, "message"=>"ticket deleted");
 
     }
+    public function getCustomFieldUpdating($ticketId){
+        $output=[];
+        $customFields=CustomTextField::where('form_name','=','ticket')->get();
+        foreach ($customFields as $customField){
+            if($customFieldData=$customField->fieldData()->where('entity_id','=',$ticketId)->get()){ //if ticket already Have Data for custom Property
+                array_push($output,array("data"=>$customFieldData->first(),"properties"=>$customField));
+            }
+            else{
+                array_push($output,["properties"=>$customField]);
+            }
+
+
+        }
+        return $output;
+
+    }
+
+
+    public function getCustomerEmail($ticketId){
+        $ticket=Ticket::find($ticketId);
+       return  $ticket->customer()->first()->email()->get();
+
+
+    }
+
+    /**most of these are not used i think*/
     public function getCustomFields()
     {
         return  CustomTextField::where('form_name', '=', 'ticket')->get();
-
-
 
     }
     public function getCustomFieldsData($ticketId){

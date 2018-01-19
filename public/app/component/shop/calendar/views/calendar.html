@@ -1,10 +1,19 @@
 <div ng-controller="calendarCtrl">
 	  <div class="wrapper-md">
+		  <div class=" row form-group">
+			  <div class="col-md-6 text-center">
+				  <div class="btn-group">
+					  <label class="btn btn-primary" ng-model="calendarView" uib-btn-radio="'year'">Year</label>
+					  <label class="btn btn-primary" ng-model="calendarView" uib-btn-radio="'month'">Month</label>
+					  <label class="btn btn-primary" ng-model="calendarView" uib-btn-radio="'week'">Week</label>
+					  <label class="btn btn-primary" ng-model="calendarView" uib-btn-radio="'day'">Day</label>
+				  </div>
+		  </div>
+
 	<div class=" row form-group">
 			<button class="btn-default" ng-click="viewLocationAppointment()">Appointment</button>
 			<button class="btn-default" ng-click="viewLocationEstimationCompletionDates()">Ticket Completion Date</button>
 			<button class="btn-default" ng-click="viewLocationTicketTaskEstimationCompletionDate()">Technician task</button>
-
 	</div>
 	<mwl-calendar
 			view="calendarView"

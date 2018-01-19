@@ -11,6 +11,7 @@ namespace App\Mylibs;
 use Illuminate\Support\Facades\Request;
 use Firebase\JWT\JWT;
 use App\Employee;
+use App\AllEmployee;
 
 class JWTAut
 {
@@ -25,6 +26,6 @@ class JWTAut
     public static function toUser(){
         $tokenData=self::decode();
 
-        return Employee::find($tokenData['iss']);
+        return AllEmployee::find($tokenData['iss']);
     }
 }

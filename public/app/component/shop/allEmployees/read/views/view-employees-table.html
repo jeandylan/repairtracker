@@ -1,0 +1,54 @@
+<div ng-controller="readAllEmployeesCtrl" id="table" >
+    <table st-table="displayedCollection"  st-safe-src="rowCollection" class="table table-striped"> <!----remember display and st-dafe when updating ---->
+        <thead>
+        <tr>
+            <th st-sort="first_name">first name</th>
+            <th st-sort="last_name" >last name</th>
+            <th>DOB</th>
+            <th st-sort="role">role</th>
+            <th st-sort='shop_location'>shop location</th>
+
+
+        </tr>
+        <tr>
+            <th>
+                <input st-search="first_name" placeholder="search for first name" class="input-sm form-control" type="search"/>
+            </th>
+            <th>
+                <input st-search="last_name" placeholder="search for last name" class="input-sm form-control" type="search"/>
+            </th>
+            <th>
+
+            </th>
+            <th>
+                <input st-search="role" placeholder="search for role" class="input-sm form-control" type="search"/>
+            </th>
+             <th>
+                <input st-search="shop_location" placeholder="search for shop location" class="input-sm form-control" type="search"/>
+            </th>
+        </tr>
+        </thead>
+
+        <tbody >
+        <tr ng-repeat="row in displayedCollection">
+            <td >{{row.first_name}}</td>
+            <td >{{row.last_name}}</td>
+            <td>{{row.date_of_birth}}</td>
+            <td>{{row.role}}</td>
+            <td>{{row.shop_location}}</td>
+            <td>
+                <a ui-sref="app.allEmployee.update({employeeId:row.id})" class="btn btn-sm btn-warning"  >
+                    <i class="glyphicon  glyphicon-edit">edit</i>
+                </a>
+            </td>
+            <td>
+                <!--->
+                <button type="button" class="btn btn-sm btn-danger"  confirm-button="deleteBtn(row.id)" message="Are you sure you want to remove this ?">
+                    <i class="glyphicon  glyphicon-remove-circle">delete</i>
+                </button>
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+    </div>

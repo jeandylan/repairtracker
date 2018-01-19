@@ -1,0 +1,90 @@
+<!-- settings -->
+<div ng-controller="settingColorCtrl">
+  <button ng-click="saveTheme()">save theme</button>
+  <div class="panel-heading">
+    Settings
+  </div>
+  <div class="panel-body"> 
+    <div class="m-b-sm">
+      <label class="i-switch bg-info pull-right">
+        <input type="checkbox" ng-model="app.settings.headerFixed">
+        <i></i>
+      </label>
+      Fixed header 
+    </div>
+    <div class="m-b-sm">
+      <label class="i-switch bg-info pull-right">
+        <input type="checkbox" ng-model="app.settings.asideFixed">
+        <i></i>
+      </label>
+      Fixed aside 
+    </div>
+    <div class="m-b-sm">
+      <label class="i-switch bg-info pull-right">
+        <input type="checkbox" ng-model="app.settings.asideFolded">
+        <i></i>
+      </label>
+      Folded aside 
+    </div>
+    <div class="m-b-sm">
+      <label class="i-switch bg-info pull-right">
+        <input type="checkbox" ng-model="app.settings.asideDock">
+        <i></i>
+      </label>
+      Dock aside
+    </div>
+    <div>
+      <label class="i-switch bg-info pull-right">
+        <input type="checkbox" ng-model="app.settings.container">
+        <i></i>
+      </label>
+      Boxed layout
+    </div>
+
+    <div class="col-md-6">
+      <h5>top Nav Color</h5>
+     <div ng-click= "app.settings.navbarHeaderColor='bg-black';" class="bg-black header">...</div>
+    <div ng-click= "app.settings.navbarHeaderColor='bg-white-only';" class="bg-white-only header">...</div>
+    <div ng-click= "app.settings.navbarHeaderColor='bg-dark';" class="bg-dark header">...</div>
+    <div ng-click= "app.settings.navbarHeaderColor='bg-primary';" class="bg-primary header">...</div>
+    <div ng-click= "app.settings.navbarHeaderColor='bg-info';" class="bg-info header">...</div>
+    <div ng-click= "app.settings.navbarHeaderColor='bg-success';" class="bg-success header">...</div>
+    <div ng-click= "app.settings.navbarHeaderColor='bg-danger';" class="bg-danger header">...</div>
+    <div ng-click= "app.settings.navbarHeaderColor='bg-info dker';" class="bg-info dker header">...</div>
+     <div ng-click= "app.settings.navbarHeaderColor='bg-light';" class="bg-light header">...</div>
+    <div ng-click= "app.settings.navbarHeaderColor='bg-danger dker bg-gd';" class="bg-danger dker bg-gd header">...</div>
+      </div>
+
+
+     <div class="col-md-6">
+      <h5>Top collapse Color</h5>
+        <div ng-click= "app.settings.navbarCollapseColor='bg-black';" class="bg-black header">...</div>
+    <div ng-click= "app.settings.navbarCollapseColor='bg-white-only';" class="bg-white-only header">...</div>
+    <div ng-click= "app.settings.navbarCollapseColor='bg-dark';" class="bg-dark header">...</div>
+    <div ng-click= "app.settings.navbarCollapseColor='bg-primary';" class="bg-primary header">...</div>
+    <div ng-click= "app.settings.navbarCollapseColor='bg-info';" class="bg-info header">...</div>
+    <div ng-click= "app.settings.navbarCollapseColor='bg-success';" class="bg-success header">...</div>
+    <div ng-click= "app.settings.navbarCollapseColor='bg-danger';" class="bg-danger header">...</div>
+    <div ng-click= "app.settings.navbarCollapseColor='bg-info dker';" class="bg-info dker header">...</div>
+     <div ng-click= "app.settings.navbarCollapseColor='bg-light';" class="bg-light header">...</div>
+    <div ng-click= "app.settings.navbarCollapseColor='bg-danger dker bg-gd';" class="bg-danger dker bg-gd header">...</di
+      </div>
+  </div>
+
+     <div class="col-md-6">
+      <h5>aside color</h5>
+        <div ng-click= "app.settings.asideColor='bg-black';" class="bg-black header">...</div>
+    <div ng-click= "app.settings.asideColor='bg-white-only';" class="bg-white-only header">...</div>
+    <div ng-click= "app.settings.asideColor='bg-dark';" class="bg-dark header">...</div>
+    <div ng-click= "app.settings.asideColor='bg-primary';" class="bg-primary header">...</div>
+    <div ng-click= "app.settings.asideColor='bg-info';" class="bg-info header">...</div>
+    <div ng-click= "app.settings.asideColor='bg-success';" class="bg-success header">...</div>
+    <div ng-click= "app.settings.asideColor='bg-danger';" class="bg-danger header">...</div>
+    <div ng-click= "app.settings.asideColor='bg-info dker';" class="bg-info dker header">...</div>
+     <div ng-click= "app.settings.asideColor='bg-light';" class="bg-light header">...</div>
+    <div ng-click= "app.settings.asideColor='bg-danger dker bg-gd';" class="bg-danger dker bg-gd header">...</div>
+      </div>
+  </div>
+  </div>
+
+<!-- /settings -->

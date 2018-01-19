@@ -14,7 +14,11 @@
         "google/apiclient": "^2.0",
         "twilio/sdk": "^5.3",
         "barryvdh/laravel-dompdf": "^0.7.0",
-        "league/fractal": "^0.14.0"
+        "league/fractal": "^0.14.0",
+        "stevebauman/purify": "1.1.*",
+        "soapbox/laravel-formatter": "^2.0",
+        "spatie/laravel-permission": "^1.5",
+        "stripe/stripe-php": "^4.0"
 
     },
     "require-dev": {

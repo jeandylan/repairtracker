@@ -1,0 +1,25 @@
+<div ng-controller='updateStockLocationCtrl'>
+<div class="row">
+  <h2>{{stockLocation.product_name}}</h2>
+</div>
+<div class="row">
+  <h5>Selling Price <b>{{stockLocation.selling_price}}</b></h5>
+</div>
+  <div class="row">
+ <h5>reorder lvl  <b>{{stockLocation.reorder_level}}</b></h5>
+</div>
+   <div class="row">
+<h5> barcode <b>{{stockLocation.barcode}}</b></h5>
+</div>
+
+  <div class="form-group row">
+    <label class="col-sm-2 control-label text-primary">current Level :</label>
+    <div class="col-sm-10">
+      <span href="#"editable-number="stockLocation.current_level" onaftersave="updateStockLevel()" e-step="any" >{{ stockLocation.current_level || 'empty' }}</span>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <a ui-sref="app.stockLocation.purchase({stockId:stockLocation.stock_id})">create Purchase orders</a>
+  </div>
+</div>

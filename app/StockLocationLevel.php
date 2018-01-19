@@ -9,9 +9,10 @@ class StockLocationLevel extends Model
 {
     use BelongsToTenant;
     protected  $table='stocks_location_level';
+    protected $connection = 'tenant';
     protected $guarded = array(['id']);
 
     public function stock(){
-        $this->hasOne('App\Stock','stock_id');
+        return $this->belongsTo('App\Stock','stock_id');
     }
 }

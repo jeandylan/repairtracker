@@ -9,14 +9,6 @@
                 personal details
             </div>
             <div class="panel-body">
-                <!---angular material drop box ---->
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">sex:</label>
-                    <div class="col-sm-10">
-                        <label class="checkbox-inline"><input type="radio" name="sex" value="">M</label>
-                        <label class="checkbox-inline"><input type="radio" name="sex" value="">F</label>
-                    </div>
-                </div>
                 <div class="line line-dashed b-b line-lg pull-in"></div>
                 <!----end of material dropBox--->
                 <!----one text box --->
@@ -38,7 +30,34 @@
                         <p class="alert-warning" ng-show="employee_form.last_name.$error.required">last Name Required.</p>
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">email</label>
+                    <div class="col-sm-10">
+                        <input type="email" name="email"  ng-model="employee.email" class="form-control" required>
+                        <p class="alert-warning" ng-show="employee_form.email.$error.required">email Required.</p>
+                    </div>
+                </div>
                 <div class="line line-dashed b-b line-lg pull-in"></div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">address</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="address"  ng-model="employee.address" class="form-control" required>
+                        <p class="alert-warning" ng-show="employee_form.address.$error.required">address Required.</p>
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+
+                    <div class="form-group">
+                    <label class="col-sm-2 control-label">telephone</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="telephone"  ng-model="employee.telephone" class="form-control" required>
+                        <p class="alert-warning" ng-show="employee_form.telephone.$error.required">address Required.</p>
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+
                 <!---end of Calendar box-->
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Date Of Bith</label>
@@ -54,99 +73,40 @@
                 </div>
                 <div class="line line-dashed b-b line-lg pull-in"></div>
                 <!---end of Calendar box-->
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">password</label>
+                    <div class="col-sm-10">
+                        <input type="password" name="password"  ng-model="employee.password" class="form-control" required>
+                        <p class="alert-warning" ng-show="employee_form.password.$error.required">password Required.</p>
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+
+                 <div class="form-group">
+                        <label><input type="radio" ng-model="employee.isActive" ng-init='1' ng-checked="1" value="1">active</label><br/>
+                        <label><input type="radio" ng-model="employee.isActive" ng-value="0">Inactive</label><br/>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                </div>
+                <label>
+    <input type="radio" ng-model="employee.role" value="admin">
+    admin
+  </label><br/>
+  <label>
+    <input type="radio" ng-model="employee.role" ng-init='1' ng-value="technician">
+    technician
+  </label><br/>
+  <label>
+    <input type="radio" ng-model="employee.role" value="superAdmin">
+    superAdmin
+  </label><br/>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                </div>
+
 
 
             </div>
         </div>
         <!--end panel-->
-        <!---start panel-->
-        <div class="panel panel-default">
-            <div class="panel-heading font-bold">telephone</div>
-            <div class="panel-body">
-                <!----telephone  --->
-                <div ng-repeat="telephone in telephones">
-                    <div class="input-group my-group">
-                        <select  ng-model="telephone.type" class="form-control" placeholder="select telephone type">
-                            <option value="home">home</option>
-                            <option value="private">private</option>
-                            <option value="company">company</option>
-                        </select>
-                        <input type="text"  ng-model="telephone.telephone_number" class="form-control" placeholder="Enter Telephone Number" >
-                        <span class="input-group-btn">
-                            <button type="button" class="btn btn-default"  ng-click="deleteTelephoneNumber(telephone)">
-                                <span class="fa fa-times-circle text-danger"></span>
-                            </button>
-                        </span>
-                    </div>
-                </div>
-                <button ng-click="createTelephoneNumber()">Add Telephone Number</button>
-            </div>
-        </div>
-
-        <div class="line line-dashed b-b line-lg pull-in"></div>
-        <!--end panel--->
-
-        <!---start panel-->
-        <div class="panel panel-default">
-            <div class="panel-heading font-bold">Address</div>
-            <div class="panel-body">
-                <!----Address  --->
-                <div ng-repeat="address in addresses">
-                    <div class="input-group my-group">
-                        <select  ng-model="address.type" class="form-control" placeholder="select Address type">
-                            <option value="home">home</option>
-                            <option value="private">private</option>
-                            <option value="company">company</option>
-                        </select>
-                        <input type="text" ng-model="address.address" placeholder="AutoCompletion For Address" uib-typeahead="address for address in getLocation($viewValue)" typeahead-loading="loadingLocations" typeahead-no-results="noResults" class="form-control">
-                        <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
-                        <div ng-show="noResults">
-                            <i class="glyphicon glyphicon-remove"></i> No Results Found
-                        </div>
-                        <span class="input-group-btn">
-                            <button type="button" class="btn btn-default"  ng-click="deleteAddress(address)">
-                                <span class="fa fa-times-circle text-danger"></span>
-                            </button>
-                        </span>
-                    </div>
-                </div>
-                <button ng-click="createAddress()">Add Address</button>
-            </div>
-        </div>
-
-        <div class="line line-dashed b-b line-lg pull-in"></div>
-        <!--end panel--->
-
-        <!---start panel-->
-        <div class="panel panel-default">
-            <div class="panel-heading font-bold">Email</div>
-            <div class="panel-body">
-                <!----Email --->
-                <div ng-repeat="email in emails">
-                    <div class="input-group my-group">
-                        <select  ng-model="email.type" class="form-control" placeholder="select email type">
-                            <option value="home">home</option>
-                            <option value="private">private</option>
-                            <option value="company">company</option>
-                        </select>
-                        <input type="text"  ng-model="email.email" class="form-control" placeholder="Enter Email" >
-                        <span class="input-group-btn">
-                            <button type="button" class="btn btn-default"  ng-click="deleteEmail(email)">
-                                <span class="fa fa-times-circle text-danger"></span>
-                            </button>
-                        </span>
-                    </div>
-                </div>
-                <button ng-click="createEmail()">Add Email</button>
-            </div>
-        </div>
-
-        <div class="line line-dashed b-b line-lg pull-in"></div>
-        <!--end panel--->
-
-
-        <!--end panel--->
-
 
         <button  ng-click="createEmployee()" class="btn btn-info btn-block">save</button>
     </div>

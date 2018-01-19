@@ -1,0 +1,64 @@
+<div ng-controller="viewTaskCtrl">
+
+
+
+    <div class="wrapper-md">
+    <h4>view My Task</h4>
+         <div class="row">
+         <div ng-style="near" class="col-md-4">
+        date near less than 7 days
+    </div>
+     <div ng-style="now" class="col-md-4">
+        Today
+    </div>
+    <div ng-style="past" class="col-md-4">
+        date past
+    </div>
+    </div>
+      <table st-table="displayedCollection"  st-safe-src="rowCollection" class="table table-striped"> <!----remember display and st-dafe when updating ---->
+        <thead>
+        <tr>
+            <th st-sort="job_assign">Job assign</th>
+            <th st-sort="completed_percentage" >completed percentage</th>
+            <th st-sort="estimated_completion_date" >my Task estimated completed date</th>
+            <th st-sort="hours_work_on" >hours work on</th>
+             <th st-sort="ticket.make" >ticket Make</th>
+            <th st-sort="ticket.model" >ticket model</th>
+            <th st-sort="ticket.estimated_completion_date" >Ticket estimated completed</th>
+        </tr>
+        <tr>
+            <th>
+                <input st-search="make" placeholder="search for make" class="input-sm form-control" type="search"/>
+            </th>
+
+            <th>
+                <input st-search="model" placeholder="search for model" class="input-sm form-control" type="search"/>
+            </th>
+            <th>
+                <input st-search="problem_type" placeholder="search for problem type " type="search"/>
+            </th>
+            <th>
+                <input st-search="ticket_problem" placeholder="search for ticket problem" class="input-sm form-control" type="search"/>
+            </th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="row in displayedCollection">
+            <td>{{row.task.job_assign}}</td>
+            <td >{{row.task.completed_percentage}} %</td>
+            <td ng-style="{{::dateStyle(row.task.estimated_completion_date)}}" >{{row.task.estimated_completion_date}}</td>
+            <td>{{row.task.hours_work_on}}</td>
+            <td>{{row.ticket.make}}</td>
+            <td>{{row.ticket.model}}</td>
+            <td ng-style="{{::dateStyle(row.ticket.estimated_completion_date)}}">{{row.ticket.estimated_completion_date}}</td>
+            <td>
+                <a ui-sref="app.ticket.update({ticketId:row.ticket.id})" class="btn btn-sm btn-warning"  >
+                    <i class="glyphicon glyphicon-edit"></i>
+                </a>
+                </td>
+        </tr>
+        </tbody>
+    </table>
+        </div>
+</div>

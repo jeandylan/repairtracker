@@ -37,8 +37,6 @@ function createSchema($schemaName)
     // we have access to parameter binding.
 
 
-
-
     //Artisan::call('migrate',['--path'=>'database/migrations/tenants']);
    // \Config::set('database.connections.mysql.database', 'saas_admin'); //use database associated with company
 

@@ -7,6 +7,7 @@ use App\EmployeeTicket;
 use App\Ticket;
 use App\Employee;
 use App\AllEmployee;
+use App\Mylibs\JWTAut;
 use App\Http\Requests;
 
 class EmployeeTaskController extends Controller
@@ -41,6 +42,24 @@ class EmployeeTaskController extends Controller
         return  array("successful"=>true, "message"=>"Technican Job updated");
     }
 
+    public function getMyTask(Request $request){ ///get current employee task
+       $employeeLogin = JWTAut::toUser();
+        if ($request->has('uncompletedTicket')){ //searchFor Uncompleted Ticket
+            $uncompletedTicketTask=[];
+            $tasks= $employeeLogin->task()->get();
+            foreach ($tasks as $task) {
+                $ticket=$task->ticket()->get()->first();
+                if(isset($ticket)){
+                    if(!$ticket->completed) array_push($uncompletedTicketTask,array('task'=>$task,"ticket"=>$ticket)); //Beware Error in location make this mad
+                }
+
+            }
+            return $uncompletedTicketTask;
+
+        }
+
+    }
+
     public function get($ticketId){
         $ticket=Ticket::find($ticketId);
         $output = [];
@@ -65,5 +84,15 @@ class EmployeeTaskController extends Controller
         }
         return $output;
 
+    }
+
+    public function myNotificationTicket(){
+        $employeeLogin = JWTAut::toUser();
+        return $employeeLogin->taskNotification()->get();
+    }
+
+    public  function readAllNotificationTicket(){
+        $employeeLogin = JWTAut::toUser();
+        return $employeeLogin->readAllNotificationTicket();
     }
 }

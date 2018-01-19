@@ -45,13 +45,20 @@ class InvoiceController extends Controller
         $invoice=$ticket->invoice()->first();
        //get Only Stock Details
         $invoiceLabour=$invoice->labour()->get();
-        $invoiceStock=$ticket->stockOnly()->get();
-        return array('stocks'=>$invoiceStock,'labours'=>$invoiceLabour);
+        $invoiceStocks=$ticket->stock()->get(); ///get StockId associated with ticket hence relation table data
+        $invoiceForStocksUsedInTicket=[];//store details about stock used in Ticket
+        foreach ($invoiceStocks as $invoiceStock){
+            $stockDetails=Stock::find($invoiceStock->stock_id); //as Stock id is provided in invoice tbl we find stockname etc...bt using stockId
+            $stockDetails->setAttribute("qty_out",$invoiceStock->qty_out);
+            array_push($invoiceForStocksUsedInTicket,$stockDetails);
+        }
+        return array('stocks'=>$invoiceForStocksUsedInTicket,'labours'=>$invoiceLabour);
 
 
     }
 
     public function createLabour($ticketId,Request $request){
+        if(!($request->has('name') && $request->has('cost'))) return "error";
         $ticket=Ticket::find($ticketId);
         if($invoice=$ticket->invoice()->first()){
             $invoice->labour()->create(['name'=>$request->name,'cost'=>$request->cost]);
@@ -65,6 +72,13 @@ class InvoiceController extends Controller
 
 
         }
+
+    }
+
+    public function deleteLabour($labourId){
+        $labourInvoice=InvoiceLabour::find($labourId);
+        $labourInvoice->delete();
+        return  array("successful"=>true, "message"=>"labour In Invoice deleted");
 
     }
 

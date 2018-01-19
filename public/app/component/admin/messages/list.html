@@ -1,0 +1,57 @@
+<div ng-controller="MessageListCtrl" id="table">
+    <div class="bg-light lter b-b wrapper-md">
+        <h1 class="m-n font-thin h3">Messages</h1>
+    </div>
+
+    <table st-table="displayedCollection" ng-show="displayedCollection.length > 0"st-safe-src="rowCollection" class="table table-striped">
+        <!----remember display and st-dafe when updating ---->
+        <thead>
+        <tr>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Subject</th>
+            <th>Message</th>
+            <th>Read</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr ng-repeat="row in displayedCollection">
+            <td>{{row.created_at}}</td>
+            <td>{{row.name}}</td>
+            <td>{{row.email}}</td>
+            <td>{{row.subject}}</td>
+            <td>{{row.message}}</td>
+            <td>{{row.status == 0 ? 'Inactive' : 'Active'}}</td>
+            <td>
+                <button type="button" class="btn btn-sm btn-danger" confirm-button="deleteBtn(row.id)"
+                        message="Are you sure you want to remove this ?">
+                    <i class="glyphicon  glyphicon-remove-circle"></i>
+                </button>
+            </td>
+            <td>
+                <a ui-sref="app.viewMessage({messageId:row.id})" class="btn btn-sm btn-info">
+                    <i class="glyphicon glyphicon-eye-open"></i>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="text-center m-b-lg" ng-show="displayedCollection.length < 1 && loadingStatus == 0">
+        <div class="text-lg m-b-lg">
+            <div class="m-t-lg m-b-lg"><i class="icon-check text-3x text-muted"></i></div>
+            <div>No messages added received yet</div>
+        </div>
+    </div>
+    <div class="text-center m-b-lg" ng-show="displayedCollection.length < 1 && loadingStatus == 1">
+        <div class="text-lg m-b-lg">
+            <div class="m-t-lg m-b-lg"><i class="icon-check text-3x text-muted"></i></div>
+            <div>Loading...</div>
+        </div>
+    </div>
+
+</div>
+

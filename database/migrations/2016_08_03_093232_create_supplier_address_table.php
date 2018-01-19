@@ -17,7 +17,6 @@ class CreateSupplierAddressTable extends Migration
             $table->integer('supplier_id')->unsigned();
             $table->string('address');
             $table->enum('type', array('home', 'company','private'));
-            $table->string('shop_location');
             $table->timestamps();
         });
     }

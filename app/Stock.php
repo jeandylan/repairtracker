@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 use HipsterJazzbo\Landlord\BelongsToTenant;
 class Stock extends Model
 {
-
+   protected $connection = 'tenant'; ///unDurint Seeding
     protected $table='stocks'; //tbl Model refers to
+
     protected $guarded = array(['id']); //cannot be updated ,by mass Assign
     function suppliers(){
         //2nd arg is pivot table name

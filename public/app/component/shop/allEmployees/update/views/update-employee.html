@@ -1,0 +1,48 @@
+<div  ng-controller="updateEmployeeCtrl" class="form-group">
+        <!---start panel-->
+        <div class="panel panel-default">
+            <!---personal detail form panel --->
+            <div class="panel-heading font-bold">
+                personal details
+            </div>
+            <div class="panel-body">
+                <!----start of panelbody-->
+                <!---on xeditbox--->
+                <div class="form-group ">
+                    First Name: <a href="#" editable-text="employee.first_name" onbeforesave="updateEmployee()">{{employee.first_name || 'empty'}}</a>
+                </div>
+                <!---on xeditbox--->
+                <div class="form-group">
+                    Last Name: <a  href="#" editable-text="employee.last_name" onaftersave="updateEmployee()">{{employee.last_name || 'empty'}}</a>
+                    </div>
+
+                <div class="form-group">
+                    Email: <a  href="#" editable-text="employee.email" onaftersave="updateEmployee()">{{employee.email || 'empty'}}</a>
+                    </div>
+                <div class="form-group">
+                    password(enter new password): <a  href="#" editable-password="newPassword"  onaftersave="updatePassword()">{{"password" || 'empty'}}</a>
+                    </div>
+                <div class="form-group">
+                    address: <a  href="#" editable-text="employee.address" onaftersave="updateEmployee()">{{employee.address || 'empty'}}</a>
+                    </div>
+                <div class="form-group">
+                    telephone: <a  href="#" editable-text="employee.telephone" onaftersave="updateEmployee()">{{employee.telephone || 'empty'}}</a>
+                    </div>
+                <div class="form-group">
+                    isActive: <a href="#" editable-radiolist="employee.isActive" onaftersave="updateEmployee()" e-ng-options="s.value as s.text for s in ::statuses track by s.value">{{employee.isActive || 'empty'}}</a>
+                    </div>
+                <div class="form-group">
+                    role: <a href="#"  editable-select="employee.role" onaftersave="updateEmployeeRole()" e-ng-options="s.value as s.text for s in roles">{{employee.role || 'empty'}}</a>
+                    </div>
+                <!---on xeditbox--->
+                <div class="form-group">
+                       DOB: <a  href="#" editable-bsdate="employee.date_of_birth" e-is-open="opened.$data" e-ng-click="open($event,'$data')" onaftersave="updateEmployee()" e-datepicker-popup="dd-MMMM-yyyy">{{ (employee.date_of_birth | date:"dd/MM/yyyy") || 'empty' }}</a>
+                    </div>
+                </div>
+             <a href="#" editable-select="employee.shop_location" onshow="loadCompanyLocations()" onaftersave="updateEmployee()" e-ng-options="g.location_hostname as g.location_hostname for g in shopLocations">{{ employee.shop_location || 'not set' }}</a>
+                <!--end panel body--->
+            </div>
+
+
+
+</div>

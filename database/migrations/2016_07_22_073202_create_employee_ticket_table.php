@@ -20,9 +20,11 @@ class CreateEmployeeTicketTable extends Migration
             $table->integer('completed_percentage')->nullable();
             $table->integer('hours_work_on')->nullable();
             $table->date('estimated_completion_date')->nullable();
+            $table->boolean('read')->default(0);
 
             $table->timestamps();
         });
+
     }
 
     /**

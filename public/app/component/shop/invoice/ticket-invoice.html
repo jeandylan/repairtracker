@@ -1,0 +1,106 @@
+<div  ng-controller="ticketInvoiceCtrl">
+    <div class="wrapper-md" >
+	     <div ng-repeat='labour in labourItems'>
+   <div class="form-group">
+               name(item/labour): <a href="#" editable-text="labour.name" onaftersave="updateLabourInvoice(labour)">{{labour.name|| 'empty'}}</a>
+               cost: <a href="#" editable-number="labour.cost"  onaftersave="updateLabourInvoice(labour)">{{labour.cost || 'empty'}}</a>
+     <button class="btn-xs btn-danger" ng-click="deleteLabourInvoice(labour)">x</button>
+  </div>
+	     </div>
+	    <div ng-repeat= 'unSavedLabourItem in unSavedLabourItems'>
+		    <div class="form-group">
+               name(item/labour): <a href="#" editable-text="labour.name" onaftersave="saveLabourInvoice(labour)">{{labour.name|| 'empty'}}</a>
+               cost: <a href="#" editable-number="labour.cost"  onaftersave="saveLabourInvoice(labour)">{{labour.cost || 'empty'}}</a>
+     <button class="btn-xs btn-danger" ng-click="removeLocally(unSavedLabourItems,unSavedLabourItem)">x</button>
+		    </div>
+	    </div>
+	    <div class="form-group">
+		    <button  ng-click="addUnsavedLabour()" class="btn-block btn-default btn-bg">Add Labour /other item to invoice</button>
+	    </div>
+
+      <div class="form-group">
+        <div class ="row">
+            <button class="btn-default" ng-click="toPdf('pdfEstimation','download')">download pdf</button>
+            <button class="btn-default" ng-click="toPdf('pdfEstimation','print')">print pdf</button>
+        </div>
+	      <div class="row">
+		      <am-multiselect class="input-lg" multiple="true" ms-selected ="There are {{selectedEmailAddresses.length}} email Adresse(s) selected"
+		                      ng-model="selectedEmailAddresses" ms-header="Select Some Email Address"
+		                      options="e.email for e in emailAddresses"
+		                      change="selected()"></am-multiselect>
+		       <button class="btn-default" ng-if="selectedEmailAddresses[0]"ng-click=toPdf('pdfEstimation','email')>
+			       sent pdf To customer{{progressPercentage}}</button>
+	      </div>
+      </div>
+
+<div id="pdfEstimation">
+  <span ng-bind-html="invoice_email_header"></span>
+      <h4>stocks </h4>
+       <table st-table="displayedCollection"  st-safe-src="rowCollection" class="table table-striped">
+         <thead>
+         <tr>
+		<th>product_name</th>
+		<th>Selling Price</th>
+		<th>Qty</th>
+		<th>Total for Item</th>
+         </tr>
+         </thead>
+         <tr ng-repeat="row in rowCollection.stocks">
+			<td>{{row.product_name | uppercase}}</td>
+			<td>{{row.selling_price | currency:"mur Rs."}}</td>
+           <td>{{row.qty_out}}</td>
+           <td>{{row.selling_price*row.qty_out | currency:"mur Rs."}}</td>
+		</tr>
+         <tfoot>
+			<tr>
+				<td colspan="5" class="text-center">
+                 Stock total {{stocksTotal | currency:"mur Rs."}}
+
+				</td>
+			</tr>
+		</tfoot>
+       </table>
+      <h4> Labour & Other Cost</h4>
+         <table st-table="displayedCollection"  st-safe-src="rowCollection" class="table table-striped">
+         <thead>
+         <tr>
+           <th>name</th>
+           <th>cost</th>
+           <th>Total for Item</th>
+         </tr>
+         </thead>
+         <tr ng-repeat="row in rowCollection.labours">
+			<td>{{row.name | uppercase}}</td>
+			<td>{{row.cost| currency:"mur Rs."}}</td>
+           <td>{{row.cost| currency:"mur Rs."}}</td>
+		</tr>
+         <tfoot>
+			<tr>
+				<td colspan="5" class="text-center">
+                 labour/others total {{labourTotal | currency:"mur Rs."}}
+
+				</td>
+			</tr>
+		</tfoot>
+       </table>
+
+      <h2> Total: <span class="text-capitalize  text-primary-dk">{{labourTotal+stocksTotal | currency:"mur Rs."}}</span></h2>
+  <span ng-bind-html="invoice_email_footer"></span>
+  <div id="signature-pad" class="m-signature-pad">
+    <div class="m-signature-pad--body">
+      <canvas id="canvas"></canvas>
+    </div>
+    <div ng-if='!hide' class="m-signature-pad--footer">
+      <div  class="description">Sign above</div>
+      <button  type="button" class="button clear" ng-click="clearSignature()">Clear</button>
+        <!--- <button type="button" class="button save" data-action="save">Save</button>--->
+    </div>
+  </div>
+
+
+	 signature {{signUser.first_name+signUser.last_name}}
+
+    </div>
+
+	    </div>
+  </div>

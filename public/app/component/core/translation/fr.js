@@ -64,17 +64,21 @@
                 "PROFILE" : "Profile",
                 "DOCUMENTS" : "Documents"
         }
-    },
-    "MILESTONE" : "Milestone",
-        "RELEASE" : "Release"
+    }
 },
-    "customers" : {
-    "customers": "clients",
-    "add-customer" : "ajouter client",
-        "view-customers" : "voir les clients",
-        "TASK" : "Task",
-        "USER" : "User",
-        "EMAIL" : "Email"
-}
+    "dashboard":"tableau de bord",
+    "calendar":"calendrier",
+    "ticketsTable":"ticket",
+    "my task":"ma tâche",
+    "stocksTable":"inventaire",
+    "stocksLocationTable":"l'inventaire de la branche",
+    "customersTable":"client",
+    "employeesLocationTable":"employé de succursale",
+    "employeesTable":"tous les employés",
+    "suppliersTable":"tous les fournisseurs",
+    "settings":"paramètres",
+    "importExportData":"les données d'importation et d'exportation"
+
+
 
 }

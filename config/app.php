@@ -157,8 +157,6 @@ return [
         App\Providers\RouteServiceProvider::class,
         /*landloard class so as to be able to provide domain subdomain */
         HipsterJazzbo\Landlord\LandlordServiceProvider::class,
-        /*permission */
-        Zizaco\Entrust\EntrustServiceProvider::class,
         /*cors*/
         Barryvdh\Cors\ServiceProvider::class,
         /*JWT for login*/
@@ -167,6 +165,10 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         /*pdf*/
         Barryvdh\DomPDF\ServiceProvider::class,
+        /*html Purify for email customization*/
+        'Stevebauman\Purify\PurifyServiceProvider',
+        /*permission*/
+        Spatie\Permission\PermissionServiceProvider::class,
 
     ],
 
@@ -216,14 +218,15 @@ return [
         'Landlord'   => HipsterJazzbo\Landlord\Facades\LandlordFacade::class,
        // 'JWTAuth' => 'Tymon\JWTAuth\Facades\JWTAuth',
        // 'JWTFactory' => 'Tymon\JWTAuth\Facades\JWTFactory',
-        /*permission*/
-        'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
-        /*permission for middleWare*/
+
+
         /*form Templates*/
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         /*pdf*/
         'PDF' => Barryvdh\DomPDF\Facade::class,
+        /*html purify*/
+        'Purify' => 'Stevebauman\Purify\Facades\Purify'
 
 
 

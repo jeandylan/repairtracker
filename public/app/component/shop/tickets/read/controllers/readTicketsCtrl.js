@@ -6,6 +6,7 @@
  */
 app.controller("readTicketsCtrl",function ($scope,serverServices,$uibModal,toaster) {
     getAllTicketsData();
+    $scope.today=new Date();
 
     function getAllTicketsData() {
         serverServices.get('api/tickets').then(function (response) {

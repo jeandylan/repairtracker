@@ -1,0 +1,35 @@
+<div ng-controller="importExportDataCtrl">
+
+<div class="col-md-4">
+  <h3>Export Data to xml </h3>
+  <a class="btn-info btn-block" href="api/exportData/xml/customers" download="customers.xml">Employee To xml</a>
+  <a class="btn-info btn-block" href="api/exportData/xml/stocks" download="stocks.xml">stock To xml</a>
+  <a class="btn-info btn-block" href="api/exportData/xml/employees" download="employees.xml">employeees To xml</a>
+  <a class="btn-info btn-block" href="api/exportData/xml/suppliers" download="suppliers.xml">suppliers To xml</a>
+</div>
+  <div class=="col-md-2></div>
+  <div class="col-md-4">
+  <h3>Export Data to Json </h3>
+  <a class="btn-info btn-block" href="api/exportData/json/employees" download="customers.json">Employee To json</a>
+  <a class="btn-info btn-block" href="api/exportData/json/stocks" download="customers.json">stock To json</a>
+  <a class="btn-info btn-block" href="api/exportData/json/customers" download="customers.json">employees To json</a>
+    <a class="btn-info btn-block" href="api/exportData/json/suppliers" download="customers.json">suppliers To json</a>
+</div>
+  <div class="row"></div>
+  <div class="col-md-4">
+  <h3>Import Data from Xml To Our System </h3>
+<div class="input-group">
+  Import Stock <input type='file' ng-model='xmlFileStocks' onload='uploadStocksXml' base-sixty-four-input>
+</div>
+    <div class="input-group">
+  Import Customers<input type='file' ng-model='xmlFileCustomers' onload='uploadCustomersXml' base-sixty-four-input>
+</div>
+
+    <div class="input-group">
+  Import suppliers<input type='file' ng-model='xmlFileSuppliers' onload='uploadSuppliersXml' base-sixty-four-input>
+</div>
+
+
+
+</div>
+  </div>

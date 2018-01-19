@@ -56,7 +56,7 @@ return [
             'driver' => 'mysql',
             'host' => env('DB_HOST', 'localhost'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'forge'),
+            'database' => 'nexus',
             'username' => env('DB_USERNAME', 'forge'),
             'password' => env('DB_PASSWORD', ''),
             'charset' => 'utf8',
@@ -65,10 +65,10 @@ return [
             'strict' => false,
             'engine' => null,
         ],
-        'saas_admin' => [
+        'tenant' => [
             'driver'    => 'mysql',
             'host'      => env('DB_HOST', 'localhost'),
-            'database'  => 'saas_admin',
+            'database'  => 'nexus',
             'username'  => env('DB_USERNAME', 'forge'),
             'password'  =>  env('DB_USERNAME', 'forge'),
             'charset'   => 'utf8',

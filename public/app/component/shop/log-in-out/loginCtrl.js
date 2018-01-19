@@ -4,12 +4,15 @@
 app.controller("loginCtrl",function ($scope,$state,serverServices,$auth) {
 
 $scope.login=function (email,password) {
+    var domainName=location.host.split(".");
+    var isSuperAdmin = domainName[0]=="admin";
     var credential={
         email:email,
         password:password
     };
+    var loginUrl=isSuperAdmin ?'api/loginSuperAdmin' :"api/login";
     var options={
-        url:"api/login",
+        url:loginUrl,
         method:'POST'
     };
 

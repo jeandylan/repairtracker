@@ -11,7 +11,7 @@ class stocksSeeder extends Seeder
      */
     public function run()
     {
-        $limit=10;
+        $limit=12;
 
         $faker = Faker\Factory::create(); //use faker to create Data
 
@@ -24,11 +24,11 @@ class stocksSeeder extends Seeder
                 
             ]);
             for($z=0; $z < 3;$z++){
-                $location=['mahebourg','vacoas','curepipe'];
+                $testingShopLocationArray=array('mahebourg.nexus.saasrepair1.xyz','curepipe.nexus.saasrepair1.xyz','vacoas.nexus.saasrepair1.xyz');
                 DB::table('stocks_location_level')->insert([
                     'stock_id' => $i+1,
                     'current_level' => rand(1,10),
-                    'shop_location' =>$location[$z],
+                    'shop_location' =>$testingShopLocationArray[$z],
                 ]);
 
             }

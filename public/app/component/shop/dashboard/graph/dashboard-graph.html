@@ -1,0 +1,104 @@
+<div ng-controller="dashboardGraphCtrl">
+  <div class="col-md-6">
+  <div class="col-md-6">
+    <span class="input-group">
+      <input type="text" name="selectedDate" class="form-control" uib-datepicker-popup="yyyy-MM-dd"
+             ng-model="ticketCountStatStartDate" is-open="calendar1.opened" datepicker-options="dateOptions" placeholder="select start date" close-text="Close"/>
+      <span class="input-group-btn">
+        <button type="button" class="btn btn-default" ng-click="calendar1.opened =! calendar1.opened"><i class="glyphicon glyphicon-calendar"></i></button>
+      </span>
+    </span>
+  </div>
+     <span class="col-md-3">
+      <button ng-click="ticketCountStat()">Go</button>
+    </span>
+    <div class="row"></div>
+    <h3>Ticket Count periods</h3>
+    <div class="row"></div>
+<canvas id="dash0" class="chart chart-line" chart-data="ticketCountStatData" chart-labels="ticketCountStatLabels"
+        chart-series="series"></canvas>
+    </div>
+  <!---new Dash board widget--->
+   <div class="col-md-6">
+  <div class="col-md-6">
+    <span class="input-group">
+      <input type="text" name="selectedDate" class="form-control" uib-datepicker-popup="yyyy-MM-dd"
+             ng-model="invoiceCountStatStartDate" is-open="calendar2.opened" datepicker-options="dateOptions" placeholder="select start date" close-text="Close"/>
+      <span class="input-group-btn">
+        <button type="button" class="btn btn-default" ng-click="calendar2.opened =! calendar2.opened"><i class="glyphicon glyphicon-calendar"></i></button>
+      </span>
+    </span>
+  </div>
+     <span class="col-md-3">
+      <button ng-click="invoiceCountStat()">Go</button>
+    </span>
+    <div class="row"></div>
+    <h3>Invoice Count periods</h3>
+    <div class="row"></div>
+<canvas id="dash1" class="chart chart-line" chart-data="invoiceCountStatData" chart-labels="invoiceCountStatLabels"
+        chart-series="series"></canvas>
+    </div>
+  <!---new Dash board widget--->
+   <div class="col-md-6">
+  <div class="col-md-6">
+    <span class="input-group">
+      <input type="text" name="selectedDate" class="form-control" uib-datepicker-popup="yyyy-MM-dd"
+             ng-model="estimationCountStatStartDate" is-open="calendar3.opened" datepicker-options="dateOptions" placeholder="select start date" close-text="Close"/>
+      <span class="input-group-btn">
+        <button type="button" class="btn btn-default" ng-click="calendar3.opened =! calendar3.opened"><i class="glyphicon glyphicon-calendar"></i></button>
+      </span>
+    </span>
+  </div>
+     <span class="col-md-3">
+      <button ng-click="estimationCountStat()">Go</button>
+    </span>
+    <div class="row"></div>
+    <h3>Estimation Count periods</h3>
+    <div class="row"></div>
+<canvas id="dash2" class="chart chart-line" chart-data="estimationCountStatData" chart-labels="estimationCountStatLabels"
+        chart-series="series"></canvas>
+    </div>
+
+  <!---new Dash board widget--->
+   <div class="col-md-6">
+  <div class="col-md-6">
+    <span class="input-group">
+      <input type="text" name="selectedDate" class="form-control" uib-datepicker-popup="yyyy-MM-dd"
+             ng-model="newCustomerCountStatStartDate" is-open="calendar4.opened" datepicker-options="dateOptions" placeholder="select start date" close-text="Close"/>
+      <span class="input-group-btn">
+        <button type="button" class="btn btn-default" ng-click="calendar4.opened =! calendar4.opened"><i class="glyphicon glyphicon-calendar"></i></button>
+      </span>
+    </span>
+  </div>
+     <span class="col-md-3">
+      <button ng-click="newCustomerCountStat()">Go</button>
+    </span>
+    <div class="row"></div>
+    <h3>new Customer Count periods</h3>
+    <div class="row"></div>
+<canvas id="dash3" class="chart chart-line" chart-data="newCustomerCountStatData" chart-labels="newCustomerCountStatLabels"
+        chart-series="series"></canvas>
+    </div>
+
+    <!---new Dash board widget--->
+   <div class="col-md-6">
+  <div class="col-md-6">
+    <span class="input-group">
+      <input type="text" name="selectedDate" class="form-control" uib-datepicker-popup="yyyy-MM-dd"
+             ng-model="invoiceAmountStatStartDate" is-open="calendar5.opened" datepicker-options="dateOptions" placeholder="select start date" close-text="Close"/>
+      <span class="input-group-btn">
+        <button type="button" class="btn btn-default" ng-click="calendar5.opened =! calendar5.opened"><i class="glyphicon glyphicon-calendar"></i></button>
+      </span>
+    </span>
+  </div>
+     <span class="col-md-3">
+      <button ng-click="invoiceAmountStat()">Go</button>
+    </span>
+    <div class="row"></div>
+    <h3>Invoice  for period </h3>
+    <div class="row"></div>
+<canvas id="dash4" class="chart chart-line" chart-data="invoiceAmountStatData" chart-labels="invoiceAmountStatLabels"
+        chart-series="series"></canvas>
+    </div>
+
+</div>

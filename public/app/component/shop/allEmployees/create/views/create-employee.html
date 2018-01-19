@@ -1,0 +1,111 @@
+<form name="employee_form" ng-controller="createEmployeeCtrl">
+
+    <div class="wrapper-md">
+
+        <!---start panel-->
+        <div class="panel panel-default">
+            <!---personal detail form panel --->
+            <div class="panel-heading font-bold">
+                personal details
+            </div>
+            <div class="panel-body">
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                <!----end of material dropBox--->
+                <!----one text box --->
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">first Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="first_name"  ng-model="employee.first_name" class="form-control" required>
+                        <p class="alert-warning" ng-show="employee_form.first_name.$error.required">first Name Required.</p>
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                <!---end of Text box-->
+
+                <!----one text box --->
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Last Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="last_name"  ng-model="employee.last_name" class="form-control" required>
+                        <p class="alert-warning" ng-show="employee_form.last_name.$error.required">last Name Required.</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">email</label>
+                    <div class="col-sm-10">
+                        <input type="email" name="email"  ng-model="employee.email" class="form-control" required>
+                        <p class="alert-warning" ng-show="employee_form.email.$error.required">email Required.</p>
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">address</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="address"  ng-model="employee.address" class="form-control" required>
+                        <p class="alert-warning" ng-show="employee_form.address.$error.required">address Required.</p>
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+
+                    <div class="form-group">
+                    <label class="col-sm-2 control-label">telephone</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="telephone"  ng-model="employee.telephone" class="form-control" required>
+                        <p class="alert-warning" ng-show="employee_form.telephone.$error.required">address Required.</p>
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+
+                <!---end of Calendar box-->
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Date Of Bith</label>
+                    <div class="col-sm-10">
+                        <p class="input-group">
+                            <input type="text"  name="date_of_birth" class="form-control" uib-datepicker-popup="{{format}}" ng-model="employee.date_of_birth" is-open="popup1.opened" datepicker-options="dateOptions" required close-text="Close" />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                                </span>
+                        </p>
+                        <p class="alert-warning" ng-show="employee.date_of_birth.$error.required">date of birth required.</p>
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                <!---end of Calendar box-->
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">password</label>
+                    <div class="col-sm-10">
+                        <input type="password" name="password"  ng-model="employee.password" class="form-control" required>
+                        <p class="alert-warning" ng-show="employee_form.password.$error.required">password Required.</p>
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+
+                 <div class="form-group">
+                        <label><input type="radio" ng-model="employee.isActive" ng-init='1' ng-checked="1" value="1">active</label><br/>
+                        <label><input type="radio" ng-model="employee.isActive" ng-value="0">Inactive</label><br/>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                </div>
+                <label>
+                    <input type="radio" ng-model="employee.role" value="admin">admin</label><br/>
+                <label><input type="radio" ng-model="employee.role" ng-init='1' ng-value="technician">technician</label><br/>
+                <label><input type="radio" ng-model="employee.role" value="superAdmin">superAdmin</label><br/>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                <div class="form-group">
+                       <select ng-model="employee.shop_location">
+                           <option ng-repeat="shopLocation in shopLocations"  ng-selected="shopLocations[0].location_hostname" value="{{shopLocation.location_hostname}}">{{shopLocation.location_hostname}}</option>
+                       </select>
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+        <!--end panel-->
+
+        <button  ng-click="createEmployee()" class="btn btn-info btn-block">save</button>
+    </div>
+</form>

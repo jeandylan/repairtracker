@@ -2,7 +2,7 @@
  * Created by dylan on 03-Jul-16.
  */
 
-app.controller("createTicketCtrl",function ($scope,$stateParams,serverServices,toaster,$state,ngDialog,$filter) {
+app.controller("createTicketCtrl",function ($scope,$stateParams,serverServices,toaster,$state,ngDialog,$filter,$rootScope) {
     $scope.customer={}; //customer should be unique
     $scope.stocks=[]; //ticket can have many Stock item
     $scope.technicians=[]; //Ticket can have many Many Tech
@@ -10,30 +10,18 @@ app.controller("createTicketCtrl",function ($scope,$stateParams,serverServices,t
     $scope.calendarOption={
         minDate:new Date()
     }
-
+    $scope.status = ["repairing","waiting_confirmation","close"];
     console.log($scope.customer.id=$stateParams.customerId); //these Are Optional Only capture if pass as Params
 
 
 
-    $scope.getFields=function () {
-        serverServices.get('api/ticketCustomFields') //using service (customer/service/clientService ) that will query Laravel for .json output
-            .then(
-                function (result) {
-                    toaster.pop("success","DONE","Got additional Fields ");
-                    $scope.customTextFields=result;
-                },
-                function (error) {
-                    // handle errors here
-                    toaster.pop("error","SERVER ERROR","ooh nothing was saved error ");
-                }
-            );
-    };
+
 
     $scope.createTicket=function () {
         $scope.ticket.estimated_completion_date=  $filter('date')($scope.ticket.estimated_completion_date, "yyyy-MM-dd"); //need to change Dates in before Laravel sent
         serverServices.post('api/ticket/' + $scope.customer.id, $scope.ticket) //using service (customer/service/clientService ) that will query Laravel for .json output
             .then(function (result) {
-                console.log(result);
+                $rootScope.$emit('ticketSaved', result.ticketId);
                 $scope.newTicketId = result.ticketId; //this is the id of newly created in db
                 assignTechnicianToTicket(result.ticketId);
 
@@ -118,7 +106,6 @@ app.controller("createTicketCtrl",function ($scope,$stateParams,serverServices,t
         return total;
     };
 
-    $scope.getFields();
 
     $scope.removeTechnician=function (technician) {
         index=$scope.technicians.indexOf(technician);

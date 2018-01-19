@@ -1,0 +1,52 @@
+<div ng-controller="readStockLocationCtrl">
+    <table st-table="displayedCollection"  st-safe-src="rowCollection" class="table table-striped"> <!----remember display and st-dafe when updating ---->
+        <thead>
+        <tr>
+            <th st-sort="product_name">product name</th>
+            <th st-sort="selling_price" >selling price</th>
+            <th st-sort="reorder_level" >reorder lvl</th>
+            <th st-sort="barcode" >barcode</th>
+            <th st-sort='current_level'>current Level</th>
+
+
+        </tr>
+        <tr>
+            <th>
+                <input st-search="product_name" placeholder="search for make" class="input-sm form-control" type="search"/>
+            </th>
+
+            <th>
+                <input st-search="selling_price" placeholder="search for selling price" class="input-sm form-control" type="search"/>
+            </th>
+            <th>
+                <input st-search="reorder_level" placeholder="search for reorder_level " type="search"/>
+            </th>
+            <th>
+                <input st-search="barcode" placeholder="search for barcode" class="input-sm form-control" type="search"/>
+            </th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="row in displayedCollection">
+            <td >{{row.product_name}}</td>
+            <td >{{row.selling_price}}</td>
+            <td>{{row.reorder_level}}</td>
+            <td>{{row.barcode}}</td>
+            <td   ng-class="{'danger': row.reorder_level > row.current_level }">{{row.current_level}}</td>
+            <td>
+                <a ui-sref="app.stockLocation.update({stockLocationId:row.stock_location_level_id})" class="btn btn-sm btn-warning"  >
+                    <i class="glyphicon glyphicon-edit">edit</i>
+                </a>
+               </td>
+            <td>
+
+
+
+
+
+        </tr>
+        </tbody>
+    </table>
+
+</div>

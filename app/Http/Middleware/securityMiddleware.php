@@ -17,7 +17,7 @@ class securityMiddleware
      */
     public function handle($request, Closure $next)
     {
-        Utility::stripXSS(); //prevent xss , should be called before server side validation so as validation is done on safe data
+      //  Utility::stripXSS(); //prevent xss , should be called before server side validation so as validation is done on safe data
 
 
         return $next($request);

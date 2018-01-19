@@ -42,20 +42,6 @@ class AddForeignKeysToTables extends Migration
         Schema::table('supplier_telephone', function (Blueprint $table) {
             $table->foreign('supplier_id')->references('id')->on('suppliers');
         });
-        /* Employee Contact Info*/
-        Schema::table('employee_address', function (Blueprint $table) {
-            $table->foreign('employee_id')->references('id')->on('employees');
-
-        });
-
-        Schema::table('employee_email', function (Blueprint $table) {
-            $table->foreign('employee_id')->references('id')->on('employees');
-
-        });
-        Schema::table('employee_telephone', function (Blueprint $table) {
-            $table->foreign('employee_id')->references('id')->on('employees');
-
-        });
 
 
 

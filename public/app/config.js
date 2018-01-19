@@ -5,7 +5,7 @@ angular.module('app')
   .config(
     [        '$controllerProvider', '$compileProvider', '$filterProvider', '$provide',
     function ($controllerProvider,   $compileProvider,   $filterProvider,   $provide) {
-        
+
         // lazy controller, directive and service
         app.controller = $controllerProvider.register;
         app.directive  = $compileProvider.directive;
@@ -46,14 +46,14 @@ angular.module('app')
             var isIE = !!navigator.userAgent.match(/MSIE/i);
             isIE && angular.element($window.document.body).addClass('ie');
             isSmartDevice( $window ) && angular.element($window.document.body).addClass('smart');
-            var domainName=location.host.split(".")
+            var domainName=location.host.split(".");
 
 
             // config
             $scope.app = {
                 name:'appName',
                 companyName:domainName[1],
-                companyLocation:domainName[2],
+                companyLocation:domainName[0],
                 version: '2.0.3',
                 // for chart colors
                 color: {
@@ -119,7 +119,7 @@ angular.module('app')
 
             // angular translate
             $scope.lang = { isopen: false };
-            $scope.langs = {en:'English', fr:'francais', it_IT:'Italian'};
+            $scope.langs = {en:'English', fr:'francais'};
             $scope.selectLang = $scope.langs[$translate.proposedLanguage()] || "English";
             $scope.setLang = function(langKey, $event) {
                 // set the current lang
@@ -140,6 +140,39 @@ angular.module('app')
             }
 
         }]);
+
+
+/**
+ * Created by dylan on 9/23/16.
+ */
+angular.module('app')
+    .config(['AclServiceProvider', function (AclServiceProvider) {
+    var myConfig = {
+        storage: 'localStorage',
+        storageKey: 'AppAcl'
+    };
+    AclServiceProvider.config(myConfig);
+}])
+
+    .run(['AclService', function (AclService) {
+
+        // Set the ACL data. Normally, you'd fetch this from an API or something.
+        // The data should have the roles as the property names,
+        // with arrays listing their permissions as their value.
+        var aclData = {
+            guest: ['login'],
+            technician: ['logout', 'view_content',"nolove"],
+            admin: ['logout', 'view_content', 'manage_employee','manage_stock','manage_customer','manage_supplier']
+        }
+        AclService.setAbilities(aclData);
+
+        // Attach the member role to the current user
+        AclService.attachRole('admin');
+
+    }]);
+
+
+
 
 
 

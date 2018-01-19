@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xml>
+    <item>
+        <product_name>ttttt</product_name>
+        <selling_price>109515.43</selling_price>
+        <reorder_level>8</reorder_level>
+        <barcode>1192650501217</barcode>
+    </item>
+    <item>
+        <product_name>wwwwwww</product_name>
+        <selling_price>80.85</selling_price>
+        <reorder_level>1</reorder_level>
+        <barcode>0500743723087</barcode>
+    </item>
+    
+</xml>
+

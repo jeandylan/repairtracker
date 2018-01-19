@@ -1,0 +1,132 @@
+
+<div ng-controller="createCompanyCtrl" >
+<div class="wrapper-md" >
+    <form name="company_form">
+
+            <!---start panel-->
+     <div class="panel panel-default">
+                <!---personal detail form panel --->
+                <div class="panel-heading font-bold">
+                    personal details
+                </div>
+                <div class="panel-body">
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                 <!----end of material dropBox--->
+                     <div class="form-group">
+                        <label class="col-sm-2 control-label">company Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="company_name" required ng-model="owner.company_name" class="form-control">
+                            <p class="alert-warning" ng-show="company_form.company_name.$error.required">company Name Required.</p>
+                        </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                 <!----one text box --->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">first Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="first_name" required ng-model="owner.owner_first_name" class="form-control">
+                            <p class="alert-warning" ng-show="company_form.first_name.$error.required">first Name Required.</p>
+                        </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                 <!---end of Text box-->
+
+                 <!----one text box --->
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Last Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="last_name" required ng-model="owner.owner_last_name" class="form-control">
+                            <p class="alert-warning" ng-show="company_form.last_name.$error.required">last Name Required.</p>
+                        </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+
+                           <div class="form-group">
+                        <label class="col-sm-2 control-label">email</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="email" required ng-model="owner.email" class="form-control">
+                            <p class="alert-warning" ng-show="company_form.email.$error.required">email Required.</p>
+                        </div>
+                    </div>
+                      <div class="form-group">
+                        <label class="col-sm-2 control-label">password</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="password" required ng-model="owner.password" class="form-control">
+                            <p class="alert-warning" ng-show="company_form.password.$error.required">password Required.</p>
+                        </div>
+                    </div>
+                     <div class="line line-dashed b-b line-lg pull-in"></div>
+<!---not working--->
+                     <div class="col-md-4">
+                  date of birth:
+                  <p class="input-group">
+                     <input type="text" class="form-control" datetime-picker="yyyy/MM/dd"
+                            ng-model="owner.date_of_birth" enable-time="false"  is-open="calendar2.isOpen">
+                     <span class="input-group-btn">
+                     <button type="button" class="btn btn-default"   ng-click="calendar2.isOpen= !calendar2.isOpen"><i class="glyphicon glyphicon-calendar"></i></button>
+                     </span>
+                  </p>
+               </div>
+                     <div class="line line-dashed b-b line-lg pull-in"></div>
+
+
+
+       <div class="form-group">
+                        <label class="col-sm-2 control-label">Max Ticket</label>
+                        <div class="col-sm-10">
+                            <input type="number" min='1' name="max_customers" required ng-model="owner.max_customers" class="form-control">
+                            <p class="alert-warning" ng-show="company_form.max_customers.$error.required">max ticket required</p>
+                        </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+     <div class="form-group">
+                        <label class="col-sm-2 control-label">Max employees</label>
+                        <div class="col-sm-10">
+                            <input type="number" min='1' name="max_employees" required ng-model="owner.max_employees" class="form-control">
+                            <p class="alert-warning" ng-show="company_form.max_employees.$error.required">max employee required.</p>
+                        </div>
+                    </div>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+          <div class="form-group">
+                        <label><input type="radio" ng-model="owner.isActive" ng-checked="1" value="1">active</label><br/>
+                        <label><input type="radio" ng-model="owner.isActive" ng-value="0">Inactive</label><br/>
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+                </div>
+
+
+                    <div class="line line-dashed b-b line-lg pull-in"></div>
+</div>
+
+     <!--end panel-->
+
+
+     <!---start panel-->
+        <div class="panel panel-default">
+            <div class="panel-heading font-bold">Company Locations</div>
+            <div class="panel-body">
+                    <!----telephone  --->
+                <div  ng-animate="'animate'"  ng-repeat="companyLocation in companyLocations">
+                    <div class="input-group my-group">
+                        <input type="text"  ng-model="companyLocation.location_hostname" class="form-control" placeholder="Enter Location name" >
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default"  ng-click="deleteCompanyLocation(companyLocation)">
+                                <span class="fa fa-times-circle text-danger"></span>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+                <button ng-click="addCompanyLocation()">Add Locations</button>
+            </div>
+        </div>
+
+        <div class="line line-dashed b-b line-lg pull-in"></div>
+     <!--end panel--->
+
+            <button  ng-click="createCompany()" class="btn btn-info btn-block">save</button>
+
+         </div>
+
+    </form>
+    </div>
+</div>
+

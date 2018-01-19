@@ -15,11 +15,7 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
-        /*
-         * security Prevent xss ,no need for xcsrt in Token Based App
-         */
-        \App\Http\Middleware\securityMiddleware::class,
-        \App\Http\Middleware\TenantMiddleware::class,
+
         'Barryvdh\Cors\HandleCors',
 
 
@@ -36,10 +32,10 @@ class Kernel extends HttpKernel
      */
     protected $middlewareGroups = [
         'web' => [
-            \App\Http\Middleware\EncryptCookies::class,
-            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
-            \Illuminate\Session\Middleware\StartSession::class,
-            \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+           // \App\Http\Middleware\EncryptCookies::class,
+          //  \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+          //  \Illuminate\Session\Middleware\StartSession::class,
+           // \Illuminate\View\Middleware\ShareErrorsFromSession::class,
 
         ],
         /*
@@ -48,6 +44,18 @@ class Kernel extends HttpKernel
         'jwtAuthMiddleware'=>[
             // \App\Http\Middleware\JWTAuthMiddleware::class,
 
+        ],
+        'securityMiddleware'=>[
+            /*
+      * security Prevent xss ,no need for xcsrt in Token Based App
+      */
+            \App\Http\Middleware\securityMiddleware::class,
+        ],
+        'tenantMiddleware'=>[
+            \App\Http\Middleware\TenantMiddleware::class,
+        ],
+        'SaasLogin'=>[
+           // \App\Http\Middleware\SaasLogin::class
         ],
 
         'api' => [
@@ -68,5 +76,6 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Foundation\Http\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+
     ];
 }

@@ -1,0 +1,69 @@
+      <!-- navbar header -->
+      <div class="navbar-header {{app.settings.navbarHeaderColor}}">
+        <button class="pull-right visible-xs dk" ui-toggle-class="show" data-target=".navbar-collapse">
+          <i class="glyphicon glyphicon-cog"></i>
+        </button>
+        <button class="pull-right visible-xs" ui-toggle-class="off-screen" data-target=".app-aside" ui-scroll-to="app">
+          <i class="glyphicon glyphicon-align-justify"></i>
+        </button>
+        <!-- brand -->
+        <a href="" class="navbar-brand text-lt">
+          <i class="fa fa-btc"></i>
+          <img src="img/logo.png" alt="." class="hide">
+          <span class="hidden-folded m-l-xs">{{app.name}}</span>
+        </a>
+        <!-- / brand -->
+      </div>
+      <!-- / navbar header -->
+
+      <!-- navbar collapse -->
+      <div class="collapse pos-rlt navbar-collapse box-shadow {{app.settings.navbarCollapseColor}}">
+        <!-- buttons -->
+        <div class="nav navbar-nav hidden-xs">
+          <a href class="btn no-shadow navbar-btn" ng-click="app.settings.asideFolded = !app.settings.asideFolded">
+            <i class="fa {{app.settings.asideFolded ? 'fa-indent' : 'fa-dedent'}} fa-fw"></i>
+          </a>
+          <!--<a href class="btn no-shadow navbar-btn" ui-toggle-class="show" target="#aside-user">-->
+            <!--<i class="icon-user fa-fw"></i>-->
+          <!--</a>-->
+        </div>
+        <!-- / buttons -->
+
+        <!-- link and dropdown -->
+        <!--<ul class="nav navbar-nav hidden-sm">-->
+          <!--<li class="dropdown">-->
+            <!--<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>-->
+            <!--<ul class="dropdown-menu">-->
+              <!--<li><a href="#">Action</a></li>-->
+              <!--<li><a href="#">Another action</a></li>-->
+              <!--<li><a href="#">Something else here</a></li>-->
+              <!--<li role="separator" class="divider"></li>-->
+              <!--<li><a href="#">Separated link</a></li>-->
+            <!--</ul>-->
+          <!--</li>-->
+          <!--<li class="dropdown">-->
+            <!--<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>-->
+            <!--<ul class="dropdown-menu ">-->
+              <!--<li><a href="#">Action</a></li>-->
+              <!--<li><a href="#">Another action</a></li>-->
+              <!--<li><a href="#">Something else here</a></li>-->
+              <!--<li role="separator" class="divider"></li>-->
+              <!--<li><a href="#">Separated link</a></li>-->
+            <!--</ul>-->
+          <!--</li>-->
+        <!--</ul>-->
+        <!-- / link and dropdown -->
+
+
+        <!-- nabar right -->
+        <ul class="nav navbar-nav navbar-right">
+
+          <li class="hidden-xs">
+            <a ui-fullscreen></a>
+          </li>
+
+        </ul>
+        <!-- / navbar right -->
+
+      </div>
+      <!-- / navbar collapse -->

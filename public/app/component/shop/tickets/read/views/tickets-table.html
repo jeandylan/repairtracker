@@ -7,6 +7,8 @@
             <th st-sort="model" >model</th>
             <th st-sort="problem_type" >problem_type</th>
             <th st-sort="problem_definition" >problem_definition</th>
+             <th st-sort="status" >status</th>
+            <th st-sort="estimated_completion_date">expected completion date</th>
 
 
         </tr>
@@ -24,6 +26,8 @@
             <th>
                 <input st-search="ticket_problem" placeholder="search for ticket problem" class="input-sm form-control" type="search"/>
             </th>
+            <th></th>
+            <th></th>
 
         </tr>
         </thead>
@@ -33,6 +37,8 @@
             <td >{{row.model}}</td>
             <td>{{row.problem_type}}</td>
             <td>{{row.problem_definition}}</td>
+            <td>{{row.status}}</td>
+            <td ng-class="{'danger': (row.status !='close') && (row.estimated_completion_date > today )}">{{row.estimated_completion_date}}</td>
             <td>
                 <a ui-sref="app.ticket.update({ticketId:row.id})" class="btn btn-sm btn-warning"  >
                     <i class="glyphicon glyphicon-edit">edit</i>

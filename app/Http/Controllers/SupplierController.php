@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Stock;
 use Illuminate\Http\Request;
 use App\Supplier;
 use App\Http\Requests;
@@ -82,5 +83,27 @@ class SupplierController extends Controller
             return array("successful" => false, "message" => "supplier cannot be deleted");
         }
 
+    }
+
+
+    public function suppliedStock($supplierId){
+        if($supplier=Supplier::find($supplierId)){
+            return $supplier->stocks()->get();
+        }
+    }
+
+    public  function  removeSuppliedStock(Request $request,$supplierId){
+        if(($supplier=Supplier::find($supplierId)) && ($stock=Stock::find($request->stock_id))){
+            $supplier->stocks()->detach($stock->id);
+            return array("successful" => true, "message" => "supplid stock Deleted");
+        }
+
+    }
+
+    public function addSuppliedStock(Request $request,$supplierId){
+        if(($supplier=Supplier::find($supplierId)) && ($stock=Stock::find($request->stock_id))){
+            $supplier->stocks()->attach($stock->id);
+            return array("successful" => true, "message" => "supplier now suppliers this Stock ");
+        }
     }
 }

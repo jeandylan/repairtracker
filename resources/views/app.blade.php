@@ -106,5 +106,14 @@
 <!---cache Plugin--->
 <script src="assets/js/angular-library/angular-cache/angular-cache.min.js"></script>
 
+
+<!---permission---->
+<script src="assets/js/angular-library/angular-acl/angular-acl.min.js"></script>
+
+<!---char---->
+<script src="assets/js/angular-library/angular-chart/Chart.min.js"></script>
+<script src="assets/js/angular-library/angular-chart/angular-chart.min.js"></script>
+
+
 </body>
 </html>

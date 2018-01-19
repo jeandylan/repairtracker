@@ -36,6 +36,78 @@ class MailController extends Controller
 
     }
 
+    public function sentInvoiceMail(Request $request){
+        $employeeSender = JWTAut::toUser(); //the login user That sent the will sent the msg
+        \Config::set('mail.password', 'jtm6310814');
+        \Config::set('mail.username', 'dylanblais1@gmail.com');
+        \Config::set('mail.from.address', 'dylanblais1@gmail.com');
+        \Config::set('mail.from.name', $employeeSender->first_name);
+        $subject = "Invoice";
+        $emailAddresses=$request->emailAddresses;
+
+        foreach($emailAddresses as $emailAddress){
+
+            Mail::raw("Invoice below", function($message) use ($emailAddress,$request)
+            {
+                $message->setSubject("invoice");
+                $message->to($emailAddress);
+                $binary = base64_decode($request->file); //Angular sents Base 64 Need To Decode It
+
+                $message->attachData($binary,'invoice.pdf'); //Attach it to Email and give it a name
+            });
+            return ['success'=>true];
+
+
+        }
+    }
+
+    public function sentEstimationMail(Request $request){
+        $employeeSender = JWTAut::toUser(); //the login user That sent the will sent the msg
+        \Config::set('mail.password', 'jtm6310814');
+        \Config::set('mail.username', 'dylanblais1@gmail.com');
+        \Config::set('mail.from.address', 'dylanblais1@gmail.com');
+        \Config::set('mail.from.name', $employeeSender->first_name);
+        $subject = "Invoice";
+        $emailAddresses=$request->emailAddresses;
+
+        foreach($emailAddresses as $emailAddress){
+
+            Mail::raw("Invoice below", function($message) use ($emailAddress,$request)
+            {
+                $message->setSubject("estimation");
+                $message->to($emailAddress);
+                $binary = base64_decode($request->file); //Angular sents Base 64 Need To Decode It
+
+                $message->attachData($binary,'invoice.pdf'); //Attach it to Email and give it a name
+            });
+            return  array("successful"=>false, "message"=>"An error Db");
+
+
+        }
+    }
+    public function sentPurchaseOrderMail(Request $request){
+        $employeeSender = JWTAut::toUser(); //the login user That sent the will sent the msg
+        \Config::set('mail.password', 'jtm6310814');
+        \Config::set('mail.username', 'dylanblais1@gmail.com');
+        \Config::set('mail.from.address', 'dylanblais1@gmail.com');
+        \Config::set('mail.from.name', $employeeSender->first_name);
+        $subject = "Purchase Order";
+        $emailAddresses=$request->emailAddresses;
+
+        foreach($emailAddresses as $emailAddress){
+
+            Mail::raw("Purchase Order below", function($message) use ($emailAddress,$request)
+            {
+                $message->setSubject("purchase Order");
+                $message->to($emailAddress);
+                $binary = base64_decode($request->file); //Angular sents Base 64 Need To Decode It
+
+                $message->attachData($binary,'purchaseOrder.pdf'); //Attach it to Email and give it a name
+            });
+            return ['success'=>true];
+        }
+    }
+
 
 
 

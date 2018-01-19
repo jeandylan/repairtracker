@@ -34,7 +34,6 @@
             Address
         </div>
         <!---Address--->
-
         <div ng-repeat="address in supplier.addresses">
             <div class="form-group">
                 Type:<a editable-select="address.type" onaftersave="updateAddressType(address)"   e-ng-options="type for type in types">
@@ -43,8 +42,6 @@
                 Address: <a editable-text="address.address" onaftersave="updateAddress(address)" e-uib-typeahead="address for address in getLocation($viewValue)" e-typeahead-loading="loadingLocations" e-typeahead-no-results="noResults">{{address.address || 'empty'}}</a>
                 <button class="btn-warning" type="button" confirm-button="deleteAddress(address)" message="Are you sure you want to remove this Address?"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
             </div>
-
-
         </div>
 
 
@@ -86,6 +83,7 @@
         <button type="button" ng-click="createEmail($event)" class="btn-primary"><i class="fa fa-plus " aria-hidden="true"></i> Add email</button>
 
     </div>
+    <span ng-include="'app/component/shop/suppliers/update/views/update-supplied-stock.html'"></span>
 
 
 </div>

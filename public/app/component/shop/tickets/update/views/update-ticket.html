@@ -1,4 +1,6 @@
 <div ng-controller="updateTicketCtrl">
+    <button class="default" ui-sref="app.estimation({ticketId:ticketId})">create/update Estimation</button>
+     <button class="default" ui-sref="app.invoice({ticketId:ticketId})">create/update Invoice</button>
    <div class="wrapper-md">
       <h4>Ticket for {{ticket.customer[0].first_name}} {{ticket.customer[0].last_name}}</h4>
        <!---start panel-->
@@ -16,6 +18,9 @@
              <!----one Edit  g box --->
             <div class="form-group ">
                problem definition: <a href="#" editable-textarea="ticket.problem_definition" e-rows="7" e-cols="40" onaftersave="updateTicket()">{{ticket.problem_definition || 'empty'}}</a>
+            </div>
+               <div class="form-group ">
+               status: <a href="#" editable-select="ticket.status"  onaftersave="updateTicket()" e-ng-options="s for s in status">{{ticket.status || 'empty'}}</a>
             </div>
             <div class="form-group ">
                Expected Completion : <a href="#" e-minDate="now" e-is-open="opened.$data" e-ng-click="open($event,'$data')" e-datepicker-popup="yyyy/MM/dd" editable-bsdate="ticket.estimated_completion_date " onbeforesave="dateNotPast($data)" onaftersave="updateTicket()">{{ (ticket.estimated_completion_date | date:"dd/MM/yyyy") || 'empty' }}</a>
@@ -40,15 +45,9 @@
                </div>
 
             </div>
+               <span ng-include="'app/component/shop/tickets/update/views/update-ticket-custom-fields.html'"></span>
 
-            <div ng-repeat="txtField in txtFields">
-               <div ng-show="txtField.data[0].id" class="ng-hide">
-                  {{txtField.properties.field_name}}: <a href="#" editable-text="txtField.data[0].field_data" onaftersave="updateTxtData(txtField)">{{txtField.data[0].field_data || 'empty'}}</a>
-               </div>
-               <div ng-show="!txtField.data[0].id" class="ng-hide">
-                  {{txtField.properties.field_name}}: <a href="#" editable-text="txtField.data[0].field_data" onaftersave="createTxtData(txtField)">{{txtField.data[0].field_data || 'empty'}}</a>
-               </div>
-            </div>
+
               </div>
          </div>
           <!----Task--->
@@ -59,14 +58,6 @@
          <div uib-accordion-group class="panel-primary" heading="stock" is-open="heading2.isOpen">
             <span ng-include="'app/component/shop/tickets/update/views/ticket-stock.html'"></span>
          </div>
-         <!----invoice---->
-          <div uib-accordion-group class="panel-primary" heading="invoice" is-open="heading3.isOpen">
-              <div ng-include="'app/component/shop/tickets/update/views/ticket-invoice.html'"></div>
-          </div>
-         <!----estimation---->
-          <div uib-accordion-group class="panel-primary" heading="estimation" is-open="heading4.isOpen">
-              <div ng-include="'app/component/shop/tickets/update/views/ticket-estimation.html'"></div>
-          </div>
          <!---comments--->
          <div uib-accordion-group class="panel-primary" heading="comments" is-open="heading5.isOpen">
             <div ng-include="'app/component/shop/tickets/update/views/ticket-comment.html'"></div>

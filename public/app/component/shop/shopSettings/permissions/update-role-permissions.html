@@ -1,0 +1,23 @@
+<div ng-controller="updateRolePermissionsCtrl">
+	<div class=form-group>
+		<h4>Admin Can:</h4>
+		<div class="btn-group">
+			<span ng-repeat="permissionAdmin in AllpermissionsAdmin">
+				<label class="btn btn-default" ng-model="permissionAdmin.select" uib-btn-checkbox>{{permissionAdmin.name}}</label>
+			</span>
+
+		</div>
+		<button ng-click="updateAdminRole()" class="btn btn-success">Save</button>
+		</div>
+	<div class=form-group>
+		<h4>Technician  Can:</h4>
+		<div class="btn-group">
+			<span ng-repeat="permissionTechnician in AllpermissionsTechnician">
+				<label class="btn btn-default" ng-model="permissionTechnician.select" uib-btn-checkbox>{{permissionTechnician.name}}</label>
+			</span>
+
+		</div>
+		<button ng-click="updateTechnicianRole()" class="btn btn-success">Save</button>
+		</div>
+
+</div>

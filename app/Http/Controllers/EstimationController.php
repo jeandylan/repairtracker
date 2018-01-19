@@ -22,15 +22,12 @@ class EstimationController extends Controller
     }
 
     public function createEstimationLabour($ticketId,Request $request){
-        if($estimation=Ticket::find($ticketId)->estimation()->first()){
-            $estimation->estimationLabour()->create($request->all());
-            return  array("successful"=>true, "message"=>"Labour Cost added");
-        }
-        else{
-            $estimation=new Estimation($ticketId);
-            $estimation->estimationLabour()->create($request->all());
-            return  array("successful"=>true, "message"=>"Estimation created + labour cost added");
-
+        if ($request->has('name') && $request->has('cost') ) {
+           if($estimation=Estimation::where('ticket_id','=',$ticketId)->first()){
+               $estimationLabour=new EstimationLabour(['cost'=>$request->cost,'name'=>$request->name,'estimation_id'=>$estimation->id]);
+               $estimationLabour->save();
+               return  array("successful"=>true, "message"=>"Estimation created + item added");
+           }
         }
     }
     public function updateEstimationLabour($estimationLabourId,Request $request){
@@ -44,18 +41,21 @@ class EstimationController extends Controller
     }
 
     public function createEstimationItem($ticketId,Request $request){
-
-        if($estimation=Ticket::find($ticketId)->estimation()->first()){
-            $stock=Stock::find($request->input("id"));
-            $estimation->estimationItem()->create(['stock_id'=>$stock->id,'product_name'=>$stock->product_name,'selling_price'=>$stock->selling_price,
+        if($estimation=Estimation::where('ticket_id','=',$ticketId)->first()){
+           $stock=Stock::find($request->input("id"));
+            $estimationItem=new EstimationItem(['estimation_id'=>$estimation->id,'stock_id'=>$stock->id,'product_name'=>$stock->product_name,'selling_price'=>$stock->selling_price,
             'qty_out'=>$request->input('qty_out')]);
+            $estimationItem->save();
             return  array("successful"=>true, "message"=>"stock added");
         }
         else{
-            $estimation=new Estimation($ticketId);
-            $stock=Stock::find($request->input("stock.id"));
-            $estimation->estimationItem()->create(['stock_id'=>$stock->id,'product_name'=>$stock->product_name,'selling_price'=>$stock->selling_price,
+            $newEstimation=new Estimation();
+            $newEstimation->ticket_id=$ticketId;
+            $newEstimation->save();
+            $stock=Stock::find($request->input("id"));
+            $estimationItem=new EstimationItem(['estimation_id'=>$newEstimation->id,'stock_id'=>$stock->id,'product_name'=>$stock->product_name,'selling_price'=>$stock->selling_price,
                 'qty_out'=>$request->input('qty_out')]);
+            $estimationItem->save();
             return  array("successful"=>true, "message"=>"Estimation created + item added");
 
         }
@@ -72,7 +72,7 @@ class EstimationController extends Controller
 
 
 
-    public function deleteEstimationItem($estimationItem){
+    public function deleteEstimationItem($estimationItem){ ///same as labour
         $estimationItem=EstimationItem::find($estimationItem);
         $estimationItem->delete();
     }

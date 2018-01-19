@@ -1,13 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\StockLocationLevel;
-use Illuminate\Http\Request;
+//use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests;
 use App\Stock;
+use App\SaasCompanyLocation;
+use App\StockLocationCreator; //use this to create stock in every company will not use the belong to ,which other wise will
+//apply hotname automatically yto tbl
+
 
 
 class StockController extends Controller
@@ -35,14 +39,32 @@ class StockController extends Controller
         $stock = new Stock(Input::all());
         //As data was  send with Dataname that correspond to that in Db ,no need to precise what input goes in what table field(row),(laravel Figure it out)
         $stock->save();
+        $companyNameSavingStock=explode(".",Request::server('HTTP_HOST'))[1];
+        $this->createStockForCompanyLocation($companyNameSavingStock,$stock->id);
         return array("successful" => true, "message" => "stock was created");
     }
 
     /*
-     * get Customer Detail with id X
-     * **return Details of Customer With id X
+     * create a stock level for location abc  with a stock id of rtry
+
      */
 
+    public function createStockForCompanyLocation($companyNameSavingStock,$stockId){
+         $companyLocations=app('App\Http\Controllers\SaasAdmin\CompanyController')->getActiveCompanyLocationsByName($companyNameSavingStock);
+        foreach ($companyLocations as $companyLocation){
+             $locationName=explode(".",$companyLocation['location_hostname'])[0];
+            if($locationName!="admin"){//do not create for location Admin
+                $stockLocation=new StockLocationCreator(); //use creator intead of StockLocation ,REASON ON THIS FILE HEADER
+                $stockLocation->stock_id=$stockId;
+                $stockLocation->shop_location=$companyLocation['location_hostname'];
+                $stockLocation->current_level=0;
+                $stockLocation->save();
+            }
+
+        }
+
+
+    }
 
     public function get($id)
     {
@@ -87,8 +109,8 @@ class StockController extends Controller
     {
         $product_name = Input::get('product_name');
         if($product_name){
-            $stock=Stock::where("product_name", "LIKE", "%$product_name%")->get();
-            return $stock;
+            $stocks=Stock::where("product_name", "LIKE", "%$product_name%")->get();
+            return $stocks;
         }
         return array();
 
@@ -108,7 +130,13 @@ class StockController extends Controller
             return array("successful" => true, "message" => "Stock item was updated");
         }
         return response()->json(['error' => 'Not enoght Stock '], 404);
-
-
     }
+
+    function getSuppliers($stockId){
+        if($stock=Stock::find($stockId)){
+            return $stock->suppliers()->get();
+        }
+    }
+
+
 }

@@ -1,0 +1,67 @@
+<div  ng-controller="updateCompanyCtrl" class="form-group">
+<div class="wrapper-md" >
+    <!---start panel-->
+    <div class="panel panel-default">
+        <!---personal detail form panel --->
+        <div class="panel-heading font-bold">
+            personal details{{company.company_name}}
+        </div>
+        <div class="panel-body">
+            <!----start of panelbody-->
+	        <!---on xeditbox--->
+
+            <div class="form-group ">
+                owner First Name: <a href="#" editable-text="company.owner_first_name" onbeforesave="updateCompany()">{{company.owner_first_name || 'empty'}}</a>
+            </div>
+	        <!---on xeditbox--->
+            <div class="form-group">
+                owner last Name: <a  href="#" editable-text="company.owner_last_name" onaftersave="updateCompany()">{{company.owner_last_name || 'empty'}}</a>
+            </div>
+            <div class="form-group">
+                max customer: <a  href="#" editable-number="company.max_customers" onaftersave="updateCompany()">{{company.max_customers || 'empty'}}</a>
+            </div>
+            <div class="form-group">
+                max employee: <a  href="#" editable-number="company.max_employees" onaftersave="updateCompany()">{{company.max_employees || 'empty'}}</a>
+            </div>
+            <div class="form-group">
+                isActive: <a  href="#" editable-radiolist="company.isActive"  e-ng-options="s.value as s.text for s in ::statuses track by s.value" onaftersave="updateCompany()">{{company.isActive==0? 'Inactive': 'Active' || 'empty'}}</a>
+            </div>
+        </div>
+	    <!--end panel body--->
+    </div>
+
+	<!---end panel--->
+
+
+	<!---right side-->
+    <div class="panel panel-default">
+        <!----Title-->
+        <div class="panel-heading font-bold">
+            company location
+        </div>
+	    <!---Address--->
+        <div ng-repeat="companyLocation in companyLocations">
+               <div class="line line-dashed b-b line-lg pull-in"></div>
+               <div class="form-group">
+                 location: <a  href="#" editable-text="companyLocation.location_hostname" onaftersave="updateCompanyLocation(companyLocation)">{{companyLocation.location_hostname || 'empty'}}</a>
+               </div>
+            <div class="form-group">
+                isActive: <a  href="#" editable-radiolist="companyLocation.isActive"  e-ng-options="s.value as s.text for s in ::statuses track by s.value" onaftersave="updateCompanyLocation(companyLocation)">{{companyLocation.isActive || 'empty'}}</a>
+            </div>
+            </div>
+         <div class="form-group">
+               <button class="btn-primary btn-sm" ng-click="addCompanyLocation()">+location</button>
+            </div>
+        <!---unsaved Stock--->
+            <h3 ng-if="unSavedCompanyLocations[0]">Unsaved Locations</h3>
+            <div ng-repeat="unSavedCompanyLocation in unSavedCompanyLocations">
+               <div class="row">
+                  <div class="col-md-2"> <input type="text"  ng-model="unSavedCompanyLocation.location_hostname"/></div>
+                  <div class="col-md-2"><button class="btn-default btn-xs" ng-click="saveUnsavedCompanyLocation(unSavedCompanyLocation)">save Items</button>
+                     <button class="btn-danger btn-xs" ng-click="removeUnsavedLocation(unSavedCompanyLocation)">X</button>
+                  </div>
+               </div>
+            </div>
+    </div>
+    </div>
+</div>

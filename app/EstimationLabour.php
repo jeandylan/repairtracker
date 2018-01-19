@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class EstimationLabour extends Model
 {
       protected $table="estimation_labour";
-    protected $fillable = ['name','cost'];
+    protected $connection = 'tenant';
+    protected $fillable = ['name','cost','estimation_id'];
     protected $guarded = array(['id']);
     public function estimation()
     {

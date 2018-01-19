@@ -1,0 +1,23 @@
+
+<div ng-controller="paymentCtrl">
+<h3>Do payment </h3>
+
+  card Number:<input ng-model="card.number" type='text'>
+  cdn:<input  ng-model="card.cvc" type="text">
+  <div class="form-group">
+                    <label class="col-sm-2 control-label">expiry Month</label>
+                    <div class="col-sm-3">
+                        <p class="input-group">
+                            <input type="text"  name="date_of_birth" class="form-control" uib-datepicker-popup="MM/yyyy" ng-model="card.exp_date" is-open="popup1.opened" datepicker-options="{minMode: 'month'}" required close-text="Close" />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="popup1.opened =! popup1.opened"><i class="glyphicon glyphicon-calendar"></i></button>
+                                </span>
+                        </p>
+                        <p class="alert-warning" ng-show="employee.date_of_birth.$error.required">date of birth required.</p>
+                    </div>
+                </div>
+  <div class="form-group">
+    <button ng-click="pay()">Do payment </button>
+  </div>
+
+</div>

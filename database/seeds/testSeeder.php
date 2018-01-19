@@ -13,13 +13,14 @@ class testSeeder extends Seeder
     {
         $faker = Faker\Factory::create(); //use faker to create Data
         //simulate A supplier providing An Iphone Screen
+        $testingShopLocationArray=array('mahebourg.nexus.saasrepair1.xyz','curepipe.nexus.saasrepair1.xyz','vacoas.nexus.saasrepair1.xyz');
         $supplierId=DB::table('suppliers')->insertGetId([
             'first_name' => "apex",
             'last_name' => "apex",
             'address' =>'rue lyon port louis',
             'mobile_tel' =>"23456789",
             'email' => 'apexMru@yahoo.com',
-            'shop_location'=>$faker->randomElement($array = array ('mahebourg','curepipe','vacoas')),
+            'shop_location'=>$faker->randomElement($array =$testingShopLocationArray),
         ]);
 
         //create A stock Row,to store the Iphone screen
@@ -28,7 +29,7 @@ class testSeeder extends Seeder
             'selling_price' => 3000,
             'reorder_level' => 3,
             'barcode' => "12345678",
-            'shop_location'=>$faker->randomElement($array = array ('mahebourg','curepipe','vacoas')),
+            'shop_location'=>$faker->randomElement($array = $testingShopLocationArray),
 
         ]);
 
@@ -38,7 +39,7 @@ class testSeeder extends Seeder
             'stock_id' => $stockId,
             'cost_price' =>  4000,
             'qty_in' => 2,
-            'shop_location'=>$faker->randomElement($array = array ('mahebourg','curepipe','vacoas')),
+            'shop_location'=>$faker->randomElement($array =$testingShopLocationArray),
 
         ]);
 

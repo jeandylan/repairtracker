@@ -2,7 +2,7 @@
  * Created by dylan on 24-Jul-16.
  */
 app.controller("createEmployeeCtrl",function ($scope,serverServices,toaster,$http) {
-
+$scope.employee={};
 
     $scope.clear = function() {
         $scope.employee.date_of_birth = null;
@@ -26,19 +26,7 @@ app.controller("createEmployeeCtrl",function ($scope,serverServices,toaster,$htt
         opened: false
     };
 /* telephone add Section*/
-    $scope.telephones=[]; //array to contain all telephone numbers
 
-    $scope.createTelephoneNumber=function () {
-        $scope.telephones.push({}); //push empty (for now ) object ->uniquely identify because of hash
-
-    };
-
-    $scope.deleteTelephoneNumber=function (telephone) {
-        index=$scope.telephones.indexOf(telephone);
-        if (index > -1) {
-            $scope.telephones.splice(index, 1);
-        }
-    };
 /*address Add Section*/
     /*address Autocomplete*/
     $scope.getLocation = function(val) {
@@ -53,53 +41,28 @@ app.controller("createEmployeeCtrl",function ($scope,serverServices,toaster,$htt
             });
         });
     };
-
-    $scope.addresses=[];
-
-    $scope.createAddress=function () {
-        $scope.addresses.push({}); //push empty (for now ) object ->uniquely identify because of hash
-
-    };
-
-    $scope.deleteAddress=function (telephone) {
-        index=$scope.addresses.indexOf(telephone);
-        if (index > -1) {
-            $scope.addresses.splice(index, 1);
+    $scope.options = [
+        {
+            name: 'superAdmin',
+            value: 'superAdmin'
+        },
+        {
+            name: 'admin',
+            value: 'admin'
+        },
+        {
+            name: 'technician',
+            value: 'technician'
         }
-    };
+    ];
 
-    /*email add Section*/
-    $scope.emails=[];
-
-    $scope.createEmail=function () {
-        $scope.emails.push({}); //push empty (for now ) object ->uniquely identify because of hash
-
-    };
-
-    $scope.deleteEmail=function (telephone) {
-        index=$scope.emails.indexOf(telephone);
-        if (index > -1) {
-            $scope.emails.splice(index, 1);
-        }
-    };
-/*Sent to server sect*/
 
     $scope.createEmployee=function () {  //it is very import that each data name matches the columns name it is to be inserted in Db, as on server side the code will not work
-        var employeeData={
-            first_name:$scope.employee.first_name,
-            last_name:$scope.employee.last_name,
-            email:$scope.employee.email,
-            date_of_birth:$scope.employee.date_of_birth,
-            role:$scope.employee.role,
-            telephones:$scope.telephones,
-            addresses:$scope.addresses,
-            emails:$scope.emails
-        };
-        serverServices.post('api/employee',employeeData) //using service (customer/service/clientService ) that will query Laravel for .json output
+console.log($scope.employee);
+        serverServices.post('api/employee',$scope.employee) //using service (customer/service/clientService ) that will query Laravel for .json output
             .then(
                 function (result) {
-                    (result.successful)?toaster.pop("success",'success',result.message):
-                        toaster.pop("warning",'info:',result.message);
+                    serverServices.post('api/employeeAssignRole/'+result.id,{role:$scope.employee.role}).then(); //now we update The role by using The New Id obtain from server
                 },
                 function (error) {
                     // handle errors here

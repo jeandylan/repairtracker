@@ -1,0 +1,37 @@
+<div ng-controller="selectSuppliersForPurchaseOrdersCtrl">
+	<h4>Select One Suppliers item </h4>
+  <table st-table="displayedCollection"  st-safe-src="rowCollection" class="table table-striped"> <!----remember display and st-dafe when updating ---->
+        <thead>
+        <tr>
+            <th st-sort="first_name">first name</th>
+            <th st-sort="last_name" >last name</th>
+            <th st-sort="company">company</th>
+
+        </tr>
+        <tr>
+            <th>
+                <input st-search="first_name" placeholder="search for first name" class="input-sm form-control" type="search"/>
+            </th>
+            <th>
+                <input st-search="last_name" placeholder="search for last name" class="input-sm form-control" type="search"/>
+            </th>
+            <th>
+                <input st-search="company" placeholder="search for company Name" class="input-sm form-control" type="search"/>
+            </th>
+        </tr>
+        </thead>
+
+        <tbody >
+        <tr ng-repeat="row in displayedCollection">
+            <td >{{row.first_name}}</td>
+            <td >{{row.last_name}}</td>
+            <td>{{row.company}}</td>
+            <td>
+                <button class="btn-default" ng-click="selectThisSupplier(row)">select</button>
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+
+</div>

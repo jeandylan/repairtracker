@@ -7,6 +7,7 @@ use HipsterJazzbo\Landlord\BelongsToTenant;
 class EmployeeTicket extends Model
 {
     protected $table='employee_ticket';
+    protected $connection = 'tenant';
     protected $guarded = array(['id']);
     // protected $fillable = ['ticket_id','employee_id'];
     public function employee()
@@ -15,6 +16,6 @@ class EmployeeTicket extends Model
     }
     public function ticket()
     {
-        return $this->belongsTo('App\Ticket');
+        return $this->belongsTo('App\Ticket','ticket_id');
     }
 }

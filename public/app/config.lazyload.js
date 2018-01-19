@@ -48,7 +48,7 @@ angular.module('app')
             daterangepicker:[   'assets/js/jquery-plugins/moment/moment.js',
                 'assets/js/jquery-plugins/bootstrap-daterangepicker/daterangepicker.js',
                 'assets/js/jquery-plugins/bootstrap-daterangepicker/daterangepicker-bs3.css'],
-            pdfMake:['assets/js/jquery-plugins/pdfMake/pdfmake.min.js',
+            pdfMake:['assets/js/jquery-plugins/pdfMake/pdfmake.js',
                 'assets/js/jquery-plugins/pdfMake/vfs_fonts.js',
                 'assets/js/jquery-plugins/pdfMake/html2canvas.js'],
             tagsinput:      [   'assets/js/jquery-plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.js',
@@ -58,8 +58,8 @@ angular.module('app')
         ],
         underscore:[
             'assets/js/jquery-plugins/underscore/underscore-min.js'
-        ]
-
+        ],
+        stripeJs:['https://js.stripe.com/v2/'],
 
         }
     )
@@ -224,7 +224,50 @@ angular.module('app')
             files: [
                 'assets/js/angular-library/angular-autogrow-textbox/angular-autogrow.min.js'
             ]
-        }
+        },
+        {
+            name: 'am.multiselect',
+            files: [
+                'assets/js/angular-library/angular-am.multiselect/multiselect-tpls.js' //multi select
+            ]
+        },
+        {
+            name: 'ngFileUpload',
+            files: [
+                'assets/js/angular-library/angular-ng-file-upload/ng-file-upload-all.min.js',
+                'assets/js/angular-library/angular-ng-file-upload/ng-file-upload-shim.min.js'
+                //our default file upload
+            ]
+        },
+        {
+            name: 'ui.tinymce',
+            files: [
+                'assets/js/angular-library/angular-ui-tinymce/tinymce.min.js',
+                'assets/js/angular-library/angular-ui-tinymce/uitinymce.min.js'
+                //our default file upload
+            ]
+        },
+        {
+            name: 'naif.base64',
+            files: [
+                'assets/js/angular-library/angular-base64-upload/angular-base64-upload.min.js'
+                //our default file upload
+            ]
+        },
+        {
+            name: 'credit-cards',
+            files: [
+                'assets/js/angular-library/angular-credit-cards/angular-credit-cards.js'
+                //our default file upload
+            ]
+        },
+        {
+            name: 'angular-stripe',
+            files: [
+                'assets/js/angular-library/angular-stripe/angular-stripe.js'
+                //our default file upload
+            ]
+        },
         ]
     )
     // oclazyload config

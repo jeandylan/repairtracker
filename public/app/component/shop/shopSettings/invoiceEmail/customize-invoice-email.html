@@ -1,0 +1,12 @@
+<div ng-controller="customizeInvoiceEmailCtrl">
+ <h3>header of Invoice email</h3>
+ <small>include company name ,loc Address etc</small>
+ <textarea ui-tinymce="tinymceOptions" ng-model="invoice_email_header"></textarea>
+  <button ng-click="saveHeader()">save</button>
+ <h3>footer Of Invoice Email</h3>
+ <small>include terms and condition</small>
+ <textarea ui-tinymce="tinymceOptions" ng-model="invoice_email_footer"></textarea>
+ <div class="row">
+  <button ng-click="saveFooter()">save</button>
+ </div>
+</div>

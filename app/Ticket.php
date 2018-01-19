@@ -12,6 +12,7 @@ class Ticket extends Model
 {
     use BelongsToTenant;
     protected $table='tickets';
+    protected $connection = 'tenant';
     protected $guarded = array(['id']);
 
     //ticket belong to A Customer

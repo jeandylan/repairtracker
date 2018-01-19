@@ -7,6 +7,7 @@ use HipsterJazzbo\Landlord\BelongsToTenant;
 class CustomerTelephone extends Model
 {
 
+    protected $connection = 'tenant';
     protected $table='customer_telephone';
   //  protected $fillable = ['telephone_number', 'type','customer_id'];
     public function customer()

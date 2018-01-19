@@ -5,10 +5,14 @@
  */
 app.service("serverServices", function ($http, $q,toaster) {
     return {
-        get: function(uri) {
+        get: function(uri,params) {
           //always return to promise , where reject means some err occured,
             var deferred = $q.defer(); //always declare a new deffered when using promised else old promise will be returned
-            return $http.get(uri) //pass the get uri,add the / so that angular could handle https ,if ever https is being used
+            return $http({
+                method: 'GET',
+                url: uri,       //add the / so that angular could handle https ,if ever https is being used
+                params: params
+            }) //pass the get uri,add the / so that angular could handle https ,if ever https is being used
                 .then(function(response) {
                     deferred.resolve(response.data); //return sucessful data to controller /function calling it
                     return deferred.promise;
@@ -23,10 +27,14 @@ app.service("serverServices", function ($http, $q,toaster) {
         /*
         delete query sent to server,use to delete data
          */
-        delete: function(uri) {
+        delete: function(uri,params) {
             //always return to promise , where reject means some err occured,
             var deferred = $q.defer(); //always declare a new deffered when using promised else old promise will be returned
-            return $http.delete(uri) //use the delete  uri,add the / so that angular could handle https ,if ever https is being used
+            return $http({
+                method: 'DELETE',
+                url: uri,       //add the / so that angular could handle https ,if ever https is being used
+                params: params
+            })  //use the delete  uri,add the / so that angular could handle https ,if ever https is being used
                 .then(function(response) {
                     deferred.resolve(response.data); //return sucessful data to controller /function calling it
                     (response.data.successful) ? toaster.pop('successful',"deleted", response.data.message ) : toaster.pop('warning',"",response.data.message);
@@ -35,7 +43,6 @@ app.service("serverServices", function ($http, $q,toaster) {
                 },function(error) {
                     // something went wrong
                     toaster.pop('error',"error", error.data.error);
-                    console.log("ewe");
                     deferred.reject(error.data);//return server error data
                     return deferred.promise;
                 });

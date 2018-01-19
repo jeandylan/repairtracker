@@ -1,0 +1,55 @@
+<div ng-controller="SupporterCtrl" id="table">
+    <div class="bg-light lter b-b wrapper-md">
+        <button md-ink-ripple ui-sref="app.supporter.add" class="btn btn-sm btn-info pull-right">Add Supporter</button>
+        <h1 class="m-n font-thin h3">Supporters</h1>
+    </div>
+
+    <table st-table="displayedCollection" ng-show="displayedCollection.length > 0"st-safe-src="rowCollection" class="table table-striped">
+        <!----remember display and st-dafe when updating ---->
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Clients</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr ng-repeat="row in displayedCollection">
+            <td>{{row.name}}</td>
+            <td>{{row.email}}</td>
+            <td>{{row.clients}}</td>
+            <td>{{row.status == 0 ? 'Inactive' : 'Active'}}</td>
+            <td>
+                <a ui-sref="app.updateSupporter({supporterId:row.id})" class="btn btn-sm btn-warning">
+                    <i class="glyphicon glyphicon-edit"></i>
+                </a>
+            </td>
+            <td>
+                <button type="button" class="btn btn-sm btn-danger" confirm-button="deleteBtn(row.id)"
+                        message="Are you sure you want to remove this ?">
+                    <i class="glyphicon  glyphicon-remove-circle"></i>
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="text-center m-b-lg" ng-show="displayedCollection.length < 1 && loadingStatus == 0">
+        <div class="text-lg m-b-lg">
+            <div class="m-t-lg m-b-lg"><i class="icon-check text-3x text-muted"></i></div>
+            <div>No supporters added yet</div>
+            <div>Click the below button to add new supporter.</div>
+        </div>
+        <a ui-sref="app.supportersAdd" type="button" class="btn btn-md btn-info btn-addon"><i class="fa fa-plus"></i>Add
+            New Supporter</a>
+    </div>
+    <div class="text-center m-b-lg" ng-show="displayedCollection.length < 1 && loadingStatus == 1">
+        <div class="text-lg m-b-lg">
+            <div class="m-t-lg m-b-lg"><i class="icon-check text-3x text-muted"></i></div>
+            <div>Loading...</div>
+        </div>
+    </div>
+
+</div>
+

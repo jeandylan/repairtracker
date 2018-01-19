@@ -1,0 +1,10 @@
+<span ng-controller="updateTicketCustomFieldsCtrl">
+<div ng-repeat="txtField in txtFields">
+               <div ng-show="txtField.data.id" class="ng-hide">
+                  {{txtField.properties.field_name}}: <a href="#" editable-text="txtField.data.field_data" onaftersave="updateTxtData(txtField)">{{txtField.data.field_data || 'empty'}}</a>
+               </div>
+               <div ng-show="!txtField.data.id" class="ng-hide">
+                  {{txtField.properties.field_name}}: <a href="#" editable-text="txtField.data.field_data" onaftersave="createTxtData(txtField)">{{txtField.data.field_data || 'empty'}}</a>
+               </div>
+            </div>
+  </span>

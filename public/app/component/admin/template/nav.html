@@ -1,0 +1,31 @@
+<!-- list -->
+<ul class="nav">
+  <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+    <span translate="aside.nav.HEADER">Navigation</span>
+  </li>
+  <li  ui-sref-active="active">
+    <a ui-sref="app.company"><span class="font-bold">Client</span></a>
+  </li>
+  <li  ui-sref-active="active">
+    <a ui-sref="app.messagesList"><span class="font-bold">Messages</span></a>
+  </li>
+  <li>
+    <a ui-sref="app.supportersList" md-ink-ripple class="auto">
+      <!--<i class="icon-users"></i>-->
+      <span class="font-bold">Supporters</span>
+    </a>
+    <ul class="nav nav-sub dk">
+      <li ui-sref-active="active">
+        <a ui-sref="app.supportersList">
+          <span>Supporters List</span>
+        </a>
+      </li>
+      <li  ui-sref-active="active">
+        <a ui-sref="app.supportersAdd">
+          <span>Add New Supporter</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+</ul>
+<!-- / list -->

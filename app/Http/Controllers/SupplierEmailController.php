@@ -57,9 +57,11 @@ class SupplierEmailController extends Controller
         else{
             return array("successful"=>false, "message"=>"deleting unknown Email");
         }
+    }
 
-
-
+    public  function  get($id){
+        $email=SupplierEmail::where('supplier_id','=',$id)->get();
+        return $email;
 
     }
 

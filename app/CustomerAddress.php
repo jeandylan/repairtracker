@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use HipsterJazzbo\Landlord\BelongsToTenant;
 class CustomerAddress extends Model
 {
-
+    protected $connection = 'tenant';
     protected $table='customer_address';
    // protected $fillable = ['address', 'type','customer_id'];
 
